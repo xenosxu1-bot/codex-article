@@ -206,15 +206,13 @@ def cheat():
     canvas.save(imgdir / "10-cheatsheet-cn.jpg", quality=94)
 
 
-hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "实战案例：从失败测试到可验证修复", "让 Codex 先定位、再修复、最后自证正确", [("Debug闭环", COL["orange"]), ("最小改动", COL["green"]), ("测试验证", COL["blue"])])
+hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
 hero("04-agents-cover-cn.jpg", "01-codex-app-cn.jpg", "AGENTS.md 深度模板", "把团队规范变成 Codex 每次都会读的上下文", [("项目规则", COL["blue"]), ("完成标准", COL["green"]), ("Review指南", COL["purple"])])
-hero("05-security-cover-cn.jpg", "02-codex-cli-cn.jpg", "Codex 安全使用指南", "权限、网络、密钥、上线前检查，一次讲清楚", [("Sandbox", COL["green"]), ("Approval", COL["orange"]), ("Secret保护", COL["pink"])])
-hero("06-cheatsheet-cover-cn.jpg", "03-codex-ide-cn.jpg", "Codex Cheat Sheet", "命令、提示词、工作流，一页收藏就够了", [("Slash命令", COL["blue"]), ("Prompt模板", COL["purple"]), ("工作流速查", COL["green"])])
 flow_debug()
 agents_template()
 safety()
 cheat()
 
 for path in sorted(imgdir.glob("*.jpg")):
-    if path.name[:2] in {"03", "04", "05", "06", "07", "08", "09", "10"}:
+    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
         print(path.name, path.stat().st_size)
