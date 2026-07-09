@@ -297,9 +297,7 @@ agents_template()
 safety()
 cheat()
 plugin_skill_cover()
-plugin_vs_skill()
-content_workflow()
 
 for path in sorted(imgdir.glob("*.jpg")):
-    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg", "11-plugin-vs-skill-cn.jpg", "12-content-skill-workflow-cn.jpg"}:
+    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
         print(path.name, path.stat().st_size)

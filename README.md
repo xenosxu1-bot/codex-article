@@ -32,8 +32,6 @@
 | `05-plugins-skill-cover-cn.jpg` | 插件与 Skill 文章封面图 |
 | `05-plugin-list-original-cn.jpg` | 常用插件清单正文图 |
 | `05-skill-list-original-cn.jpg` | 内容创作 Skill 清单正文图 |
-| `11-plugin-vs-skill-cn.jpg` | 插件、Skill、MCP 对照图 |
-| `12-content-skill-workflow-cn.jpg` | 内容创作 Skill 工作流图 |
 
 ## 推荐阅读顺序
 新手建议按 `01 -> 03` 阅读，先跑通界面和任务，再掌握修 bug、安全检查和常用提示词。
