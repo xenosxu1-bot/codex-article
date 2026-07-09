@@ -364,58 +364,72 @@ def article3_wechat_cover():
 
 def article3_wechat_cover_modern():
     size = (1410, 600)
-    canvas = Image.new("RGB", size, (245, 248, 255))
+    canvas = Image.new("RGB", size, (8, 12, 32))
+    px = canvas.load()
+    for y in range(size[1]):
+        for x in range(size[0]):
+            rx = x / size[0]
+            ry = y / size[1]
+            r = int(9 + rx * 34 + ry * 10)
+            g = int(15 + rx * 20 + ry * 6)
+            b = int(44 + rx * 82 + ry * 42)
+            px[x, y] = (r, g, b)
+
+    glow = Image.new("RGBA", size, (0, 0, 0, 0))
+    gdraw = ImageDraw.Draw(glow)
+    for box, color in [
+        ([800, -180, 1540, 540], (99, 102, 241, 78)),
+        ([980, 120, 1520, 760], (34, 211, 238, 58)),
+        ([-160, 250, 480, 780], (168, 85, 247, 48)),
+    ]:
+        gdraw.ellipse(box, fill=color)
+    glow = glow.filter(ImageFilter.GaussianBlur(52))
+    canvas = canvas.convert("RGBA")
+    canvas.alpha_composite(glow)
     draw = ImageDraw.Draw(canvas)
 
-    # Soft editorial background.
-    for x in range(size[0]):
-        ratio = x / size[0]
-        r = int(246 - ratio * 16)
-        g = int(249 - ratio * 22)
-        b = int(255 - ratio * 8)
-        draw.line([(x, 0), (x, size[1])], fill=(r, g, b))
-    draw.rounded_rectangle([1030, -120, 1520, 330], radius=120, fill=(219, 234, 254))
-    draw.rounded_rectangle([880, 360, 1490, 760], radius=120, fill=(224, 242, 254))
+    # Subtle tech grid and data connections.
+    for x in range(0, size[0], 54):
+        draw.line([(x, 0), (x, size[1])], fill=(148, 163, 184, 24), width=1)
+    for y in range(0, size[1], 54):
+        draw.line([(0, y), (size[0], y)], fill=(148, 163, 184, 22), width=1)
+    nodes = [(820, 120), (990, 180), (1160, 115), (1260, 280), (1080, 390), (900, 330)]
+    for a, b in zip(nodes, nodes[1:]):
+        draw.line([a, b], fill=(125, 92, 255, 130), width=3)
+    for x, y in nodes:
+        draw.ellipse([x - 7, y - 7, x + 7, y + 7], fill=(34, 211, 238), outline=(218, 236, 255), width=2)
 
-    # Title block.
-    write(draw, (70, 68), "Codex 实战速查", bold(78), (8, 13, 30))
-    write(draw, (76, 164), "修 bug / 安全检查 / 提示词模板", bold(36), (37, 99, 235))
-    draw.line([76, 224, 500, 224], fill=COL["orange"], width=8)
+    write(draw, (72, 74), "Codex", bold(78), (236, 244, 255))
+    write(draw, (72, 158), "实战速查", bold(82), (255, 255, 255))
+    draw.line([76, 255, 510, 255], fill=(103, 232, 249), width=8)
+    draw.line([76, 270, 365, 270], fill=(168, 85, 247), width=6)
+    write(draw, (78, 300), "修 bug  /  安全检查  /  提示词模板", bold(34), (191, 219, 254))
 
-    # Main visual card.
-    rounded(draw, [760, 62, 1334, 352], 34, (255, 255, 255), outline=(191, 219, 254), width=3)
-    rounded(draw, [790, 96, 1304, 138], 16, (15, 23, 42))
-    for i, c in enumerate([COL["orange"], COL["green"], COL["blue"]]):
-        draw.ellipse([812 + i * 28, 110, 824 + i * 28, 122], fill=c)
-    write(draw, (820, 172), "失败测试", CARD, (15, 23, 42))
-    write(draw, (1008, 172), "最小修复", CARD, COL["green"])
-    write(draw, (820, 222), "pnpm test orders", SMALL, (71, 85, 105))
-    rounded(draw, [820, 264, 1268, 306], 18, (239, 246, 255), outline=(191, 219, 254), width=2)
-    write(draw, (846, 272), "验证通过  /  无密钥  /  diff 可审查", SMALL, (37, 99, 235))
+    rounded(draw, [74, 390, 560, 452], 31, (15, 23, 42, 190), outline=(125, 211, 252, 150), width=2)
+    write(draw, (102, 406), "先复现，再修改；先验证，再提交", bold(25), (240, 249, 255))
 
-    # Icon grid from article content.
-    items = [
-        ("复现", "先证明问题", COL["orange"], "01"),
-        ("定位", "找到根因", COL["cyan"], "02"),
-        ("修复", "最小改动", COL["green"], "03"),
-        ("验证", "跑相关测试", COL["blue"], "04"),
-        ("安全", "提交前检查", COL["purple"], "05"),
-    ]
-    x = 70
-    y = 318
-    for title, body, color, num in items:
-        rounded(draw, [x, y, x + 236, y + 180], 30, (255, 255, 255), outline=(226, 232, 240), width=2)
-        rounded(draw, [x + 24, y + 24, x + 86, y + 86], 20, color)
-        write(draw, (x + 38, y + 36), num, bold(26), COL["white"])
-        write(draw, (x + 112, y + 32), title, bold(34), (15, 23, 42))
-        write(draw, (x + 112, y + 82), body, SMALL, (71, 85, 105))
-        draw.line([x + 28, y + 128, x + 208, y + 128], fill=color, width=5)
-        x += 262
+    # Floating terminal card.
+    rounded(draw, [690, 104, 1306, 480], 34, (8, 13, 30, 220), outline=(129, 140, 248, 190), width=3)
+    rounded(draw, [724, 136, 1272, 184], 20, (15, 23, 42, 240))
+    for i, c in enumerate([(248, 113, 113), (52, 211, 153), (96, 165, 250)]):
+        draw.ellipse([754 + i * 30, 154, 768 + i * 30, 168], fill=c)
+    write(draw, (748, 222), "Debug loop", bold(34), (226, 232, 240))
+    write(draw, (748, 278), "> reproduce  ->  locate  ->  patch", font(27), (125, 211, 252))
+    write(draw, (748, 326), "> test passed  |  diff reviewed", font(27), (196, 181, 253))
+    rounded(draw, [748, 388, 1218, 432], 22, (30, 41, 59, 230), outline=(56, 189, 248, 130), width=2)
+    write(draw, (772, 398), "问题 + 上下文 + 约束 + 完成标准", bold(24), (255, 255, 255))
 
-    # Bottom prompt formula.
-    rounded(draw, [70, 520, 1160, 574], 27, (15, 23, 42))
-    write(draw, (98, 533), "提示词结构：问题 + 上下文 + 约束 + 完成标准", bold(28), COL["white"])
-    canvas.save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
+    steps = [("01", "复现"), ("02", "定位"), ("03", "修复"), ("04", "验证"), ("05", "安全")]
+    x = 640
+    for num, label in steps:
+        rounded(draw, [x, 510, x + 126, 560], 25, (15, 23, 42, 205), outline=(147, 197, 253, 110), width=2)
+        write(draw, (x + 18, 523), num, bold(22), (125, 211, 252))
+        write(draw, (x + 58, 522), label, bold(23), (241, 245, 249))
+        x += 142
+
+    draw.rounded_rectangle([1180, 36, 1336, 78], radius=21, fill=(59, 130, 246, 70), outline=(147, 197, 253, 90), width=1)
+    write(draw, (1204, 45), "可验证修复", bold(20), (219, 234, 254))
+    canvas.convert("RGB").save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
 
 
 hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
