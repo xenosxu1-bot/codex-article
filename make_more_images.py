@@ -362,6 +362,62 @@ def article3_wechat_cover():
     canvas.convert("RGB").save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
 
 
+def article3_wechat_cover_modern():
+    size = (1410, 600)
+    canvas = Image.new("RGB", size, (245, 248, 255))
+    draw = ImageDraw.Draw(canvas)
+
+    # Soft editorial background.
+    for x in range(size[0]):
+        ratio = x / size[0]
+        r = int(246 - ratio * 16)
+        g = int(249 - ratio * 22)
+        b = int(255 - ratio * 8)
+        draw.line([(x, 0), (x, size[1])], fill=(r, g, b))
+    draw.rounded_rectangle([1030, -120, 1520, 330], radius=120, fill=(219, 234, 254))
+    draw.rounded_rectangle([880, 360, 1490, 760], radius=120, fill=(224, 242, 254))
+
+    # Title block.
+    write(draw, (70, 68), "Codex 实战速查", bold(78), (8, 13, 30))
+    write(draw, (76, 164), "修 bug / 安全检查 / 提示词模板", bold(36), (37, 99, 235))
+    draw.line([76, 224, 500, 224], fill=COL["orange"], width=8)
+
+    # Main visual card.
+    rounded(draw, [760, 62, 1334, 352], 34, (255, 255, 255), outline=(191, 219, 254), width=3)
+    rounded(draw, [790, 96, 1304, 138], 16, (15, 23, 42))
+    for i, c in enumerate([COL["orange"], COL["green"], COL["blue"]]):
+        draw.ellipse([812 + i * 28, 110, 824 + i * 28, 122], fill=c)
+    write(draw, (820, 172), "失败测试", CARD, (15, 23, 42))
+    write(draw, (1008, 172), "最小修复", CARD, COL["green"])
+    write(draw, (820, 222), "pnpm test orders", SMALL, (71, 85, 105))
+    rounded(draw, [820, 264, 1268, 306], 18, (239, 246, 255), outline=(191, 219, 254), width=2)
+    write(draw, (846, 272), "验证通过  /  无密钥  /  diff 可审查", SMALL, (37, 99, 235))
+
+    # Icon grid from article content.
+    items = [
+        ("复现", "先证明问题", COL["orange"], "01"),
+        ("定位", "找到根因", COL["cyan"], "02"),
+        ("修复", "最小改动", COL["green"], "03"),
+        ("验证", "跑相关测试", COL["blue"], "04"),
+        ("安全", "提交前检查", COL["purple"], "05"),
+    ]
+    x = 70
+    y = 318
+    for title, body, color, num in items:
+        rounded(draw, [x, y, x + 236, y + 180], 30, (255, 255, 255), outline=(226, 232, 240), width=2)
+        rounded(draw, [x + 24, y + 24, x + 86, y + 86], 20, color)
+        write(draw, (x + 38, y + 36), num, bold(26), COL["white"])
+        write(draw, (x + 112, y + 32), title, bold(34), (15, 23, 42))
+        write(draw, (x + 112, y + 82), body, SMALL, (71, 85, 105))
+        draw.line([x + 28, y + 128, x + 208, y + 128], fill=color, width=5)
+        x += 262
+
+    # Bottom prompt formula.
+    rounded(draw, [70, 520, 1160, 574], 27, (15, 23, 42))
+    write(draw, (98, 533), "提示词结构：问题 + 上下文 + 约束 + 完成标准", bold(28), COL["white"])
+    canvas.save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
+
+
 hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
 hero("04-agents-cover-cn.jpg", "01-codex-app-cn.jpg", "AGENTS.md 深度模板", "把团队规范变成 Codex 每次都会读的上下文", [("项目规则", COL["blue"]), ("完成标准", COL["green"]), ("Review指南", COL["purple"])])
 flow_debug()
@@ -369,7 +425,7 @@ agents_template()
 safety()
 cheat()
 plugin_skill_cover()
-article3_wechat_cover()
+article3_wechat_cover_modern()
 
 for path in sorted(imgdir.glob("*.jpg")):
     if path.name in {"03-case-cover-cn.jpg", "03-wechat-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
