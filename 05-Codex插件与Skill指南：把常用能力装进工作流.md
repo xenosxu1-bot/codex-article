@@ -26,18 +26,20 @@
 
 ## 三、Skill 负责沉淀流程
 Skill 适合处理步骤固定、素材多、每次都要重复做的任务。一个 Skill 通常包含 `SKILL.md`，也可以带脚本、模板、参考资料和素材。
+内容创作类 Skill 最典型。它不是把一句提示词写长，而是把选题、资料、文案、配图、排版、发布前检查这些步骤固定下来。
 
-![中文内容创作 Skill 清单](images/05-skill-list-original-cn.jpg)
-
-内容创作类 Skill 最典型，可以覆盖这些流程：
-
-- PPT：主题分析、页面结构、文案、视觉风格。
-- 社媒卡片：小红书、公众号、朋友圈海报。
-- 图片：提示词整理、封面设计、统一视觉风格。
-- 润色：去掉套话、空话、翻译腔和 AI 腔。
-- 深度研究：研究大纲、资料收集、报告汇总。
-- 视频：长视频切片、字幕整理、短视频脚本。
-- 营销：SEO、品牌定位、用户研究、广告文案。
+| 主流 Skill | 作用 | 展示效果图 |
+| --- | --- | --- |
+| guizang-ppt-skill | 生成 HTML 演示稿，适合做汇报、课程、分享型 PPT。 | <img src="images/05-skill-effect-01.jpg" width="220" alt="guizang-ppt-skill 展示效果"> |
+| guizang-social-card-skill | 把文字整理成小红书、公众号封面和社媒卡片。 | <img src="images/05-skill-effect-02.jpg" width="220" alt="guizang-social-card-skill 展示效果"> |
+| awesome-gpt-image-2 | 管理生图提示词，统一封面、海报、产品图和人物图风格。 | <img src="images/05-skill-effect-03.jpg" width="220" alt="awesome-gpt-image-2 展示效果"> |
+| Humanizer-zh | 把生硬表达改成自然中文，减少套话、翻译腔和 AI 腔。 | <img src="images/05-skill-effect-04.jpg" width="220" alt="Humanizer-zh 展示效果"> |
+| Deep-Research-skills | 按研究大纲、分头调研、汇总报告、改写方向推进长文。 | <img src="images/05-skill-effect-05.jpg" width="220" alt="Deep-Research-skills 展示效果"> |
+| anything-to-notebooklm | 把网页、视频、PDF、公众号文章转成播客、PPT、思维导图或测验。 | <img src="images/05-skill-effect-06.jpg" width="220" alt="anything-to-notebooklm 展示效果"> |
+| wewrite | 覆盖抓热点、定选题、写正文、做 SEO、配图、排版和发布草稿。 | <img src="images/05-skill-effect-07.jpg" width="220" alt="wewrite 展示效果"> |
+| Youtube-clipper-skill | 把长视频拆成短视频片段，处理高光、字幕和剪辑时间线。 | <img src="images/05-skill-effect-08.jpg" width="220" alt="Youtube-clipper-skill 展示效果"> |
+| oh-story-claudecode | 处理小说、网文选题、爆款结构、人物切入点和拆解框架。 | <img src="images/05-skill-effect-09.jpg" width="220" alt="oh-story-claudecode 展示效果"> |
+| marketingskills | 适合营销团队做文章写作、SEO、品牌定位、用户研究、广告投放和邮件营销。 | <img src="images/05-skill-effect-10.jpg" width="220" alt="marketingskills 展示效果"> |
 
 Skill 的价值不是多写一段提示词，而是让 Codex 每次都按同一套流程执行。
 
