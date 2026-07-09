@@ -24,6 +24,7 @@
 | `05-codex-artifact-cn.jpg` | Artifact Viewer 中文标注图 |
 | `06-codex-advanced-workflow-cn.jpg` | 进阶工作流组合图 |
 | `03-case-cover-cn.jpg` | 实战修复案例封面图 |
+| `03-wechat-cover-cn.jpg` | 第 3 篇微信公众号封面图 |
 | `04-agents-cover-cn.jpg` | AGENTS.md 模板封面图 |
 | `07-debug-loop-cn.jpg` | Debug 闭环流程图 |
 | `08-agents-template-cn.jpg` | AGENTS.md 规则结构图 |

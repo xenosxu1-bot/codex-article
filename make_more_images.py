@@ -290,6 +290,78 @@ def content_workflow():
     canvas.save(imgdir / "12-content-skill-workflow-cn.jpg", quality=94)
 
 
+def article3_wechat_cover():
+    size = (1410, 600)
+    canvas = fit_cover(Image.open(imgdir / "04-codex-browser-cn.jpg").convert("RGB"), size).filter(ImageFilter.GaussianBlur(5))
+    canvas = canvas.convert("RGBA")
+    canvas.alpha_composite(Image.new("RGBA", size, (8, 13, 30, 178)))
+    draw = ImageDraw.Draw(canvas)
+
+    def icon_bug(cx, cy, color):
+        draw.ellipse([cx - 22, cy - 20, cx + 22, cy + 24], outline=color, width=5)
+        draw.line([cx, cy - 42, cx, cy - 20], fill=color, width=5)
+        draw.line([cx - 34, cy - 8, cx - 58, cy - 22], fill=color, width=5)
+        draw.line([cx + 34, cy - 8, cx + 58, cy - 22], fill=color, width=5)
+        draw.line([cx - 35, cy + 14, cx - 60, cy + 28], fill=color, width=5)
+        draw.line([cx + 35, cy + 14, cx + 60, cy + 28], fill=color, width=5)
+
+    def icon_target(cx, cy, color):
+        for r in [42, 28, 12]:
+            draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=color, width=5)
+        draw.line([cx - 50, cy + 50, cx + 50, cy - 50], fill=color, width=5)
+
+    def icon_wrench(cx, cy, color):
+        draw.line([cx - 42, cy + 38, cx + 30, cy - 34], fill=color, width=10)
+        draw.ellipse([cx + 18, cy - 48, cx + 58, cy - 8], outline=color, width=7)
+        draw.ellipse([cx - 58, cy + 22, cx - 26, cy + 54], outline=color, width=7)
+
+    def icon_check(cx, cy, color):
+        draw.ellipse([cx - 46, cy - 46, cx + 46, cy + 46], outline=color, width=6)
+        draw.line([cx - 24, cy + 2, cx - 4, cy + 24, cx + 30, cy - 24], fill=color, width=9, joint="curve")
+
+    def icon_shield(cx, cy, color):
+        pts = [(cx, cy - 50), (cx + 44, cy - 28), (cx + 34, cy + 34), (cx, cy + 56), (cx - 34, cy + 34), (cx - 44, cy - 28)]
+        draw.line(pts + [pts[0]], fill=color, width=6)
+        draw.line([cx - 22, cy + 4, cx - 5, cy + 22, cx + 26, cy - 18], fill=color, width=8)
+
+    rounded(draw, [56, 54, 760, 230], 28, (7, 14, 32), outline=(71, 85, 105), width=2)
+    shadow_text(draw, (86, 80), "Codex 实战速查", bold(68))
+    shadow_text(draw, (90, 164), "修 bug、安全检查、高质量提示词", bold(34), (226, 232, 240))
+
+    # Right-side miniature article card for realism.
+    rounded(draw, [960, 58, 1328, 238], 24, (255, 255, 255), outline=COL["cyan"], width=4)
+    write(draw, (990, 86), "提示词结构", CARD, (15, 23, 42))
+    for idx, label in enumerate(["问题", "上下文", "约束", "完成标准"]):
+        y = 138 + idx * 22
+        rounded(draw, [990, y, 1066, y + 14], 7, [COL["orange"], COL["blue"], COL["green"], COL["purple"]][idx])
+        write(draw, (1082, y - 7), label, SMALL, (51, 65, 85))
+
+    steps = [
+        ("复现", "先证明问题存在", COL["orange"], icon_bug),
+        ("定位", "找到具体函数分支", COL["cyan"], icon_target),
+        ("修复", "保持最小改动", COL["green"], icon_wrench),
+        ("验证", "跑最小相关测试", COL["blue"], icon_check),
+        ("安全", "提交前看风险", COL["purple"], icon_shield),
+    ]
+    x = 70
+    y = 318
+    for idx, (title, body, color, fn) in enumerate(steps):
+        rounded(draw, [x, y, x + 238, y + 188], 26, (255, 255, 255), outline=color, width=4)
+        fn(x + 119, y + 70, color)
+        write(draw, (x + 82, y + 118), title, CARD, (15, 23, 42))
+        write(draw, (x + 38, y + 154), body, SMALL, (71, 85, 105))
+        if idx < len(steps) - 1:
+            draw.line([x + 246, y + 92, x + 280, y + 92], fill=(203, 213, 225), width=6)
+            draw.polygon([(x + 280, y + 92), (x + 264, y + 82), (x + 264, y + 102)], fill=(203, 213, 225))
+        x += 268
+
+    x = 74
+    for label, color in [("Debug闭环", COL["orange"]), ("最小改动", COL["green"]), ("测试验证", COL["blue"]), ("安全检查", COL["purple"])]:
+        x = chip(draw, x, 528, label, color)
+
+    canvas.convert("RGB").save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
+
+
 hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
 hero("04-agents-cover-cn.jpg", "01-codex-app-cn.jpg", "AGENTS.md 深度模板", "把团队规范变成 Codex 每次都会读的上下文", [("项目规则", COL["blue"]), ("完成标准", COL["green"]), ("Review指南", COL["purple"])])
 flow_debug()
@@ -297,7 +369,8 @@ agents_template()
 safety()
 cheat()
 plugin_skill_cover()
+article3_wechat_cover()
 
 for path in sorted(imgdir.glob("*.jpg")):
-    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
+    if path.name in {"03-case-cover-cn.jpg", "03-wechat-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
         print(path.name, path.stat().st_size)
