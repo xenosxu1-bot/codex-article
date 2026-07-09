@@ -1,14 +1,11 @@
 # Codex 进阶提效：配置、权限、复用与自动化
-
-副标题：真正拉开差距的不是“让 Codex 写代码”，而是让它按你的项目规则持续稳定地工作。
+副标题：拉开差距的往往不是“让 Codex 写代码”，而是让它按你的项目规则持续稳定地工作。
 
 ![Codex 进阶工作流中文图](images/06-codex-advanced-workflow-cn.jpg)
 
 ## 开篇
-
 如果你已经用 Codex 修过 bug、写过测试、解释过代码，下一步就不是继续堆 prompt，而是把那些反复出现的规则、流程和工具固化下来。
-
-这篇文章讲 Codex 进阶使用的核心：
+这篇主要讲 Codex 进阶使用的核心：
 
 - 用权限和沙箱控制安全边界。
 - 用 `AGENTS.md` 沉淀项目规则。
@@ -17,9 +14,7 @@
 - 用 review、worktree、automation 和 subagents 提升团队效率。
 
 ## 一、先把安全边界讲清楚：Sandbox 和 Approval
-
 Codex 能读文件、改代码、运行命令，所以第一件事不是“放开权限”，而是理解权限边界。
-
 Codex 的安全控制主要有两层：
 
 1. Sandbox mode：技术上允许 Codex 访问哪里、写哪里、是否能联网。
@@ -56,7 +51,6 @@ codex --sandbox read-only --ask-for-approval on-request
 不要一上来就使用 full access。Full access 很方便，但边界也最大。团队环境里，宁可先用默认权限，再按任务逐步放开。
 
 ## 二、`AGENTS.md`：把项目规则写给 Codex
-
 很多团队一开始用 Codex 时，都会重复提醒：
 
 - 用 pnpm，不要用 npm。
@@ -66,9 +60,7 @@ codex --sandbox read-only --ask-for-approval on-request
 - PR review 重点关注正确性和安全。
 
 这些不该每次都手打。应该写进 `AGENTS.md`。
-
 `AGENTS.md` 可以理解为“给 agent 看的 README”。Codex 启动时会读取它，并把其中的规则作为项目上下文。
-
 一个实用版 `AGENTS.md` 可以这样写：
 
 ```md
@@ -89,7 +81,6 @@ codex --sandbox read-only --ask-for-approval on-request
 ```
 
 当 Codex 连续两次犯同一个错误，不要只在聊天里纠正它。让它做一次复盘，然后把规则写进 `AGENTS.md`。
-
 可以这样说：
 
 ```text
@@ -98,9 +89,7 @@ codex --sandbox read-only --ask-for-approval on-request
 ```
 
 ## 三、`config.toml`：让 Codex 每次都按同一套方式启动
-
 `AGENTS.md` 管项目规则，`config.toml` 管 Codex 自身配置。
-
 常见位置：
 
 ```text
@@ -109,7 +98,6 @@ codex --sandbox read-only --ask-for-approval on-request
 ```
 
 用户级配置适合个人默认偏好。项目级配置适合团队共享规则，但项目配置通常只有在项目被信任时才加载。
-
 常用配置示例：
 
 ```toml
@@ -136,11 +124,9 @@ codex -c sandbox_workspace_write.network_access=true
 ```
 
 ## 四、前端和产物任务：一定要让 Codex 看见结果
-
 Codex 不只适合写业务代码，也适合处理页面和非代码产物。
 
 ![Codex Artifact 中文操作图](images/05-codex-artifact-cn.jpg)
-
 对于前端页面，建议让 Codex 使用 in-app browser：
 
 ```text
@@ -162,9 +148,7 @@ Codex 不只适合写业务代码，也适合处理页面和非代码产物。
 不要只让 Codex “生成一个文件”，要让它“生成并检查”。
 
 ## 五、MCP：让 Codex 连接外部工具
-
 MCP，全称 Model Context Protocol，可以让 Codex 接入外部工具和私有上下文。
-
 常见用途：
 
 - 查最新开发文档。
@@ -198,7 +182,6 @@ bearer_token_env_var = "FIGMA_OAUTH_TOKEN"
 - token 和 API key 不要写进仓库。
 
 ## 六、Skills：把重复流程变成技能
-
 如果你发现自己反复对 Codex 说同一套流程，比如：
 
 - 按公司格式生成周报。
@@ -207,9 +190,7 @@ bearer_token_env_var = "FIGMA_OAUTH_TOKEN"
 - 按发布流程检查 changelog。
 
 那就该做成 Skill。
-
 Skill 是一组任务说明、资源和可选脚本。它适合把重复工作流固化下来。
-
 创建方式：
 
 ```text
@@ -234,9 +215,7 @@ Follow the release checklist:
 Skill 的关键不是写得长，而是触发范围清楚、步骤明确、输出标准稳定。
 
 ## 七、Plugins：把技能和工具分发给团队
-
 Skill 是工作流本身，Plugin 是可安装的分发单元。
-
 当你想把一组能力发给团队使用时，就可以做 Plugin。插件可以包含：
 
 - 一个或多个 Skills。
@@ -260,9 +239,7 @@ $plugin-creator
 - 安全扫描和修复流程。
 
 ## 八、Review：让 Codex 做第二双眼睛
-
 写完代码后，不要立刻提交。先让 Codex review。
-
 CLI 可以用：
 
 ```text
@@ -287,7 +264,6 @@ CLI 可以用：
 好的 review 不是“帮我看看”，而是告诉 Codex 按什么优先级看。
 
 ## 九、Worktree 和 Cloud：把并行任务隔离开
-
 Codex App 里可以选择 Local、Worktree、Cloud。
 
 - Local：直接在当前项目目录工作。
@@ -303,7 +279,6 @@ Codex App 里可以选择 Local、Worktree、Cloud。
 不要让两个线程同时改同一批文件。并行的前提是边界清楚。
 
 ## 十、Automations 和 Subagents：让 Codex 处理长期和并行问题
-
 Automations 适合周期性任务：
 
 - 每天检查错误日志。
@@ -326,7 +301,6 @@ Subagents 适合并行分析：
 注意：子代理会消耗更多 tokens。最适合读多写少的任务，比如探索、审查、日志分析、文档总结。多个代理同时写代码，要格外谨慎。
 
 ## 十一、进阶用户的日常工作流
-
 你可以把 Codex 的日常工作流固定成这样：
 
 1. 任务开始前：确认 `AGENTS.md` 和相关文件上下文。
@@ -341,13 +315,9 @@ Subagents 适合并行分析：
 这套流程的核心是：不要让 Codex 每次都从零理解你的工作方式。
 
 ## 结尾
-
 初级用法是让 Codex 写代码。  
 进阶用法是让 Codex 按你的工程规则写代码。  
 高手用法是把这些规则、工具和流程固化下来，让 Codex 每次都在正确边界内工作。
-
-如果你只记住一句话：  
+如果你只记住简单说，  
 把临时提示词沉淀成 `AGENTS.md`，把重复流程沉淀成 Skills，把外部上下文接入 MCP，把长期任务交给 Automations。
-
 这样 Codex 才会真正从“单次问答工具”，变成团队开发流程的一部分。
-
