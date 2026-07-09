@@ -214,20 +214,34 @@ def plugin_skill_cover():
     shadow_text(draw, (64, 134), "把浏览器、设计、文档、内容创作能力装进工作流", SUB, (241, 245, 249))
     x = 64
     for label, color in [("插件=工具入口", COL["blue"]), ("Skill=工作流", COL["green"]), ("MCP=外部系统", COL["purple"])]:
-        x = chip(draw, x, 610, label, color)
-    rounded(draw, [800, 155, 1190, 560], 34, (255, 255, 255), outline=COL["cyan"], width=5)
+        x = chip(draw, x, 632, label, color)
+    rounded(draw, [630, 220, 1236, 622], 34, (255, 255, 255), outline=COL["cyan"], width=5)
+    write(draw, (665, 246), "常用插件能力", CARD, (15, 23, 42))
+
+    def center_text(label, cx, y, fill=(15, 23, 42)):
+        bbox = draw.textbbox((0, 0), label, font=SMALL)
+        write(draw, (cx - (bbox[2] - bbox[0]) / 2, y), label, SMALL, fill)
+
     icons = [
-        ("浏览器", "浏览", COL["blue"]), ("GitHub", "Git", (15, 23, 42)), ("设计", "设计", COL["pink"]),
-        ("文档", "文档", COL["blue"]), ("PPT", "PPT", COL["orange"]), ("表格", "表格", COL["green"]),
-        ("视频", "视频", COL["purple"]), ("研究", "研究", COL["cyan"]), ("写作", "写作", COL["yellow"]),
+        ("chrome", "Chrome"), ("github", "GitHub"), ("computer-use", "电脑"),
+        ("build-web-apps", "网页"), ("figma", "Figma"), ("documents", "文档"),
+        ("presentations", "PPT"), ("spreadsheets", "表格"), ("hyperframes", "视频"),
+        ("remotion", "代码视频"),
     ]
-    x0, y0 = 835, 195
-    for idx, (name, short, color) in enumerate(icons):
-        x = x0 + (idx % 3) * 115
-        y = y0 + (idx // 3) * 115
-        rounded(draw, [x, y, x + 82, y + 82], 22, color)
-        write(draw, (x + 15, y + 22), short, SMALL, COL["white"])
-        write(draw, (x - 2, y + 90), name, SMALL, (15, 23, 42))
+    x0, y0 = 665, 300
+    for idx, (file_name, label) in enumerate(icons):
+        col = idx % 5
+        row = idx // 5
+        tile_x = x0 + col * 108
+        tile_y = y0 + row * 150
+        rounded(draw, [tile_x, tile_y, tile_x + 92, tile_y + 118], 20, (248, 250, 252), outline=(226, 232, 240), width=1)
+        icon_path = imgdir / "plugin-icons" / f"{file_name}.png"
+        if icon_path.exists():
+            icon = Image.open(icon_path).convert("RGB").resize((66, 66), Image.Resampling.LANCZOS)
+            canvas.paste(icon, (tile_x + 13, tile_y + 12))
+        else:
+            rounded(draw, [tile_x + 13, tile_y + 12, tile_x + 79, tile_y + 78], 18, COL["blue"])
+        center_text(label, tile_x + 46, tile_y + 84)
     canvas.save(imgdir / "05-plugins-skills-cover-cn.jpg", quality=94)
 
 
