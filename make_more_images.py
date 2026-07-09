@@ -206,13 +206,86 @@ def cheat():
     canvas.save(imgdir / "10-cheatsheet-cn.jpg", quality=94)
 
 
+def plugin_skill_cover():
+    canvas = bg_from("01-codex-app-cn.jpg")
+    draw = ImageDraw.Draw(canvas)
+    rounded(draw, [42, 38, 760, 198], 24, (8, 13, 30), outline=(51, 65, 85), width=2)
+    shadow_text(draw, (62, 62), "Codex 插件与 Skills", TITLE)
+    shadow_text(draw, (64, 134), "把浏览器、设计、文档、内容创作能力装进工作流", SUB, (241, 245, 249))
+    x = 64
+    for label, color in [("插件=工具入口", COL["blue"]), ("Skill=工作流", COL["green"]), ("MCP=外部系统", COL["purple"])]:
+        x = chip(draw, x, 610, label, color)
+    rounded(draw, [800, 155, 1190, 560], 34, (255, 255, 255), outline=COL["cyan"], width=5)
+    icons = [
+        ("浏览器", "浏览", COL["blue"]), ("GitHub", "Git", (15, 23, 42)), ("设计", "设计", COL["pink"]),
+        ("文档", "文档", COL["blue"]), ("PPT", "PPT", COL["orange"]), ("表格", "表格", COL["green"]),
+        ("视频", "视频", COL["purple"]), ("研究", "研究", COL["cyan"]), ("写作", "写作", COL["yellow"]),
+    ]
+    x0, y0 = 835, 195
+    for idx, (name, short, color) in enumerate(icons):
+        x = x0 + (idx % 3) * 115
+        y = y0 + (idx // 3) * 115
+        rounded(draw, [x, y, x + 82, y + 82], 22, color)
+        write(draw, (x + 15, y + 22), short, SMALL, COL["white"])
+        write(draw, (x - 2, y + 90), name, SMALL, (15, 23, 42))
+    canvas.save(imgdir / "05-plugins-skills-cover-cn.jpg", quality=94)
+
+
+def plugin_vs_skill():
+    canvas = Image.new("RGB", (1280, 720), (248, 250, 252))
+    draw = ImageDraw.Draw(canvas)
+    draw.rectangle([0, 0, 1280, 112], fill=COL["navy"])
+    write(draw, (54, 30), "插件与 Skill：不要混着用", TITLE)
+    cols = [
+        (70, "插件 Plugin", "安装新能力入口\n可包含工具、界面、资产\n适合浏览器、GitHub", COL["blue"]),
+        (470, "Skill", "把工作流写成说明书\n可带脚本、资料、示例\n适合写稿、PPT、研究、改图", COL["green"]),
+        (870, "MCP", "连接外部系统和数据\n提供工具、资源、提示词\n适合 Jira、Linear、文档库", COL["purple"]),
+    ]
+    for x, title, body, color in cols:
+        rounded(draw, [x, 170, x + 340, 525], 28, (255, 255, 255), outline=color, width=5)
+        write(draw, (x + 28, 205), title, CARD, (15, 23, 42))
+        yy = 275
+        for line in body.split("\n"):
+            write(draw, (x + 28, yy), line, SMALL, (51, 65, 85))
+            yy += 48
+    write(draw, (76, 610), "选择顺序：已有插件先装插件；重复流程写成 Skill；需要外部系统就接 MCP。", SUB, (15, 23, 42))
+    canvas.save(imgdir / "11-plugin-vs-skill-cn.jpg", quality=94)
+
+
+def content_workflow():
+    canvas = Image.new("RGB", (1280, 720), (255, 255, 255))
+    draw = ImageDraw.Draw(canvas)
+    draw.rectangle([0, 0, 1280, 112], fill=(30, 41, 59))
+    write(draw, (54, 30), "内容创作 Skill：把一条内容做成流水线", TITLE)
+    steps = [
+        ("1 选题研究", "资料收集\n竞品分析\n大纲生成", COL["blue"]),
+        ("2 写稿润色", "中文口吻\n去模板腔\n标题优化", COL["pink"]),
+        ("3 配图排版", "封面图\n社媒卡片\n公众号图文", COL["orange"]),
+        ("4 PPT/视频", "演示稿\n短视频脚本\n字幕切片", COL["purple"]),
+        ("5 分发复盘", "平台适配\nSEO\n数据分析", COL["green"]),
+    ]
+    x = 45
+    for idx, (title, body, color) in enumerate(steps):
+        card(draw, x, 170, 225, 280, title, body, color)
+        if idx < len(steps) - 1:
+            draw.line([x + 225, 310, x + 250, 310], fill=(100, 116, 139), width=5)
+            draw.polygon([(x + 250, 310), (x + 235, 300), (x + 235, 320)], fill=(100, 116, 139))
+        x += 245
+    rounded(draw, [70, 580, 1210, 650], 22, (239, 246, 255), outline=COL["blue"], width=2)
+    write(draw, (95, 598), "适合沉淀为 Skill 的规则：步骤固定、素材多、需要脚本、每次都要重复做。", SUB, (15, 23, 42))
+    canvas.save(imgdir / "12-content-skill-workflow-cn.jpg", quality=94)
+
+
 hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
 hero("04-agents-cover-cn.jpg", "01-codex-app-cn.jpg", "AGENTS.md 深度模板", "把团队规范变成 Codex 每次都会读的上下文", [("项目规则", COL["blue"]), ("完成标准", COL["green"]), ("Review指南", COL["purple"])])
 flow_debug()
 agents_template()
 safety()
 cheat()
+plugin_skill_cover()
+plugin_vs_skill()
+content_workflow()
 
 for path in sorted(imgdir.glob("*.jpg")):
-    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
+    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skills-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg", "11-plugin-vs-skill-cn.jpg", "12-content-skill-workflow-cn.jpg"}:
         print(path.name, path.stat().st_size)
