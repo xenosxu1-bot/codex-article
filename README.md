@@ -10,7 +10,7 @@
 | 02 | [Codex 进阶提效：配置、权限、复用与自动化](./02-Codex进阶提效：配置权限复用自动化.md) | 已经跑通过基础任务，希望稳定提效的用户 |
 | 03 | [Codex 实战速查：修 bug、安全检查与高质量提示词](./03-Codex实战案例：从失败测试到可验证修复.md) | 想快速套用实战提示词的用户 |
 | 04 | [AGENTS.md 深度模板：让 Codex 按团队规则工作](./04-AGENTS.md深度模板：让Codex按团队规则工作.md) | 团队项目维护者、技术负责人 |
-| 05 | [Codex 插件与 Skills 指南：把常用能力装进工作流](./05-Codex插件与Skills指南：把常用能力装进工作流.md) | 想扩展浏览器、设计、文档和内容创作能力的用户 |
+| 05 | [Codex 插件与 Skill 指南：把常用能力装进工作流](./05-Codex插件与Skill指南：把常用能力装进工作流.md) | 想扩展浏览器、设计、文档和内容创作能力的用户 |
 
 ## 图片素材
 图片位于 `images/`，均为中文标注图或公众号封面式配图：
@@ -29,7 +29,7 @@
 | `08-agents-template-cn.jpg` | AGENTS.md 规则结构图 |
 | `09-safety-cn.jpg` | 权限与安全边界图 |
 | `10-cheatsheet-cn.jpg` | 常用命令与提示词速查图 |
-| `05-plugins-skills-cover-cn.jpg` | 插件与 Skills 文章封面图 |
+| `05-plugins-skill-cover-cn.jpg` | 插件与 Skill 文章封面图 |
 | `11-plugin-vs-skill-cn.jpg` | 插件、Skill、MCP 对照图 |
 | `12-content-skill-workflow-cn.jpg` | 内容创作 Skill 工作流图 |
 

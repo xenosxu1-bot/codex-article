@@ -210,7 +210,7 @@ def plugin_skill_cover():
     canvas = bg_from("01-codex-app-cn.jpg")
     draw = ImageDraw.Draw(canvas)
     rounded(draw, [42, 38, 760, 198], 24, (8, 13, 30), outline=(51, 65, 85), width=2)
-    shadow_text(draw, (62, 62), "Codex 插件与 Skills", TITLE)
+    shadow_text(draw, (62, 62), "Codex 插件与 Skill", TITLE)
     shadow_text(draw, (64, 134), "把浏览器、设计、文档、内容创作能力装进工作流", SUB, (241, 245, 249))
     x = 64
     for label, color in [("插件=工具入口", COL["blue"]), ("Skill=工作流", COL["green"]), ("MCP=外部系统", COL["purple"])]:
@@ -242,7 +242,7 @@ def plugin_skill_cover():
         else:
             rounded(draw, [tile_x + 13, tile_y + 12, tile_x + 79, tile_y + 78], 18, COL["blue"])
         center_text(label, tile_x + 46, tile_y + 84)
-    canvas.save(imgdir / "05-plugins-skills-cover-cn.jpg", quality=94)
+    canvas.save(imgdir / "05-plugins-skill-cover-cn.jpg", quality=94)
 
 
 def plugin_vs_skill():
@@ -301,5 +301,5 @@ plugin_vs_skill()
 content_workflow()
 
 for path in sorted(imgdir.glob("*.jpg")):
-    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skills-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg", "11-plugin-vs-skill-cn.jpg", "12-content-skill-workflow-cn.jpg"}:
+    if path.name in {"03-case-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg", "11-plugin-vs-skill-cn.jpg", "12-content-skill-workflow-cn.jpg"}:
         print(path.name, path.stat().st_size)
