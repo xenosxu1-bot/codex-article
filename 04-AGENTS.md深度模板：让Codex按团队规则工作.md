@@ -1,5 +1,5 @@
 # AGENTS.md 深度模板：让 Codex 按团队规则工作
-副标题：把反复提醒 Codex 的项目规则，变成它每次开工前都会读取的默认上下文。
+副标题：把项目规则写进 Codex 默认上下文。
 
 ![AGENTS.md 深度模板封面](images/04-agents-cover-cn.jpg)
 
