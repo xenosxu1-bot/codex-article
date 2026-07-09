@@ -22,6 +22,8 @@
 ## 二、插件负责扩展工具
 插件适合解决 Codex 原本做不到，或做起来很麻烦的事情。
 
+![Codex 常用插件清单](images/05-plugin-list-original-cn.jpg)
+
 | 插件方向 | 主要作用 |
 | --- | --- |
 | Chrome / 浏览器 | 打开网页、调试页面、截图验证 |
@@ -39,6 +41,8 @@
 
 ## 三、Skill 负责沉淀流程
 Skill 适合处理步骤固定、素材多、每次都要重复做的任务。一个 Skill 通常包含 `SKILL.md`，也可以带脚本、模板、参考资料和素材。
+
+![中文内容创作 Skill 清单](images/05-skill-list-original-cn.jpg)
 
 ![内容创作 Skill 工作流](images/12-content-skill-workflow-cn.jpg)
 

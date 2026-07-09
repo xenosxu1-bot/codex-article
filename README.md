@@ -30,6 +30,8 @@
 | `09-safety-cn.jpg` | 权限与安全边界图 |
 | `10-cheatsheet-cn.jpg` | 常用命令与提示词速查图 |
 | `05-plugins-skill-cover-cn.jpg` | 插件与 Skill 文章封面图 |
+| `05-plugin-list-original-cn.jpg` | 常用插件清单正文图 |
+| `05-skill-list-original-cn.jpg` | 内容创作 Skill 清单正文图 |
 | `11-plugin-vs-skill-cn.jpg` | 插件、Skill、MCP 对照图 |
 | `12-content-skill-workflow-cn.jpg` | 内容创作 Skill 工作流图 |
 
