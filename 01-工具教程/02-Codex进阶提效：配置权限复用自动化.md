@@ -1,8 +1,7 @@
 <!--
----
 id: "02"
 title: "Codex 进阶提效：配置、权限、复用与自动化"
-description: "拉开差距的往往不是“让 Codex 写代码”，而是让它按你的项目规则持续稳定地工作。"
+description: "拉开差距的往往不是**让 Codex 写代码**，而是让它按你的项目规则持续稳定地工作。"
 author: "Codex Article Lab"
 published: "2026-07-15"
 updated: "2026-07-15"
@@ -12,13 +11,11 @@ tags: ["工具教程", "Codex", "可操作指南"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
 cover: "../08-素材库/图片/文章封面/02-Codex 进阶提效：配置、权限、复用与自动化-封面.jpg"
----
 -->
 
+副标题：拉开差距的往往不是**让 Codex 写代码**，而是让它按你的项目规则持续稳定地工作。
 
-副标题：拉开差距的往往不是“让 Codex 写代码”，而是让它按你的项目规则持续稳定地工作。
-
-![Codex 进阶工作流中文图](../08-素材库/图片/文章封面/02-Codex%20进阶提效：配置、权限、复用与自动化-封面.jpg)
+![Codex 进阶工作流中文图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/02-Codex%20%E8%BF%9B%E9%98%B6%E6%8F%90%E6%95%88%EF%BC%9A%E9%85%8D%E7%BD%AE%E3%80%81%E6%9D%83%E9%99%90%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96-%E5%B0%81%E9%9D%A2.jpg)
 
 ## 开篇
 如果你已经用 Codex 修过 bug、写过测试、解释过代码，下一步就不是继续堆 prompt，而是把那些反复出现的规则、流程和工具固化下来。
@@ -31,7 +28,7 @@ cover: "../08-素材库/图片/文章封面/02-Codex 进阶提效：配置、权
 - 用 review、worktree、automation 和 subagents 提升团队效率。
 
 ## 一、先把安全边界讲清楚：Sandbox 和 Approval
-Codex 能读文件、改代码、运行命令，所以第一件事不是“放开权限”，而是理解权限边界。
+Codex 能读文件、改代码、运行命令，所以第一件事不是**放开权限**，而是理解权限边界。
 Codex 的安全控制主要有两层：
 
 1. Sandbox mode：技术上允许 Codex 访问哪里、写哪里、是否能联网。
@@ -77,7 +74,7 @@ codex --sandbox read-only --ask-for-approval on-request
 - PR review 重点关注正确性和安全。
 
 这些不该每次都手打。应该写进 `AGENTS.md`。
-`AGENTS.md` 可以理解为“给 agent 看的 README”。Codex 启动时会读取它，并把其中的规则作为项目上下文。
+`AGENTS.md` 可以理解为**给 agent 看的 README**。Codex 启动时会读取它，并把其中的规则作为项目上下文。
 一个实用版 `AGENTS.md` 可以这样写：
 
 ```md
@@ -143,7 +140,7 @@ codex -c sandbox_workspace_write.network_access=true
 ## 四、前端和产物任务：一定要让 Codex 看见结果
 Codex 不只适合写业务代码，也适合处理页面和非代码产物。
 
-![Codex Artifact 中文操作图](../08-素材库/图片/正文插图/02-Codex%20进阶提效：配置、权限、复用与自动化-正文插图02.jpg)
+![Codex Artifact 中文操作图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE/02-Codex%20%E8%BF%9B%E9%98%B6%E6%8F%90%E6%95%88%EF%BC%9A%E9%85%8D%E7%BD%AE%E3%80%81%E6%9D%83%E9%99%90%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96-%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE02.jpg)
 对于前端页面，建议让 Codex 使用 in-app browser：
 
 ```text
@@ -162,7 +159,7 @@ Codex 不只适合写业务代码，也适合处理页面和非代码产物。
 4. 最后告诉我文件保存位置和检查结果
 ```
 
-不要只让 Codex “生成一个文件”，要让它“生成并检查”。
+不要只让 Codex **生成一个文件**，要让它**生成并检查**。
 
 ## 五、MCP：让 Codex 连接外部工具
 MCP，全称 Model Context Protocol，可以让 Codex 接入外部工具和私有上下文。
@@ -217,11 +214,8 @@ $skill-creator
 一个 Skill 的核心是 `SKILL.md`：
 
 ```md
----
 name: release-check
 description: Run the release checklist before publishing a package.
----
-
 Follow the release checklist:
 1. Check changelog
 2. Run tests
@@ -278,7 +272,7 @@ CLI 可以用：
 如果没有发现问题，请明确说明，并列出剩余风险。
 ```
 
-好的 review 不是“帮我看看”，而是告诉 Codex 按什么优先级看。
+好的 review 不是**帮我看看**，而是告诉 Codex 按什么优先级看。
 
 ## 九、Worktree 和 Cloud：把并行任务隔离开
 Codex App 里可以选择 Local、Worktree、Cloud。
@@ -337,4 +331,4 @@ Subagents 适合并行分析：
 高手用法是把这些规则、工具和流程固化下来，让 Codex 每次都在正确边界内工作。
 如果你只记住简单说，
 把临时提示词沉淀成 `AGENTS.md`，把重复流程沉淀成 Skill，把外部上下文接入 MCP，把长期任务交给 Automations。
-这样 Codex 才会真正从“单次问答工具”，变成团队开发流程的一部分。
+这样 Codex 才会真正从**单次问答工具**，变成团队开发流程的一部分。
