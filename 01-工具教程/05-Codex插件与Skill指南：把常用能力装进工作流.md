@@ -10,13 +10,13 @@ series: "Codex入门与工程化"
 tags: ["工具教程", "Codex", "可操作指南"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/05-plugins-skill-cover-cn.jpg"
+cover: "../08-素材库/图片/文章封面/05-Codex 插件与 Skill 指南：把常用能力装进工作流-封面.jpg"
 ---
 
 # Codex 插件与 Skill 指南：把常用能力装进工作流
 副标题：插件扩展工具，Skill 沉淀流程。
 
-![Codex 插件与 Skill 封面](../08-素材库/图片/05-plugins-skill-cover-cn.jpg)
+![Codex 插件与 Skill 封面](../08-素材库/图片/文章封面/05-Codex 插件与 Skill 指南：把常用能力装进工作流-封面.jpg)
 
 ## 开篇
 插件和 Skill 都是在给 Codex 加能力，但用途不同。
@@ -36,7 +36,7 @@ cover: "../08-素材库/图片/05-plugins-skill-cover-cn.jpg"
 插件不是单个按钮，而是一组可安装能力包。它可以包含 Skill、App 连接和 MCP 服务器，把 Codex 的能力扩展到浏览器、设计稿、文档、表格、视频和外部系统里。
 新手先记住一句话：本地页面用 Browser，登录网页用 Chrome，桌面软件用 Computer Use，设计稿用 Figma，文档表格用对应办公插件。
 
-![Codex 常用插件清单](../08-素材库/图片/05-plugin-list-original-cn.jpg)
+![Codex 常用插件清单](../08-素材库/图片/正文插图/05-Codex 插件与 Skill 指南：把常用能力装进工作流-正文插图02.jpg)
 
 ### 常用插件怎么选
 

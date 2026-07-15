@@ -3,6 +3,10 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 repo = Path(__file__).resolve().parents[1]
 imgdir = repo / "08-素材库" / "图片"
+cover_dir = imgdir / "文章封面"
+inline_dir = imgdir / "正文插图"
+cover_dir.mkdir(parents=True, exist_ok=True)
+inline_dir.mkdir(parents=True, exist_ok=True)
 font_path = r"C:\Windows\Fonts\msyh.ttc"
 font_bold_path = r"C:\Windows\Fonts\msyhbd.ttc"
 
@@ -19,6 +23,20 @@ TITLE = bold(54)
 SUB = font(30)
 CARD = bold(30)
 SMALL = font(24)
+
+
+def asset_path(name):
+    candidates = [imgdir / name, cover_dir / name, inline_dir / name]
+    candidates.extend(imgdir.rglob(name))
+    for path in candidates:
+        if path.exists():
+            return path
+    raise FileNotFoundError(f"素材库中找不到图片：{name}")
+
+
+def output_path(name):
+    # 封面类图片进入“文章封面”，其他过程图进入“正文插图”。
+    return (cover_dir if "cover" in name else inline_dir) / name
 
 COL = {
     "navy": (10, 18, 38),
@@ -63,7 +81,7 @@ def shadow_text(draw, xy, s, f, fill=COL["white"]):
 
 
 def bg_from(name, size=(1280, 720), blur=7):
-    im = fit_cover(Image.open(imgdir / name).convert("RGB"), size).filter(ImageFilter.GaussianBlur(blur))
+    im = fit_cover(Image.open(asset_path(name)).convert("RGB"), size).filter(ImageFilter.GaussianBlur(blur))
     overlay = Image.new("RGBA", size, (7, 14, 32, 172))
     im = im.convert("RGBA")
     im.alpha_composite(overlay)
@@ -96,11 +114,11 @@ def hero(out, src, title, subtitle, chips, accent=COL["cyan"]):
     x = 64
     for label, color in chips:
         x = chip(draw, x, 610, label, color)
-    shot = fit_cover(Image.open(imgdir / src).convert("RGB"), (520, 340))
+    shot = fit_cover(Image.open(asset_path(src)).convert("RGB"), (520, 340))
     rounded(draw, [694, 210, 1226, 562], 28, (255, 255, 255), outline=accent, width=5)
     canvas.paste(shot, (700, 216))
     draw.rounded_rectangle([700, 216, 1220, 556], radius=22, outline=(255, 255, 255), width=2)
-    canvas.save(imgdir / out, quality=94)
+    canvas.save(output_path(out), quality=94)
 
 
 def flow_debug():
@@ -123,7 +141,7 @@ def flow_debug():
             draw.line([x - 20, 295, x + 10, 295], fill=(100, 116, 139), width=5)
             draw.polygon([(x + 10, 295), (x - 6, 285), (x - 6, 305)], fill=(100, 116, 139))
     write(draw, (70, 610), "推荐提示词：先复现/定位，再修复/验证，最后报告命令和结果", SUB, (15, 23, 42))
-    canvas.save(imgdir / "07-debug-loop-cn.jpg", quality=94)
+    canvas.save(output_path("07-debug-loop-cn.jpg"), quality=94)
 
 
 def agents_template():
@@ -147,7 +165,7 @@ def agents_template():
             y += 190
     rounded(draw, [70, 610, 1210, 675], 22, (30, 41, 59), outline=(71, 85, 105), width=2)
     write(draw, (95, 626), "口诀：重复提醒两次的规则，就应该沉淀进 AGENTS.md", SUB, COL["yellow"])
-    canvas.save(imgdir / "08-agents-template-cn.jpg", quality=94)
+    canvas.save(output_path("08-agents-template-cn.jpg"), quality=94)
 
 
 def safety():
@@ -173,7 +191,7 @@ def safety():
     x, y = 80, 545
     for label in warnings:
         x = chip(draw, x, y, label, COL["pink"])
-    canvas.save(imgdir / "09-safety-cn.jpg", quality=94)
+    canvas.save(output_path("09-safety-cn.jpg"), quality=94)
 
 
 def cheat():
@@ -203,7 +221,7 @@ def cheat():
         write(draw, (736, y + 8), key, SMALL)
         write(draw, (905, y + 8), value, SMALL, (51, 65, 85))
         y += 82
-    canvas.save(imgdir / "10-cheatsheet-cn.jpg", quality=94)
+    canvas.save(output_path("10-cheatsheet-cn.jpg"), quality=94)
 
 
 def plugin_skill_cover():
@@ -235,14 +253,14 @@ def plugin_skill_cover():
         tile_x = x0 + col * 108
         tile_y = y0 + row * 150
         rounded(draw, [tile_x, tile_y, tile_x + 92, tile_y + 118], 20, (248, 250, 252), outline=(226, 232, 240), width=1)
-        icon_path = imgdir / "plugin-icons" / f"{file_name}.png"
-        if icon_path.exists():
+        icon_path = next(imgdir.rglob(f"{file_name}.png"), None)
+        if icon_path and icon_path.exists():
             icon = Image.open(icon_path).convert("RGB").resize((66, 66), Image.Resampling.LANCZOS)
             canvas.paste(icon, (tile_x + 13, tile_y + 12))
         else:
             rounded(draw, [tile_x + 13, tile_y + 12, tile_x + 79, tile_y + 78], 18, COL["blue"])
         center_text(label, tile_x + 46, tile_y + 84)
-    canvas.save(imgdir / "05-plugins-skill-cover-cn.jpg", quality=94)
+    canvas.save(output_path("05-plugins-skill-cover-cn.jpg"), quality=94)
 
 
 def plugin_vs_skill():
@@ -263,7 +281,7 @@ def plugin_vs_skill():
             write(draw, (x + 28, yy), line, SMALL, (51, 65, 85))
             yy += 48
     write(draw, (76, 610), "选择顺序：已有插件先装插件；重复流程写成 Skill；需要外部系统就接 MCP。", SUB, (15, 23, 42))
-    canvas.save(imgdir / "11-plugin-vs-skill-cn.jpg", quality=94)
+    canvas.save(output_path("11-plugin-vs-skill-cn.jpg"), quality=94)
 
 
 def content_workflow():
@@ -287,12 +305,12 @@ def content_workflow():
         x += 245
     rounded(draw, [70, 580, 1210, 650], 22, (239, 246, 255), outline=COL["blue"], width=2)
     write(draw, (95, 598), "适合沉淀为 Skill 的规则：步骤固定、素材多、需要脚本、每次都要重复做。", SUB, (15, 23, 42))
-    canvas.save(imgdir / "12-content-skill-workflow-cn.jpg", quality=94)
+    canvas.save(output_path("12-content-skill-workflow-cn.jpg"), quality=94)
 
 
 def article3_wechat_cover():
     size = (1410, 600)
-    canvas = fit_cover(Image.open(imgdir / "04-codex-browser-cn.jpg").convert("RGB"), size).filter(ImageFilter.GaussianBlur(5))
+    canvas = fit_cover(Image.open(asset_path("04-codex-browser-cn.jpg")).convert("RGB"), size).filter(ImageFilter.GaussianBlur(5))
     canvas = canvas.convert("RGBA")
     canvas.alpha_composite(Image.new("RGBA", size, (8, 13, 30, 178)))
     draw = ImageDraw.Draw(canvas)
@@ -359,7 +377,7 @@ def article3_wechat_cover():
     for label, color in [("Debug闭环", COL["orange"]), ("最小改动", COL["green"]), ("测试验证", COL["blue"]), ("安全检查", COL["purple"])]:
         x = chip(draw, x, 528, label, color)
 
-    canvas.convert("RGB").save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
+    canvas.convert("RGB").save(output_path("03-wechat-cover-cn.jpg"), quality=94)
 
 
 def article3_wechat_cover_modern():
@@ -429,7 +447,7 @@ def article3_wechat_cover_modern():
 
     draw.rounded_rectangle([1180, 36, 1336, 78], radius=21, fill=(59, 130, 246, 70), outline=(147, 197, 253, 90), width=1)
     write(draw, (1204, 45), "可验证修复", bold(20), (219, 234, 254))
-    canvas.convert("RGB").save(imgdir / "03-wechat-cover-cn.jpg", quality=94)
+    canvas.convert("RGB").save(output_path("03-wechat-cover-cn.jpg"), quality=94)
 
 
 hero("03-case-cover-cn.jpg", "04-codex-browser-cn.jpg", "Codex 实战速查", "修 bug、安全检查、高质量提示词，一篇讲透核心用法", [("Debug闭环", COL["orange"]), ("安全检查", COL["green"]), ("提示词模板", COL["blue"])])
@@ -441,6 +459,6 @@ cheat()
 plugin_skill_cover()
 article3_wechat_cover_modern()
 
-for path in sorted(imgdir.glob("*.jpg")):
+for path in sorted(imgdir.rglob("*.jpg")):
     if path.name in {"03-case-cover-cn.jpg", "03-wechat-cover-cn.jpg", "04-agents-cover-cn.jpg", "05-plugins-skill-cover-cn.jpg", "07-debug-loop-cn.jpg", "08-agents-template-cn.jpg", "09-safety-cn.jpg", "10-cheatsheet-cn.jpg"}:
         print(path.name, path.stat().st_size)

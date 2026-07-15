@@ -10,13 +10,13 @@ series: "Codex入门与工程化"
 tags: ["工具教程", "Codex", "可操作指南"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/06-codex-advanced-workflow-cn.jpg"
+cover: "../08-素材库/图片/文章封面/02-Codex 进阶提效：配置、权限、复用与自动化-封面.jpg"
 ---
 
 # Codex 进阶提效：配置、权限、复用与自动化
 副标题：拉开差距的往往不是“让 Codex 写代码”，而是让它按你的项目规则持续稳定地工作。
 
-![Codex 进阶工作流中文图](../08-素材库/图片/06-codex-advanced-workflow-cn.jpg)
+![Codex 进阶工作流中文图](../08-素材库/图片/文章封面/02-Codex 进阶提效：配置、权限、复用与自动化-封面.jpg)
 
 ## 开篇
 如果你已经用 Codex 修过 bug、写过测试、解释过代码，下一步就不是继续堆 prompt，而是把那些反复出现的规则、流程和工具固化下来。
@@ -141,7 +141,7 @@ codex -c sandbox_workspace_write.network_access=true
 ## 四、前端和产物任务：一定要让 Codex 看见结果
 Codex 不只适合写业务代码，也适合处理页面和非代码产物。
 
-![Codex Artifact 中文操作图](../08-素材库/图片/05-codex-artifact-cn.jpg)
+![Codex Artifact 中文操作图](../08-素材库/图片/正文插图/02-Codex 进阶提效：配置、权限、复用与自动化-正文插图02.jpg)
 对于前端页面，建议让 Codex 使用 in-app browser：
 
 ```text

@@ -10,13 +10,13 @@ series: "Codex入门与工程化"
 tags: ["工具教程", "Codex", "可操作指南"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/04-agents-cover-cn.jpg"
+cover: "../08-素材库/图片/文章封面/04-AGENTS.md 深度模板：让 Codex 按团队规则工作-封面.jpg"
 ---
 
 # AGENTS.md 深度模板：让 Codex 按团队规则工作
 副标题：把项目规则写进 Codex 默认上下文。
 
-![AGENTS.md 深度模板封面](../08-素材库/图片/04-agents-cover-cn.jpg)
+![AGENTS.md 深度模板封面](../08-素材库/图片/文章封面/04-AGENTS.md 深度模板：让 Codex 按团队规则工作-封面.jpg)
 
 ## 开篇
 如果你每次使用 Codex 都要重复说：
@@ -95,7 +95,7 @@ my-project/
 
 ## 四、推荐模板：适合大多数项目
 
-![AGENTS.md 模板图](../08-素材库/图片/08-agents-template-cn.jpg)
+![AGENTS.md 模板图](../08-素材库/图片/正文插图/04-AGENTS.md 深度模板：让 Codex 按团队规则工作-正文插图02.jpg)
 可以从这份中文模板开始：
 
 ```md

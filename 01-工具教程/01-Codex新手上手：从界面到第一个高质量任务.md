@@ -10,13 +10,13 @@ series: "Codex入门与工程化"
 tags: ["工具教程", "Codex", "可操作指南"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/01-codex-app-cn.jpg"
+cover: "../08-素材库/图片/文章封面/01-Codex 新手上手：从界面到第一个高质量任务-封面.jpg"
 ---
 
 # Codex 新手上手：从界面到第一个高质量任务
 副标题：会提问不够，关键是让 Codex 读懂项目、改得动代码、跑得出验证。
 
-![Codex App 中文操作图](../08-素材库/图片/01-codex-app-cn.jpg)
+![Codex App 中文操作图](../08-素材库/图片/文章封面/01-Codex 新手上手：从界面到第一个高质量任务-封面.jpg)
 
 ## 开篇
 如果你第一次打开 Codex，很容易把它当成“更会写代码的聊天机器人”。但用起来之后你会发现，它更像一个可以进入项目、读取文件、修改代码、运行命令、查看 diff、继续修复问题的开发协作者。
@@ -61,7 +61,7 @@ Codex App 是桌面端工作台，适合大多数人入门。
 
 ### 2. Codex CLI：适合终端用户和脚本化
 
-![Codex CLI 中文操作图](../08-素材库/图片/02-codex-cli-cn.jpg)
+![Codex CLI 中文操作图](../08-素材库/图片/正文插图/01-Codex 新手上手：从界面到第一个高质量任务-正文插图02.jpg)
 CLI 适合已经习惯终端的开发者。进入项目根目录后运行：
 
 ```bash
@@ -92,7 +92,7 @@ codex exec "fix the CI failure"
 
 ### 3. IDE Extension：适合边看代码边问
 
-![Codex IDE 中文操作图](../08-素材库/图片/03-codex-ide-cn.jpg)
+![Codex IDE 中文操作图](../08-素材库/图片/正文插图/01-Codex 新手上手：从界面到第一个高质量任务-正文插图03.jpg)
 IDE 扩展适合 VS Code、Cursor、Windsurf 等 VS Code 兼容编辑器。
 它的优势是能利用编辑器上下文：
 
@@ -204,7 +204,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 
 ## 六、前端任务一定要用浏览器预览
 
-![Codex 浏览器中文操作图](../08-素材库/图片/04-codex-browser-cn.jpg)
+![Codex 浏览器中文操作图](../08-素材库/图片/正文插图/01-Codex 新手上手：从界面到第一个高质量任务-正文插图04.jpg)
 如果你的任务涉及页面、组件、样式或交互，建议让 Codex 打开本地开发服务器，用 in-app browser 检查页面。
 可以这样说：
 
