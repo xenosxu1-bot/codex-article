@@ -1,17 +1,3 @@
-<!--
-id: "09"
-title: "Codex 智能体与 Skills 中文参考手册"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "Codex入门与工程化"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-source_status: "已核对公开资料；建议后续更新时重新核验"
--->
-
-
 > **用途**：本手册面向本工作区的日常研发、内容生产、数据处理与桌面自动化工作，说明 Codex 中的**智能体（subagents）**和 **Skills** 分别解决什么问题、何时使用，以及如何在任务中准确提出要求。
 >
 > **更新时间**：2026-07-13

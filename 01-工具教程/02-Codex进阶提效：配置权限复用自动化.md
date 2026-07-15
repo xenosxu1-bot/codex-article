@@ -1,18 +1,3 @@
-<!--
-id: "02"
-title: "Codex 进阶提效：配置、权限、复用与自动化"
-description: "拉开差距的往往不是**让 Codex 写代码**，而是让它按你的项目规则持续稳定地工作。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "Codex入门与工程化"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/文章封面/02-Codex 进阶提效：配置、权限、复用与自动化-封面.jpg"
--->
-
 副标题：拉开差距的往往不是**让 Codex 写代码**，而是让它按你的项目规则持续稳定地工作。
 
 ![Codex 进阶工作流中文图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/02-Codex%20%E8%BF%9B%E9%98%B6%E6%8F%90%E6%95%88%EF%BC%9A%E9%85%8D%E7%BD%AE%E3%80%81%E6%9D%83%E9%99%90%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96-%E5%B0%81%E9%9D%A2.jpg)

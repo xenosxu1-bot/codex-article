@@ -1,19 +1,3 @@
-<!--
-id: "29"
-title: "AI Agent 权限越大，安全边界越重要"
-description: "Agent 越能操作工具、文件和网络，越需要权限分层、沙箱、来源核验和人工确认。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "安全治理"
-series: "AI项目与Agent落地"
-tags: ["安全治理", "权限边界", "验收清单"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**Agent 越能操作工具、文件和网络，越需要权限分层、沙箱、来源核验和人工确认。
 
 AI Agent 的价值来自**能行动**，风险也来自**能行动**。当它能安装依赖、读取文件、访问网页、调用 API 或操作企业系统时，一次错误判断就可能变成真实损失。

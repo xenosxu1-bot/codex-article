@@ -1,19 +1,3 @@
-<!--
-id: "26"
-title: "AI Coding 的终点不是写代码，而是交付一个任务"
-description: "Coding Agent 的关键变化不是补全代码更快，而是开始参与调研、修改、运行、测试和修复。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "AI项目与Agent落地"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**Coding Agent 的关键变化不是补全代码更快，而是开始参与调研、修改、运行、测试和修复。
 
 早期 AI 编程像**副驾驶**：人负责方向，AI 补代码。现在的 Coding Agent 正在靠近另一种形态：人给出目标和边界，Agent 进入仓库，理解上下文，提出方案，改文件，跑命令，修失败，再汇报结果。

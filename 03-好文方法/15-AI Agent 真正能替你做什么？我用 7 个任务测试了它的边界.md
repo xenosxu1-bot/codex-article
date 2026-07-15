@@ -1,19 +1,3 @@
-<!--
-id: "15"
-title: "AI Agent 真正能替你做什么？我用 7 个任务测试了它的边界"
-description: "把**能不能做**拆成可复现的任务，才看得到 Agent 的强项和红线"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "好文方法"
-series: "AI工作流与个人效率"
-tags: ["工作方法", "AI效率", "可交付工作流"]
-status: "published"
-reading_time: "9 分钟"
-source_status: "已核对公开资料；建议后续更新时重新核验"
-cover: "../08-素材库/图片/文章封面/15-AI Agent 真正能替你做什么？我用 7 个任务测试了它的边界-封面.jpg"
--->
-
 > **核心观点：**把**能不能做**拆成可复现的任务，才看得到 Agent 的强项和红线。
 
 ![电脑与项目工作台，封面文字为后期排版](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/15-AI%20Agent%20%E7%9C%9F%E6%AD%A3%E8%83%BD%E6%9B%BF%E4%BD%A0%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F%E6%88%91%E7%94%A8%207%20%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B5%8B%E8%AF%95%E4%BA%86%E5%AE%83%E7%9A%84%E8%BE%B9%E7%95%8C-%E5%B0%81%E9%9D%A2.jpg)

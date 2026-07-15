@@ -1,19 +1,3 @@
-<!--
-id: "01"
-title: "Codex 新手上手：从界面到第一个高质量任务"
-description: "会提问不够，关键是让 Codex 读懂项目、改得动代码、跑得出验证。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "Codex入门与工程化"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/文章封面/01-Codex 新手上手：从界面到第一个高质量任务-封面.jpg"
--->
-
-
 副标题：会提问不够，关键是让 Codex 读懂项目、改得动代码、跑得出验证。
 
 ![Codex App 中文操作图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/01-Codex%20%E6%96%B0%E6%89%8B%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BB%8E%E7%95%8C%E9%9D%A2%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%BB%E5%8A%A1-%E5%B0%81%E9%9D%A2.jpg)

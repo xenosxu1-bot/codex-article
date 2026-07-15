@@ -1,19 +1,3 @@
-<!--
-id: "03"
-title: "Codex 实战速查：修 bug、安全检查与高质量提示词"
-description: "把 Codex 用顺，靠的不是长提示词，而是复现、边界、验证三件事。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "案例实战"
-series: "Codex入门与工程化"
-tags: ["案例实战", "实操复盘", "项目落地"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/文章封面/03-Codex 实战速查：修 bug、安全检查与高质量提示词-封面.jpg"
--->
-
-
 副标题：把 Codex 用顺，靠的不是长提示词，而是复现、边界、验证三件事。
 
 ![Codex 实战速查微信公众号封面](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/03-Codex%20%E5%AE%9E%E6%88%98%E9%80%9F%E6%9F%A5%EF%BC%9A%E4%BF%AE%20bug%E3%80%81%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%8F%90%E7%A4%BA%E8%AF%8D-%E5%B0%81%E9%9D%A2.jpg)

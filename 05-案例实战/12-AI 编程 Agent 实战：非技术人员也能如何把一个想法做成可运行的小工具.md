@@ -1,19 +1,3 @@
-<!--
-id: "12"
-title: "AI 编程 Agent 实战：非技术人员也能如何把一个想法做成可运行的小工具"
-description: "你负责判断问题值不值得做，Agent 负责把可验证的步骤往前推"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "案例实战"
-series: "AI学习与应用案例"
-tags: ["案例实战", "实操复盘", "项目落地"]
-status: "published"
-reading_time: "9 分钟"
-source_status: "已核对公开资料；建议后续更新时重新核验"
-cover: "../08-素材库/图片/文章封面/12-AI 编程 Agent 实战：非技术人员也能如何把一个想法做成可运行的小工具-封面.jpg"
--->
-
 > **核心观点：**你负责判断问题值不值得做，Agent 负责把可验证的步骤往前推。
 
 ![显示代码的屏幕，封面文字为后期排版](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/12-AI%20%E7%BC%96%E7%A8%8B%20Agent%20%E5%AE%9E%E6%88%98%EF%BC%9A%E9%9D%9E%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E4%B9%9F%E8%83%BD%E5%A6%82%E4%BD%95%E6%8A%8A%E4%B8%80%E4%B8%AA%E6%83%B3%E6%B3%95%E5%81%9A%E6%88%90%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7-%E5%B0%81%E9%9D%A2.jpg)

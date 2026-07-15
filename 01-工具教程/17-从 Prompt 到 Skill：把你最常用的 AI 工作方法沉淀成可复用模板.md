@@ -1,19 +1,3 @@
-<!--
-id: "17"
-title: "从 Prompt 到 Skill：把你最常用的 AI 工作方法沉淀成可复用模板"
-description: "有效提示词不是一段咒语，而是一套带输入、检查和边界的工作方法"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "AI工作流与个人效率"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-reading_time: "8 分钟"
-source_status: "已核对公开资料；建议后续更新时重新核验"
-cover: "../08-素材库/图片/文章封面/17-从 Prompt 到 Skill：把你最常用的 AI 工作方法沉淀成可复用模板-封面.jpg"
--->
-
 > **核心观点：**有效提示词不是一段咒语，而是一套带输入、检查和边界的工作方法。
 
 ![笔记本电脑前的工作者，封面文字为后期排版](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/17-%E4%BB%8E%20Prompt%20%E5%88%B0%20Skill%EF%BC%9A%E6%8A%8A%E4%BD%A0%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%20AI%20%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%B3%95%E6%B2%89%E6%B7%80%E6%88%90%E5%8F%AF%E5%A4%8D%E7%94%A8%E6%A8%A1%E6%9D%BF-%E5%B0%81%E9%9D%A2.jpg)

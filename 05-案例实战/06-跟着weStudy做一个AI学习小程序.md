@@ -1,17 +1,3 @@
-<!--
-id: "06"
-title: "跟着 weStudy 做一个 AI 学习小程序：用 Codex、WorkBuddy 和微信开发者工具从 0 推到提审前"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "案例实战"
-series: "AI学习与应用案例"
-tags: ["案例实战", "实操复盘", "项目落地"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
--->
-
-
 > 这篇不拆代码细节。重点讲我怎样把一个**想做 AI 学习小程序**的想法，借助 WorkBuddy、Codex 和微信开发者工具，一步步推到 `D:\projects_git\weStudy` 当前这个可联调、可真机预览、可准备提审的状态。
 
 很多人第一次做 AI 应用，容易把问题想复杂：既想做题库，又想做课程，又想做家长报告，还想做游戏化。真正落地时，最重要的不是功能堆得多，而是先跑通一条每天都能使用的闭环。

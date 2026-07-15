@@ -1,19 +1,3 @@
-<!--
-id: "04"
-title: "AGENTS.md 深度模板：让 Codex 按团队规则工作"
-description: "把项目规则写进 Codex 默认上下文。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "Codex入门与工程化"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/文章封面/04-AGENTS.md 深度模板：让 Codex 按团队规则工作-封面.jpg"
--->
-
-
 副标题：把项目规则写进 Codex 默认上下文。
 
 ![AGENTS.md 深度模板封面](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/04-AGENTS.md%20%E6%B7%B1%E5%BA%A6%E6%A8%A1%E6%9D%BF%EF%BC%9A%E8%AE%A9%20Codex%20%E6%8C%89%E5%9B%A2%E9%98%9F%E8%A7%84%E5%88%99%E5%B7%A5%E4%BD%9C-%E5%B0%81%E9%9D%A2.jpg)

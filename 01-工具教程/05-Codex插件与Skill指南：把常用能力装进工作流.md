@@ -1,19 +1,3 @@
-<!--
-id: "05"
-title: "Codex 插件与 Skill 指南：把常用能力装进工作流"
-description: "插件扩展工具，Skill 沉淀流程。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "Codex入门与工程化"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-source_status: "本地教程与项目经验；后续按官方文档更新"
-cover: "../08-素材库/图片/文章封面/05-Codex 插件与 Skill 指南：把常用能力装进工作流-封面.jpg"
--->
-
-
 副标题：插件扩展工具，Skill 沉淀流程。
 
 ![Codex 插件与 Skill 封面](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/05-Codex%20%E6%8F%92%E4%BB%B6%E4%B8%8E%20Skill%20%E6%8C%87%E5%8D%97%EF%BC%9A%E6%8A%8A%E5%B8%B8%E7%94%A8%E8%83%BD%E5%8A%9B%E8%A3%85%E8%BF%9B%E5%B7%A5%E4%BD%9C%E6%B5%81-%E5%B0%81%E9%9D%A2.jpg)

@@ -1,19 +1,3 @@
-<!--
-id: "32"
-title: "AI for Science 很热，但科学家还不会被替代"
-description: "AI 正在进入科研流程，但从生成合理内容到可靠完成科学工作，中间还有严肃的验证鸿沟。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "热点追踪"
-series: "AI前沿观察"
-tags: ["热点追踪", "AI趋势", "行业观察"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**AI 正在进入科研流程，但从生成合理内容到可靠完成科学工作，中间还有严肃的验证鸿沟。
 
 AI for Science 是 2026 年最值得关注的方向之一。它已经不只是在单个步骤上加速，例如预测结构、整理文献或生成代码，而是开始进入假设生成、实验设计、结果分析和工作流自动化。

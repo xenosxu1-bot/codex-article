@@ -1,18 +1,3 @@
-<!--
-id: "20"
-title: "MCP 到底是什么？不用懂代码，也能看懂 AI 为什么开始会用工具了"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "AI知识"
-series: "AI项目与Agent落地"
-tags: ["AI知识", "Agent", "系统能力"]
-status: "published"
-reading_time: "8 分钟"
-source_status: "已核对公开资料；建议后续更新时重新核验"
-cover: "../08-素材库/图片/文章封面/20-MCP 到底是什么？不用懂代码，也能看懂 AI 为什么开始会用工具了-封面.jpg"
--->
-
 > MCP 不是让 AI 获得**超能力**的魔法词。它更像一套约定：让 AI 在你授权的范围内，知道有哪些资料和工具可以用、怎样调用、结果如何返回。
 
 ![封面：电脑屏幕与工作环境](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/20-MCP%20%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%8D%E7%94%A8%E6%87%82%E4%BB%A3%E7%A0%81%EF%BC%8C%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%20AI%20%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%A7%8B%E4%BC%9A%E7%94%A8%E5%B7%A5%E5%85%B7%E4%BA%86-%E5%B0%81%E9%9D%A2.jpg)

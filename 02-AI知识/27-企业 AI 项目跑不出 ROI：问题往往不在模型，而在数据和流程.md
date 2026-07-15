@@ -1,19 +1,3 @@
-<!--
-id: "27"
-title: "企业 AI 项目跑不出 ROI：问题往往不在模型，而在数据和流程"
-description: "很多企业 AI 项目卡住，不是因为模型不会回答，而是数据、口径、权限和流程还不能被 AI 稳定消费。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "AI知识"
-series: "AI项目与Agent落地"
-tags: ["AI知识", "Agent", "系统能力"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**很多企业 AI 项目卡住，不是因为模型不会回答，而是数据、口径、权限和流程还不能被 AI 稳定消费。
 
 企业做 AI 最容易高估两件事：一是模型的**聪明**可以自动补齐业务上下文；二是 Demo 跑通就代表生产可用。

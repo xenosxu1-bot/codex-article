@@ -1,19 +1,3 @@
-<!--
-id: "28"
-title: "Data Agent 落地避坑：Text-to-SQL 为什么一上线就不准"
-description: "Text-to-SQL 能做演示，但企业级 Data Agent 需要语义层、权限、指标治理和多阶段校验。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "AI知识"
-series: "AI项目与Agent落地"
-tags: ["AI知识", "Agent", "系统能力"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**Text-to-SQL 能做演示，但企业级 Data Agent 需要语义层、权限、指标治理和多阶段校验。
 
 **帮我查一下这个月华东区的新客转化率。**这句话看似适合 Text-to-SQL，真正上线后却很容易翻车。

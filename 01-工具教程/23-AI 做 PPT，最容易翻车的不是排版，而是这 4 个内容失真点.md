@@ -1,18 +1,3 @@
-<!--
-id: "23"
-title: "AI 做 PPT，最容易翻车的不是排版，而是这 4 个内容失真点"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "工具教程"
-series: "AI学习与应用案例"
-tags: ["工具教程", "Codex", "可操作指南"]
-status: "published"
-reading_time: "8 分钟"
-source_status: "已核对公开资料；建议后续更新时重新核验"
-cover: "../08-素材库/图片/文章封面/23-AI 做 PPT，最容易翻车的不是排版，而是这 4 个内容失真点-封面.jpg"
--->
-
 > AI 能帮你快速摆脱空白页，却不能替你确认：这份内容能不能在会上讲、经不经得起追问、会不会误导决策。
 
 ![封面：会议讨论场景](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/23-AI%20%E5%81%9A%20PPT%EF%BC%8C%E6%9C%80%E5%AE%B9%E6%98%93%E7%BF%BB%E8%BD%A6%E7%9A%84%E4%B8%8D%E6%98%AF%E6%8E%92%E7%89%88%EF%BC%8C%E8%80%8C%E6%98%AF%E8%BF%99%204%20%E4%B8%AA%E5%86%85%E5%AE%B9%E5%A4%B1%E7%9C%9F%E7%82%B9-%E5%B0%81%E9%9D%A2.jpg)

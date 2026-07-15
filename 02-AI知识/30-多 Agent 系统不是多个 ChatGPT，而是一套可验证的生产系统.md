@@ -1,19 +1,3 @@
-<!--
-id: "30"
-title: "多 Agent 系统不是多个 ChatGPT，而是一套可验证的生产系统"
-description: "多 Agent 的关键不是角色越多越好，而是任务分工、信息流、权限、验证和失败恢复。"
-author: "Codex Article Lab"
-published: "2026-07-15"
-updated: "2026-07-15"
-category: "AI知识"
-series: "AI项目与Agent落地"
-tags: ["AI知识", "Agent", "系统能力"]
-status: "published"
-reading_time: "6 分钟"
-source_status: "已基于公开资料核验，访问日期 2026-07-15"
--->
-
-
 > **一句话结论：**多 Agent 的关键不是角色越多越好，而是任务分工、信息流、权限、验证和失败恢复。
 
 很多人第一次听到多 Agent，会把它理解成**让几个 AI 分别扮演产品经理、工程师、测试和审稿人**。这只是最表层的角色设计。
