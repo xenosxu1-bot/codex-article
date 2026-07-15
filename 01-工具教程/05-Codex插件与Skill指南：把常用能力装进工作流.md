@@ -1,3 +1,4 @@
+<!--
 ---
 id: "05"
 title: "Codex 插件与 Skill 指南：把常用能力装进工作流"
@@ -12,8 +13,9 @@ status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
 cover: "../08-素材库/图片/文章封面/05-Codex 插件与 Skill 指南：把常用能力装进工作流-封面.jpg"
 ---
+-->
 
-# Codex 插件与 Skill 指南：把常用能力装进工作流
+
 副标题：插件扩展工具，Skill 沉淀流程。
 
 ![Codex 插件与 Skill 封面](../08-素材库/图片/文章封面/05-Codex%20插件与%20Skill%20指南：把常用能力装进工作流-封面.jpg)

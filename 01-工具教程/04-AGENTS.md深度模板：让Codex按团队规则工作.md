@@ -1,3 +1,4 @@
+<!--
 ---
 id: "04"
 title: "AGENTS.md 深度模板：让 Codex 按团队规则工作"
@@ -12,8 +13,9 @@ status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
 cover: "../08-素材库/图片/文章封面/04-AGENTS.md 深度模板：让 Codex 按团队规则工作-封面.jpg"
 ---
+-->
 
-# AGENTS.md 深度模板：让 Codex 按团队规则工作
+
 副标题：把项目规则写进 Codex 默认上下文。
 
 ![AGENTS.md 深度模板封面](../08-素材库/图片/文章封面/04-AGENTS.md%20深度模板：让%20Codex%20按团队规则工作-封面.jpg)

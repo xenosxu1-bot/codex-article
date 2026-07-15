@@ -1,3 +1,4 @@
+<!--
 ---
 id: "06"
 title: "跟着 weStudy 做一个 AI 学习小程序：用 Codex、WorkBuddy 和微信开发者工具从 0 推到提审前"
@@ -10,8 +11,8 @@ tags: ["案例实战", "实操复盘", "项目落地"]
 status: "published"
 source_status: "本地教程与项目经验；后续按官方文档更新"
 ---
+-->
 
-# 跟着 weStudy 做一个 AI 学习小程序：用 Codex、WorkBuddy 和微信开发者工具从 0 推到提审前
 
 > 这篇不拆代码细节。重点讲我怎样把一个“想做 AI 学习小程序”的想法，借助 WorkBuddy、Codex 和微信开发者工具，一步步推到 `D:\projects_git\weStudy` 当前这个可联调、可真机预览、可准备提审的状态。
 
@@ -399,4 +400,3 @@ flowchart TD
 - [CloudBase AI 能力文档](https://docs.cloudbase.net/ai/)
 
 > 文中工具图片来自对应官方站点资源；项目案例来自本地 `D:\projects_git\weStudy` 的 V1.0 开发过程。
-

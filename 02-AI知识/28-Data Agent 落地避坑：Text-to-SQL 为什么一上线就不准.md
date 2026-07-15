@@ -1,3 +1,4 @@
+<!--
 ---
 id: "28"
 title: "Data Agent 落地避坑：Text-to-SQL 为什么一上线就不准"
@@ -12,8 +13,8 @@ status: "published"
 reading_time: "6 分钟"
 source_status: "已基于公开资料核验，访问日期 2026-07-15"
 ---
+-->
 
-# Data Agent 落地避坑：Text-to-SQL 为什么一上线就不准
 
 > **一句话结论：**Text-to-SQL 能做演示，但企业级 Data Agent 需要语义层、权限、指标治理和多阶段校验。
 
