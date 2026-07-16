@@ -1,6 +1,4 @@
-副标题：插件扩展工具，Skill 沉淀流程。
-
-![Codex 插件与 Skill 封面](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/05-Codex%20%E6%8F%92%E4%BB%B6%E4%B8%8E%20Skill%20%E6%8C%87%E5%8D%97%EF%BC%9A%E6%8A%8A%E5%B8%B8%E7%94%A8%E8%83%BD%E5%8A%9B%E8%A3%85%E8%BF%9B%E5%B7%A5%E4%BD%9C%E6%B5%81-%E5%B0%81%E9%9D%A2.jpg)
+> 一句话结论：插件扩展工具，Skill 沉淀流程。
 
 ## 开篇
 插件和 Skill 都是在给 Codex 加能力，但用途不同。
