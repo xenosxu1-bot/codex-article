@@ -6,7 +6,7 @@
 
 | 编号 | 标题 | 分类 | 标签 | 状态 |
 | --- | --- | --- | --- | --- |
-| 20 | [MCP 到底是什么？不用懂代码，也能看懂 AI 为什么开始会用工具了](<../02-AI知识\20-MCP 到底是什么？不用懂代码，也能看懂 AI 为什么开始会用工具了.md>) | AI知识 | AI知识、Agent、系统能力 | published |
+| 20 | [MCP 到底是什么？不用懂代码，也能看懂 AI 为什么开始会用工具了](<../02-AI知识\20-MCP 到底是什么：不用懂代码，也能看懂 AI 为什么开始会用工具了.md>) | AI知识 | AI知识、Agent、系统能力 | published |
 | 27 | [企业 AI 项目跑不出 ROI：问题往往不在模型，而在数据和流程](<../02-AI知识\27-企业 AI 项目跑不出 ROI：问题往往不在模型，而在数据和流程.md>) | AI知识 | AI知识、Agent、系统能力 | published |
 | 28 | [Data Agent 落地避坑：Text-to-SQL 为什么一上线就不准](<../02-AI知识\28-Data Agent 落地避坑：Text-to-SQL 为什么一上线就不准.md>) | AI知识 | AI知识、Agent、系统能力 | published |
 | 30 | [多 Agent 系统不是多个 ChatGPT，而是一套可验证的生产系统](<../02-AI知识\30-多 Agent 系统不是多个 ChatGPT，而是一套可验证的生产系统.md>) | AI知识 | AI知识、Agent、系统能力 | published |
