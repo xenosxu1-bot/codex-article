@@ -1,0 +1,20 @@
+Generate a premium WeChat AI technology article cover background, final crop ratio 2.35:1, with rich right-side visual elements inspired by a 2026 AI keynote poster.
+
+CRITICAL: no readable text, no Chinese or English words, no brand names, no logos, no watermarks, no QR codes. Leave all text areas blank for later overlay.
+
+Layout:
+- Left 52 to 56 percent must remain dark, clean negative space for large Chinese title overlay, with enough contrast.
+- Right 44 to 48 percent should be visually rich but still orderly.
+
+Right-side subject for article about AI deep industry research:
+- A luminous holographic AI research assistant or translucent digital human head, facing a human analyst silhouette at a workstation.
+- Surround it with 5 floating glass UI cards using only icons and abstract marks: source search, evidence verification, citation chain, gap list, final report dashboard.
+- Add a central research dashboard, source nodes connected by thin glowing lines, citation/evidence cards, data graphs, document stack, and a finished report panel.
+- Show the workflow visually: public sources -> evidence check -> gap analysis -> structured report.
+
+Visual style:
+- Similar mood to premium AI technology keynote, dark blue black gradient, neon cyan and emerald green highlights, cinematic light, realistic software product presentation.
+- Title color area should support green/cyan title accents. Use deep navy background with emerald green glow, not purple-heavy.
+- High-end tech magazine cover, professional, sharp, rich details, premium SaaS dashboard, futuristic AI research lab, cinematic but not messy.
+
+Avoid: cartoon, low-quality text, fake readable UI words, cluttered random panels, cheap cyberpunk, overexposed glow, copied brands.

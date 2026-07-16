@@ -1,0 +1,16 @@
+Generate a premium WeChat technology article cover background, final crop ratio 2.35:1.
+CRITICAL: no readable text, no Chinese or English words, no brand names, no logos, no QR codes, no watermarks, no screenshots or trademarks.
+
+Layout: leave the left 55 to 60 percent as clean dark negative space for later Chinese title and subtitle overlay. The bottom-left area must stay calm for a compact four-keyword tag bar.
+
+Right side: include exactly 3 core visuals only:
+1) a dim semi-transparent code/control panel as a background layer,
+2) a clear three-node workflow chain showing input -> orchestration -> delivery with large icon-only nodes,
+3) a subdued glowing delivery core or cube.
+Avoid five-node chains, scattered cards, dense side panels, extra floating modules, excessive data streams, busy floor grids, strong center glow, and over-stacked UI elements. The right side must support the title, not compete with it.
+
+Style: 2026 AI technology product launch keynote visual, premium technology magazine cover, professional AI developer ecosystem, dark futuristic UI, AI Agent, developer workspace, neon blue purple lighting, premium SaaS product design, Apple keynote-level restraint, OpenAI Codex-like mood without copying any real brand or UI.
+
+Background: black plus deep navy gradient, subtle particle glow, faint data streams, restrained code light trails, ambient rim light. High-end, restrained, professional, futuristic, cinematic.
+Color palette: black and deep navy gradient, electric cyan, restrained cobalt blue, soft violet purple, professional white highlights. Article theme: modular AI workspace, main model hub, specialist tool cards.
+Quality: high-resolution commercial illustration, cinematic lighting, realistic software product presentation. Keep lighting restrained: left title should remain the brightest reading focus, right-side delivery core glow must be subdued. Avoid cartoon style, flashy background, low-quality text, clutter, cheap cyberpunk, copied brands or logos.
