@@ -1,6 +1,7 @@
 > 一句话结论：会提问不够，关键是让 Codex 读懂项目、改得动代码、跑得出验证。
 
 ## 开篇
+
 如果你第一次打开 Codex，很容易把它当成更会写代码的聊天机器人。但用起来之后你会发现，它更像一个可以进入项目、读取文件、修改代码、运行命令、查看 diff、继续修复问题的开发协作者。
 这篇文章不讲概念堆叠，只解决一个问题：怎样让一个从没用过 Codex 的读者，在 15 分钟内跑通第一个靠谱任务。
 这篇会讲清楚：
@@ -12,6 +13,7 @@
 - 如何让 Codex 实现、验证、审查，形成闭环。
 
 ## 一、先理解 Codex：它不是只回答问题，而是能执行开发任务
+
 Codex 是 OpenAI 面向软件开发的编程智能体。它能做的事情大致分为五类：
 
 1. 写代码：根据你的目标新增功能、修复逻辑、补齐组件。
@@ -26,6 +28,7 @@ Codex 是 OpenAI 面向软件开发的编程智能体。它能做的事情大致
 ## 二、三个入口怎么选：App、CLI、IDE
 
 ### 1. Codex App：最适合新手和可视化工作流
+
 Codex App 是桌面端工作台，适合大多数人入门。
 你可以在一个界面里看到：
 
@@ -44,6 +47,7 @@ Codex App 是桌面端工作台，适合大多数人入门。
 ### 2. Codex CLI：适合终端用户和脚本化
 
 ![Codex CLI 中文操作图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE/01-Codex%20%E6%96%B0%E6%89%8B%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BB%8E%E7%95%8C%E9%9D%A2%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%BB%E5%8A%A1-%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE02.jpg)
+
 CLI 适合已经习惯终端的开发者。进入项目根目录后运行：
 
 ```bash
@@ -75,6 +79,7 @@ codex exec "fix the CI failure"
 ### 3. IDE Extension：适合边看代码边问
 
 ![Codex IDE 中文操作图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE/01-Codex%20%E6%96%B0%E6%89%8B%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BB%8E%E7%95%8C%E9%9D%A2%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%BB%E5%8A%A1-%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE03.jpg)
+
 IDE 扩展适合 VS Code、Cursor、Windsurf 等 VS Code 兼容编辑器。
 它的优势是能利用编辑器上下文：
 
@@ -97,6 +102,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 如果 Codex 回答像是没看到你正在看的文件，优先检查 IDE context，或者直接把文件 `@` 出来。
 
 ## 三、第一次打开 Codex，不要先让它改代码
+
 新手最常见的错误是：刚进项目就说帮我实现某某功能。这会让 Codex 在不了解项目结构、命令、测试方式和代码风格的情况下直接动手。
 第一次使用，建议先发这条：
 
@@ -114,9 +120,11 @@ Use @example.tsx as a reference to add a new page named Resources.
 这一步的价值很大：你会得到一份项目地图，Codex 也会先收集上下文。
 
 ## 四、写一个高质量任务：四件事必须说清楚
+
 一个稳定的 Codex 任务，最好包含四部分：
 
 ### 1. Goal：目标是什么
+
 不要说：
 
 ```text
@@ -130,6 +138,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 ```
 
 ### 2. Context：上下文在哪里
+
 告诉 Codex 相关文件、错误日志、截图、复现步骤。
 
 ```text
@@ -140,6 +149,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 ```
 
 ### 3. Constraints：哪些不能乱动
+
 例如：
 
 ```text
@@ -151,6 +161,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 ```
 
 ### 4. Done when：怎样算完成
+
 例如：
 
 ```text
@@ -161,6 +172,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 ```
 
 ## 五、可直接复用的新手任务模板
+
 把下面这段复制到 Codex 里，替换尖括号内容即可：
 
 ```text
@@ -187,6 +199,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 ## 六、前端任务一定要用浏览器预览
 
 ![Codex 浏览器中文操作图](../08-%E7%B4%A0%E6%9D%90%E5%BA%93/%E5%9B%BE%E7%89%87/%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE/01-Codex%20%E6%96%B0%E6%89%8B%E4%B8%8A%E6%89%8B%EF%BC%9A%E4%BB%8E%E7%95%8C%E9%9D%A2%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%BB%E5%8A%A1-%E6%AD%A3%E6%96%87%E6%8F%92%E5%9B%BE04.jpg)
+
 如果你的任务涉及页面、组件、样式或交互，建议让 Codex 打开本地开发服务器，用 in-app browser 检查页面。
 可以这样说：
 
@@ -198,6 +211,7 @@ Use @example.tsx as a reference to add a new page named Resources.
 前端任务尤其要避免只跑测试不看页面。测试能证明逻辑没坏，但页面是否好用、是否对齐、是否遮挡，还是要看实际渲染结果。
 
 ## 七、第一次任务的完整流程
+
 建议你按这个顺序跑：
 
 1. 进入项目根目录。
@@ -215,24 +229,32 @@ Use @example.tsx as a reference to add a new page named Resources.
 ## 八、新手最容易踩的 5 个坑
 
 ### 坑 1：任务太大
+
 “重构整个项目”“优化所有性能问题”都太大。先拆成一个页面、一个模块、一个失败测试。
 
 ### 坑 2：不给复现步骤
+
 修 bug 时，复现步骤比一句它坏了重要得多。
 
 ### 坑 3：不给完成标准
+
 如果你没说要跑哪个测试，Codex 可能只做静态修改。
 
 ### 坑 4：两个线程同时改同一批文件
+
 并行线程很诱人，但同一批文件被两个线程同时修改，容易冲突。
 
 ### 坑 5：不看 diff 直接接受
+
 Codex 是强力协作者，不是免审合并按钮。每次都看 diff，尤其是跨模块改动。
 
 ## 结尾
+
 Codex 的上手关键不是记住所有命令，而是建立正确协作习惯：
 先读项目，再说目标。
 先给约束，再让它动手。
 先跑验证，再看 diff。
 最后才接受改动。
 当你用这套方式开始，Codex 就不再只是会写代码的聊天框，而是一个能参与真实工程闭环的开发助手。
+
+本文发布前已完成事实、版权与格式检查。
