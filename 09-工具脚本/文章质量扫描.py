@@ -71,8 +71,8 @@ def scan_file(path):
         problems.append(("P1", "正文以图片开头，封面应外置"))
     if "文章封面" in text or "%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2" in text:
         problems.append(("P1", "正文包含文章封面图引用，封面应外置"))
-    if FINAL_CHECK_SENTENCE not in text:
-        problems.append(("P1", "正文缺少统一发布检查收束句"))
+    if FINAL_CHECK_SENTENCE in text:
+        problems.append(("P1", "正文含发布检查收束句；应移至发布流程或资产登记表"))
 
     in_fence = False
     for index, line in enumerate(lines, 1):
@@ -136,3 +136,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
