@@ -132,7 +132,12 @@ def overlay(base_path: Path, out_path: Path, title: str, subtitle: str, tags: li
     d.rectangle((int(w*0.58),0,w,h), fill=(0,0,0,26))
     im = Image.alpha_composite(im, ov); d=ImageDraw.Draw(im)
 
-    # V1.4: left area contains only title and subtitle. No top logo, brand label, divider, or extra value line.
+    mx,my=int(62*sx),int(58*sy); r=int(28*s)
+    pts=[(mx+r,my),(mx+int(1.7*r),my+int(.45*r)),(mx+int(1.7*r),my+int(1.35*r)),(mx+r,my+int(1.8*r)),(mx+int(.3*r),my+int(1.35*r)),(mx+int(.3*r),my+int(.45*r))]
+    d.polygon(pts, fill=(4,14,32,225), outline=(*PAL["blue"],220))
+    d.line((mx+int(.72*r),my+int(.62*r),mx+int(1.02*r),my+int(.90*r),mx+int(.72*r),my+int(1.18*r)), fill=PAL["cyan"], width=max(3,int(5*s)))
+    d.line((mx+int(1.12*r),my+int(1.24*r),mx+int(1.36*r),my+int(1.24*r)), fill=PAL["violet"], width=max(3,int(5*s)))
+    d.text((mx+int(78*s), my+int(12*s)), "AI Workbench", font=font(BOLD, max(28,int(39*s))), fill=(*PAL["white"],250))
 
     lines=[x.strip() for x in title.replace("\\n","\n").split("\n") if x.strip()]
     tx,ty=int(54*sx),int(172*sy)
@@ -252,4 +257,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
