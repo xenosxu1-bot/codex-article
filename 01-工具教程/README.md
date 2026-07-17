@@ -10,3 +10,4 @@
 | 05 | [Codex 插件与 Skill 指南：把常用能力沉淀进工作流](<05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流.md>) | Codex入门与工程化 | Skill, 插件, 工作流 | 3510 |
 | 09 | [Codex 智能体与 Skills 中文参考手册](<09-Codex 智能体与 Skills 中文参考手册.md>) | Codex入门与工程化 | 智能体, Skill, 手册 | 7131 |
 | 21 | [AI 做 PPT，最容易翻车的不是排版，而是内容失真](<21-AI 做 PPT，最容易翻车的不是排版，而是内容失真.md>) | AI办公与交付 | PPT, 内容失真, 验收 | 2448 |
+| 26 | [OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件](<26-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md>) | AI工具连接与系统 | OpenClaw, AI Agent, Gateway | 2851 |
