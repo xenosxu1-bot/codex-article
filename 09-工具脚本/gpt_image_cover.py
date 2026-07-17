@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from __future__ import annotations
 
 import argparse, base64, json, os, re, sys, textwrap, time, urllib.error, urllib.request
@@ -173,14 +173,16 @@ def build_prompt(theme: str, palette_key: str) -> str:
     return textwrap.dedent(f"""
     Generate a premium WeChat technology article cover background, final crop ratio 2.35:1.
     CRITICAL: no readable text, no Chinese or English words, no brand names, no logos, no QR codes, no watermarks, no screenshots or trademarks.
+    CRITICAL: no people, no human figure, no back-view person, no face, no digital human head, no humanoid robot. Express the topic through software product UI and tool modules only.
 
-    Layout: leave the left 55 to 60 percent as clean dark negative space for later Chinese title and subtitle overlay. The bottom-left area must stay calm for a compact four-keyword tag bar.
+    Layout: create a dark product-launch poster composition. Keep the left 42 to 45 percent as clean dark title space for later Chinese title and subtitle overlay; if the theme implies a long title, visually keep this left area calmer up to about 55 percent. The bottom-left area must stay calm for a compact four-keyword tag bar. Do not place light streaks, panels, or horizontal lines across the title area.
 
-    Right side: include exactly 3 core visuals only:
-    1) a dim semi-transparent code/control panel as a background layer,
-    2) a clear three-node workflow chain showing input -> orchestration -> delivery with large icon-only nodes,
-    3) a subdued glowing delivery core or cube.
-    Avoid five-node chains, scattered cards, dense side panels, extra floating modules, excessive data streams, busy floor grids, strong center glow, and over-stacked UI elements. The right side must support the title, not compete with it.
+    Right side: build a rich but organized no-person AI product workbench scene:
+    1) one large dark SaaS dashboard / developer workspace panel with glassmorphism, rounded cards, icon-only plugin / skill / workflow modules,
+    2) two or three smaller side panels for code, evidence cards, task logs, or report snippets, all decorative and unreadable,
+    3) one subdued glowing terminal cube, delivery core, or holographic platform in the lower-right foreground,
+    4) a simple icon-only workflow row showing input -> understanding -> tool use -> execution -> delivery, integrated inside the UI rather than floating everywhere.
+    Keep the right side close to a Codex-like product ecosystem poster mood, but make it original and generic. It should feel richer than a simple three-node diagram, yet still readable and premium. Avoid scattered cards, dense side panels, excessive data streams, busy floor grids, strong center glow, over-stacked UI elements, and anything covering the left title area.
 
     Style: 2026 AI technology product launch keynote visual, premium technology magazine cover, professional AI developer ecosystem, dark futuristic UI, AI Agent, developer workspace, neon blue purple lighting, premium SaaS product design, Apple keynote-level restraint, OpenAI Codex-like mood without copying any real brand or UI.
 
@@ -253,7 +255,7 @@ def main() -> None:
     overlay(base, cover, args.title, args.subtitle, tags, canvas); print("cover generated: "+str(cover))
     if not RECORD.exists(): RECORD.write_text("# image generation record\n\n", encoding="utf-8")
     with RECORD.open("a", encoding="utf-8") as f:
-        f.write(f"\n## {time.strftime('%Y-%m-%d %H:%M:%S')} - cover regenerated\n\n- model: {os.environ.get('OPENAI_IMAGE_MODEL','gpt-image-2')}\n- size: {canvas[0]} x {canvas[1]}\n- style: clear title hierarchy, compact bottom keywords, right side exactly 3 visuals\n- base: `{base.relative_to(REPO).as_posix()}`\n- cover: `{cover.relative_to(REPO).as_posix()}`\n")
+        f.write(f"\n## {time.strftime('%Y-%m-%d %H:%M:%S')} - cover regenerated\n\n- model: {os.environ.get('OPENAI_IMAGE_MODEL','gpt-image-2')}\n- size: {canvas[0]} x {canvas[1]}\n- style: clear title hierarchy, compact bottom keywords, right no-person product workbench\n- base: `{base.relative_to(REPO).as_posix()}`\n- cover: `{cover.relative_to(REPO).as_posix()}`\n")
 
 if __name__ == "__main__":
     main()

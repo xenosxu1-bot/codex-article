@@ -1,0 +1,17 @@
+Create a premium AI technology WeChat cover background, 2.35:1 wide banner, product launch poster style, no people, no human silhouettes, no faces, no robots shaped like humans, no readable words, no brand logos, no watermarks.
+
+Strict visual reference: a high-end Codex-like developer product poster with dark futuristic UI, large software dashboard on the right, floating code panels, plugin cards, workflow nodes, glowing 3D cube on a platform, glassmorphism cards, blue and purple neon rim lights, premium SaaS interface design. It should feel like an OpenAI / Anthropic / Google DeepMind product launch slide, but do not copy any real logo or trademark.
+
+Layout:
+- Left 42% to 45% must remain clean dark negative space for later Chinese title overlay.
+- Right 55% to 58% contains a rich AI research workspace interface, not a person.
+- Main right visual: one large dark glass desktop app window, tilted slightly in perspective, with top bar, sidebar, plugin cards, skills cards, and a workflow strip.
+- Add three smaller floating code/document panels on the far right, like terminal or YAML cards, with abstract unreadable code lines only.
+- Bottom center-right: glowing 3D cube or command icon on a small circular platform, surrounded by small app icons and data blocks, but no real brand icons.
+- Add subtle desk surface reflections, blue-purple light trails, cyan grid, premium cinematic lighting.
+
+Theme details for article: AI deep industry research workflow, evidence verification, source retrieval, report delivery. Include abstract icons only: magnifier, shield check, document stack, citation chain, analytics chart, workflow arrows.
+
+Style keywords: dark futuristic UI, premium SaaS product design, developer workspace, AI research workbench, neon blue purple lighting, glassmorphism, cinematic product launch, high-end technology magazine cover, 8k commercial poster, sharp clean details.
+
+Avoid: humans, faces, avatars, cartoons, clutter, fake Chinese text, real brand names, recognizable third-party logos, QR codes, watermark, low quality typography.
