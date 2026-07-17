@@ -15,14 +15,12 @@ weStudy 这次定下来的第一条闭环很简单：
 
 ## 先把工具摆上桌：每个工具只做自己擅长的事
 
-<table>
-  <tr>
-    <td align="center" width="25%"><img src="images/06-official-workbuddy-logo.svg" width="150"><br><strong>WorkBuddy</strong><br>需求、PRD、流程、上线材料</td>
-    <td align="center" width="25%"><img src="images/06-official-openai-icon.svg" width="64"><br><strong>Codex</strong><br>读项目、拆任务、改代码、做检查</td>
-    <td align="center" width="25%"><img src="images/06-official-wechat-touch.png" width="64"><br><strong>微信开发者工具</strong><br>编译、预览、真机调试、提审</td>
-    <td align="center" width="25%"><img src="images/06-official-cloudbase-logo.svg" width="150"><br><strong>CloudBase</strong><br>云函数、数据库、AI 模型调用</td>
-  </tr>
-</table>
+| 工具 | 在这个项目里负责什么 | 不让它负责什么 |
+| --- | --- | --- |
+| WorkBuddy | 需求、PRD、流程、上线材料 | 不直接替我判断代码是否可用 |
+| Codex | 读项目、拆任务、改代码、做检查 | 不跳过需求确认直接大改 |
+| 微信开发者工具 | 编译、预览、真机调试、提审 | 不承担产品设计和验收判断 |
+| CloudBase | 云函数、数据库、AI 模型调用 | 不替代权限、成本和数据边界设计 |
 
 我一开始踩过一个坑：把所有事都丢给同一个聊天窗口。后来发现这样很不稳，因为想清楚产品和改对项目文件不是同一类工作。
 
