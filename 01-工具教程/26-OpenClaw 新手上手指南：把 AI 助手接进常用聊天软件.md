@@ -10,6 +10,12 @@
 
 OpenClaw 官方把它定位为运行在你自己设备上的 personal AI assistant。它可以通过你已经在用的渠道回复你，也可以通过 macOS、iOS、Android 等节点能力扩展到语音、Canvas、设备命令和媒体处理。
 
+先看官方 UI，会更容易理解它和普通聊天机器人的差别。OpenClaw 的界面不是只放一个输入框，而是把 Skills、Commands、Tools 和 Integrations 这些能力放在一个控制台里管理；左侧切换能力类别，中间查看已安装能力，右侧编辑某个 Skill 的说明、允许工具、同步目标和配置项。
+
+![OpenClaw 官方 UI 界面](<../08-素材库/图片/正文插图/26-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件-官方UI界面.jpg>)
+
+新手不用一开始理解所有配置，先抓住四个基础功能就够了：Skills 决定助手会什么，Commands 像常用快捷指令，Tools 决定它能调用哪些外部能力，Integrations 负责把 OpenClaw 接到其他服务或渠道。右侧的 Sync Targets 可以帮助你理解另一件事：同一份能力配置，可能会同步给不同助手入口，但每个入口能不能执行，仍要看权限和工具边界。
+
 更通俗地说，你可以把它拆成四层：
 
 - 第一层是消息入口：例如 Telegram、Slack、WebChat、iMessage，以及通过插件接入的更多渠道。
