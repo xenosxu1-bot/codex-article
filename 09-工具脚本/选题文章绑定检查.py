@@ -144,8 +144,8 @@ def main() -> None:
     lines: list[str] = []
     lines.append("# 选题文章绑定表")
     lines.append("")
-    lines.append(f"> 更新时间：{date.today().isoformat()}  ")
-    lines.append("> 作用：把 `选题库.md` 中的选题ID，与已经生成/入库的正文文件绑定，方便查看状态，避免把同一主题重复写成多篇文章。  ")
+    lines.append(f"> 更新时间：{date.today().isoformat()}")
+    lines.append("> 作用：把 `选题库.md` 中的选题ID，与已经生成/入库的正文文件绑定，方便查看状态，避免把同一主题重复写成多篇文章。")
     lines.append("> 数据来源：`选题库.md`、`文章资产登记表.md`。")
     lines.append("")
     lines.append("## 一、当前状态概览")
@@ -154,7 +154,8 @@ def main() -> None:
     lines.append(f"- 选题库候选：{len(topics)} 条。")
     lines.append(f"- 已精确绑定生成文件：{len(exact_bindings)} 条。")
     lines.append(f"- 疑似已覆盖/可合并选题：{len(candidate_bindings)} 条。")
-    lines.append(f"- 关联编号失效项：{len(invalid_refs)} 条，需要后续清理。")
+    invalid_note = "需要后续清理" if invalid_refs else "无须清理"
+    lines.append(f"- 关联编号失效项：{len(invalid_refs)} 条，{invalid_note}。")
     lines.append("")
     lines.append("## 二、绑定规则")
     lines.append("")

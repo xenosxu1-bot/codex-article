@@ -14,6 +14,7 @@ BROAD_UNSOURCED_PHRASES = ("当前一些产品", "产品方公开资料也会", 
 FINAL_CHECK_SENTENCE = "本文发布前已完成事实、版权与格式检查。"
 VISUAL_MODULE_MARKERS = ("视觉速读", "方法卡", "对比卡", "检查清单", "流程卡", "图解", "速览")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
+CAPTION_RE = re.compile(r"^\s*(?:\*|_)?(?:图|图片|自制示意图)[:：].*(?:\*|_)?\s*$")
 
 
 def iter_articles():
@@ -76,7 +77,10 @@ def scan_file(path):
     if not image_refs and not any(marker in text for marker in VISUAL_MODULE_MARKERS):
         problems.append(("P1", "正文缺少图片或视觉化版式模块；请加入正文插图、视觉速读、方法卡、对比卡、检查清单或流程卡"))
     for image_ref in image_refs:
-        normalized_ref = image_ref.strip().strip("<>")
+        raw_ref = image_ref.strip()
+        normalized_ref = raw_ref.strip("<>")
+        if re.search(r"[\u4e00-\u9fff\s]", normalized_ref) and not (raw_ref.startswith("<") and raw_ref.endswith(">")):
+            problems.append(("P1", f"正文图片路径含中文或空格但未用 <...> 包裹：{normalized_ref}"))
         if normalized_ref.startswith(("http://", "https://", "data:")) or not normalized_ref:
             continue
         target = unquote(normalized_ref.split("#", 1)[0].strip().strip("<>"))
@@ -102,6 +106,8 @@ def scan_file(path):
             problems.append(("P1", f"第 {index} 行疑似标题与正文挤在同一行"))
         if re.search(r"!\[[^\]]*\]\([^)]+\)\S", line):
             problems.append(("P1", f"第 {index} 行疑似图片与正文挤在同一行"))
+        if CAPTION_RE.match(line):
+            problems.append(("P1", f"第 {index} 行存在独立图片图注；请把说明融入相邻正文或移入素材登记表"))
 
     bold_count = len(re.findall(r"\*\*[^*]+\*\*", text))
     if bold_count > 10:

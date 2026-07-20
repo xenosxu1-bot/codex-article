@@ -56,7 +56,7 @@ def update_readme(rows):
         before,
     )
     before = re.sub(r"> 文章数量：\d+ 篇", f"> 文章数量：{len(rows)} 篇", before)
-    before = re.sub(r"> 发布状态：\d+/\d+ 已整合入库.*", f"> 发布状态：{len(rows)}/{len(rows)} 已整合入库，正文图片与本地链接检查通过。", before)
+    before = re.sub(r"> 发布状态：\d+/\d+ 已整合入库.*", f"> 发布状态：{len(rows)}/{len(rows)} 已整合入库，正文图片、本地链接与正文图注检查通过。", before)
     out = [before, "", "## 全部文章", "", "> 排序规则：README 采用连续阅读序号，避免因下架文章产生跳号；历史文章编号以文件名、文章资产登记表和发布记录为准。", "", "| 排序 | 标题 | 分类 | 系列 | 标签 | 中文字数 |", "| ---: | --- | --- | --- | --- | ---: |"]
     for i, r in enumerate(rows, 1):
         out.append(f"| {i:02d} | {link(r['title'], r['path'])} | {r['category']} | {r['series']} | {r['tags_text']} | {r['chars']} |")
