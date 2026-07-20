@@ -2,7 +2,7 @@
 
 如果你每天打开 Codex 写代码、整理文章、跑任务，默认界面用久了会有一种工具疲劳：功能很强，但工作区很像临时控制台。Codex Dream Skin 做的事很直接：给 Codex Desktop 加一层外部视觉皮肤，让首页更有氛围，同时尽量保留原生侧栏、项目选择、任务内容和输入框。
 
-截至 2026-07-20，我查到 Fei-Away/Codex-Dream-Skin 在 GitHub 上已经超过 1 万个 star，仓库最近仍有更新。这个热度说明一件事：Codex 用户已经不只关心模型和命令，也开始关心长期使用时的桌面体验。
+截至目前，Fei-Away/Codex-Dream-Skin 在 GitHub 上已超过 1 万个 star，仓库也保持着更新记录。这个热度至少说明：不少 Codex 用户除了关心模型和命令，也开始在意长期使用时的桌面体验。
 
 但这类工具也最容易被误解。它不是 OpenAI 官方产品，也不是把 Codex 改造成另一个应用。项目文档反复强调：不修改 WindowsApps、不替换 app.asar、不改官方签名；Windows 版本通过本机回环 CDP 给官方 Store 安装的 Codex 加载外部主题。
 
