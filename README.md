@@ -64,4 +64,4 @@
 | 15 | [OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件](<01-工具教程/26-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md>) | 工具教程 | AI工具连接与系统 | OpenClaw, AI Agent, Gateway | 3207 |
 | 16 | [Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库](<05-案例实战/27-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md>) | 案例实战 | Codex入门与工程化 | Codex, 知识库, 工作流 | 3183 |
 | 17 | [给 Codex 换一套皮肤：Codex Dream Skin 实操教程](<01-工具教程/28-给 Codex 换一套皮肤：Codex Dream Skin 实操教程.md>) | 工具教程 | Codex入门与工程化 | Codex, Skill, 工具教程 | 2632 |
-| 18 | [Hermes Agent 新手快速上手：从安装到跑通第一个 Agent](<01-工具教程/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md>) | 工具教程 | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 4979 |
+| 18 | [Hermes Agent 新手快速上手：从安装到跑通第一个 Agent](<01-工具教程/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md>) | 工具教程 | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 2831 |
