@@ -82,32 +82,24 @@ def update_total_index(rows):
 
 def update_home(rows):
     p = NAV / "知识库首页.md"
-    beginner = [rows[i] for i in [0,1,3,4,8]]
-    cases = [r for r in rows if r["category"] == "案例实战"]
-    methods = [r for r in rows if r["category"] == "好文方法"]
-    safety = [r for r in rows if r["category"] in ["安全治理", "工具教程"] and ("PPT" in r["tags_text"] or "OpenClaw" in r["tags_text"] or r["category"] == "安全治理")]
-    def names(items):
-        return "、".join(r["title"] for r in items)
     out = [
         "# 知识库首页",
         "",
         f"> 更新时间：{DATE}；当前正式文章 {len(rows)} 篇。",
         "> 发布状态：全部已整合入库；首页和总索引使用连续阅读序号，历史编号保留在资产登记表中。",
         "",
-        "## 快速入口",
+        "## 从哪里开始",
         "",
-        "- [总索引](<知识库总索引.md>)：按连续阅读顺序查看全部文章。",
+        "- [阅读路径](<阅读路径.md>)：按你的目标选择第一篇文章，适合第一次进入知识库的读者。",
+        "- [知识库总索引](<知识库总索引.md>)：按连续阅读顺序查看全部文章。",
         "- [分类索引](<分类索引.md>)：按主题目录查找。",
         "- [系列索引](<系列索引.md>)：按专题路线连续阅读。",
         "- [标签索引](<标签索引.md>)：按关键词查找。",
-        "- [文章资产登记表](<../07-资料与流程/文章资产登记表.md>)：维护历史编号、路径、状态和字数。",
         "",
-        "## 阅读路径建议",
+        "## 维护与历史",
         "",
-        f"1. 新手先读：{names(beginner)}。",
-        f"2. 想看实战案例：{names(cases)}。",
-        f"3. 想提升 AI 工作法：{names(methods)}。",
-        f"4. 涉及公开发布、权限与资料输入：{names(safety)}。",
+        "- [文章资产登记表](<../07-资料与流程/文章资产登记表.md>)：查看正式文章的历史编号、路径、状态和字数。",
+        "- [下架文章与替代关系](<../07-资料与流程/下架文章与替代关系.md>)：查看已下架编号及可继续阅读的替代内容。",
         "",
         "## 按阅读顺序",
         "",
@@ -115,7 +107,6 @@ def update_home(rows):
     for i, r in enumerate(rows, 1):
         out.append(f"- {i:02d}. {link(r['title'], '../' + r['path'])}｜{r['category']}｜{r['series']}")
     p.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
-
 
 def update_category_index(rows):
     p = NAV / "分类索引.md"
