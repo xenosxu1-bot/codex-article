@@ -114,9 +114,7 @@ def scan_file(path):
         problems.append(("P0", "代码块数量疑似未闭合"))
     for idx, (line_no, fence, lang) in enumerate(openers):
         if idx % 2 == 0:
-            normalized = lang.lower()
-            if normalized in RISKY_CODE_LANGS or "`" in normalized:
-                problems.append(("P1", f"第 {line_no} 行存在发布风险代码块语言：{lang or '无语言'}"))
+            problems.append(("P1", f"第 {line_no} 行存在围栏代码块；公众号发布版请改成引用示例卡、编号清单或静态图片"))
             if fence != "```":
                 problems.append(("P1", f"第 {line_no} 行存在非标准代码围栏：{fence}"))
 
