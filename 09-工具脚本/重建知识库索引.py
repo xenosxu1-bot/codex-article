@@ -172,21 +172,31 @@ def update_category_readmes(rows):
     for r in rows:
         prefix = r["path"].split("/", 1)[0]
         by_path_prefix[prefix].append(r)
-    for prefix, items in by_path_prefix.items():
+
+    category_dirs = sorted(
+        p.name for p in ROOT.iterdir()
+        if p.is_dir() and re.fullmatch(r"0[1-6]-.+", p.name)
+    )
+    for prefix in category_dirs:
+        items = sorted(by_path_prefix.get(prefix, []), key=lambda r: int(r["id"]))
         p = ROOT / prefix / "README.md"
-        items = sorted(items, key=lambda r: int(r["id"]))
         cat_title = prefix.split("-", 1)[1] if "-" in prefix else prefix
         out = [
             f"# {cat_title}",
             "",
             f"> 共 {len(items)} 篇；分类内按连续阅读序号展示，历史文章编号以文件名和资产登记表为准。",
             "",
-            "| 排序 | 标题 | 系列 | 标签 | 中文字数 |",
-            "| ---: | --- | --- | --- | ---: |",
         ]
-        for i, r in enumerate(items, 1):
-            filename = r["path"].split("/", 1)[1]
-            out.append(f"| {i:02d} | {link(r['title'], filename)} | {r['series']} | {r['tags_text']} | {r['chars']} |")
+        if items:
+            out += [
+                "| 排序 | 标题 | 系列 | 标签 | 中文字数 |",
+                "| ---: | --- | --- | --- | ---: |",
+            ]
+            for i, r in enumerate(items, 1):
+                filename = r["path"].split("/", 1)[1]
+                out.append(f"| {i:02d} | {link(r['title'], filename)} | {r['series']} | {r['tags_text']} | {r['chars']} |")
+        else:
+            out.append("暂无正式入库文章；后续新增文章后由重建脚本自动刷新。")
         p.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
 
 
