@@ -25,6 +25,67 @@ Hermes Agent 是 Nous Research 开源的自进化 AI Agent 项目。官方 READM
 
 官方 README 提到，Hermes Agent 支持多种模型或端点，包括 Nous Portal、OpenRouter、NVIDIA NIM、MiMo、z.ai/GLM、Kimi/Moonshot、MiniMax、Hugging Face、OpenAI 和自定义端点。也就是说，它更像一个 Agent 工作底座，而不是一个固定模型客户端。
 
+## Hermes Agent 和 Codex 的差异：不要把它当成另一个编程 Agent
+
+很多读者会自然把 Hermes Agent 和 Codex 放在一起比较，因为它们都能在终端里工作，也都能读取项目、调用工具、帮助你完成复杂任务。但如果只用 **谁更会写代码** 来比较，反而会看错 Hermes Agent 的价值。
+
+Codex 更像一个围绕代码仓库设计的工程协作者。它的优势集中在理解项目、修改文件、运行检查、做代码审查、生成补丁和把工程任务拆成可验证步骤；在 Codex cloud 场景里，它还可以在隔离环境中并行处理任务，并和 GitHub、Linear、Slack 等协作入口衔接。
+
+Hermes Agent 的定位更接近 **可长期运行的个人或团队 Agent 底座**。它当然也能做代码相关任务，但它的重点不是只在一个仓库里改代码，而是把模型、工具、记忆、Skills、MCP、消息入口、定时任务和远程运行环境串起来，让 Agent 可以从终端、桌面端、消息平台或远程机器持续工作。
+
+| 对比维度 | Codex 更偏向 | Hermes Agent 更偏向 |
+| --- | --- | --- |
+| 核心任务 | 代码理解、修改、测试、审查、自动化执行 | 个人助手、跨平台 Agent、长期任务和工具编排 |
+| 主要入口 | 终端、IDE、ChatGPT、Codex cloud | CLI、Web UI、桌面端、Telegram、Discord、Slack 等消息入口 |
+| 运行方式 | 本地仓库协作，或云端隔离环境并行处理工程任务 | 本地、Docker、SSH、VPS、云端或长期运行环境 |
+| 工具扩展 | 围绕开发工具链、Skills、插件、MCP 和代码审查流程 | 内置工具集、Tool Gateway、Skills、MCP、Cron、消息 Gateway、API Server |
+| 知识沉淀 | 更适合把团队工程规则写进 AGENTS.md、Skill 和项目规范 | 更强调跨会话记忆、用户偏好、Skills 自我沉淀和长期助手场景 |
+| 风险重点 | 防止误改代码、误跑命令、误提交敏感信息 | 防止跨平台消息误触发、长期任务越权、工具权限边界失控 |
+
+所以，新手可以这样判断：如果你的主要目标是 **改一个仓库、修一个 bug、写测试、做代码审查**，Codex 通常更顺手；如果你的目标是 **搭一个能接消息、能记住偏好、能定时跑任务、能接多种工具的个人 Agent 工作台**，Hermes Agent 更值得研究。
+
+这也是本文建议你先跑通最小闭环的原因。Hermes Agent 的能力面更宽，第一天不要追求全开，而要先确认模型链路、会话恢复和只读工具都稳定。
+
+## Hermes Agent 的工具优势：强在可接入、可沉淀、可长期运行
+
+从官方功能说明看，Hermes Agent 的优势不是某一个单点按钮，而是它把多类工具放到同一个 Agent 工作方式里。对新手来说，可以先记住 6 个关键词。
+
+### 1. 多模型与多端点，不被单一入口锁死
+
+Hermes Agent 支持 Nous Portal、OpenRouter、OpenAI 和自定义 OpenAI-compatible endpoint 等模型来源。好处是你可以先用最容易配置的一条链路跑通，再根据成本、速度、模型能力或地区网络情况调整 Provider。
+
+新手不要一开始就追求多 Provider fallback。先稳定一个模型，再谈路由和备份，排错成本会低很多。
+
+### 2. Tool Gateway，把搜索、浏览、图片和语音能力集中接入
+
+官方 Quickstart 提到，`hermes setup --portal` 可以把模型 Provider 和 Tool Gateway 工具一起配置起来，包括 Web 搜索、图片生成、TTS 和浏览器能力。它的价值在于减少零散 API Key 的配置负担，让新手先用一条较短路径体验工具调用。
+
+但这里仍然要注意边界：搜索和浏览适合做资料核验，图片生成适合做创意草图，TTS 适合做语音输出，不要把它们默认等同于可靠事实来源。
+
+### 3. Skills 系统，把反复有效的方法沉淀下来
+
+Hermes Agent 的 Skills 可以理解成可复用的操作说明和经验包。你做过一次项目上手、资料整理、排错或日报生成后，如果流程稳定，就可以把步骤、输入要求和验收标准沉淀为 Skill。
+
+这点和 Codex 里的 Skill 思路很接近，但 Hermes 更强调 Agent 在长期使用中积累经验，适合个人知识库、固定工作流和跨会话助手场景。
+
+### 4. MCP 与工具集，适合连接外部系统
+
+Hermes Agent 支持通过 MCP 连接 GitHub、数据库、文件系统、内部 API 等外部工具。对普通用户来说，这意味着你不一定要等官方内置所有能力，而是可以通过标准协议把已有工具接进来。
+
+建议新手先用只读 MCP 或低风险工具做练习。等你看得懂每次工具调用记录，再逐步开放写入、提交、发送消息等高风险能力。
+
+### 5. Gateway 和 Cron，让 Agent 不只待在终端里
+
+Hermes Agent 的消息 Gateway 适合把 Agent 接到 Telegram、Discord、Slack 等入口；Cron 则适合做定时任务，比如每天整理资料、检查项目状态、生成简报。
+
+这也是它区别于单次对话工具的关键：它可以成为一个持续在线的助手。但持续在线意味着权限也持续存在，所以更要设置 allowlist、工具范围和人工验收节点。
+
+### 6. API Server 与远程运行，适合搭自己的 Agent 工作台
+
+官方文档提到 Hermes Agent 可以通过 OpenAI-compatible HTTP endpoint 暴露能力，也支持不同运行后端。对进阶用户来说，这让它有机会成为其他前端、自动化系统或团队内部工具背后的 Agent 服务。
+
+不过，这已经不是第一天要完成的内容。新手最实用的顺序仍然是：先 CLI 跑通，再 Web UI 看状态，再尝试 Skills，最后才接消息入口、MCP、Cron 和远程服务。
+
 新手先记住一个原则：**先证明它能稳定完成普通对话，再逐层打开 Gateway、Cron、Skills、MCP 和远程运行能力**。
 
 ## 安装前准备：别让第一步卡在环境上
