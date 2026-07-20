@@ -84,13 +84,13 @@ def check_article_consistency() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     readme_rows = [line for line in readme.splitlines() if re.match(r"^\| \d{2} \|", line)]
     readme_numbers = [int(re.match(r"^\| (\d{2}) \|", line).group(1)) for line in readme_rows]
-    continuous = readme_numbers == list(range(1, len(readme_numbers) + 1))
+    readme_matches_asset_ids = readme_numbers == asset_ids
 
     print({
         "articleFileCount": len(files),
         "assetCount": len(asset_ids),
         "readmeCount": len(readme_rows),
-        "readmeContinuous": continuous,
+        "readmeMatchesAssetIds": readme_matches_asset_ids,
         "assetIds": asset_ids,
     })
     if missing:
@@ -99,9 +99,9 @@ def check_article_consistency() -> None:
     if extra:
         for path in extra:
             print(f"[P0] 正文文件存在但未登记资产表：{path}")
-    if not continuous:
-        print("[P1] README 连续阅读序号不连续")
-    if missing or extra or not continuous or not (len(files) == len(asset_ids) == len(readme_rows)):
+    if not readme_matches_asset_ids:
+        print("[P1] README 展示编号与文章文件名前缀或资产登记表不一致")
+    if missing or extra or not readme_matches_asset_ids or not (len(files) == len(asset_ids) == len(readme_rows)):
         raise SystemExit("正式文章数量一致性检查失败")
     print("通过")
 
