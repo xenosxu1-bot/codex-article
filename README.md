@@ -63,5 +63,5 @@
 | 19 | [AI 不懂你的业务，不是它不够聪明：你还没把上下文交给它](<03-好文方法/19-AI 不懂你的业务，不是它不够聪明：你还没把上下文交给它.md>) | 好文方法 | AI工作流与个人效率 | 上下文, 业务, 任务卡 | 2479 |
 | 26 | [OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件](<01-工具教程/26-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md>) | 工具教程 | AI工具连接与系统 | OpenClaw, AI Agent, Gateway | 3207 |
 | 27 | [Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库](<05-案例实战/27-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md>) | 案例实战 | Codex入门与工程化 | Codex, 知识库, 工作流 | 3183 |
-| 28 | [给 Codex 换一套皮肤：Codex Dream Skin 实操教程](<01-工具教程/28-给 Codex 换一套皮肤：Codex Dream Skin 实操教程.md>) | 工具教程 | Codex入门与工程化 | Codex, Skill, 工具教程 | 2632 |
+| 28 | [给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代](<01-工具教程/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md>) | 工具教程 | Codex入门与工程化 | Codex, AI Coding, 个性化工作台 | 2838 |
 | 29 | [Hermes Agent 新手快速上手：从安装到跑通第一个 Agent](<01-工具教程/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md>) | 工具教程 | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 2831 |

@@ -170,20 +170,90 @@ def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
     return approved, unexpected
 
 
+
+def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
+    """Allow an article/title asset rename when the same numeric id has a new registered path.
+
+    This keeps the deletion guard strict for real removals, but does not block a planned retitle
+    where article file and image prefix are replaced under the same article number.
+    """
+    approved: list[str] = []
+    rejected: list[str] = []
+    _ids, asset_paths = parse_asset_ids()
+    registered_by_id: dict[str, str] = {}
+    for item in asset_paths:
+        match = re.match(r"^0[1-6]-[^/]+/(\d{2})-", item)
+        if match:
+            registered_by_id[match.group(1)] = item.replace("/", "\\")
+
+    for line in filter(None, raw.splitlines()):
+        parts = line.split("\t")
+        status = parts[0] if parts else ""
+        if status.startswith("R"):
+            if len(parts) >= 3:
+                old_name = Path(parts[1].replace("/", "\\")).name
+                new_path = Path(parts[2].replace("/", "\\"))
+                old_match = re.match(r"^(\d{2})-", old_name)
+                new_match = re.match(r"^(\d{2})-", new_path.name)
+                if old_match and new_match and old_match.group(1) == new_match.group(1) and (ROOT / new_path).exists():
+                    approved.append(line)
+                    continue
+            rejected.append(line)
+            continue
+        if len(parts) < 2 or not status.startswith("D"):
+            rejected.append(line)
+            continue
+        source = parts[-1].replace("/", "\\")
+        source_path = Path(source)
+        match = re.match(r"^(\d{2})-", source_path.name)
+        if not match:
+            rejected.append(line)
+            continue
+        no = match.group(1)
+        registered = registered_by_id.get(no, "")
+
+        # Article retitle: old formal article path is deleted, but the same id now points to a new file.
+        if re.match(r"^0[1-6]-", source_path.parent.as_posix()) and source_path.suffix.lower() == ".md":
+            if registered and registered != source and (ROOT / registered).exists():
+                approved.append(line)
+                continue
+
+        # Image retitle/redraw: old same-number image leaves active asset dirs, new same-number image exists.
+        parent = source_path.parent.as_posix()
+        if parent in {"08-素材库/图片/文章封面", "08-素材库/图片/正文插图"}:
+            suffix_match = re.search(r"(-封面|-正文插图\d+)\.(png|jpe?g|webp)$", source_path.name, re.I)
+            if suffix_match:
+                suffix = suffix_match.group(0)
+                replacement_dir = ROOT / source_path.parent
+                replacement_exists = any(
+                    q.is_file()
+                    and q.name.startswith(no + "-")
+                    and q.name != source_path.name
+                    and q.name.endswith(suffix)
+                    for q in replacement_dir.glob(no + "-*" + suffix)
+                )
+                if replacement_exists:
+                    approved.append(line)
+                    continue
+        rejected.append(line)
+    return approved, rejected
+
 def check_git_deletions() -> None:
     print("\n=== Git 删除检查 ===")
-    staged = capture_stdout(["git", "diff", "--cached", "--name-status", "--diff-filter=D"]).strip()
-    unstaged = capture_stdout(["git", "diff", "--name-status", "--diff-filter=D"]).strip()
+    staged = capture_stdout(["git", "diff", "--cached", "--find-renames=5%", "--name-status", "--diff-filter=DR"]).strip()
+    unstaged = capture_stdout(["git", "diff", "--find-renames=5%", "--name-status", "--diff-filter=DR"]).strip()
 
     approved: list[str] = []
     unexpected: list[str] = []
     for raw in (staged, unstaged):
-        accepted, rejected = approved_archive_deletions(raw)
-        approved.extend(accepted)
-        unexpected.extend(rejected)
+        accepted_replacements, rejected_replacements = approved_same_number_replacements(raw)
+        approved.extend(accepted_replacements)
+        accepted_archives, rejected_archives = approved_archive_deletions("\n".join(rejected_replacements))
+        approved.extend(accepted_archives)
+        unexpected.extend(rejected_archives)
 
     if approved:
-        print(f"已识别 {len(approved)} 项已登记的正文插图归档迁移。")
+        print(f"已识别 {len(approved)} 项已登记的归档迁移或同编号重命名。")
     if unexpected:
         print("\n".join(unexpected))
         raise SystemExit("存在未登记的删除项，请确认是否为预期删除")
