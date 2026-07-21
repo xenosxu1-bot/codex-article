@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "29",
+    "title": "Hermes Agent 新手快速上手：从安装到跑通第一个 Agent",
+    "category": "01-工具教程",
+    "tier": "deep",
+    "status": "published",
+    "path": "01-工具教程/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md"
+  },
+  "sources": [
+    {
+      "label": "Hermes Agent GitHub 仓库",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "type": "official"
+    },
+    {
+      "label": "Hermes Agent 文档",
+      "url": "https://hermesagent.nousresearch.com/",
+      "type": "official"
+    }
+  ],
+  "checks": {
+    "status": "passed",
+    "reviewed_at": "2026-07-21",
+    "notes": "按深度稿标准完成正文、图片和元数据核验。"
+  },
+  "visuals": {
+    "cover": {
+      "path": "08-素材库/图片/文章封面/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
+      "background_mode": "model-background",
+      "text_overlay": "local",
+      "reviewed": true
+    },
+    "inline": [
+      {
+        "path": "08-素材库/图片/正文插图/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图01.png",
+        "purpose": "快速上手流程"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图02.png",
+        "purpose": "与 Codex 的差异"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图03.png",
+        "purpose": "工具能力边界"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/29-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图04.png",
+        "purpose": "任务连接示意"
+      }
+    ]
+  }
+}

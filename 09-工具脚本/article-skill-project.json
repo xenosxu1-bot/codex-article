@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "project": "codex-article",
+  "canonical_skill": {
+    "repository": "xenosxu1-bot/article-Skill",
+    "branch": "main",
+    "commit": "e31fd66388f96fc2da09f34ed36714f6a8585358"
+  },
+  "runtime_resolution": [
+    "--skill-root",
+    "ARTICLE_SKILL_ROOT",
+    "~/.codex/skills/article-wechat"
+  ],
+  "paths": {
+    "metadata_directory": "07-资料与流程/文章元数据",
+    "asset_registry": "07-资料与流程/文章资产登记表.md",
+    "active_cover_template": "09-工具脚本/封面提示词模板-V1.3.md",
+    "cover_directory": "08-素材库/图片/文章封面",
+    "inline_image_directory": "08-素材库/图片/正文插图"
+  },
+  "validation": {
+    "manifest_required_tiers": [
+      "standard",
+      "deep"
+    ],
+    "min_inline_images": {
+      "quick": 0,
+      "standard": 1,
+      "deep": 2
+    },
+    "cover_ratio": 2.35,
+    "cover_ratio_tolerance": 0.05,
+    "min_cover_width": 1200
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "canonical_skill": {
+    "repository": "https://github.com/xenosxu1-bot/article-Skill",
+    "branch": "main",
+    "commit": "e31fd66388f96fc2da09f34ed36714f6a8585358"
+  },
+  "compatibility": {
+    "historical_snapshot": "09-工具脚本/article-wechat-skill",
+    "mode": "read-only",
+    "note": "历史快照仅用于追溯，新增规则与脚本统一由 article-Skill 维护。"
+  }
+}
