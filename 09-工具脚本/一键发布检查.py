@@ -28,6 +28,8 @@ SECRET_PATTERNS = [
 ]
 SECRET_RE = re.compile("(" + "|".join(SECRET_PATTERNS) + ")", re.IGNORECASE)
 LOCAL_ONLY_NAME_RE = re.compile(r"(\.env|token|secret|credential|cookie|\.pem|\.p12|id_rsa)", re.IGNORECASE)
+ARCHIVED_INLINE_DIR = ROOT / "08-素材库/图片/归档/正文插图-历史未引用"
+ARCHIVE_MANIFEST = ROOT / "07-资料与流程/图片归档清单.md"
 
 
 def run(cmd: list[str], title: str, check: bool = True) -> subprocess.CompletedProcess[str]:
@@ -143,22 +145,62 @@ def check_markdown_links() -> None:
         raise SystemExit("Markdown 本地链接与图片引用检查失败")
 
 
+def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
+    approved: list[str] = []
+    unexpected: list[str] = []
+    manifest_text = ARCHIVE_MANIFEST.read_text(encoding="utf-8") if ARCHIVE_MANIFEST.exists() else ""
+
+    for line in filter(None, raw.splitlines()):
+        parts = line.split("\t")
+        if len(parts) < 2 or not parts[0].startswith("D"):
+            unexpected.append(line)
+            continue
+        source = parts[-1].replace("/", "\\")
+        source_path = Path(source)
+        target = ARCHIVED_INLINE_DIR / source_path.name
+        if (
+            source_path.parent.as_posix() == "08-素材库/图片/正文插图"
+            and target.exists()
+            and source_path.name in manifest_text
+        ):
+            approved.append(line)
+        else:
+            unexpected.append(line)
+
+    return approved, unexpected
+
+
 def check_git_deletions() -> None:
     print("\n=== Git 删除检查 ===")
-    staged = run(["git", "diff", "--cached", "--name-status", "--diff-filter=D"], "暂存区删除检查", check=False).stdout.strip()
-    unstaged = run(["git", "diff", "--name-status", "--diff-filter=D"], "工作区删除检查", check=False).stdout.strip()
-    if staged or unstaged:
-        print(staged)
-        print(unstaged)
-        raise SystemExit("存在删除项，请确认是否为预期删除")
-    print("通过")
+    staged = capture_stdout(["git", "diff", "--cached", "--name-status", "--diff-filter=D"]).strip()
+    unstaged = capture_stdout(["git", "diff", "--name-status", "--diff-filter=D"]).strip()
 
+    approved: list[str] = []
+    unexpected: list[str] = []
+    for raw in (staged, unstaged):
+        accepted, rejected = approved_archive_deletions(raw)
+        approved.extend(accepted)
+        unexpected.extend(rejected)
+
+    if approved:
+        print(f"已识别 {len(approved)} 项已登记的正文插图归档迁移。")
+    if unexpected:
+        print("\n".join(unexpected))
+        raise SystemExit("存在未登记的删除项，请确认是否为预期删除")
+    print("通过")
 
 def capture(cmd: list[str]) -> str:
     env = os.environ.copy()
     env.setdefault("PYTHONIOENCODING", "utf-8")
     result = subprocess.run(cmd, cwd=ROOT, text=True, encoding="utf-8", errors="replace", capture_output=True, env=env)
     return (result.stdout or "") + (result.stderr or "")
+
+
+def capture_stdout(cmd: list[str]) -> str:
+    env = os.environ.copy()
+    env.setdefault("PYTHONIOENCODING", "utf-8")
+    result = subprocess.run(cmd, cwd=ROOT, text=True, encoding="utf-8", errors="replace", capture_output=True, env=env)
+    return result.stdout or ""
 
 
 def check_secret_risk() -> None:
@@ -183,6 +225,7 @@ def main() -> int:
     run_python("文章质量扫描.py", "文章质量扫描")
     run_python("选题文章绑定检查.py", "选题文章绑定检查")
     run_python("图片资产检查.py", "图片资产检查")
+    run_python("图片视觉检查.py", "图片视觉检查")
     check_markdown_links()
     check_article_consistency()
     run(["git", "diff", "--check"], "Git 格式检查")
