@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "28",
+    "title": "给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代",
+    "category": "01-工具教程",
+    "tier": "standard",
+    "status": "published",
+    "path": "01-工具教程/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
+  },
+  "sources": [
+    {
+      "label": "Codex Dream Skin GitHub 仓库",
+      "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
+      "type": "official"
+    }
+  ],
+  "checks": {
+    "status": "passed",
+    "reviewed_at": "2026-07-21",
+    "notes": "按标准稿完成事实边界、公众号版式、图片路径和统一检查器核验。"
+  },
+  "visuals": {
+    "cover": {
+      "path": "08-素材库/图片/文章封面/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
+      "background_mode": "model-background",
+      "text_overlay": "local",
+      "reviewed": true
+    },
+    "inline": [
+      {
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图01.png",
+        "purpose": "从工具到私人工作台的价值定位"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图02.png",
+        "purpose": "安装、验证与恢复的最小闭环"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图03.png",
+        "purpose": "AI Coding 个性化工作台的能力边界"
+      }
+    ]
+  }
+}
