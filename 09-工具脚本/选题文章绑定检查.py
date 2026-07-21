@@ -228,7 +228,7 @@ def main() -> None:
     lines.append("3. 重新运行绑定检查，刷新本表。")
     lines.append("4. 如果发现疑似重复，先决定“修订旧文、合并选题、改成新角度”，再生成正文。")
 
-    OUTPUT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    OUTPUT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print(f"已生成：{OUTPUT_FILE.relative_to(ROOT)}")
     print(f"正式文章：{len(assets)}；候选选题：{len(topics)}；精确绑定：{len(exact_bindings)}；疑似重复：{len(candidate_bindings)}；失效关联：{len(invalid_refs)}")
 

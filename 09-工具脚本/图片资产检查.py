@@ -5,6 +5,7 @@
 1. 正式文章正文中的 Markdown 图片引用必须指向存在的本地文件。
 2. 每篇正式文章建议至少有一个同编号封面文件。
 3. 正文插图目录中未被正式文章引用的图片、已下架编号图片只作为 P2 提醒，便于后续清理，不阻断发布。
+4. 已归档的历史正文插图必须登记在图片归档清单中，且正式文章不得直接引用归档文件。
 """
 from __future__ import annotations
 
@@ -19,6 +20,8 @@ ASSET_FILE = ROOT / "07-资料与流程" / "文章资产登记表.md"
 IMAGE_ROOT = ROOT / "08-素材库" / "图片"
 COVER_DIR = IMAGE_ROOT / "文章封面"
 INLINE_DIR = IMAGE_ROOT / "正文插图"
+ARCHIVE_INLINE_DIR = IMAGE_ROOT / "归档" / "正文插图-历史未引用"
+ARCHIVE_MANIFEST = ROOT / "07-资料与流程/图片归档清单.md"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 
@@ -103,6 +106,21 @@ def main() -> int:
         problems.append(f"[P1] 正式文章 {no} 缺少同编号封面文件")
 
     inline_files = [p for p in INLINE_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if INLINE_DIR.exists() else []
+    archived_inline_files = [p for p in ARCHIVE_INLINE_DIR.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if ARCHIVE_INLINE_DIR.exists() else []
+    archived_set = {p.resolve() for p in archived_inline_files}
+
+    if archived_inline_files:
+        if not ARCHIVE_MANIFEST.exists():
+            problems.append(f"[P1] 存在归档正文插图，但缺少归档清单：{ARCHIVE_MANIFEST.relative_to(ROOT)}")
+        else:
+            manifest_text = ARCHIVE_MANIFEST.read_text(encoding="utf-8")
+            for p in archived_inline_files:
+                if p.name not in manifest_text:
+                    problems.append(f"[P1] 归档正文插图未登记：{p.relative_to(ROOT)}")
+
+    for p in sorted(used_images & archived_set):
+        problems.append(f"[P1] 正式文章引用了归档正文插图：{p.relative_to(ROOT)}")
+
     for p in inline_files:
         m = re.match(r"^(\d{2})-", p.name)
         if not m:
@@ -116,7 +134,7 @@ def main() -> int:
 
     print(f"正式文章：{len(assets)} 篇")
     print(f"正文图片引用：{len(used_images)} 个")
-    print(f"封面文件：{len(cover_files)} 个；正文插图文件：{len(inline_files)} 个")
+    print(f"封面文件：{len(cover_files)} 个；正文插图文件：{len(inline_files)} 个；归档正文插图：{len(archived_inline_files)} 个")
 
     if problems:
         print("\n阻断问题：")
