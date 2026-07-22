@@ -4,21 +4,21 @@
     "id": "28",
     "title": "给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代",
     "category": "01-工具教程",
-    "tier": "standard",
+    "tier": "deep",
     "status": "published",
     "path": "01-工具教程/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
   },
   "sources": [
     {
-      "label": "Codex Dream Skin GitHub 仓库",
+      "label": "Codex Dream Skin GitHub 仓库（第三方项目）",
       "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
-      "type": "official"
+      "type": "third-party"
     }
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-21",
-    "notes": "按标准稿完成事实边界、公众号版式、图片路径和统一检查器核验。"
+    "reviewed_at": "2026-07-22",
+    "notes": "已完成 Windows 实测、隐私脱敏截图、浅深色对比、恢复路径和本地代码结构/风险边界；2026-07-22 通过第 28 篇严格统一检查，图片检查无 P0/P1。"
   },
   "visuals": {
     "cover": {
@@ -29,16 +29,20 @@
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图01.png",
-        "purpose": "从工具到私人工作台的价值定位"
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
+        "purpose": "第三方项目仓库入口实拍"
       },
       {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图02.png",
-        "purpose": "安装、验证与恢复的最小闭环"
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
+        "purpose": "用户提供矿工猫背景的浅色新任务页实测，项目与会话已遮蔽"
       },
       {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图03.png",
-        "purpose": "AI Coding 个性化工作台的能力边界"
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图06.png",
+        "purpose": "用户提供矿工猫背景的深色新任务页实测，项目与会话已遮蔽"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图07.png",
+        "purpose": "恢复后未加载皮肤的新任务页实测，项目与会话已遮蔽"
       }
     ]
   }
