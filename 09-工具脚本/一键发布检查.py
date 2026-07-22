@@ -50,20 +50,23 @@ def run_python(script_name: str, title: str) -> None:
     run([sys.executable, str(SCRIPTS / script_name)], title)
 
 
-def parse_asset_ids() -> tuple[list[int], list[str]]:
+def parse_asset_records() -> list[dict[str, str]]:
     asset = ROOT / "07-资料与流程" / "文章资产登记表.md"
-    ids: list[int] = []
-    paths: list[str] = []
+    records: list[dict[str, str]] = []
     for line in asset.read_text(encoding="utf-8").splitlines():
         if not line.startswith("|") or "---" in line or "编号" in line:
             continue
-        cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if cells and cells[0].isdigit():
-            ids.append(int(cells[0]))
-            if len(cells) >= 6:
-                match = re.search(r"`([^`]+)`", cells[5])
-                paths.append(match.group(1) if match else cells[5])
-    return ids, paths
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) < 8 or not cells[0].isdigit():
+            continue
+        path_cell = cells[5]
+        path_match = re.search(r"`([^`]+)`", path_cell)
+        records.append({
+            "id": cells[0].zfill(2),
+            "title": cells[1],
+            "path": path_match.group(1) if path_match else path_cell,
+        })
+    return records
 
 
 def iter_article_files() -> list[Path]:
@@ -75,38 +78,100 @@ def iter_article_files() -> list[Path]:
     return files
 
 
-def check_article_consistency() -> None:
-    print("\n=== 正式文章数量一致性检查 ===")
-    asset_ids, asset_paths = parse_asset_ids()
-    files = iter_article_files()
-    file_paths = {str(p.relative_to(ROOT)).replace("\\", "/") for p in files}
-    missing = [p for p in asset_paths if p not in file_paths]
-    extra = sorted(file_paths - set(asset_paths))
+def parse_article_path(path: str) -> tuple[str, str] | None:
+    match = re.fullmatch(r"0[1-6]-.+/(\d{2})-(.+)\.md", path.replace("\\", "/"))
+    if not match:
+        return None
+    return match.group(1), match.group(2)
 
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    readme_rows = [line for line in readme.splitlines() if re.match(r"^\| \d{2} \|", line)]
-    readme_numbers = [int(re.match(r"^\| (\d{2}) \|", line).group(1)) for line in readme_rows]
-    readme_matches_asset_ids = readme_numbers == asset_ids
+
+def readme_article_rows(readme: Path) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    row_re = re.compile(r"^\|\s*(\d{2})\s*\|\s*\[([^\]]+)\]\(<([^>]+)>\)")
+    for line_no, line in enumerate(readme.read_text(encoding="utf-8").splitlines(), 1):
+        match = row_re.match(line)
+        if not match:
+            continue
+        target = (readme.parent / match.group(3)).resolve()
+        try:
+            relative_target = target.relative_to(ROOT).as_posix()
+        except ValueError:
+            relative_target = match.group(3)
+        rows.append({
+            "line": str(line_no),
+            "id": match.group(1),
+            "title": match.group(2),
+            "path": relative_target,
+        })
+    return rows
+
+
+def check_article_consistency() -> None:
+    print("\n=== 正式文章编号、标题与 README 一致性检查 ===")
+    records = parse_asset_records()
+    files = iter_article_files()
+    file_paths = {file.relative_to(ROOT).as_posix() for file in files}
+    record_paths = {record["path"] for record in records}
+    issues: list[str] = []
+
+    for record in records:
+        parsed = parse_article_path(record["path"])
+        if parsed is None:
+            issues.append(f"[P0] 资产登记表路径不符合文章命名规则：{record['path']}")
+            continue
+        file_id, file_title = parsed
+        if record["id"] != file_id:
+            issues.append(
+                f"[P0] 资产登记表编号与文件名前缀不一致：登记 {record['id']}，文件 {file_id}，{record['path']}"
+            )
+        if record["title"] != file_title:
+            issues.append(
+                f"[P0] 资产登记表标题与文件名标题不一致：登记《{record['title']}》，文件《{file_title}》"
+            )
+
+    missing = sorted(record_paths - file_paths)
+    extra = sorted(file_paths - record_paths)
+    for article_path in missing:
+        issues.append(f"[P0] 资产登记表有记录但正文不存在：{article_path}")
+    for article_path in extra:
+        issues.append(f"[P0] 正文文件存在但未登记资产表：{article_path}")
+
+    root_readme = ROOT / "README.md"
+    root_rows = readme_article_rows(root_readme)
+    expected_rows = [(record["id"], record["title"], record["path"]) for record in records]
+    actual_rows = [(row["id"], row["title"], row["path"]) for row in root_rows]
+    if actual_rows != expected_rows:
+        issues.append("[P1] 根 README 的文章编号、标题或链接顺序与资产登记表不一致")
+
+    readmes = [root_readme]
+    readmes.extend(directory / "README.md" for directory in ROOT.iterdir() if directory.is_dir() and ARTICLE_DIR_RE.match(directory.name))
+    for readme in readmes:
+        rows = readme_article_rows(readme)
+        for row in rows:
+            parsed = parse_article_path(row["path"])
+            if parsed is None:
+                issues.append(f"[P0] {readme.relative_to(ROOT)}:{row['line']} 的文章链接无效：{row['path']}")
+                continue
+            file_id, file_title = parsed
+            if row["id"] != file_id:
+                issues.append(
+                    f"[P0] {readme.relative_to(ROOT)}:{row['line']} 的序号 {row['id']} 与文章文件名前缀 {file_id} 不一致"
+                )
+            if row["title"] != file_title:
+                issues.append(
+                    f"[P0] {readme.relative_to(ROOT)}:{row['line']} 的标题《{row['title']}》与文章文件名《{file_title}》不一致"
+                )
 
     print({
         "articleFileCount": len(files),
-        "assetCount": len(asset_ids),
-        "readmeCount": len(readme_rows),
-        "readmeMatchesAssetIds": readme_matches_asset_ids,
-        "assetIds": asset_ids,
+        "assetCount": len(records),
+        "rootReadmeCount": len(root_rows),
+        "readmeFilesChecked": len(readmes),
     })
-    if missing:
-        for path in missing:
-            print(f"[P0] 资产登记表有记录但正文不存在：{path}")
-    if extra:
-        for path in extra:
-            print(f"[P0] 正文文件存在但未登记资产表：{path}")
-    if not readme_matches_asset_ids:
-        print("[P1] README 展示编号与文章文件名前缀或资产登记表不一致")
-    if missing or extra or not readme_matches_asset_ids or not (len(files) == len(asset_ids) == len(readme_rows)):
-        raise SystemExit("正式文章数量一致性检查失败")
+    if issues:
+        print("\n".join(issues))
+        raise SystemExit("正式文章编号、标题与 README 一致性检查失败")
     print("通过")
-
 
 def normalize_target(raw: str) -> str:
     target = raw.strip()
@@ -124,7 +189,7 @@ def check_markdown_links() -> None:
     missing: list[tuple[str, str]] = []
     checked = 0
     for path in ROOT.rglob("*.md"):
-        if ".git" in path.parts:
+        if ".git" in path.parts or ".tmp" in path.parts:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         for match in LOCAL_LINK_RE.finditer(text):
@@ -179,7 +244,7 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
     """
     approved: list[str] = []
     rejected: list[str] = []
-    _ids, asset_paths = parse_asset_ids()
+    asset_paths = [record["path"] for record in parse_asset_records()]
     registered_by_id: dict[str, str] = {}
     for item in asset_paths:
         match = re.match(r"^0[1-6]-[^/]+/(\d{2})-", item)
