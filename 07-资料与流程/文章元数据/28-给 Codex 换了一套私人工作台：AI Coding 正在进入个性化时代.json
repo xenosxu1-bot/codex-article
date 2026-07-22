@@ -1,49 +1,43 @@
 {
-  "schema_version": "1.0",
-  "article": {
-    "id": "28",
-    "title": "给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代",
-    "category": "01-工具教程",
-    "tier": "deep",
-    "status": "published",
-    "path": "01-工具教程/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
-  },
-  "sources": [
-    {
-      "label": "Codex Dream Skin GitHub 仓库（第三方项目）",
-      "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
-      "type": "third-party"
-    }
-  ],
-  "checks": {
-    "status": "passed",
-    "reviewed_at": "2026-07-22",
-    "notes": "已完成 Windows 实测、隐私脱敏截图、浅深色对比、恢复路径和本地代码结构/风险边界；2026-07-22 通过第 28 篇严格统一检查，图片检查无 P0/P1。"
-  },
-  "visuals": {
-    "cover": {
-      "path": "08-素材库/图片/文章封面/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
-      "background_mode": "model-background",
-      "text_overlay": "local",
-      "reviewed": true
-    },
-    "inline": [
-      {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
-        "purpose": "第三方项目仓库入口实拍"
-      },
-      {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
-        "purpose": "用户提供矿工猫背景的浅色新任务页实测，项目与会话已遮蔽"
-      },
-      {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图06.png",
-        "purpose": "用户提供矿工猫背景的深色新任务页实测，项目与会话已遮蔽"
-      },
-      {
-        "path": "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图07.png",
-        "purpose": "恢复后未加载皮肤的新任务页实测，项目与会话已遮蔽"
-      }
-    ]
-  }
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "28",
+                    "title":  "给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代",
+                    "category":  "01-工具教程",
+                    "tier":  "deep",
+                    "status":  "published",
+                    "path":  "01-工具教程/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
+                },
+    "sources":  [
+                    {
+                        "label":  "Codex Dream Skin GitHub 仓库（第三方项目）",
+                        "url":  "https://github.com/Fei-Away/Codex-Dream-Skin",
+                        "type":  "third-party"
+                    }
+                ],
+    "checks":  {
+                   "status":  "passed",
+                   "reviewed_at":  "2026-07-22",
+                   "notes":  "2026-07-22 第二轮精简为可执行教程；已移除仓库截图与含黑色遮挡的界面图，仅保留用户提供的首个皮肤风格展示和无内容视觉区的矿工猫实测图。"
+               },
+    "visuals":  {
+                    "cover":  {
+                                  "path":  "08-素材库/图片/文章封面/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
+                                  "background_mode":  "model-background",
+                                  "text_overlay":  "local",
+                                  "reviewed":  true
+                              },
+                    "inline":  [
+                                   {
+                                       "path":  "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
+                                       "purpose":  "首次安装皮肤时的风格展示；用户提供，仅用于本文效果说明，不代表可被第三方再分发",
+                                       "source_type":  "user-provided"
+                                   },
+                                   {
+                                       "path":  "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
+                                       "purpose":  "矿工猫浅色皮肤的无内容视觉区实拍；未叠加黑色打码",
+                                       "source_type":  "local-verified-screenshot"
+                                   }
+                               ]
+                }
 }
