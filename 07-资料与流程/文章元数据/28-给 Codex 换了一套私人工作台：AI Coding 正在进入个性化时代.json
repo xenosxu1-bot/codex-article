@@ -18,7 +18,7 @@
     "checks":  {
                    "status":  "passed",
                    "reviewed_at":  "2026-07-22",
-                   "notes":  "2026-07-22 第二轮精简为可执行教程；已移除仓库截图与含黑色遮挡的界面图，仅保留用户提供的首个皮肤风格展示和无内容视觉区的矿工猫实测图。"
+                   "notes":  "2026-07-22 已按用户要求将热度口径改为截至目前，并恢复首次安装阶段的图片生成 ChatGPT 皮肤实测截图；仓库截图和黑色遮挡图仍不使用。"
                },
     "visuals":  {
                     "cover":  {
@@ -30,8 +30,8 @@
                     "inline":  [
                                    {
                                        "path":  "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
-                                       "purpose":  "首次安装皮肤时的风格展示；用户提供，仅用于本文效果说明，不代表可被第三方再分发",
-                                       "source_type":  "user-provided"
+                                       "purpose":  "首次安装阶段的图片生成 ChatGPT 皮肤实测截图，保留 Codex 原生界面与主题效果",
+                                       "source_type":  "local-verified-screenshot"
                                    },
                                    {
                                        "path":  "08-素材库/图片/正文插图/28-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
