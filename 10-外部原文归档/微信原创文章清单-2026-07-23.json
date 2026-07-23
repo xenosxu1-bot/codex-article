@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "exported_at": "2026-07-23",
+  "source": {
+    "platform": "WeChat Official Account",
+    "scope": "原创文章",
+    "listing_pages": 5,
+    "total_articles": 43
+  },
+  "articles": [
+    {
+      "title": "学AI最大的误区：收藏100个Prompt，不如练好这5种能力",
+      "url": "https://mp.weixin.qq.com/s/dlX9CpbWSUVc9BEmTIP9QA",
+      "published_at": "2026-07-15"
+    },
+    {
+      "title": "Codex 插件与 Skill 指南：把常用能力装进工作流",
+      "url": "https://mp.weixin.qq.com/s/Vt_W0pyHI9_YcZk8Jeen8w",
+      "published_at": "2026-07-14"
+    },
+    {
+      "title": "GPT-5.6 来了，但真正炸裂的是 ChatGPT Work",
+      "url": "https://mp.weixin.qq.com/s/9zHNTBbFhrwwif8SZnYxlg",
+      "published_at": "2026-07-11"
+    },
+    {
+      "title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+      "url": "https://mp.weixin.qq.com/s/njIOjTALcXqGW9Fxf_3_hA",
+      "published_at": "2026-07-10"
+    },
+    {
+      "title": "Codex实战案例Day3：从失败测试到可验证修复",
+      "url": "https://mp.weixin.qq.com/s/rumQG--XAQEjUHhGChwToQ",
+      "published_at": "2026-07-10"
+    },
+    {
+      "title": "Codex 新手上手Day2：从界面到第一个高质量任务",
+      "url": "https://mp.weixin.qq.com/s/UCrtwlgnA0C8QhqlqHCl_g",
+      "published_at": "2026-07-08"
+    },
+    {
+      "title": "Codex 完整使用指南Day1：从入门到 AI 自动开发",
+      "url": "https://mp.weixin.qq.com/s/v7PEykq1Xrpdy4U0LrF5tw",
+      "published_at": "2026-07-08"
+    },
+    {
+      "title": "人与AI的认知分水岭：谁在为你思考？",
+      "url": "https://mp.weixin.qq.com/s/7IYwzvRMCK-trMeCV7T7yg",
+      "published_at": "2026-07-01"
+    },
+    {
+      "title": "靠AI月入过万：普通人靠AI赚钱的5条路",
+      "url": "https://mp.weixin.qq.com/s/w-nhqOYfKlWV8iQB5xSVzg",
+      "published_at": "2026-06-30"
+    },
+    {
+      "title": "别再装满一整个AI工具箱了：我实测了10款主流AI工具，最后只留下这3个",
+      "url": "https://mp.weixin.qq.com/s/x69dNzfFgmMnBKyf8oEFUA",
+      "published_at": "2026-06-24"
+    },
+    {
+      "title": "打工人必看：用AI把3小时工作压缩到15分钟",
+      "url": "https://mp.weixin.qq.com/s/a2sD-__a-jb26kByhmLdQQ",
+      "published_at": "2026-06-22"
+    },
+    {
+      "title": "为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力",
+      "url": "https://mp.weixin.qq.com/s/zOXtiVzBdv2wR0J-z1zrGQ",
+      "published_at": "2026-06-22"
+    },
+    {
+      "title": "法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球?",
+      "url": "https://mp.weixin.qq.com/s/FLthFv2FblEm_JQMvB5iMA",
+      "published_at": "2026-06-15"
+    },
+    {
+      "title": "未来3年，AI不会淘汰你，但不会这5项技能的人会越来越难",
+      "url": "https://mp.weixin.qq.com/s/sWa6LplWHNdzVRl87PQnmg",
+      "published_at": "2026-06-14"
+    },
+    {
+      "title": "别再傻傻买OpenAI API了！10分钟让Codex直连DeepSeek-V4",
+      "url": "https://mp.weixin.qq.com/s/ZHeSY-2DK7YW9yMfP9lLSg",
+      "published_at": "2026-06-10"
+    },
+    {
+      "title": "被吹爆的Notion到底怎么用？我整理了一份全网最简单教程",
+      "url": "https://mp.weixin.qq.com/s/OlCiRUAtgq_xN18D7Yds4Q",
+      "published_at": "2026-06-09"
+    },
+    {
+      "title": "AI学习神器NotebookLM：真正的高手已经不用AI找答案了",
+      "url": "https://mp.weixin.qq.com/s/NGlwnOwt2qT0DfD_a7_T2Q",
+      "published_at": "2026-06-07"
+    },
+    {
+      "title": "AI不会淘汰你，但会用AI的人正在淘汰你",
+      "url": "https://mp.weixin.qq.com/s/LsNni21PyPPfLT-Gw8Jd9Q",
+      "published_at": "2026-06-03"
+    },
+    {
+      "title": "Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队",
+      "url": "https://mp.weixin.qq.com/s/jHXiy7riNsLrvMYX7PxTvg",
+      "published_at": "2026-06-03"
+    },
+    {
+      "title": "3分钟看懂 WorkBuddy：腾讯正在打造真正的“AI员工”",
+      "url": "https://mp.weixin.qq.com/s/pUJZ_8O6c0JeNz-obUQPJg",
+      "published_at": "2026-05-27"
+    },
+    {
+      "title": "一篇文章讲透 Agent Skill：从使用到原理，一次讲清",
+      "url": "https://mp.weixin.qq.com/s/u0-t6rP_G9mSj_tkEIhK6w",
+      "published_at": "2026-05-26"
+    },
+    {
+      "title": "ChatGPT只是开始，AI Agent才是真正危险的东西",
+      "url": "https://mp.weixin.qq.com/s/t2XXfRYbQlSH-xda7FNYLQ",
+      "published_at": "2026-05-25"
+    },
+    {
+      "title": "普通人最容易赚钱的AI玩法：不是写代码，而是工作流",
+      "url": "https://mp.weixin.qq.com/s/MYxHCvjguhLoNWyzRdTcPA",
+      "published_at": "2026-05-23"
+    },
+    {
+      "title": "给AI新手的100个神级Prompt模板",
+      "url": "https://mp.weixin.qq.com/s/-Bn94QNLYs6hQJmhlr_LDQ",
+      "published_at": "2026-05-23"
+    },
+    {
+      "title": "【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么",
+      "url": "https://mp.weixin.qq.com/s/0UP1Nh1FhOCojIxQRF30_w",
+      "published_at": "2026-05-19"
+    },
+    {
+      "title": "AI开始“自己上班”了，很多人还停留在问问题",
+      "url": "https://mp.weixin.qq.com/s/oj0nlJww2NkJ44xl58GqpA",
+      "published_at": "2026-05-17"
+    },
+    {
+      "title": "AI不会替代你，但会用AI的人一定会",
+      "url": "https://mp.weixin.qq.com/s/ISEeqrbHdxymwwlDdyyQEw",
+      "published_at": "2026-05-16"
+    },
+    {
+      "title": "【产品经理必备】AI基础概念篇：Agent、Token、RAG......",
+      "url": "https://mp.weixin.qq.com/s/O0n0E541EYdbZmUtzNdj5Q",
+      "published_at": "2026-05-14"
+    },
+    {
+      "title": "DeepSeek、豆包、千问三足鼎立！2026 国产 AI 最强对决，看完就知道怎么选",
+      "url": "https://mp.weixin.qq.com/s/4Lr5VRlMHXqCK6z-0jOE2Q",
+      "published_at": "2026-05-11"
+    },
+    {
+      "title": "零基础学AI，3个阶段循序渐，普通人也能轻松上手",
+      "url": "https://mp.weixin.qq.com/s/ILMGFs6AqORtrjSb_-Xz_A",
+      "published_at": "2026-05-10"
+    },
+    {
+      "title": "一文读懂OpenCode，从入门到精通",
+      "url": "https://mp.weixin.qq.com/s/JR2xhsumZaxmwrE347CW0A",
+      "published_at": "2026-05-09"
+    },
+    {
+      "title": "10款精选国内AI软件，亲测好用，建议偷偷收藏",
+      "url": "https://mp.weixin.qq.com/s/GOATTCe8pwtgX1Sx88h_eg",
+      "published_at": "2026-05-08"
+    },
+    {
+      "title": "AI重磅消息：OpenAI甩出GPT-5.5 Instant！",
+      "url": "https://mp.weixin.qq.com/s/elR-kgg2u0QblXmB7B-VCQ",
+      "published_at": "2026-05-06"
+    },
+    {
+      "title": "当机器学会写诗，人类还剩什么？",
+      "url": "https://mp.weixin.qq.com/s/d1K05dve2ZiMykNAFaDhyQ",
+      "published_at": "2026-05-04"
+    },
+    {
+      "title": "免费接入DeepSeek V4：ClaudeCode/OpenClaw/Opencode配置全攻略",
+      "url": "https://mp.weixin.qq.com/s/JyfuQd5_Lf629RlHer_X8g",
+      "published_at": "2026-05-03"
+    },
+    {
+      "title": "除了OpenAI，还有谁在定义AI未来？15家海外必知的大模型公司",
+      "url": "https://mp.weixin.qq.com/s/WWkwjEozwYFLP2lqW8-4Zw",
+      "published_at": "2026-04-30"
+    },
+    {
+      "title": "未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析",
+      "url": "https://mp.weixin.qq.com/s/KfuZX8ohpSwYvf7_p_rggw",
+      "published_at": "2026-04-29"
+    },
+    {
+      "title": "99%的人不知道的AI进阶三步曲",
+      "url": "https://mp.weixin.qq.com/s/rqMpFDiAtNr21x4ZGNlQ_g",
+      "published_at": "2026-04-28"
+    },
+    {
+      "title": "Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀",
+      "url": "https://mp.weixin.qq.com/s/btjx1un380XfL5AXvV6bIw",
+      "published_at": "2026-04-28"
+    },
+    {
+      "title": "AI编程：如何构建一个能自主写代码的“数字同事”",
+      "url": "https://mp.weixin.qq.com/s/FLlaWjdVePLMU3QqV95WGw",
+      "published_at": "2026-04-27"
+    },
+    {
+      "title": "用这五款AI工具，小白也能变行业大神",
+      "url": "https://mp.weixin.qq.com/s/hcgAuOET3L20LjkvufWZnQ",
+      "published_at": "2026-04-21"
+    },
+    {
+      "title": "海内外主流AI工具分析",
+      "url": "https://mp.weixin.qq.com/s/uHjNp9V_KYgpRi1iISM9qA",
+      "published_at": "2026-04-16"
+    },
+    {
+      "title": "PPT、Excel、Photoshop全下岗！2026年最值得掌握的10个AI神器曝光",
+      "url": "https://mp.weixin.qq.com/s/itm09QdRXbryzpXx8sAtNQ",
+      "published_at": "2026-04-16"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-013",
+    "title": "法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球?",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-013-法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球-/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-013-法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球-/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-013-法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球-/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/FLthFv2FblEm_JQMvB5iMA",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "49433b202957bf3cc79368ec13276e1740f803f281d08eb5fe47f21265250ed3",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1475,
+      "normalized_sha256": "48dda4d2eb88d42f8217538ba2a424be191ed734610094a2ad14747192867433",
+      "five_char_shingle_count": 1347
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

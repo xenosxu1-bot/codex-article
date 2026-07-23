@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-034",
+    "title": "当机器学会写诗，人类还剩什么？",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-034-当机器学会写诗，人类还剩什么？/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-034-当机器学会写诗，人类还剩什么？/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-034-当机器学会写诗，人类还剩什么？/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/d1K05dve2ZiMykNAFaDhyQ",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "3645f0635c57e7e8833a24b583e2c4a81ce4bac48b52fd7614c9a4f2c7d9bb31",
+    "converted_text_fingerprint": {
+      "normalized_chars": 596,
+      "normalized_sha256": "8c391ac70eef6c98b4389681b1c38cbc09632f4544fb0d32ca5b7ad22ca79d6c",
+      "five_char_shingle_count": 592
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

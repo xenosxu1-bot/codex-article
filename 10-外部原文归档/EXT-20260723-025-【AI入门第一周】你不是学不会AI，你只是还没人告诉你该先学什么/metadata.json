@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-025",
+    "title": "【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-025-【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-025-【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-025-【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/0UP1Nh1FhOCojIxQRF30_w",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "03f997284a5a90cf9b7ce1fe0f1669f194d726ee1ce9f73339ce78d46a7aba12",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1249,
+      "normalized_sha256": "337ade7ba929a7810f03895747d0fdeda55b34e0393a90c0ecc49d0292127ae6",
+      "five_char_shingle_count": 1208
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

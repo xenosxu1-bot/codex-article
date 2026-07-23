@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-037",
+    "title": "未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-037-未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-037-未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-037-未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/KfuZX8ohpSwYvf7_p_rggw",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "d64306ca2444d09b1ecaf07eaa016ddf2aad8dbe5eef4677c0c2bed2a7dd5980",
+    "converted_text_fingerprint": {
+      "normalized_chars": 3418,
+      "normalized_sha256": "3cf9db7245db7114371d05fdccae8450b864b34af3c6ba5ff67872a3c172c82b",
+      "five_char_shingle_count": 3295
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

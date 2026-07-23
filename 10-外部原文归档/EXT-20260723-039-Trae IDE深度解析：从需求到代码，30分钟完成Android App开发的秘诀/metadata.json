@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-039",
+    "title": "Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-039-Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-039-Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-039-Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/btjx1un380XfL5AXvV6bIw",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "202bb833cf504bc0d20bec36e541437159b5938fd9e49ff35a254ac0a21cd28f",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1899,
+      "normalized_sha256": "c50f3d42dd62a5b6f2ba5e21e41c91f349a76968493ac16cc52abb0a58c5b230",
+      "five_char_shingle_count": 1822
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

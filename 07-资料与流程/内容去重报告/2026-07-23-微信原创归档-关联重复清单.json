@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-23",
+  "scope": "微信公众平台账号后台原创文章批量归档后的存量关系核验",
+  "baseline": {
+    "formal_articles": 18,
+    "external_original_archives": 43,
+    "total_entries": 61,
+    "pairs_examined": 1830
+  },
+  "policy": {
+    "external_archive": "已获账号权利人授权的外部原文一律保留为去重与追溯参考；即使与仓库既有正式文章高度相似，也不得因相似度而跳过或删除原始快照。",
+    "new_formal_article": "新增、整合或重写的正式文章必须与全部基线比较；规范化标题或正文完全一致，或重复度大于等于 50%，均不得作为新正式文章入库。"
+  },
+  "summary": {
+    "formal_to_formal_blocking_pairs": 0,
+    "formal_to_external_reference_pairs": 4,
+    "external_to_external_blocking_pairs": 0
+  },
+  "relationships": [
+    {
+      "formal_id": "04",
+      "formal_title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+      "external_id": "EXT-20260723-004",
+      "external_title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+      "repeat_percent": 81.65,
+      "relationship": "既有正式文章与同一账号原创原文快照的追溯关系"
+    },
+    {
+      "formal_id": "01",
+      "formal_title": "Codex 新手上手：从界面到第一个高质量任务",
+      "external_id": "EXT-20260723-006",
+      "external_title": "Codex 新手上手Day2：从界面到第一个高质量任务",
+      "repeat_percent": 74.54,
+      "relationship": "既有正式文章与同一账号原创原文快照的追溯关系"
+    },
+    {
+      "formal_id": "03",
+      "formal_title": "Codex 实战案例：从失败测试到可验证修复",
+      "external_id": "EXT-20260723-005",
+      "external_title": "Codex实战案例Day3：从失败测试到可验证修复",
+      "repeat_percent": 60.92,
+      "relationship": "既有正式文章与同一账号原创原文快照的追溯关系"
+    },
+    {
+      "formal_id": "05",
+      "formal_title": "Codex 插件与 Skill 指南：把常用能力沉淀进工作流",
+      "external_id": "EXT-20260723-002",
+      "external_title": "Codex 插件与 Skill 指南：把常用能力装进工作流",
+      "repeat_percent": 60.47,
+      "relationship": "既有正式文章与同一账号原创原文快照的追溯关系"
+    }
+  ]
+}

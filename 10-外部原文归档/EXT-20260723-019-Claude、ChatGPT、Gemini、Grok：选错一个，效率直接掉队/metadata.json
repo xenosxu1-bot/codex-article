@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-019",
+    "title": "Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-019-Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-019-Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-019-Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/jHXiy7riNsLrvMYX7PxTvg",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "7b0cca4c3c873089a668448804359f9b58798a53bc4ed88fc7fcdd5888fe9103",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1884,
+      "normalized_sha256": "b4e930e7764b035a65692011ef9a8d373315e5a2f999c22deedb0e086a5aabf2",
+      "five_char_shingle_count": 1827
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

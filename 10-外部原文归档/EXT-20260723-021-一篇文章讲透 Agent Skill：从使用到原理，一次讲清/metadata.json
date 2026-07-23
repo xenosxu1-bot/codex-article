@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-021",
+    "title": "一篇文章讲透 Agent Skill：从使用到原理，一次讲清",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-021-一篇文章讲透 Agent Skill：从使用到原理，一次讲清/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-021-一篇文章讲透 Agent Skill：从使用到原理，一次讲清/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-021-一篇文章讲透 Agent Skill：从使用到原理，一次讲清/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/u0-t6rP_G9mSj_tkEIhK6w",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "6a473336d4a13e2b70cd892415bea59871f3704fef163e4f9d8ed79ec264a181",
+    "converted_text_fingerprint": {
+      "normalized_chars": 2279,
+      "normalized_sha256": "4fb02a9e331f8c0f18e3ec896684b5d8626b68f6906fde9637bd45adac364621",
+      "five_char_shingle_count": 2078
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

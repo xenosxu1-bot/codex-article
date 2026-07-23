@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-028",
+    "title": "【产品经理必备】AI基础概念篇：Agent、Token、RAG......",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-028-【产品经理必备】AI基础概念篇：Agent、Token、RAG/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-028-【产品经理必备】AI基础概念篇：Agent、Token、RAG/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-028-【产品经理必备】AI基础概念篇：Agent、Token、RAG/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/O0n0E541EYdbZmUtzNdj5Q",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "647e35d67f8fdc668b366ffa20440f8f04daed8094e5c1ba93c70da0738a94f8",
+    "converted_text_fingerprint": {
+      "normalized_chars": 3004,
+      "normalized_sha256": "f6928550ecfd71556ad0b28ae69a99a72a2b1815ca9d46cf6f8509cdd413fc2f",
+      "five_char_shingle_count": 2875
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

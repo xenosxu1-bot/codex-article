@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-009",
+    "title": "靠AI月入过万：普通人靠AI赚钱的5条路",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-009-靠AI月入过万：普通人靠AI赚钱的5条路/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-009-靠AI月入过万：普通人靠AI赚钱的5条路/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-009-靠AI月入过万：普通人靠AI赚钱的5条路/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/w-nhqOYfKlWV8iQB5xSVzg",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "232b5861737df9a784e4656c30d736eddd1d3db077bca790ff40a65e5ce23ab6",
+    "converted_text_fingerprint": {
+      "normalized_chars": 2168,
+      "normalized_sha256": "01e193c1930b7bbd1e7439ff666684e57984837b0f8e20dc49a219c0756cea2c",
+      "five_char_shingle_count": 2149
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

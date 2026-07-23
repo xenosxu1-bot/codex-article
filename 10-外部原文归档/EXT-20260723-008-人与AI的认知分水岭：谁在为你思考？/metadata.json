@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-008",
+    "title": "人与AI的认知分水岭：谁在为你思考？",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-008-人与AI的认知分水岭：谁在为你思考？/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-008-人与AI的认知分水岭：谁在为你思考？/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-008-人与AI的认知分水岭：谁在为你思考？/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/7IYwzvRMCK-trMeCV7T7yg",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "bb69257d6760be8f2649e0e2dbc0899199ff64b0929bec8fced80717381d33f0",
+    "converted_text_fingerprint": {
+      "normalized_chars": 2211,
+      "normalized_sha256": "da4863d3ae2c9fc536bbbfeebc6d8502444605781cebc4c3394ce0fff832b6a3",
+      "five_char_shingle_count": 2185
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

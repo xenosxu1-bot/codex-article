@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-022",
+    "title": "ChatGPT只是开始，AI Agent才是真正危险的东西",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-022-ChatGPT只是开始，AI Agent才是真正危险的东西/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-022-ChatGPT只是开始，AI Agent才是真正危险的东西/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-022-ChatGPT只是开始，AI Agent才是真正危险的东西/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/t2XXfRYbQlSH-xda7FNYLQ",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "c925c04c39900b4c9eddafcd40ec312c7d8c095a586da32916471527470c3067",
+    "converted_text_fingerprint": {
+      "normalized_chars": 2219,
+      "normalized_sha256": "f3f621a2f608db8569825248842a26e9770483017a6fe187784cec1332388798",
+      "five_char_shingle_count": 2063
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

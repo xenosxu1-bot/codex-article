@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-002",
+    "title": "Codex 插件与 Skill 指南：把常用能力装进工作流",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-002-Codex 插件与 Skill 指南：把常用能力装进工作流/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-002-Codex 插件与 Skill 指南：把常用能力装进工作流/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-002-Codex 插件与 Skill 指南：把常用能力装进工作流/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/Vt_W0pyHI9_YcZk8Jeen8w",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "a9c3cdc429ab4c1ac678b0bea0c7ad729cdbbf13cf6754f41a736c133c5fd151",
+    "converted_text_fingerprint": {
+      "normalized_chars": 2481,
+      "normalized_sha256": "c80088d9a1c8af359762616d3ba21049908edd5ec6898470d490dfa907629680",
+      "five_char_shingle_count": 2274
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-012",
+    "title": "为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-012-为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-012-为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-012-为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/zOXtiVzBdv2wR0J-z1zrGQ",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "41254303564b11879f6692fea4c3a8fc6c39736ff40f69b90465fa824edb0f4a",
+    "converted_text_fingerprint": {
+      "normalized_chars": 3998,
+      "normalized_sha256": "598d75dcc733c7ae348bffd682b55fec3e3be1b386cc932e73c3fdebdc1e1013",
+      "five_char_shingle_count": 3881
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

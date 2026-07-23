@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-033",
+    "title": "AI重磅消息：OpenAI甩出GPT-5.5 Instant！",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-033-AI重磅消息：OpenAI甩出GPT-5.5 Instant！/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-033-AI重磅消息：OpenAI甩出GPT-5.5 Instant！/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-033-AI重磅消息：OpenAI甩出GPT-5.5 Instant！/content.txt"
+  },
+  "sources": [
+    {
+      "label": "账号后台授权的原创原文",
+      "url": "https://mp.weixin.qq.com/s/elR-kgg2u0QblXmB7B-VCQ",
+      "type": "account-owner-authorized"
+    }
+  ],
+  "rights": {
+    "classification": "account-owner-authorized",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "5d2f10f39675836df2668462435183e56bdf7bbcab20bd7893ee3949ac0da3e9",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1406,
+      "normalized_sha256": "df7f241787b42c06af9fdec9cf4e65eeb30b67a182ca013205a975e74c394fa9",
+      "five_char_shingle_count": 1331
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

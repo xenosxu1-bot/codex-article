@@ -48,7 +48,7 @@ function extractDivById(html, id) {
 }
 
 function safeDirectoryName(value) {
-  return value.replace(/[<>:"/\\|?*]/g, '-').trim();
+  return value.replace(/[<>:"/\\|?*]/g, '-').trim().replace(/[. ]+$/g, '');
 }
 
 function relative(absolutePath) {
@@ -86,6 +86,10 @@ await fs.copyFile(sourceHtmlPath, sourceOutput);
 await fs.writeFile(markdownOutput, `# ${args.title}\n\n${text}\n`, 'utf8');
 await fs.writeFile(textOutput, `${text}\n`, 'utf8');
 const sourceHash = crypto.createHash('sha256').update(await fs.readFile(sourceOutput)).digest('hex');
+const rightsClassification = args.rights || 'user-provided';
+const sourceInfo = rightsClassification === 'account-owner-authorized'
+  ? { label: '账号后台授权的原创原文', type: 'account-owner-authorized' }
+  : { label: '用户提供的外部原文', type: 'user-provided' };
 const metadata = {
   schema_version: '1.0',
   archive: {
@@ -98,12 +102,12 @@ const metadata = {
     normalized_text_path: relative(textOutput)
   },
   sources: [{
-    label: '用户提供的外部原文',
+    label: sourceInfo.label,
     url: args['source-url'],
-    type: 'user-provided'
+    type: sourceInfo.type
   }],
   rights: {
-    classification: args.rights || 'user-provided',
+    classification: rightsClassification,
     repository_policy: '原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。'
   },
   integrity: {
