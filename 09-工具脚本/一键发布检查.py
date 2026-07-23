@@ -30,6 +30,7 @@ SECRET_RE = re.compile("(" + "|".join(SECRET_PATTERNS) + ")", re.IGNORECASE)
 LOCAL_ONLY_NAME_RE = re.compile(r"(\.env|token|secret|credential|cookie|\.pem|\.p12|id_rsa)", re.IGNORECASE)
 ARCHIVED_INLINE_DIR = ROOT / "08-素材库/图片/归档/正文插图-历史未引用"
 ARCHIVE_MANIFEST = ROOT / "07-资料与流程/图片归档清单.md"
+OFFLINE_RELATION = ROOT / "07-资料与流程/下架文章与替代关系.md"
 
 
 def run(cmd: list[str], title: str, check: bool = True) -> subprocess.CompletedProcess[str]:
@@ -47,7 +48,13 @@ def run(cmd: list[str], title: str, check: bool = True) -> subprocess.CompletedP
 
 
 def run_python(script_name: str, title: str) -> None:
-    run([sys.executable, str(SCRIPTS / script_name)], title)
+    safe_name = ascii(script_name)
+    code = (
+        "import glob,runpy,sys;d=glob.glob('09-*')[0];sys.path.insert(0,d);"
+        + "target=" + safe_name + ";p=next(x for x in glob.glob('09-*/*.py') if x.endswith(target));"
+        + "runpy.run_path(p,run_name='__main__')"
+    )
+    run([sys.executable, '-c', code], title)
 
 
 def parse_asset_records() -> list[dict[str, str]]:
@@ -113,6 +120,14 @@ def check_article_consistency() -> None:
     file_paths = {file.relative_to(ROOT).as_posix() for file in files}
     record_paths = {record["path"] for record in records}
     issues: list[str] = []
+
+    expected_ids = [f"{index:02d}" for index in range(1, len(files) + 1)]
+    file_ids = sorted((parse_article_path(path)[0] for path in file_paths if parse_article_path(path)), key=int)
+    record_ids = [record["id"] for record in records]
+    if file_ids != expected_ids:
+        issues.append("[P0] Formal article file IDs are not continuous")
+    if record_ids != expected_ids:
+        issues.append("[P0] Asset register IDs are not continuous")
 
     for record in records:
         parsed = parse_article_path(record["path"])
@@ -210,6 +225,34 @@ def check_markdown_links() -> None:
         raise SystemExit("Markdown 本地链接与图片引用检查失败")
 
 
+def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str]]:
+    approved: list[str] = []
+    rejected: list[str] = []
+    stems: set[str] = set()
+    if OFFLINE_RELATION.exists():
+        for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines():
+            if not line.startswith("|") or "已下架" not in line:
+                continue
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if len(cells) >= 3 and cells[0].isdigit():
+                stems.add(f"{cells[0].zfill(2)}-{cells[1]}")
+    allowed_dirs = {"08-素材库/图片/文章封面", "08-素材库/图片/正文插图"}
+    for line in filter(None, raw.splitlines()):
+        parts = line.split("\t")
+        if len(parts) < 2 or not parts[0].startswith("D"):
+            rejected.append(line)
+            continue
+        source = Path(parts[-1].replace("/", "\\"))
+        rel_parent = source.parent.as_posix()
+        exact = source.stem
+        is_formal_article = bool(re.match(r"^0[1-6]-", rel_parent)) and source.suffix.lower() == ".md"
+        is_formal_image = rel_parent in allowed_dirs
+        if (is_formal_article or is_formal_image) and any(exact == stem or exact.startswith(stem + "-") for stem in stems):
+            approved.append(line)
+        else:
+            rejected.append(line)
+    return approved, rejected
+
 def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
     approved: list[str] = []
     unexpected: list[str] = []
@@ -260,6 +303,14 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                 new_path = Path(parts[2].replace("/", "\\"))
                 old_match = re.match(r"^(\d{2})-", old_name)
                 new_match = re.match(r"^(\d{2})-", new_path.name)
+                # A complete reindex preserves the title suffix while changing its numeric prefix.
+                if old_match and new_match and old_name[3:] == new_path.name[3:] and (ROOT / new_path).exists():
+                    approved.append(line)
+                    continue
+                # Full reindexing preserves the title suffix while replacing its numeric prefix.
+                if old_match and new_match and old_name[3:] == new_path.name[3:] and (ROOT / new_path).exists():
+                    approved.append(line)
+                    continue
                 if old_match and new_match and old_match.group(1) == new_match.group(1) and (ROOT / new_path).exists():
                     approved.append(line)
                     continue
@@ -311,7 +362,9 @@ def check_git_deletions() -> None:
     approved: list[str] = []
     unexpected: list[str] = []
     for raw in (staged, unstaged):
-        accepted_replacements, rejected_replacements = approved_same_number_replacements(raw)
+        accepted_offline, rejected_offline = approved_registered_offline_deletions(raw)
+        approved.extend(accepted_offline)
+        accepted_replacements, rejected_replacements = approved_same_number_replacements("\n".join(rejected_offline))
         approved.extend(accepted_replacements)
         accepted_archives, rejected_archives = approved_archive_deletions("\n".join(rejected_replacements))
         approved.extend(accepted_archives)

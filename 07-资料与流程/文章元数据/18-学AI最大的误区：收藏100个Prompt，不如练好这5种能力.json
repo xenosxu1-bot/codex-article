@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "18",
+    "title": "学AI最大的误区：收藏100个Prompt，不如练好这5种能力",
+    "category": "03-好文方法",
+    "tier": "quick",
+    "status": "published",
+    "path": "03-好文方法/18-学AI最大的误区：收藏100个Prompt，不如练好这5种能力.md"
+  },
+  "sources": [
+    {
+      "label": "用户提供的微信公众号原文",
+      "url": "https://mp.weixin.qq.com/s/dlX9CpbWSUVc9BEmTIP9QA",
+      "type": "user-provided"
+    }
+  ],
+  "checks": {
+    "status": "synced",
+    "reviewed_at": "2026-07-23",
+    "notes": "按用户提供的公众号链接入库，保留原文的核心观点、练习路线和任务卡。"
+  }
+}

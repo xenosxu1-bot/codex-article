@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "sources": [],
+  "checks": {
+    "status": "migrated",
+    "reviewed_at": "2026-07-23",
+    "notes": "连续编号迁移后统一补齐文章元数据。"
+  },
+  "article": {
+    "id": "14",
+    "title": "OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件",
+    "category": "01-工具教程",
+    "tier": "standard",
+    "status": "published",
+    "path": "01-工具教程/14-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md"
+  }
+}
