@@ -9,14 +9,14 @@
   ],
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/12-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化-封面.png",
+      "path": "08-素材库/图片/文章封面/13-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化-封面.png",
       "text_overlay": "local",
       "reviewed": true,
       "background_mode": "model-background"
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/12-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化-正文插图02.png",
+        "path": "08-素材库/图片/正文插图/13-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化-正文插图02.png",
         "purpose": "四个 AI 工位的输入、输出与人工确认边界速读图",
         "source_type": "local-designed-infographic"
       }
@@ -25,7 +25,7 @@
   "article": {
     "id": "12",
     "tier": "standard",
-    "path": "05-案例实战/12-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化.md",
+    "path": "05-案例实战/13-一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化.md",
     "category": "05-案例实战",
     "title": "一人公司如何用 AI 搭建轻量团队：内容、调研、客服与自动化",
     "status": "published"

@@ -6,7 +6,7 @@
     "category": "01-工具教程",
     "tier": "deep",
     "status": "published",
-    "path": "01-工具教程/16-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
+    "path": "01-工具教程/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
   },
   "sources": [
     {
@@ -22,19 +22,19 @@
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/16-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
+      "path": "08-素材库/图片/文章封面/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
       "background_mode": "model-background",
       "text_overlay": "local",
       "reviewed": true
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/16-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
+        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
         "purpose": "首次安装阶段的图片生成 ChatGPT 皮肤实测截图，保留 Codex 原生界面与主题效果",
         "source_type": "local-verified-screenshot"
       },
       {
-        "path": "08-素材库/图片/正文插图/16-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
+        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图05.png",
         "purpose": "矿工猫浅色皮肤的无内容视觉区实拍；未叠加黑色打码",
         "source_type": "local-verified-screenshot"
       }

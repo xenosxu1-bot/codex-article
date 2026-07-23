@@ -1,0 +1,18 @@
+Generate a premium WeChat technology article cover background, final crop ratio 2.35:1.
+CRITICAL: no readable text, no Chinese or English words, no brand names, no logos, no QR codes, no watermarks, no screenshots or trademarks.
+CRITICAL: no people, no human figure, no back-view person, no face, no digital human head, no humanoid robot. Express the topic through software product UI and tool modules only.
+
+Layout: create a dark product-launch poster composition. Keep the left 42 to 45 percent as clean dark title space for later Chinese title and subtitle overlay; if the theme implies a long title, visually keep this left area calmer up to about 55 percent. The bottom-left area must stay calm for a compact four-keyword tag bar. Do not place light streaks, panels, or horizontal lines across the title area.
+
+Right side: build a rich but organized no-person AI product workbench scene:
+1) one large dark SaaS dashboard / developer workspace panel with glassmorphism, rounded cards, icon-only plugin / skill / workflow modules,
+2) two or three smaller side panels for code, evidence cards, task logs, or report snippets, all decorative and unreadable,
+3) one subdued glowing terminal cube, delivery core, or holographic platform in the lower-right foreground,
+4) a simple icon-only workflow row showing input -> understanding -> tool use -> execution -> delivery, integrated inside the UI rather than floating everywhere.
+Keep the right side close to a Codex-like product ecosystem poster mood, but make it original and generic. It should feel richer than a simple three-node diagram, yet still readable and premium. Avoid scattered cards, dense side panels, excessive data streams, busy floor grids, strong center glow, over-stacked UI elements, and anything covering the left title area.
+
+Style: 2026 AI technology product launch keynote visual, premium technology magazine cover, professional AI developer ecosystem, dark futuristic UI, AI Agent, developer workspace, neon blue purple lighting, premium SaaS product design, Apple keynote-level restraint, OpenAI Codex-like mood without copying any real brand or UI.
+
+Background: black plus deep navy gradient, subtle particle glow, faint data streams, restrained code light trails, ambient rim light. High-end, restrained, professional, futuristic, cinematic.
+Color palette: black and deep navy gradient, electric cyan, restrained cobalt blue, soft violet purple, professional white highlights. Article theme: AI agent delegation workflow, task card, plan execute review.
+Quality: high-resolution commercial illustration, cinematic lighting, realistic software product presentation. Keep lighting restrained: left title should remain the brightest reading focus, right-side delivery core glow must be subdued. Avoid cartoon style, flashy background, low-quality text, clutter, cheap cyberpunk, copied brands or logos.

@@ -7,11 +7,11 @@
     "notes": "连续编号迁移后统一补齐文章元数据。"
   },
   "article": {
-    "id": "15",
-    "title": "Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库",
-    "category": "05-案例实战",
+    "id": "14",
+    "title": "OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件",
+    "category": "01-工具教程",
     "tier": "standard",
     "status": "published",
-    "path": "05-案例实战/15-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md"
+    "path": "01-工具教程/15-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md"
   }
 }

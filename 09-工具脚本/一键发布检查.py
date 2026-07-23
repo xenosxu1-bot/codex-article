@@ -92,10 +92,16 @@ def parse_article_path(path: str) -> tuple[str, str] | None:
     return match.group(1), match.group(2)
 
 
-def readme_article_rows(readme: Path) -> list[dict[str, str]]:
+def readme_article_rows(readme: Path, article_table_only: bool = False) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     row_re = re.compile(r"^\|\s*(\d{2})\s*\|\s*\[([^\]]+)\]\(<([^>]+)>\)")
+    in_article_table = not article_table_only
     for line_no, line in enumerate(readme.read_text(encoding="utf-8").splitlines(), 1):
+        if article_table_only and line.startswith("## "):
+            in_article_table = line == "## 全部文章"
+            continue
+        if not in_article_table:
+            continue
         match = row_re.match(line)
         if not match:
             continue
@@ -152,7 +158,7 @@ def check_article_consistency() -> None:
         issues.append(f"[P0] 正文文件存在但未登记资产表：{article_path}")
 
     root_readme = ROOT / "README.md"
-    root_rows = readme_article_rows(root_readme)
+    root_rows = readme_article_rows(root_readme, article_table_only=True)
     expected_rows = [(record["id"], record["title"], record["path"]) for record in records]
     actual_rows = [(row["id"], row["title"], row["path"]) for row in root_rows]
     if actual_rows != expected_rows:
@@ -161,7 +167,7 @@ def check_article_consistency() -> None:
     readmes = [root_readme]
     readmes.extend(directory / "README.md" for directory in ROOT.iterdir() if directory.is_dir() and ARTICLE_DIR_RE.match(directory.name))
     for readme in readmes:
-        rows = readme_article_rows(readme)
+        rows = readme_article_rows(readme, article_table_only=(readme == root_readme))
         for row in rows:
             parsed = parse_article_path(row["path"])
             if parsed is None:
