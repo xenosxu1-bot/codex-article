@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "archive": {
+    "id": "EXT-20260723-001",
+    "title": "学AI最大的误区：收藏100个Prompt，不如练好这5种能力",
+    "kind": "external-original",
+    "status": "dedupe-reference",
+    "source_html_path": "10-外部原文归档/EXT-20260723-001-学AI最大的误区：收藏100个Prompt，不如练好这5种能力/source.html",
+    "converted_markdown_path": "10-外部原文归档/EXT-20260723-001-学AI最大的误区：收藏100个Prompt，不如练好这5种能力/content.md",
+    "normalized_text_path": "10-外部原文归档/EXT-20260723-001-学AI最大的误区：收藏100个Prompt，不如练好这5种能力/content.txt"
+  },
+  "sources": [
+    {
+      "label": "用户提供的外部原文",
+      "url": "https://mp.weixin.qq.com/s/dlX9CpbWSUVc9BEmTIP9QA",
+      "type": "user-provided"
+    }
+  ],
+  "rights": {
+    "classification": "user-provided",
+    "repository_policy": "原始快照仅用于内容去重与追溯；公开范围由内容权利人确认。"
+  },
+  "integrity": {
+    "captured_at": "2026-07-23",
+    "source_html_sha256": "e7da342c79f4ef89719e174c722cf9d286fffb8b85ed28511c4ab149caad88b3",
+    "converted_text_fingerprint": {
+      "normalized_chars": 1534,
+      "normalized_sha256": "9f4826f3ff6eec5fe01765ac28d4f5a2f75f5a778a076459cee4b8e23f3c18b4",
+      "five_char_shingle_count": 1522
+    },
+    "conversion": "从 source.html 的 #js_content 自动提取正文并转换；未进行人工改写。"
+  },
+  "deduplication": {
+    "max_allowed_repeat_percent": 50,
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%；结果必须低于 50%。",
+    "exact_title_policy": "规范化标题完全一致时直接阻止，需要人工改题或明确豁免。"
+  }
+}

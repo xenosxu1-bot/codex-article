@@ -18,3 +18,5 @@
 *.jpeg binary
 *.webp binary
 *.gif binary
+# Preserve immutable external-source snapshots byte-for-byte and skip whitespace lint.
+10-外部原文归档/**/source.html -text -whitespace
