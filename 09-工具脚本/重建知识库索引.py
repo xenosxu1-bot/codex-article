@@ -21,9 +21,9 @@ def load_articles():
         if "---" in line or "编号" in line:
             continue
         cols = split_row(line)
-        if len(cols) < 8:
+        if len(cols) < 9:
             continue
-        no, title, category, series, tags, path_cell, chars, status = cols[:8]
+        no, title, category, series, tags, path_cell, chars, storage_status, publish_status = cols[:9]
         if not re.fullmatch(r"\d+", no):
             continue
         path = path_cell.strip("`")
@@ -36,7 +36,8 @@ def load_articles():
             "tags_text": tags,
             "path": path,
             "chars": chars,
-            "status": status,
+            "storage_status": storage_status,
+            "publish_status": publish_status,
         })
     return sorted(rows, key=lambda r: int(r["id"]))
 
@@ -61,13 +62,13 @@ def update_readme(rows):
         "",
         "## 全部文章",
         "",
-        "> 编号规则：README 使用文章文件名前缀编号；下架或删除后不自动重排；只有明确批准的一次性迁移才按《编号变更记录》执行；《编号变更记录》保留旧号到新号的追溯关系，编号与正文路径、文章资产登记表和发布记录保持一致。",
+        "> 发布状态以《文章资产登记表》为准，由本脚本生成到每篇文章行；编号使用文件名前缀，下架或删除后不自动重排，只有明确批准的一次性迁移才按《编号变更记录》执行。",
         "",
-        "| 编号 | 标题 | 分类 | 系列 | 标签 | 中文字数 |",
-        "| ---: | --- | --- | --- | --- | ---: |",
+        "| 编号 | 标题 | 分类 | 系列 | 标签 | 发布状态 | 中文字数 |",
+        "| ---: | --- | --- | --- | --- | --- | ---: |",
     ]
     for r in rows:
-        out.append(f"| {r['id']} | {link(r['title'], r['path'])} | {r['category']} | {r['series']} | {r['tags_text']} | {r['chars']} |")
+        out.append(f"| {r['id']} | {link(r['title'], r['path'])} | {r['category']} | {r['series']} | {r['tags_text']} | {r['publish_status']} | {r['chars']} |")
     p.write_text("\n".join(out).rstrip() + "\n", encoding="utf-8", newline="\n")
 
 
@@ -80,11 +81,11 @@ def update_total_index(rows):
         f"> 发布状态：{len(rows)}/{len(rows)} 已整合入库。",
         "> 编号规则：本页使用文章文件名前缀编号；下架或删除后不自动重排；只有明确批准的一次性迁移才按《编号变更记录》执行；《编号变更记录》保留旧号到新号的追溯关系，编号与正文路径、文章资产登记表和发布记录保持一致。",
         "",
-        "| 编号 | 标题 | 分类 | 系列 | 标签 | 中文字数 |",
-        "| ---: | --- | --- | --- | --- | ---: |",
+        "| 编号 | 标题 | 分类 | 系列 | 标签 | 发布状态 | 中文字数 |",
+        "| ---: | --- | --- | --- | --- | --- | ---: |",
     ]
     for r in rows:
-        out.append(f"| {r['id']} | {link(r['title'], '../' + r['path'])} | {r['category']} | {r['series']} | {r['tags_text']} | {r['chars']} |")
+        out.append(f"| {r['id']} | {link(r['title'], '../' + r['path'])} | {r['category']} | {r['series']} | {r['tags_text']} | {r['publish_status']} | {r['chars']} |")
     p.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
 
 

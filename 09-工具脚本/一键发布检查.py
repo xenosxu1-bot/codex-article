@@ -64,7 +64,7 @@ def parse_asset_records() -> list[dict[str, str]]:
         if not line.startswith("|") or "---" in line or "编号" in line:
             continue
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if len(cells) < 8 or not cells[0].isdigit():
+        if len(cells) < 9 or not cells[0].isdigit():
             continue
         path_cell = cells[5]
         path_match = re.search(r"`([^`]+)`", path_cell)
@@ -72,6 +72,8 @@ def parse_asset_records() -> list[dict[str, str]]:
             "id": cells[0].zfill(2),
             "title": cells[1],
             "path": path_match.group(1) if path_match else path_cell,
+            "storage_status": cells[7],
+            "publish_status": cells[8],
         })
     return records
 
@@ -105,6 +107,8 @@ def readme_article_rows(readme: Path, article_table_only: bool = False) -> list[
         match = row_re.match(line)
         if not match:
             continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        publish_status = cells[5] if article_table_only and len(cells) >= 7 else ""
         target = (readme.parent / match.group(3)).resolve()
         try:
             relative_target = target.relative_to(ROOT).as_posix()
@@ -115,6 +119,7 @@ def readme_article_rows(readme: Path, article_table_only: bool = False) -> list[
             "id": match.group(1),
             "title": match.group(2),
             "path": relative_target,
+            "publish_status": publish_status,
         })
     return rows
 
@@ -135,7 +140,10 @@ def check_article_consistency() -> None:
     if record_ids != expected_ids:
         issues.append("[P0] Asset register IDs are not continuous")
 
+    valid_publish_statuses = {"已发布", "待上线", "修正中", "暂不发布", "已下架"}
     for record in records:
+        if record["publish_status"] not in valid_publish_statuses:
+            issues.append(f"[P1] 资产登记表发布状态无效：{record['id']} {record['publish_status']!r}")
         parsed = parse_article_path(record["path"])
         if parsed is None:
             issues.append(f"[P0] 资产登记表路径不符合文章命名规则：{record['path']}")
@@ -159,10 +167,10 @@ def check_article_consistency() -> None:
 
     root_readme = ROOT / "README.md"
     root_rows = readme_article_rows(root_readme, article_table_only=True)
-    expected_rows = [(record["id"], record["title"], record["path"]) for record in records]
-    actual_rows = [(row["id"], row["title"], row["path"]) for row in root_rows]
+    expected_rows = [(record["id"], record["title"], record["path"], record["publish_status"]) for record in records]
+    actual_rows = [(row["id"], row["title"], row["path"], row["publish_status"]) for row in root_rows]
     if actual_rows != expected_rows:
-        issues.append("[P1] 根 README 的文章编号、标题或链接顺序与资产登记表不一致")
+        issues.append("[P1] 根 README 的文章编号、标题、链接或发布状态与资产登记表不一致")
 
     readmes = [root_readme]
     readmes.extend(directory / "README.md" for directory in ROOT.iterdir() if directory.is_dir() and ARTICLE_DIR_RE.match(directory.name))
