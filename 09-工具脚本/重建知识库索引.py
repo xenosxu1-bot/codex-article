@@ -204,7 +204,7 @@ def update_category_readmes(rows):
 def update_agents_rule():
     p = ROOT / "AGENTS.md"
     text = p.read_text(encoding="utf-8")
-    new = "- 新增文章时同步更新 `README.md`、`00-知识库导航/知识库总索引.md`、`分类索引.md`、`系列索引.md`、`标签索引.md` 和 `07-资料与流程/发布记录.md`；读者可见的 README、首页和索引使用文章文件名前缀编号；下架默认不重排，批量重排必须经明确确认并同步更新文件名、正在使用的图片、元数据、资产登记表和发布记录，并记录旧号→新号映射。"
+    new = "- 新增文章时同步更新 `README.md`、`00-知识库导航/知识库总索引.md`、`分类索引.md`、`系列索引.md`、`标签索引.md` 和 `07-资料与流程/发布记录.md`；读者可见的 README、首页和索引使用文章文件名前缀编号；删除或下架后立即连续补位，并同步更新文件名、正在使用的图片、元数据、资产登记表和发布记录；旧号→新号映射保留在编号变更记录中。"
     pattern = r"- 新增文章时同步更新 `README\.md`、`00-知识库导航/知识库总索引\.md`、`分类索引\.md`、`系列索引\.md`、`标签索引\.md` 和 `07-资料与流程/发布记录\.md`；[^\n]*"
     text, count = re.subn(pattern, new, text)
     if count == 0 and new not in text:
