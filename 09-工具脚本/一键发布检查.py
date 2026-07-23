@@ -408,8 +408,7 @@ def check_secret_risk() -> None:
 
 
 def main() -> int:
-    print("一键发布前检查开始：先连续重排正式文章并重建索引，不提交、不推送。")
-    run_python("reindex_formal_articles.py", "正式文章连续重排")
+    print("一键发布前检查开始：检查并重建索引，不提交、不推送。")
     run_python("重建知识库索引.py", "重建知识库索引")
     run_python("文章质量扫描.py", "文章质量扫描")
     run_python("选题文章绑定检查.py", "选题文章绑定检查")
