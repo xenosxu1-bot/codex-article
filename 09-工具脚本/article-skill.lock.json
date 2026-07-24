@@ -3,7 +3,7 @@
   "canonical_skill": {
     "repository": "https://github.com/xenosxu1-bot/article-Skill",
     "branch": "main",
-    "commit": "e31fd66388f96fc2da09f34ed36714f6a8585358"
+    "commit": "ddb2735b298d4b66c9f493b979f2d5819e46f951"
   },
   "compatibility": {
     "historical_snapshot": "09-工具脚本/article-wechat-skill",

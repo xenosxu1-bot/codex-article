@@ -15,15 +15,20 @@
       "type": "official"
     },
     {
-      "label": "Hermes Agent 文档",
-      "url": "https://hermesagent.nousresearch.com/",
+      "label": "Hermes Agent Quickstart",
+      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+      "type": "official"
+    },
+    {
+      "label": "Hermes Agent Installation",
+      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
       "type": "official"
     }
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-21",
-    "notes": "按深度稿标准完成正文、图片和元数据核验。"
+    "reviewed_at": "2026-07-24",
+    "notes": "按当前官方 Quickstart 与 Installation 重写；保留已登记的封面和正文插图，待人工内容审阅。"
   },
   "visuals": {
     "cover": {
