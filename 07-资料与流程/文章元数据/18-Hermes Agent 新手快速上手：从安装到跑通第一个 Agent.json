@@ -28,7 +28,7 @@
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-24",
-    "notes": "按当前官方 Quickstart 与 Installation 重写；保留已登记的封面和正文插图，待人工内容审阅。"
+    "notes": "已按当前官方 Quickstart 与 Installation 核验安装、模型、会话和 Gateway 指令；补充了工具权限与只读任务边界，保留已登记视觉资产。"
   },
   "visuals": {
     "cover": {
