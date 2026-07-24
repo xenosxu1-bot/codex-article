@@ -134,6 +134,15 @@
 - 提交说明要简洁写清本次文章、索引、素材或流程变更范围；提交后向用户说明提交哈希、推送分支和本地是否仍有未提交文件。
 
 
+## Workspace Boundary and Artifact Retention
+
+- `D:\projects_git\Codex_article\.publication\codex-article` is the only Git root and the long-term source of truth. Run Git commands there. The outer `D:\projects_git\Codex_article` directory is a workspace container and must not contain a second `.git` directory, a release copy, or an unpacked repository backup.
+- Keep publishable articles, indexes, source ledgers, and registered assets in the canonical repository. The outer `articles/` directory is a legacy/staging source area, not an automatic deletion target: remove a package only after its content, required evidence, and retained assets have been explicitly migrated, linked, or declared obsolete.
+- Treat `.tmp/` as task-local, ignored working space. Remove generated previews, temporary scripts, fetched image batches, and diagnostic files after the related visual or publishing check has completed; retain only artifacts needed by an active task or an unresolved review.
+- Do not keep the same deliverable as an unpacked release folder, a local ZIP, and a copied checkout. Use the canonical Git history and versioned GitHub Releases for reproducible releases; keep only one documented recovery copy when a recovery copy is truly required.
+- `10-外部原文归档/` is evidence storage rather than disposable cache. Do not delete raw source snapshots merely because derived Markdown or text exists; clean it only through the archive retention and copyright-review process.
+- Before any cleanup, confirm the target is outside the active Git worktree or intentionally tracked, check references and exact duplicates, then verify `git status -sb` after the operation. Never delete `.git`, active `.tmp` review artifacts, or source records by broad pattern alone.
+
 ## 正文图片视觉质量规范
 
 - 正文图生成前必须先写图片 Brief：明确图片目标、文章类型、图片类型、内容结构、视觉风格、中文文案和禁止元素；不得直接套固定皮肤。
