@@ -17,7 +17,7 @@
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已复核正文结构、仓库事实、图片路径与图文对应关系；封面为 2.35:1，两张正文图以 CC Switch 调用 gpt-image-2 生成无文字底图，再由本地脚本叠加中文排版。未执行外部发布或 Git 提交。"
+    "notes": "2026-07-27 已将第 16 篇重构为公众号读者主稿：保留 Codex_Help 的可复核案例、来源边界与两张正文图，改为场景钩子、方法步骤、案例证据、维护闭环和七天行动清单；未新增外部事实或执行外部发布。"
   },
   "article": {
     "id": "16",
@@ -129,5 +129,14 @@
         }
       }
     ]
+  },
+  "editorial": {
+    "article_type": "wechat_reading",
+    "primary_reader": "已积累零散 Codex 使用经验，想把个人或团队教程整理成可维护知识库的读者",
+    "reader_scenario": "资料、聊天记录和教程分散，换项目或版本后不知道从哪里继续或如何核验旧结论",
+    "structure": "hook-pain-reframe-method-case-verification-action",
+    "one_sentence_promise": "用 Codex_Help 的可复核案例，搭出一条从读者入口到持续维护的最小知识库路径",
+    "primary_action": "用七天最小版本完成第一个任务入口、来源复核和更新清单",
+    "retention_hypothesis": "hypothesis_only: 先用读者路径和可检查任务卡降低知识库搭建的抽象感，再用七天行动清单促成首次实践"
   }
 }
