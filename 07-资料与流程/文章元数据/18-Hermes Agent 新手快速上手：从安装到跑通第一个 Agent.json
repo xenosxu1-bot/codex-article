@@ -94,5 +94,14 @@
         }
       }
     ]
+  },
+  "editorial": {
+    "article_type": "wechat_reading",
+    "primary_reader": "第一次安装 Hermes Agent，需要建立受控、可复核基础闭环的新手读者",
+    "reader_scenario": "担心一次配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题",
+    "structure": "hook-pain-reframe-method-verification-action",
+    "one_sentence_promise": "用三段十分钟练习跑通启动、模型、只读任务与会话续接",
+    "primary_action": "在同一终端完成四项验证，并把扩展能力放到第二轮",
+    "retention_hypothesis": "hypothesis_only: 以四项验收标准替代功能堆叠，帮助读者按步骤完成首个可核查任务"
   }
 }

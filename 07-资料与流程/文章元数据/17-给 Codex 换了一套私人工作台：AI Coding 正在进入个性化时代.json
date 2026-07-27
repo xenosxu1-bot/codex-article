@@ -84,5 +84,14 @@
         }
       }
     ]
+  },
+  "editorial": {
+    "article_type": "wechat_reading",
+    "primary_reader": "已开始高频使用 Codex，正在评估第三方界面主题是否适合日常工作的读者",
+    "reader_scenario": "想尝试 Dream Skin，但需要先确认任务页、输入区域和还原路径是否稳定可用",
+    "structure": "hook-pain-reframe-method-verification-action",
+    "one_sentence_promise": "用一套十分钟验证顺序判断主题是否值得留在日常工作台",
+    "primary_action": "在空白任务中完成导航、输入、滚动和还原检查，再决定是否安装",
+    "retention_hypothesis": "hypothesis_only: 将视觉兴趣转为可复核的可用性判断，降低只看截图后直接安装的跳失风险"
   }
 }
