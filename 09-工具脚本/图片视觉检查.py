@@ -104,13 +104,26 @@ def ink_bbox(img: Image.Image) -> tuple[int, int, int, int] | None:
     rgb = img.convert("RGB")
     pix = rgb.load()
     w, h = rgb.size
+    # Original assets are often light canvases, while AI-generated technical
+    # diagrams commonly use a dark canvas.  Treating every dark pixel as ink
+    # makes the full dark background look like edge content.  Sample the four
+    # corners and switch to contrast-based detection for dark canvases.
+    samples = [pix[x, y] for x in (0, min(12, w - 1), max(0, w - 13), w - 1) for y in (0, min(12, h - 1), max(0, h - 13), h - 1)]
+    bg = tuple(sum(color[index] for color in samples) // len(samples) for index in range(3))
+    bg_luminance = (bg[0] * 299 + bg[1] * 587 + bg[2] * 114) // 1000
+    dark_canvas = bg_luminance < 72
     row_counts = [0] * h
     col_counts = [0] * w
     for y in range(h):
         for x in range(w):
             r, g, b = pix[x, y]
-            # 只看较深的文字/图标，尽量排除浅色背景、网格和装饰色块。
-            is_ink = r < 145 and g < 155 and b < 175
+            if dark_canvas:
+                contrast = max(abs(r - bg[0]), abs(g - bg[1]), abs(b - bg[2]))
+                # Count bright/contrasting foreground, not the dark backdrop.
+                is_ink = contrast >= 42 and max(r, g, b) >= 58
+            else:
+                # Light canvases retain the original text/icon heuristic.
+                is_ink = r < 145 and g < 155 and b < 175
             if is_ink:
                 row_counts[y] += 1
                 col_counts[x] += 1

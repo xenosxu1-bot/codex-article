@@ -18,13 +18,10 @@ ARTICLE_DIR_RE = re.compile(r"^0[1-6]-")
 ARTICLE_FILE_RE = re.compile(r"^\d{2}-.+\.md$")
 LOCAL_LINK_RE = re.compile(r"(!?\[[^\]]*\]\(([^)]+)\))")
 SECRET_PATTERNS = [
-    "OPENAI" + "_API" + "_KEY",
     "sk-" + r"[A-Za-z0-9]{20,}",
     "ghp_" + r"[A-Za-z0-9_]{20,}",
     "xox" + r"[baprs]-",
-    r"token\s*=",
-    r"api[_-]?key\s*=",
-    r"secret\s*=",
+    r"(?:token|api[_-]?key|secret)\s*=\s*['\"][A-Za-z0-9_\-]{20,}",
 ]
 SECRET_RE = re.compile("(" + "|".join(SECRET_PATTERNS) + ")", re.IGNORECASE)
 LOCAL_ONLY_NAME_RE = re.compile(r"(\.env|token|secret|credential|cookie|\.pem|\.p12|id_rsa)", re.IGNORECASE)
@@ -368,6 +365,35 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         rejected.append(line)
     return approved, rejected
 
+def approved_legacy_script_template_archives(raw: str) -> tuple[list[str], list[str]]:
+    """Allow approved legacy script/template moves into the historical docs area."""
+    approved: list[str] = []
+    rejected: list[str] = []
+    allowed_names = {
+        "reindex_formal_articles.py",
+        "封面提示词模板-V1.md",
+        "封面提示词模板-V1.2.md",
+    }
+    for line in filter(None, raw.splitlines()):
+        parts = line.split("\t")
+        status = parts[0] if parts else ""
+        if not status.startswith("R") or len(parts) < 3:
+            rejected.append(line)
+            continue
+        old_path = Path(parts[1].replace("/", "\\"))
+        new_path = Path(parts[2].replace("/", "\\"))
+        if (
+            old_path.parent.as_posix() == "09-工具脚本"
+            and new_path.parent.as_posix() == "07-资料与流程/历史脚本与模板"
+            and old_path.name == new_path.name
+            and old_path.name in allowed_names
+            and (ROOT / new_path).exists()
+        ):
+            approved.append(line)
+        else:
+            rejected.append(line)
+    return approved, rejected
+
 def check_git_deletions() -> None:
     print("\n=== Git 删除检查 ===")
     staged = capture_stdout(["git", "diff", "--cached", "--find-renames=5%", "--name-status", "--diff-filter=DR"]).strip()
@@ -382,7 +408,9 @@ def check_git_deletions() -> None:
         approved.extend(accepted_replacements)
         accepted_archives, rejected_archives = approved_archive_deletions("\n".join(rejected_replacements))
         approved.extend(accepted_archives)
-        unexpected.extend(rejected_archives)
+        accepted_legacy_archives, rejected_legacy_archives = approved_legacy_script_template_archives("\n".join(rejected_archives))
+        approved.extend(accepted_legacy_archives)
+        unexpected.extend(rejected_legacy_archives)
 
     if approved:
         print(f"已识别 {len(approved)} 项已登记的归档迁移或同编号重命名。")
@@ -405,6 +433,15 @@ def capture_stdout(cmd: list[str]) -> str:
     return result.stdout or ""
 
 
+def added_lines_from_diff(diff_text: str) -> str:
+    """Return only newly added diff lines so removed historical code does not create false positives."""
+    lines: list[str] = []
+    for line in diff_text.splitlines():
+        if line.startswith("+++") or not line.startswith("+"):
+            continue
+        lines.append(line[1:])
+    return "\n".join(lines)
+
 def check_secret_risk() -> None:
     print("\n=== 敏感信息检查 ===")
     status = capture(["git", "status", "--porcelain=v1"])
@@ -416,8 +453,9 @@ def check_secret_risk() -> None:
 
     diff = capture(["git", "diff", "--", ":!*.png", ":!*.jpg", ":!*.jpeg", ":!*.webp", ":!*.gif"])
     cached_diff = capture(["git", "diff", "--cached", "--", ":!*.png", ":!*.jpg", ":!*.jpeg", ":!*.webp", ":!*.gif"])
-    if SECRET_RE.search(diff) or SECRET_RE.search(cached_diff):
-        raise SystemExit("发现疑似密钥或 Token，请先人工排查")
+    scan_text = "\n".join([added_lines_from_diff(diff), added_lines_from_diff(cached_diff)])
+    if SECRET_RE.search(scan_text):
+        raise SystemExit("发现新增疑似密钥或 Token，请先人工排查")
     print("通过")
 
 

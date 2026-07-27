@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
-import argparse, base64, json, os, re, sys, textwrap, time, urllib.error, urllib.request
+import argparse, os, re, sys, textwrap, time
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+
+from ccswitch_image import generate_image
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -208,28 +210,14 @@ def redact(x: str) -> str:
     return re.sub(r"sk-[A-Za-z0-9_\-\*]{8,}", "sk-***REDACTED***", x)
 
 
-def call_api(prompt: str, out: Path) -> None:
-    key=os.environ.get("OPENAI_API_KEY")
-    if not key or "请在这里" in key: raise RuntimeError("OPENAI_API_KEY missing")
-    base=os.environ.get("OPENAI_BASE_URL","https://api.openai.com/v1").rstrip("/")
-    endpoint=f"{base}/images/generations"
-    payload={"model":os.environ.get("OPENAI_IMAGE_MODEL","gpt-image-2"),"prompt":prompt,"size":os.environ.get("OPENAI_IMAGE_SIZE","1536x1024"),"n":1}
-    q=os.environ.get("OPENAI_IMAGE_QUALITY","high")
-    if q: payload["quality"]=q
-    req=urllib.request.Request(endpoint, data=json.dumps(payload).encode("utf-8"), headers={"Authorization":f"Bearer {key}","Content-Type":"application/json"}, method="POST")
-    print("image endpoint: "+endpoint)
-    try:
-        with urllib.request.urlopen(req, timeout=240) as resp:
-            body=json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"image API failed HTTP {e.code}\n{redact(e.read().decode('utf-8',errors='replace'))}")
-    item=body.get("data",[{}])[0]
-    if item.get("b64_json"):
-        out.write_bytes(base64.b64decode(item["b64_json"]))
-    elif item.get("url"):
-        with urllib.request.urlopen(item["url"], timeout=240) as r: out.write_bytes(r.read())
-    else:
-        raise RuntimeError("image response has no b64_json or url")
+def call_api(prompt: str, out: Path) -> dict[str, str]:
+    # Covers deliberately avoid the project remote endpoint and use local CC Switch only.
+    return generate_image(
+        prompt,
+        out,
+        size=os.environ.get("CC_SWITCH_IMAGE_SIZE", "1536x1024"),
+        quality=os.environ.get("CC_SWITCH_IMAGE_QUALITY", "high"),
+    )
 
 
 def main() -> None:
@@ -247,15 +235,21 @@ def main() -> None:
     BASE_DIR.mkdir(parents=True, exist_ok=True); COVER_DIR.mkdir(parents=True, exist_ok=True); RECORD.parent.mkdir(parents=True, exist_ok=True)
     stem=safe(args.stem); base=BASE_DIR/(stem+"-gpt-image\u5e95\u56fe.png"); cover=COVER_DIR/(stem+"-\u5c01\u9762.png"); pf=BASE_DIR/(stem+"-gpt-image\u63d0\u793a\u8bcd.txt")
     pr=build_prompt(args.theme, args.palette); pf.write_text(pr, encoding="utf-8"); print("prompt saved: "+str(pf))
+    route_note = "CC Switch local proxy http://127.0.0.1:15721/v1"
+    model_note = "CC Switch Responses image_generation (backend selected by provider)"
     if not args.skip_api:
-        print("generating with: "+os.environ.get("OPENAI_IMAGE_MODEL","gpt-image-2")); call_api(pr, base); print("base generated: "+str(base))
+        route = call_api(pr, base)
+        route_note = route["route"]
+        model_note = route["image_model_selection"]
+        print("generated through CC Switch local proxy: "+route_note+"; model: "+model_note)
+        print("base generated: "+str(base))
     elif not base.exists():
         raise FileNotFoundError(str(base))
     tags=[x.strip() for x in re.split(r"[,，]", args.tags) if x.strip()]
     overlay(base, cover, args.title, args.subtitle, tags, canvas); print("cover generated: "+str(cover))
     if not RECORD.exists(): RECORD.write_text("# image generation record\n\n", encoding="utf-8")
     with RECORD.open("a", encoding="utf-8") as f:
-        f.write(f"\n## {time.strftime('%Y-%m-%d %H:%M:%S')} - cover regenerated\n\n- model: {os.environ.get('OPENAI_IMAGE_MODEL','gpt-image-2')}\n- size: {canvas[0]} x {canvas[1]}\n- style: clear title hierarchy, compact bottom keywords, right no-person product workbench\n- base: `{base.relative_to(REPO).as_posix()}`\n- cover: `{cover.relative_to(REPO).as_posix()}`\n")
+        f.write(f"\n## {time.strftime('%Y-%m-%d %H:%M:%S')} - cover regenerated\n\n- route: {route_note}\n- model: {model_note}\n- size: {canvas[0]} x {canvas[1]}\n- style: clear title hierarchy, compact bottom keywords, right no-person product workbench\n- base: `{base.relative_to(REPO).as_posix()}`\n- cover: `{cover.relative_to(REPO).as_posix()}`\n")
 
 if __name__ == "__main__":
     main()
