@@ -2,15 +2,22 @@
   "schema_version": "1.0",
   "sources": [
     {
-      "label": "OpenAI Codex（官方产品页）",
-      "url": "https://openai.com/index/introducing-codex/",
-      "type": "official"
+      "label": "Codex_Help repository",
+      "url": "https://github.com/xenosxu1-bot/Codex_Help",
+      "type": "repository",
+      "checked_at": "2026-07-27"
+    },
+    {
+      "label": "OpenAI Codex official documentation",
+      "url": "https://developers.openai.com/codex/overview",
+      "type": "official",
+      "checked_at": "2026-07-27"
     }
   ],
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已复核正文结构、链接、封面与两张正文信息图；正文图以 CC Switch 调用 gpt-image-2 生成无文字视觉底图，再由本地脚本完成中文排版。发布前仍需由负责人完成平台审核与实际发布确认。"
+    "notes": "2026-07-27 已复核正文结构、仓库事实、图片路径与图文对应关系；封面为 2.35:1，两张正文图以 CC Switch 调用 gpt-image-2 生成无文字底图，再由本地脚本叠加中文排版。未执行外部发布或 Git 提交。"
   },
   "article": {
     "id": "16",
@@ -22,69 +29,104 @@
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-封面.png",
-      "purpose": "知识库搭建主题与文章定位",
-      "source_type": "local-authored-cover",
-      "content_binding": "对应文章开场的“从 0 到 1 搭建知识库”承诺",
-      "post_layout_handoff": "作为公众号首图，正文从开场故事进入方法。",
+      "path": "08-素材库/图片/文章封面/16-Codex_Help-cover-v2.png",
+      "purpose": "从代码任务到使用帮助知识库的主题定位",
+      "source_type": "ai-generated-base-plus-local-typography",
+      "content_binding": "对应开场中“把教程做成长期资产”的承诺。",
+      "post_layout_handoff": "作为公众号首图，正文从 Codex_Help 的结构进入方法论。",
       "rights_reviewed": true,
       "consistency_review": {
         "reviewed": true,
         "reviewed_at": "2026-07-27",
         "topic_consistent": true,
         "text_overflow_checked": true
+      },
+      "generation": {
+        "provider": "ccswitch-codex-responses-image",
+        "model": "gpt-image-2",
+        "base_asset_request_id": "resp_057bccd639516af0016a66f5bb8f548191b263b075d6914e73",
+        "base_asset_sha256": "6c3476afef68ecfa83abc09b89aa4cc0decbc59818bcdd8be5ff251b7d50963b",
+        "base_asset_file": ".tmp/article16-codex-help-20260727/cover-base.png",
+        "local_composition": "在无文字视觉底图上用本地脚本完成中文排版与信息层级。",
+        "license_status": "needs_human_review"
       }
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-正文插图01.png",
-        "purpose": "知识库搭建的六步流程",
+        "path": "08-素材库/图片/正文插图/16-Codex_Help-reader-path-v3.png",
+        "purpose": "将首个任务、入口选择、场景学习与回查进阶连成读者路线",
         "source_type": "ai-generated-base-plus-local-typography",
-        "content_binding": "紧跟“先把范围与目录定清楚”的方法段落；按蛇形顺序呈现六步闭环。",
-        "post_layout_handoff": "插入第一轮方法说明后，读者先看流程再读细节。",
+        "content_binding": "紧跟“设计读者的下一步”段落，回答读者完成第一个任务后如何继续。",
+        "post_layout_handoff": "作为概念地图使用；标题和五段标签均为本地确定性中文排版。",
         "rights_reviewed": true,
         "consistency_review": {
           "reviewed": true,
           "reviewed_at": "2026-07-27",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "ai_visual_notice_checked": true
+          "ai_visual_notice_checked": true,
+          "generation_state": "completed-needs-human-release-review"
         },
         "generation": {
           "provider": "ccswitch-codex-responses-image",
+          "route": "CC Switch local proxy http://127.0.0.1:15721/v1",
+          "endpoint": "http://127.0.0.1:15721/v1/responses",
           "model": "gpt-image-2",
-          "base_asset_request_id": "resp_008d536569468470016a66dbdf65c08191b1265635ce5f496e",
-          "base_asset_sha256": "2ffac72f1bef19ca778fdaec59fa00b2b175fd800812bba323cc231856b2e85d",
-          "base_asset_file": "article16-17-redraw-a/a16-flow-base.png",
-          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
-          "license_status": "needs_human_review"
+          "response_id": "resp_0cac962b0f44da4d016a6712797e1c819191d735e7b9264ca0",
+          "base_asset_file": ".tmp/article16-codex-help-20260727/reader-path-base-v3.png",
+          "base_asset_sha256": "c94c4b15418bb489ec85dc33f3b005200d35cd4749d1083de3249b66dcc4a824",
+          "quality": "high",
+          "local_composition": "在无文字底图上制作 1600x900 读者路线图，并用本地脚本完成中文标题、五阶段节点和说明栏。",
+          "license_status": "needs_human_release_review"
         },
-        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标、真实人物或截图主张；最终账号发布授权仍由内容负责人确认。"
+        "rights_review_note": "2026-07-27 已人工检查：底图不含可读文字、商标、真实人物或截图主张；最终帐号发布授权仍由内容负责人确认。",
+        "visual_job": {
+          "asset_id": "reader-path-v3",
+          "asset_role": "concept-map",
+          "reader_question": "完成第一步后，读者该去哪里继续？",
+          "information_gain": "将抽象的教程导航压缩为五个可见阶段。",
+          "text_overlay": "教程不是文章堆，而是一条读者路线；五阶段标签与结论栏。",
+          "alt_text": "深蓝色信息图展示从起点、快速开始、选择入口、按场景学习到回查进阶的读者路线。",
+          "copyright_requirements": "底图经本地 CC Switch 路由生成；外部发布前仍需内容负责人完成人工版权与帐号审核。"
+        }
       },
       {
-        "path": "08-素材库/图片/正文插图/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-正文插图02.png",
-        "purpose": "知识库维护的四份记录与任务卡关系",
+        "path": "08-素材库/图片/正文插图/16-Codex_Help-maintenance-loop-v3.png",
+        "purpose": "将来源核对、教程写入、导航生成、素材补齐与复核更新连成维护闭环",
         "source_type": "ai-generated-base-plus-local-typography",
-        "content_binding": "紧跟选题、文章、资产与质量检查的维护说明。",
-        "post_layout_handoff": "插入维护流程段落后，用于复核台账、扫描与索引的状态关系。",
+        "content_binding": "紧跟“知识库形成闭环”段落，解释首次上线后的固定维护动作。",
+        "post_layout_handoff": "作为行动闭环图使用；标题和五个动作均为本地确定性中文排版。",
         "rights_reviewed": true,
         "consistency_review": {
           "reviewed": true,
           "reviewed_at": "2026-07-27",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "ai_visual_notice_checked": true
+          "ai_visual_notice_checked": true,
+          "generation_state": "completed-needs-human-release-review"
         },
         "generation": {
           "provider": "ccswitch-codex-responses-image",
+          "route": "CC Switch local proxy http://127.0.0.1:15721/v1",
+          "endpoint": "http://127.0.0.1:15721/v1/responses",
           "model": "gpt-image-2",
-          "base_asset_request_id": "resp_0ee542df995440e1016a66dc1e638c8191a81b4c59787d8fc3",
-          "base_asset_sha256": "3079fef3cadc1e9edead56a8bdb3a73727b4aedb2b679639ec834013c1c45470",
-          "base_asset_file": "article16-17-redraw-a/a16-dashboard-base.png",
-          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
-          "license_status": "needs_human_review"
+          "response_id": "resp_0f1bb4b06ecd228b016a6712cff53881939edb46e39b67b09a",
+          "base_asset_file": ".tmp/article16-codex-help-20260727/maintenance-loop-base-v3.png",
+          "base_asset_sha256": "e82916952557c29f8c18dd2f01bb66d1e9c6259ece7853e0eefaea46906d11cb",
+          "quality": "high",
+          "local_composition": "在无文字底图上制作 1600x900 维护闭环图，并用本地脚本完成中文标题、五个动作节点和结论栏。",
+          "license_status": "needs_human_release_review"
         },
-        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标、真实人物或截图主张；最终账号发布授权仍由内容负责人确认。"
+        "rights_review_note": "2026-07-27 已人工检查：底图不含可读文字、商标、真实人物或截图主张；最终帐号发布授权仍由内容负责人确认。",
+        "visual_job": {
+          "asset_id": "maintenance-loop-v3",
+          "asset_role": "action-loop",
+          "reader_question": "教程首次上线后，如何避免它快速过期？",
+          "information_gain": "把分散的更新事项收束为五个可复查的维护动作。",
+          "text_overlay": "让教程长期可用的，不是一次上线；五个维护动作与中心说明。",
+          "alt_text": "深蓝色循环信息图展示核对来源、写入教程、生成导航、补齐素材和复核更新五个动作。",
+          "copyright_requirements": "底图经本地 CC Switch 路由生成；外部发布前仍需内容负责人完成人工版权与帐号审核。"
+        }
       }
     ]
   }
