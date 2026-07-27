@@ -23,7 +23,7 @@
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已按 OpenAI Codex 官方产品页和 Dream Skin 当期 README 复核第三方边界、普通用户安装路径、任务页验证与还原原则；三张旧版拟真界面图已替换为明确标注的 AI 视觉示意，不再作为实测截图证据。"
+    "notes": "2026-07-27 已按 OpenAI Codex 官方产品页和 Dream Skin 当期 README 复核第三方边界、普通用户安装路径、任务页验证与还原原则；第 17 篇正文图片已按内容负责人要求回退为原始视觉示例。"
   },
   "visuals": {
     "cover": {
@@ -43,78 +43,45 @@
     "inline": [
       {
         "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
-        "purpose": "主题与原生工作区层级的 AI 视觉示意",
-        "source_type": "ai-generated-visual-illustration",
+        "purpose": "主题与原生工作区层级的视觉示例",
+        "source_type": "local-authored-visual-example",
         "content_binding": "主题层只承载装饰，导航、任务区与输入框仍须保持清晰层级。",
-        "post_layout_handoff": "图 1 标注为 AI 视觉示意，用于解释主题不应遮住工作区，不作为产品实测截图。",
+        "post_layout_handoff": "图 1 为工作台主题视觉示例，用于解释主题不应遮住工作区。",
         "rights_reviewed": true,
         "consistency_review": {
           "reviewed": true,
           "reviewed_at": "2026-07-27",
           "topic_consistent": true,
-          "text_overflow_checked": true,
-          "ai_visual_notice_checked": true
-        },
-        "generation": {
-          "provider": "ccswitch-codex-responses-image",
-          "model": "gpt-image-2",
-          "base_asset_request_id": "resp_0f7fde0ba7d40987016a66dc5b430881918437fedf0624f074",
-          "base_asset_sha256": "a07c7848be9f9d3409f7cfe485baeebfe2f81ace05aca0756667d8c4b9616f09",
-          "base_asset_file": "article16-17-redraw-a/a17-style-base.png",
-          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
-          "license_status": "needs_human_review"
-        },
-        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标或真实人物；成图内已标注“AI 视觉示意”，最终账号发布授权仍由内容负责人确认。"
+          "text_overflow_checked": true
+        }
       },
       {
         "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图06-矿工猫主页.jpg",
-        "purpose": "矿工猫主题工作台的 AI 视觉示意",
-        "source_type": "ai-generated-visual-illustration",
+        "purpose": "矿工猫主题工作台视觉示例",
+        "source_type": "local-authored-visual-example",
         "content_binding": "用导航清楚、内容不抢读、输入可用三项说明主题的可用性边界。",
-        "post_layout_handoff": "图 2 标注为 AI 视觉示意，用于说明检查标准，不作为矿工猫皮肤的实测截图。",
+        "post_layout_handoff": "图 2 为矿工猫主题工作台视觉示例，用于说明检查标准。",
         "rights_reviewed": true,
         "consistency_review": {
           "reviewed": true,
           "reviewed_at": "2026-07-27",
           "topic_consistent": true,
-          "text_overflow_checked": true,
-          "ai_visual_notice_checked": true
-        },
-        "generation": {
-          "provider": "ccswitch-codex-responses-image",
-          "model": "gpt-image-2",
-          "base_asset_request_id": "resp_0e2e9c5202ea9d18016a66dcdbeab48191b002afc44d60ea33",
-          "base_asset_sha256": "5c7e0941d4b8d5845cd6a3510780a6760da9d8d64eac12b63c33b6f0ab57a8dc",
-          "base_asset_file": "article16-17-redraw-b/a17-home-base.png",
-          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
-          "license_status": "needs_human_review"
-        },
-        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标或真实人物；成图内已标注“AI 视觉示意”，最终账号发布授权仍由内容负责人确认。"
+          "text_overflow_checked": true
+        }
       },
       {
         "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图07-矿工猫任务页.jpg",
-        "purpose": "矿工猫主题任务页的 AI 视觉示意",
-        "source_type": "ai-generated-visual-illustration",
+        "purpose": "矿工猫主题任务页视觉示例",
+        "source_type": "local-authored-visual-example",
         "content_binding": "用五项基础操作说明主题安装后的最低可用性检查线。",
-        "post_layout_handoff": "图 3 标注为 AI 视觉示意，用于说明验证清单，不作为任务页实测截图。",
+        "post_layout_handoff": "图 3 为任务页视觉示例，用于说明验证清单。",
         "rights_reviewed": true,
         "consistency_review": {
           "reviewed": true,
           "reviewed_at": "2026-07-27",
           "topic_consistent": true,
-          "text_overflow_checked": true,
-          "ai_visual_notice_checked": true
-        },
-        "generation": {
-          "provider": "ccswitch-codex-responses-image",
-          "model": "gpt-image-2",
-          "base_asset_request_id": "resp_017ee238351f615a016a66dd1176a08191ab6e76e785a5a351",
-          "base_asset_sha256": "79239552c2c57c2f635a46cf16663876cf69267812e204a0ddadc4292c113104",
-          "base_asset_file": "article16-17-redraw-b/a17-task-base.png",
-          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
-          "license_status": "needs_human_review"
-        },
-        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标或真实人物；成图内已标注“AI 视觉示意”，最终账号发布授权仍由内容负责人确认。"
+          "text_overflow_checked": true
+        }
       }
     ]
   }
