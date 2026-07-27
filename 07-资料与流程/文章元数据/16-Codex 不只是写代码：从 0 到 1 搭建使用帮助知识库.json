@@ -17,7 +17,7 @@
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已将第 16 篇重构为公众号读者主稿：保留 Codex_Help 的可复核案例、来源边界与两张正文图，改为场景钩子、方法步骤、案例证据、维护闭环和七天行动清单；未新增外部事实或执行外部发布。"
+    "notes": "2026-07-27 已完成第 16 篇两张正文图安全区修复：原图经无裁剪缩放后，补齐左右 64px、上下 36px 的深色安全边距；保留正文结构、来源边界和可复核案例。"
   },
   "article": {
     "id": "16",
@@ -65,7 +65,15 @@
           "topic_consistent": true,
           "text_overflow_checked": true,
           "ai_visual_notice_checked": true,
-          "generation_state": "completed-needs-human-release-review"
+          "generation_state": "completed-needs-human-release-review",
+          "safe_margin_repaired_at": "2026-07-27",
+          "safe_margin_px": {
+            "left": 64,
+            "right": 64,
+            "top": 36,
+            "bottom": 36
+          },
+          "safe_margin_checked": true
         },
         "generation": {
           "provider": "ccswitch-codex-responses-image",
@@ -76,7 +84,7 @@
           "base_asset_file": ".tmp/article16-codex-help-20260727/reader-path-base-v3.png",
           "base_asset_sha256": "c94c4b15418bb489ec85dc33f3b005200d35cd4749d1083de3249b66dcc4a824",
           "quality": "high",
-          "local_composition": "在无文字底图上制作 1600x900 读者路线图，并用本地脚本完成中文标题、五阶段节点和说明栏。",
+          "local_composition": "在无文字底图上制作 1600x900 读者路线图，并用本地脚本完成中文标题、五阶段节点和说明栏；2026-07-27 通过本地 Pillow 脚本将原图无裁剪缩放至 1472×828，并置于 1600×900 深色底图中，补齐左右 64px、上下 36px 安全边距。",
           "license_status": "needs_human_release_review"
         },
         "rights_review_note": "2026-07-27 已人工检查：底图不含可读文字、商标、真实人物或截图主张；最终帐号发布授权仍由内容负责人确认。",
@@ -103,7 +111,15 @@
           "topic_consistent": true,
           "text_overflow_checked": true,
           "ai_visual_notice_checked": true,
-          "generation_state": "completed-needs-human-release-review"
+          "generation_state": "completed-needs-human-release-review",
+          "safe_margin_repaired_at": "2026-07-27",
+          "safe_margin_px": {
+            "left": 64,
+            "right": 64,
+            "top": 36,
+            "bottom": 36
+          },
+          "safe_margin_checked": true
         },
         "generation": {
           "provider": "ccswitch-codex-responses-image",
@@ -114,7 +130,7 @@
           "base_asset_file": ".tmp/article16-codex-help-20260727/maintenance-loop-base-v3.png",
           "base_asset_sha256": "e82916952557c29f8c18dd2f01bb66d1e9c6259ece7853e0eefaea46906d11cb",
           "quality": "high",
-          "local_composition": "在无文字底图上制作 1600x900 维护闭环图，并用本地脚本完成中文标题、五个动作节点和结论栏。",
+          "local_composition": "在无文字底图上制作 1600x900 维护闭环图，并用本地脚本完成中文标题、五个动作节点和结论栏；2026-07-27 通过本地 Pillow 脚本将原图无裁剪缩放至 1472×828，并置于 1600×900 深色底图中，补齐左右 64px、上下 36px 安全边距。",
           "license_status": "needs_human_release_review"
         },
         "rights_review_note": "2026-07-27 已人工检查：底图不含可读文字、商标、真实人物或截图主张；最终帐号发布授权仍由内容负责人确认。",
