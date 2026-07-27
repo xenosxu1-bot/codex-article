@@ -6,7 +6,7 @@
 
 ![OpenClaw 工作方式示意图](<../08-素材库/图片/正文插图/15-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件-正文插图01.png>)
 
-## 先用一句话理解 OpenClaw
+## 一、先用一句话理解 OpenClaw
 
 OpenClaw 官方把它定位为运行在你自己设备上的 personal AI assistant。它可以通过你已经在用的渠道回复你，也可以通过 macOS、iOS、Android 等节点能力扩展到语音、Canvas、设备命令和媒体处理。
 
@@ -25,7 +25,7 @@ OpenClaw 官方把它定位为运行在你自己设备上的 personal AI assista
 
 这也是新手最容易误解的地方。OpenClaw 的重点不是换一个聊天界面，而是把 AI 助手放进一个可扩展的本地控制平面里。
 
-## 新手快速上手：先跑通最小闭环
+## 二、新手快速上手：先跑通最小闭环
 
 截至 2026-07-20，官方 Getting Started 给出的新手路径是：准备 Node.js 和模型供应商 API Key，安装 OpenClaw，运行 onboarding，确认 Gateway 正常，再打开 Control UI 发送第一条消息。
 
@@ -68,7 +68,7 @@ Windows PowerShell 的官方安装命令是 `iwr -useb https://openclaw.ai/insta
 
 接下来再接一个手机端渠道。官方文档把 Telegram 称为最快的渠道之一，因为只需要 bot token。之后你可以按实际需求扩展 Slack、Discord、Feishu、Signal、WhatsApp、WebChat 等入口。
 
-## 核心功能一：Gateway 是整个系统的控制平面
+## 三、核心功能一：Gateway 是整个系统的控制平面
 
 OpenClaw 的 Gateway 是一个长期运行的进程。官方架构文档把它描述为负责消息面、控制平面和节点连接的核心服务；Control UI、CLI、macOS app、自动化等客户端通过 WebSocket 连接它。
 
@@ -80,7 +80,7 @@ OpenClaw 的 Gateway 是一个长期运行的进程。官方架构文档把它�
 - 权限更清楚：谁能发消息、哪些设备能连接、哪些工具能执行，都不是随便开放。
 - 扩展更清楚：以后加渠道、加插件、加节点，都是围绕 Gateway 展开。
 
-## 核心功能二：多渠道入口，而不是只守着一个窗口
+## 四、核心功能二：多渠道入口，而不是只守着一个窗口
 
 OpenClaw 的 README 和 Features 文档列出了大量消息渠道。核心安装包含 iMessage、Telegram、WebChat 等，其他许多渠道通过官方插件或外部插件扩展，例如 Discord、Feishu、Google Chat、LINE、Matrix、Microsoft Teams、Signal、Slack、WhatsApp、Zalo 等。
 
@@ -90,7 +90,7 @@ OpenClaw 的 README 和 Features 文档列出了大量消息渠道。核心安�
 
 新手建议很简单：**先接一个私聊渠道，不要一开始接公开群，也不要把 allowlist 放得过宽**。
 
-## 核心功能三：Agent、会话和多 Agent 路由
+## 五、核心功能三：Agent、会话和多 Agent 路由
 
 OpenClaw 不只是把消息转给一个模型。Features 文档提到，它有内置 Agent runtime、tool streaming、多 Agent routing，并且按 workspace 或 sender 做会话隔离。
 
@@ -104,7 +104,7 @@ OpenClaw 不只是把消息转给一个模型。Features 文档提到，它有�
 
 把任务分清楚，比堆更多工具更重要。
 
-## 核心功能四：工具、Skills、插件和节点
+## 六、核心功能四：工具、Skills、插件和节点
 
 OpenClaw 的工具能力覆盖浏览器自动化、执行、沙箱、Web 搜索、定时任务、Skills、plugins 和 workflow pipelines。它还支持图片、音频、视频、文档等媒体输入输出，以及语音转写、文本转语音和生成类能力。
 
@@ -116,7 +116,7 @@ OpenClaw 的工具能力覆盖浏览器自动化、执行、沙箱、Web 搜索�
 2. 再尝试本地文件草稿、项目资料整理等可回滚操作。
 3. 最后才考虑执行类工具，并设置人工确认和日志留痕。
 
-## 一个可复现的项目使用案例：开源项目维护助理
+## 七、一个可复现的项目使用案例：开源项目维护助理
 
 下面这个案例不是客户案例，也不是性能承诺，而是一个可以照着搭建的工作流模板。
 
@@ -146,7 +146,7 @@ OpenClaw 的工具能力覆盖浏览器自动化、执行、沙箱、Web 搜索�
 
 这条说明的重点不是措辞多漂亮，而是把允许范围、输出格式和禁止动作说清楚。
 
-## 截至 2026-07-20 的使用边界
+## 八、截至 2026-07-20 的使用边界
 
 OpenClaw 的安装方式、节点能力和支持渠道仍可能更新。本文中的命令和路径适合作为新手理解流程的参考，真正操作时应以官方文档和当前版本提示为准。
 
@@ -154,7 +154,7 @@ OpenClaw 的安装方式、节点能力和支持渠道仍可能更新。本文�
 
 如果其中任何一步失败，不要急着继续接 Slack、Telegram 或移动端节点。先把失败步骤、错误提示、系统环境和已执行命令整理出来，再让 AI 或社区帮你定位。多渠道助手最怕的是没跑通基础链路就开始叠功能。
 
-## 新手最容易踩的 5 个坑
+## 九、新手最容易踩的 5 个坑
 
 ### 坑一：把安装成功当成系统可用
 
@@ -176,7 +176,7 @@ OpenClaw 的安装方式、节点能力和支持渠道仍可能更新。本文�
 
 节点是能力扩展，不是消息中心。手机、Mac、headless node 可以提供能力，但消息和路由仍然要回到 Gateway。
 
-## 适合谁，不适合谁
+## 十、适合谁，不适合谁
 
 OpenClaw 适合三类人：
 
