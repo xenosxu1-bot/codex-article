@@ -1,3 +1,5 @@
+> 一句话结论：第一天只验证 Hermes 能启动、模型能回复、只读任务可复核、会话能续接；Gateway、Skills 和 MCP 留到基础链路稳定之后。
+
 第一次装 Hermes，最容易浪费时间的不是安装命令，而是把模型、工具、消息平台和定时任务一起打开。任何一处配置没对，报错都会混在一起，最后连第一步出了什么问题都说不清。
 
 这篇只解决新手第一天最该做的事：在 30 分钟内跑通一个可核查的闭环。你需要看到 `hermes` 能启动、模型能回复、它能完成一次低风险的目录阅读，并且能接着同一段会话继续工作。
@@ -21,21 +23,15 @@
 
 Windows 原生 PowerShell：
 
-```powershell
-iex (irm https://hermes-agent.nousresearch.com/install.ps1)
-```
+> Windows PowerShell 安装命令： `iex (irm https://hermes-agent.nousresearch.com/install.ps1)`
 
 Linux、macOS、WSL2 和 Termux：
 
-```bash
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-```
+> Linux、macOS、WSL2 和 Termux 安装命令： `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`
 
 除 Windows 外，安装器唯一前置是 Git；Linux 还需要 `curl` 和 `xz-utils`。安装后重新打开终端，再运行：
 
-```bash
-hermes
-```
+> 启动命令： `hermes`
 
 这一步只确认命令能否真正启动。Windows 用户尤其要避免在 PowerShell、Git Bash 与 WSL 之间来回切换：后续配置和运行尽量放在同一套终端环境里。安装方式与平台支持会更新，遇到版本差异时，以 [Hermes Agent Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart) 和 [Installation](https://hermes-agent.nousresearch.com/docs/getting-started/installation) 为准。
 
@@ -43,9 +39,7 @@ hermes
 
 启动 Hermes 后，先运行：
 
-```bash
-hermes model
-```
+> 模型配置命令： `hermes model`
 
 它会引导你选择 Provider 和模型。这里检查的不是模型名称好不好看，而是认证、端点、模型权限和额度能否一起工作。官方 Quickstart 还建议为 Agent 选择至少 64K 上下文窗口的模型；上下文太短时，任务一长就容易丢掉前面的文件证据和限制条件。
 
@@ -59,7 +53,7 @@ hermes model
 
 模型配置好后，先不要让它改代码、发消息或操作浏览器。选一个没有密钥、没有客户数据的测试目录，最好是项目副本，然后发出下面这张任务卡：
 
-> **第一次任务卡**
+> 第一次任务卡
 >
 > 请先只读当前目录，不要修改任何文件，也不要执行会改变环境的命令。
 >
@@ -77,11 +71,7 @@ hermes model
 
 如果模型不响应、回答为空，或结论明显对不上文件，先停在基础链路排查：
 
-```bash
-hermes doctor
-hermes model
-hermes setup
-```
+> 基础诊断顺序： `hermes doctor` → `hermes model` → `hermes setup`
 
 先看诊断结果，再确认 Provider 和模型；只有基础对话稳定后，才值得继续加工具。
 
@@ -89,9 +79,7 @@ hermes setup
 
 第一轮任务结束后，运行：
 
-```bash
-hermes --continue
-```
+> 续接会话命令： `hermes --continue`
 
 接着发送：
 
@@ -99,9 +87,7 @@ hermes --continue
 
 这一步的验收不是看它写得多流畅，而是看它会不会沿用前一轮已经核对过的文件。找不到旧会话时，先运行：
 
-```bash
-hermes sessions list
-```
+> 列出会话命令： `hermes sessions list`
 
 确认自己仍在同一个 profile 与会话范围内，再决定是否重开任务。不要一看到上下文断掉，就先怀疑安装脚本或记忆功能。
 
@@ -123,9 +109,9 @@ hermes sessions list
 
 这些能力不是不能用，而是不该在基础链路还没验证时一起开启。
 
-- **Gateway** 可能引入 bot token、消息平台、身份白名单和触发规则。
-- **Skills** 需要核对安装来源、执行步骤与外部依赖。
-- **MCP 和外部工具** 往往涉及网络、账号、读写权限和数据边界。
+- Gateway 可能引入 bot token、消息平台、身份白名单和触发规则。
+- Skills 需要核对安装来源、执行步骤与外部依赖。
+- MCP 和外部工具 往往涉及网络、账号、读写权限和数据边界。
 
 需要连接 Telegram、Discord、Slack 等入口时，再运行 `hermes gateway setup`。每新增一个连接，只做一个小任务，并重新检查它引用的文件、权限和输出；不要把联网、写文件、执行命令和账号访问同时交给一个刚配好的 Agent。
 

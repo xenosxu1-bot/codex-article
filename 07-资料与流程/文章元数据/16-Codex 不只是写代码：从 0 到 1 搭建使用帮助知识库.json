@@ -1,10 +1,16 @@
 {
   "schema_version": "1.0",
-  "sources": [],
+  "sources": [
+    {
+      "label": "OpenAI Codex（官方产品页）",
+      "url": "https://openai.com/index/introducing-codex/",
+      "type": "official"
+    }
+  ],
   "checks": {
-    "status": "migrated",
-    "reviewed_at": "2026-07-23",
-    "notes": "连续编号迁移后统一补齐文章元数据。"
+    "status": "passed",
+    "reviewed_at": "2026-07-27",
+    "notes": "2026-07-27 已复核正文结构、链接、封面与两张正文信息图；正文图以 CC Switch 调用 gpt-image-2 生成无文字视觉底图，再由本地脚本完成中文排版。发布前仍需由负责人完成平台审核与实际发布确认。"
   },
   "article": {
     "id": "16",
@@ -13,5 +19,73 @@
     "tier": "standard",
     "status": "published",
     "path": "05-案例实战/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md"
+  },
+  "visuals": {
+    "cover": {
+      "path": "08-素材库/图片/文章封面/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-封面.png",
+      "purpose": "知识库搭建主题与文章定位",
+      "source_type": "local-authored-cover",
+      "content_binding": "对应文章开场的“从 0 到 1 搭建知识库”承诺",
+      "post_layout_handoff": "作为公众号首图，正文从开场故事进入方法。",
+      "rights_reviewed": true,
+      "consistency_review": {
+        "reviewed": true,
+        "reviewed_at": "2026-07-27",
+        "topic_consistent": true,
+        "text_overflow_checked": true
+      }
+    },
+    "inline": [
+      {
+        "path": "08-素材库/图片/正文插图/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-正文插图01.png",
+        "purpose": "知识库搭建的六步流程",
+        "source_type": "ai-generated-base-plus-local-typography",
+        "content_binding": "紧跟“先把范围与目录定清楚”的方法段落；按蛇形顺序呈现六步闭环。",
+        "post_layout_handoff": "插入第一轮方法说明后，读者先看流程再读细节。",
+        "rights_reviewed": true,
+        "consistency_review": {
+          "reviewed": true,
+          "reviewed_at": "2026-07-27",
+          "topic_consistent": true,
+          "text_overflow_checked": true,
+          "ai_visual_notice_checked": true
+        },
+        "generation": {
+          "provider": "ccswitch-codex-responses-image",
+          "model": "gpt-image-2",
+          "base_asset_request_id": "resp_008d536569468470016a66dbdf65c08191b1265635ce5f496e",
+          "base_asset_sha256": "2ffac72f1bef19ca778fdaec59fa00b2b175fd800812bba323cc231856b2e85d",
+          "base_asset_file": "article16-17-redraw-a/a16-flow-base.png",
+          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
+          "license_status": "needs_human_review"
+        },
+        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标、真实人物或截图主张；最终账号发布授权仍由内容负责人确认。"
+      },
+      {
+        "path": "08-素材库/图片/正文插图/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-正文插图02.png",
+        "purpose": "知识库维护的四份记录与任务卡关系",
+        "source_type": "ai-generated-base-plus-local-typography",
+        "content_binding": "紧跟选题、文章、资产与质量检查的维护说明。",
+        "post_layout_handoff": "插入维护流程段落后，用于复核台账、扫描与索引的状态关系。",
+        "rights_reviewed": true,
+        "consistency_review": {
+          "reviewed": true,
+          "reviewed_at": "2026-07-27",
+          "topic_consistent": true,
+          "text_overflow_checked": true,
+          "ai_visual_notice_checked": true
+        },
+        "generation": {
+          "provider": "ccswitch-codex-responses-image",
+          "model": "gpt-image-2",
+          "base_asset_request_id": "resp_0ee542df995440e1016a66dc1e638c8191a81b4c59787d8fc3",
+          "base_asset_sha256": "3079fef3cadc1e9edead56a8bdb3a73727b4aedb2b679639ec834013c1c45470",
+          "base_asset_file": "article16-17-redraw-a/a16-dashboard-base.png",
+          "local_composition": "在无文字视觉底图上，用本地脚本完成中文排版、信息层级与流程/工作台结构。",
+          "license_status": "needs_human_review"
+        },
+        "rights_review_note": "2026-07-27 已人工检查：底图未含可读文字、商标、真实人物或截图主张；最终账号发布授权仍由内容负责人确认。"
+      }
+    ]
   }
 }
