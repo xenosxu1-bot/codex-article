@@ -75,6 +75,18 @@ def parse_asset_records() -> list[dict[str, str]]:
     return records
 
 
+def read_retired_formal_ids() -> list[str]:
+    """Read explicitly freed current formal IDs from the offboarding register."""
+    if not OFFLINE_RELATION.exists():
+        return []
+    ids = {
+        match.group(1).zfill(2)
+        for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines()
+        for match in re.finditer(r"已释放正式编号[：:]\s*(\d{1,2})", line)
+    }
+    return sorted(ids, key=int)
+
+
 def iter_article_files() -> list[Path]:
     files: list[Path] = []
     for directory in sorted(p for p in ROOT.iterdir() if p.is_dir() and ARTICLE_DIR_RE.match(p.name)):
@@ -129,13 +141,22 @@ def check_article_consistency() -> None:
     record_paths = {record["path"] for record in records}
     issues: list[str] = []
 
-    expected_ids = [f"{index:02d}" for index in range(1, len(files) + 1)]
     file_ids = sorted((parse_article_path(path)[0] for path in file_paths if parse_article_path(path)), key=int)
     record_ids = [record["id"] for record in records]
+    retired_ids = read_retired_formal_ids()
+    max_id = max((int(item) for item in [*file_ids, *record_ids]), default=0)
+    expected_ids = [
+        f"{index:02d}"
+        for index in range(1, max_id + 1)
+        if f"{index:02d}" not in retired_ids
+    ]
     if file_ids != expected_ids:
-        issues.append("[P0] Formal article file IDs are not continuous")
+        issues.append("[P0] Formal article file IDs are not continuous after excluding registered retired IDs")
     if record_ids != expected_ids:
-        issues.append("[P0] Asset register IDs are not continuous")
+        issues.append("[P0] Asset register IDs are not continuous after excluding registered retired IDs")
+    for retired_id in retired_ids:
+        if retired_id in file_ids or retired_id in record_ids:
+            issues.append(f"[P0] Retired formal ID is still occupied: {retired_id}")
 
     valid_publish_statuses = {"已发布", "待上线", "修正中", "暂不发布", "已下架"}
     for record in records:
@@ -237,17 +258,35 @@ def check_markdown_links() -> None:
 
 
 def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str]]:
+    """Allow deletions whose active number/title pair is registered as offboarded."""
     approved: list[str] = []
     rejected: list[str] = []
     stems: set[str] = set()
+    approved_active_names: set[str] = set()
     if OFFLINE_RELATION.exists():
+        released_id_re = re.compile(r"\u5df2\u91ca\u653e\u6b63\u5f0f\u7f16\u53f7[\uff1a:]\s*(\d{1,2})")
+        active_purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u73b0\u7528\u6587\u4ef6[\uff1a:]\s*([^|；]+)")
         for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines():
-            if not line.startswith("|") or "已下架" not in line:
+            if not line.startswith("|") or "\u5df2\u4e0b\u67b6" not in line:
                 continue
             cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-            if len(cells) >= 3 and cells[0].isdigit():
-                stems.add(f"{cells[0].zfill(2)}-{cells[1]}")
-    allowed_dirs = {"08-素材库/图片/文章封面", "08-素材库/图片/正文插图"}
+            if len(cells) < 3 or not cells[0].isdigit():
+                continue
+            title = cells[1]
+            stems.add(f"{cells[0].zfill(2)}-{title}")
+            for match in released_id_re.finditer(line):
+                stems.add(f"{match.group(1).zfill(2)}-{title}")
+            active_match = active_purge_re.search(line)
+            if active_match:
+                for item in active_match.group(1).split("\u3001"):
+                    name = item.strip().strip("` .")
+                    if name.lower().endswith((".png", ".jpg", ".jpeg", ".webp", ".txt")):
+                        approved_active_names.add(name)
+    allowed_dirs = {
+        "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u6587\u7ae0\u5c01\u9762",
+        "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u6b63\u6587\u63d2\u56fe",
+        "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u5c01\u9762\u5e95\u56fe",
+    }
     for line in filter(None, raw.splitlines()):
         parts = line.split("\t")
         if len(parts) < 2 or not parts[0].startswith("D"):
@@ -257,18 +296,32 @@ def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str
         rel_parent = source.parent.as_posix()
         exact = source.stem
         is_formal_article = bool(re.match(r"^0[1-6]-", rel_parent)) and source.suffix.lower() == ".md"
-        is_formal_image = rel_parent in allowed_dirs
-        if (is_formal_article or is_formal_image) and any(exact == stem or exact.startswith(stem + "-") for stem in stems):
+        is_formal_asset = rel_parent in allowed_dirs
+        is_article_metadata = rel_parent == "07-资料与流程/文章元数据" and source.suffix.lower() == ".json"
+        matches_registered_stem = any(exact == stem or exact.startswith(stem + "-") or exact.startswith(stem) for stem in stems)
+        matches_explicit_active_file = is_formal_asset and source.name in approved_active_names
+        if (is_formal_article or is_formal_asset or is_article_metadata) and (matches_registered_stem or matches_explicit_active_file):
             approved.append(line)
         else:
             rejected.append(line)
     return approved, rejected
 
+
 def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
+    """Allow registered moves into the archive and explicitly approved archive purges."""
     approved: list[str] = []
     unexpected: list[str] = []
     manifest_text = ARCHIVE_MANIFEST.read_text(encoding="utf-8") if ARCHIVE_MANIFEST.exists() else ""
+    approved_purge_names: set[str] = set()
+    if OFFLINE_RELATION.exists():
+        purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u5f52\u6863\u6587\u4ef6[\uff1a:]\s*([^|；]+)")
+        for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines():
+            for match in purge_re.finditer(line):
+                name = match.group(1).strip().strip("` .")
+                if name.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                    approved_purge_names.add(name)
 
+    archive_dir = ARCHIVED_INLINE_DIR.relative_to(ROOT).as_posix()
     for line in filter(None, raw.splitlines()):
         parts = line.split("\t")
         if len(parts) < 2 or not parts[0].startswith("D"):
@@ -277,17 +330,21 @@ def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
         source = parts[-1].replace("/", "\\")
         source_path = Path(source)
         target = ARCHIVED_INLINE_DIR / source_path.name
-        if (
-            source_path.parent.as_posix() == "08-素材库/图片/正文插图"
+        is_registered_move = (
+            source_path.parent.as_posix() == "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u6b63\u6587\u63d2\u56fe"
             and target.exists()
             and source_path.name in manifest_text
-        ):
+        )
+        is_approved_purge = (
+            source_path.parent.as_posix().startswith("08-素材库/图片/归档/")
+            and source_path.name in approved_purge_names
+        )
+        if is_registered_move or is_approved_purge:
             approved.append(line)
         else:
             unexpected.append(line)
 
     return approved, unexpected
-
 
 
 def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
