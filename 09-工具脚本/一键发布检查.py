@@ -76,13 +76,13 @@ def parse_asset_records() -> list[dict[str, str]]:
 
 
 def read_retired_formal_ids() -> list[str]:
-    """Read explicitly freed current formal IDs from the offboarding register."""
+    """Read IDs explicitly marked permanently reserved in the offboarding register."""
     if not OFFLINE_RELATION.exists():
         return []
     ids = {
         match.group(1).zfill(2)
         for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines()
-        for match in re.finditer(r"已释放正式编号[：:]\s*(\d{1,2})", line)
+        for match in re.finditer(r"\u6c38\u4e45\u4fdd\u7559\u7f16\u53f7[\uff1a:]\s*(\d{1,2})", line)
     }
     return sorted(ids, key=int)
 
@@ -308,20 +308,28 @@ def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str
 
 
 def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
-    """Allow registered moves into the archive and explicitly approved archive purges."""
+    """Allow registered moves into the archive and explicitly approved image purges."""
     approved: list[str] = []
     unexpected: list[str] = []
     manifest_text = ARCHIVE_MANIFEST.read_text(encoding="utf-8") if ARCHIVE_MANIFEST.exists() else ""
     approved_purge_names: set[str] = set()
+    approved_official_screenshot_names: set[str] = set()
     if OFFLINE_RELATION.exists():
         purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u5f52\u6863\u6587\u4ef6[\uff1a:]\s*([^|；]+)")
+        official_purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u5b98\u65b9\u5de5\u5177\u622a\u56fe\u6587\u4ef6[\uff1a:]\s*([^|\uff1b]+)")
         for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines():
             for match in purge_re.finditer(line):
                 name = match.group(1).strip().strip("` .")
                 if name.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
                     approved_purge_names.add(name)
+            for match in official_purge_re.finditer(line):
+                for item in match.group(1).split("、"):
+                    name = item.strip().strip("` .")
+                    if name.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                        approved_official_screenshot_names.add(name)
 
     archive_dir = ARCHIVED_INLINE_DIR.relative_to(ROOT).as_posix()
+    official_screenshot_dir = (ROOT / "08-素材库" / "图片" / "官方工具截图").relative_to(ROOT).as_posix()
     for line in filter(None, raw.splitlines()):
         parts = line.split("\t")
         if len(parts) < 2 or not parts[0].startswith("D"):
@@ -339,7 +347,11 @@ def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
             source_path.parent.as_posix().startswith("08-素材库/图片/归档/")
             and source_path.name in approved_purge_names
         )
-        if is_registered_move or is_approved_purge:
+        is_approved_official_screenshot_purge = (
+            source_path.parent.as_posix() == official_screenshot_dir
+            and source_path.name in approved_official_screenshot_names
+        )
+        if is_registered_move or is_approved_purge or is_approved_official_screenshot_purge:
             approved.append(line)
         else:
             unexpected.append(line)
@@ -348,10 +360,10 @@ def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
 
 
 def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
-    """Allow an article/title asset rename when the same numeric id has a new registered path.
+    """Allow a retitle or complete reindex when its article-title suffix remains in the worktree.
 
-    This keeps the deletion guard strict for real removals, but does not block a planned retitle
-    where article file and image prefix are replaced under the same article number.
+    This keeps the deletion guard strict for real removals, but accepts an explicitly related
+    filename migration even when an updated raster asset is emitted as delete/add instead of a Git rename.
     """
     approved: list[str] = []
     rejected: list[str] = []
@@ -380,6 +392,23 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                     approved.append(line)
                     continue
                 if old_match and new_match and old_match.group(1) == new_match.group(1) and (ROOT / new_path).exists():
+                    approved.append(line)
+                    continue
+                # A regenerated official screenshot may pair a different figure suffix during a reindex;
+                # approve only when both paths are inline images for the same article title.
+                old_path = Path(parts[1].replace("/", "\\"))
+                inline_dir = "08-素材库/图片/正文插图"
+                old_title = old_name[3:].split("-正文插图", 1)[0] if old_match else ""
+                new_title = new_path.name[3:].split("-正文插图", 1)[0] if new_match else ""
+                if (
+                    old_match
+                    and new_match
+                    and old_path.parent.as_posix() == inline_dir
+                    and new_path.parent.as_posix() == inline_dir
+                    and old_title
+                    and old_title == new_title
+                    and (ROOT / new_path).exists()
+                ):
                     approved.append(line)
                     continue
             rejected.append(line)
@@ -419,6 +448,21 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                 if replacement_exists:
                     approved.append(line)
                     continue
+
+        # Complete reindex with a regenerated image: the numeric prefix changes but the title
+        # suffix remains. Git may report this as D/A because the image bytes changed, so infer
+        # the replacement from its deterministic filename rather than similarity detection.
+        parent_dir = ROOT / source_path.parent
+        if source_path.parts and source_path.parts[0].startswith("08-") and parent_dir.exists():
+            replacement_exists = any(
+                candidate.is_file()
+                and re.match(r"^\d{2}-", candidate.name)
+                and candidate.name[3:] == source_path.name[3:]
+                for candidate in parent_dir.iterdir()
+            )
+            if replacement_exists:
+                approved.append(line)
+                continue
         rejected.append(line)
     return approved, rejected
 

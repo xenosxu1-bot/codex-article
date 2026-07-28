@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "article": {
-    "id": "17",
+    "id": "13",
     "title": "给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代",
     "category": "01-工具教程",
     "tier": "deep",
     "status": "published",
-    "path": "01-工具教程/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
+    "path": "01-工具教程/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md"
   },
   "sources": [
     {
@@ -32,7 +32,7 @@
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
+      "path": "08-素材库/图片/文章封面/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
       "purpose": "第三方主题工具与私人工作台主题",
       "source_type": "local-authored-cover",
       "content_binding": "概括文章“主题改造须可验证、可还原”的结论",
@@ -47,7 +47,7 @@
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
+        "path": "08-素材库/图片/正文插图/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图04.png",
         "purpose": "主题与原生工作区层级的视觉示例",
         "source_type": "local-authored-visual-example",
         "content_binding": "主题层只承载装饰，导航、任务区与输入框仍须保持清晰层级。",
@@ -61,7 +61,7 @@
         }
       },
       {
-        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图06-矿工猫主页.jpg",
+        "path": "08-素材库/图片/正文插图/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图06-矿工猫主页.jpg",
         "purpose": "矿工猫主题工作台视觉示例",
         "source_type": "local-authored-visual-example",
         "content_binding": "用导航清楚、内容不抢读、输入可用三项说明主题的可用性边界。",
@@ -75,7 +75,7 @@
         }
       },
       {
-        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图07-矿工猫任务页.jpg",
+        "path": "08-素材库/图片/正文插图/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图07-矿工猫任务页.jpg",
         "purpose": "矿工猫主题任务页视觉示例",
         "source_type": "local-authored-visual-example",
         "content_binding": "用五项基础操作说明主题安装后的最低可用性检查线。",
@@ -89,7 +89,7 @@
         }
       },
       {
-        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图08-五层工作台.png",
+        "path": "08-素材库/图片/正文插图/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图08-五层工作台.png",
         "purpose": "个人 AI 工作台五层结构",
         "source_type": "cc-switch-local-authored-illustration",
         "content_binding": "对应外观、导航、任务、知识与恢复五层结构。",

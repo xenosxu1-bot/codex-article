@@ -20,16 +20,16 @@
     "notes": "2026-07-27 已完成第 16 篇两张正文图安全区修复：原图经无裁剪缩放后，补齐左右 64px、上下 36px 的深色安全边距；保留正文结构、来源边界和可复核案例。"
   },
   "article": {
-    "id": "16",
+    "id": "12",
     "title": "Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库",
     "category": "05-案例实战",
     "tier": "standard",
     "status": "published",
-    "path": "05-案例实战/16-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md"
+    "path": "05-案例实战/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库.md"
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/16-Codex_Help-cover-v2.png",
+      "path": "08-素材库/图片/文章封面/12-Codex_Help-cover-v2.png",
       "purpose": "从代码任务到使用帮助知识库的主题定位",
       "source_type": "ai-generated-base-plus-local-typography",
       "content_binding": "对应开场中“把教程做成长期资产”的承诺。",
@@ -53,7 +53,7 @@
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/16-Codex_Help-reader-path-v3.png",
+        "path": "08-素材库/图片/正文插图/12-Codex_Help-reader-path-v3.png",
         "purpose": "将首个任务、入口选择、场景学习与回查进阶连成读者路线",
         "source_type": "ai-generated-base-plus-local-typography",
         "content_binding": "紧跟“设计读者的下一步”段落，回答读者完成第一个任务后如何继续。",
@@ -99,7 +99,7 @@
         }
       },
       {
-        "path": "08-素材库/图片/正文插图/16-Codex_Help-maintenance-loop-v3.png",
+        "path": "08-素材库/图片/正文插图/12-Codex_Help-maintenance-loop-v3.png",
         "purpose": "将来源核对、教程写入、导航生成、素材补齐与复核更新连成维护闭环",
         "source_type": "ai-generated-base-plus-local-typography",
         "content_binding": "紧跟“知识库形成闭环”段落，解释首次上线后的固定维护动作。",

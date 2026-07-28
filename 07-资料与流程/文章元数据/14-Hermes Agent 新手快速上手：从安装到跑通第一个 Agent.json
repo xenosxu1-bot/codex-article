@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "article": {
-    "id": "18",
+    "id": "14",
     "title": "Hermes Agent 新手快速上手：从安装到跑通第一个 Agent",
     "category": "01-工具教程",
     "tier": "deep",
     "status": "published",
-    "path": "01-工具教程/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md"
+    "path": "01-工具教程/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md"
   },
   "sources": [
     {
@@ -52,7 +52,7 @@
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
+      "path": "08-素材库/图片/文章封面/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
       "purpose": "Hermes Agent 新手第一天路线",
       "source_type": "local-authored-cover",
       "content_binding": "对应“先跑通基础闭环，再扩展能力”的文章结论",
@@ -67,9 +67,9 @@
     },
     "inline": [
       {
-        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图01.png",
-        "purpose": "Hermes 第一天最小闭环官方截图中文标注",
-        "source_type": "official-screenshot-with-local-chinese-annotation",
+        "path": "08-素材库/图片/正文插图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图01.png",
+        "purpose": "Hermes 官方简体中文 Quickstart 最快路径截图",
+        "source_type": "official-zh-cn-ui-screenshot",
         "content_binding": "对应 Agent 的模型、工具、状态和权限边界，以及四项验收标准",
         "post_layout_handoff": "插入开场后，帮助读者先建立 Agent 与可核查交付的关系。",
         "rights_reviewed": true,
@@ -78,19 +78,21 @@
           "reviewed_at": "2026-07-28",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "official_source_checked": true
+          "official_source_checked": true,
+          "official_chinese_ui_checked": true,
+          "no_synthetic_ui": true
         },
         "source_urls": [
-          "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart"
+          "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart"
         ],
         "source_asset_dir": "08-素材库/图片/官方工具截图/",
-        "rendering": "local deterministic layout with Microsoft YaHei Chinese labels",
-        "rights_note": "公开官方页面或官方仓库截图用于工具说明和中文标注；正式发布前需人工确认平台引用边界与来源标注。"
+        "rendering": "direct viewport screenshot from official Simplified Chinese documentation; no synthetic UI and no Chinese overlay",
+        "rights_note": "公开官方简体中文文档截图用于工具说明；正式发布前需人工确认平台引用边界与来源标注。"
       },
       {
-        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图05-Codex对比.png",
-        "purpose": "Hermes 与 Codex 工作台分工官方截图中文标注",
-        "source_type": "official-screenshot-with-local-chinese-annotation",
+        "path": "08-素材库/图片/正文插图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图05-Codex对比.png",
+        "purpose": "Hermes 官方简体中文快速参考截图，用于交接清单核对",
+        "source_type": "official-zh-cn-ui-screenshot",
         "content_binding": "对应“按任务类型选择工作台，并以任务卡明确交接边界”的比较段落",
         "post_layout_handoff": "插入 Hermes 与 Codex 对比表之后，作为视觉化总结。",
         "rights_reviewed": true,
@@ -99,20 +101,21 @@
           "reviewed_at": "2026-07-28",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "official_source_checked": true
+          "official_source_checked": true,
+          "official_chinese_ui_checked": true,
+          "no_synthetic_ui": true
         },
         "source_urls": [
-          "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-          "https://github.com/openai/codex"
+          "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart"
         ],
         "source_asset_dir": "08-素材库/图片/官方工具截图/",
-        "rendering": "local deterministic layout with Microsoft YaHei Chinese labels",
-        "rights_note": "公开官方页面或官方仓库截图用于工具说明和中文标注；正式发布前需人工确认平台引用边界与来源标注。"
+        "rendering": "direct viewport screenshot from official Simplified Chinese documentation; no synthetic UI and no Chinese overlay",
+        "rights_note": "公开官方简体中文文档截图用于工具说明；正式发布前需人工确认平台引用边界与来源标注。"
       },
       {
-        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图04.png",
-        "purpose": "30 分钟练习卡官方截图中文标注",
-        "source_type": "official-screenshot-with-local-chinese-annotation",
+        "path": "08-素材库/图片/正文插图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图04.png",
+        "purpose": "Hermes 官方简体中文首次对话与会话验证截图",
+        "source_type": "official-zh-cn-ui-screenshot",
         "content_binding": "对应目录检查、规划、验证和结果回传的循环",
         "post_layout_handoff": "插入会话续接段落之后，承接 30 分钟行动清单。",
         "rights_reviewed": true,
@@ -121,19 +124,21 @@
           "reviewed_at": "2026-07-28",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "official_source_checked": true
+          "official_source_checked": true,
+          "official_chinese_ui_checked": true,
+          "no_synthetic_ui": true
         },
         "source_urls": [
-          "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart"
+          "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart"
         ],
         "source_asset_dir": "08-素材库/图片/官方工具截图/",
-        "rendering": "local deterministic layout with Microsoft YaHei Chinese labels",
-        "rights_note": "公开官方页面或官方仓库截图用于工具说明和中文标注；正式发布前需人工确认平台引用边界与来源标注。"
+        "rendering": "direct viewport screenshot from official Simplified Chinese documentation; no synthetic UI and no Chinese overlay",
+        "rights_note": "公开官方简体中文文档截图用于工具说明；正式发布前需人工确认平台引用边界与来源标注。"
       },
       {
-        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图06-三条边界.png",
-        "purpose": "首次运行三条边界官方工具文档截图中文标注",
-        "source_type": "official-screenshot-with-local-chinese-annotation",
+        "path": "08-素材库/图片/正文插图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图06-三条边界.png",
+        "purpose": "Hermes 官方简体中文工具与工具集截图",
+        "source_type": "official-zh-cn-ui-screenshot",
         "content_binding": "对应首次运行前收紧能力、数据和写入范围的三条边界。",
         "post_layout_handoff": "插入三条边界之后，帮助读者先理解权限范围再开始练习。",
         "rights_reviewed": true,
@@ -142,19 +147,21 @@
           "reviewed_at": "2026-07-28",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "official_source_checked": true
+          "official_source_checked": true,
+          "official_chinese_ui_checked": true,
+          "no_synthetic_ui": true
         },
         "source_urls": [
-          "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/tools.md"
+          "https://hermes-agent.nousresearch.com/docs/zh-Hans/user-guide/features/tools"
         ],
         "source_asset_dir": "08-素材库/图片/官方工具截图/",
-        "rendering": "local deterministic layout with Microsoft YaHei Chinese labels",
-        "rights_note": "公开官方页面或官方仓库截图用于工具说明和中文标注；正式发布前需人工确认平台引用边界与来源标注。"
+        "rendering": "direct viewport screenshot from official Simplified Chinese documentation; no synthetic UI and no Chinese overlay",
+        "rights_note": "公开官方简体中文文档截图用于工具说明；正式发布前需人工确认平台引用边界与来源标注。"
       },
       {
-        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图07-升级阶梯.png",
-        "purpose": "从只读到自动化的能力阶梯官方截图中文标注",
-        "source_type": "official-screenshot-with-local-chinese-annotation",
+        "path": "08-素材库/图片/正文插图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图07-升级阶梯.png",
+        "purpose": "Hermes 官方简体中文添加下一层功能截图",
+        "source_type": "official-zh-cn-ui-screenshot",
         "content_binding": "对应 L1 到 L4 的渐进式扩展路径。",
         "post_layout_handoff": "插入能力阶梯之后，收束 Gateway、Skills 与 MCP 的扩展时机。",
         "rights_reviewed": true,
@@ -163,36 +170,43 @@
           "reviewed_at": "2026-07-28",
           "topic_consistent": true,
           "text_overflow_checked": true,
-          "official_source_checked": true
+          "official_source_checked": true,
+          "official_chinese_ui_checked": true,
+          "no_synthetic_ui": true
         },
         "source_urls": [
-          "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart"
+          "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart"
         ],
         "source_asset_dir": "08-素材库/图片/官方工具截图/",
-        "rendering": "local deterministic layout with Microsoft YaHei Chinese labels",
-        "rights_note": "公开官方页面或官方仓库截图用于工具说明和中文标注；正式发布前需人工确认平台引用边界与来源标注。"
+        "rendering": "direct viewport screenshot from official Simplified Chinese documentation; no synthetic UI and no Chinese overlay",
+        "rights_note": "公开官方简体中文文档截图用于工具说明；正式发布前需人工确认平台引用边界与来源标注。"
       }
     ],
     "official_screenshot_sources": [
       {
-        "path": "08-素材库/图片/官方工具截图/hermes-quickstart-official.png",
-        "source_url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-        "purpose": "Hermes Quickstart 页面底图"
+        "path": "08-素材库/图片/官方工具截图/hermes-zh-quickstart-fast-path.png",
+        "source_url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+        "purpose": "Hermes Agent 官方简体中文 Quickstart 最快路径区块截图"
       },
       {
-        "path": "08-素材库/图片/官方工具截图/hermes-quickstart-reference-section.png",
-        "source_url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-        "purpose": "Hermes Quick Reference 区块底图"
+        "path": "08-素材库/图片/官方工具截图/hermes-zh-tools-available.png",
+        "source_url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/user-guide/features/tools",
+        "purpose": "Hermes Agent 官方简体中文工具与工具集页面截图"
       },
       {
-        "path": "08-素材库/图片/官方工具截图/hermes-tools-github-top-section.png",
-        "source_url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/tools.md",
-        "purpose": "Hermes Tools 文档源码页面底图"
+        "path": "08-素材库/图片/官方工具截图/hermes-zh-first-chat-session.png",
+        "source_url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+        "purpose": "Hermes Agent 官方简体中文首次对话与会话验证区块截图"
       },
       {
-        "path": "08-素材库/图片/官方工具截图/openai-codex-github-top-section.png",
-        "source_url": "https://github.com/openai/codex",
-        "purpose": "OpenAI Codex 官方仓库页面底图"
+        "path": "08-素材库/图片/官方工具截图/hermes-zh-quick-reference.png",
+        "source_url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+        "purpose": "Hermes Agent 官方简体中文快速参考区块截图"
+      },
+      {
+        "path": "08-素材库/图片/官方工具截图/hermes-zh-next-layer.png",
+        "source_url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+        "purpose": "Hermes Agent 官方简体中文添加下一层功能区块截图"
       }
     ]
   },
