@@ -22,6 +22,7 @@ description: "用于中文微信公众号和 AI 自媒体文章的选题、写�
    - 结构承接检查：`references/structure-cohesion-checklist.md`（完整生产包、深度稿和审核修订时必读）
    - 事实核查：`references/fact-check-policy.md`
    - 视觉与版权：`references/visual-policy.md`
+   - 视觉设计系统：`references/visual-design-system.md`（需要封面、正文信息图、流程图、卡片图、AI 生图或重绘示意图时必读）
    - 正文插图分镜：`references/image-storyboard-workflow.md`（需要正文插图、流程图、卡片图或图文包时必读）
    - 质检清单：`references/qa-checklist.md`
    - GitHub 发布：`references/publishing-github.md`
@@ -47,6 +48,13 @@ description: "用于中文微信公众号和 AI 自媒体文章的选题、写�
 **发布采用模式 C：只有用户明确要求“发布/上传/推送/同步到 GitHub”时，才执行编号、入库、更新索引、提交和推送。** 单纯“写文章、做草稿、做完整生产包”不触发发布。
 
 ## 完整生产包默认流水线
+
+## 视觉硬门禁
+
+- 封面和正文插图必须先写 visual_spec，再按模板和统一 token 生成；禁止无网格、无文字预算、无预览结论的临时拼图直接入稿。
+- 正文信息图默认 1600 × 900；卡片标题 ≤ 6 个汉字，说明优先短词化；解释性长句放回正文，不塞进图里。
+- 出现裁切、挤字、贴边、撞线、遮挡、乱码、卡片不齐、风格漂移或手机缩略图不可读，均为 P0，必须回到 visual_spec 重做。
+- AI 图像模型只负责无中文字底图；中文标题、标签和流程文字由确定性排版层渲染。用户确认保留的 ChatGPT/Codex 工具截图不得替换为重绘图，只能裁切、脱敏和压缩。
 
 用户要求完整文章、可发布包、图文包、全自动生产或批量生产时，默认执行 `references/automation-workflow.md`：选题去重与评分 → Brief → 来源台账 → 标题评分 → 结构地图 → 初稿 → 关键断言核查 → 去 AI 化改写 → 封面与正文插图 → 格式检查 → 独立 QA → 生产包归档。P0/P1 未清零不得标记为可发布。
 

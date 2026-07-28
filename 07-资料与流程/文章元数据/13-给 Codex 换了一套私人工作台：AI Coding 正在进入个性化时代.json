@@ -27,8 +27,8 @@
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已完成重写与验证：文章统一检查、质量扫描、图片资产检查、4 张正文图严格视觉检查、Python 编译和 diff 格式检查均通过；全仓图片资产检查遗留 3 项与第17、18篇无关的 P2 未引用旧图预警，未删除或移动。"
+    "reviewed_at": "2026-07-28",
+    "notes": "2026-07-28 根据公众号阅读质量反馈完成二次重写：新增故事钩子、人情味场景、五层工作台判断与十分钟空白任务实操；同步重构后续文章生成方案、微信发布质量规范和文章质量扫描中的说明书化预警。关键公开信息已复核：Codex Dream Skin 最新 Release 为 v1.5.6，发布时间 2026-07-26，提供 Windows/macOS 安装包与 SHA256 校验文件。"
   },
   "visuals": {
     "cover": {
@@ -108,9 +108,9 @@
     "article_type": "wechat_reading",
     "primary_reader": "高频使用 Codex、希望安全调整工作界面并建立个人工作台的新手与进阶用户",
     "reader_scenario": "想安装第三方主题，但担心任务受干扰、更新失效或无法恢复",
-    "structure": "story-trend-boundary-experience-method-install-safety-audience-future-action",
-    "one_sentence_promise": "用一次十分钟空白任务验证，判断主题是否真正提升个人 AI 工作台",
+    "structure": "story-hook-pain-insight-method-boundary-audience-action",
+    "one_sentence_promise": "用一个真实工作场景和十分钟空白任务验证，判断 Codex Dream Skin 是否真的让私人 AI 工作台更好用。",
     "primary_action": "通过空白任务验证主题，并固定恢复入口、项目入口和规则入口",
-    "retention_hypothesis": "hypothesis_only: 以工作台五层结构替代单纯换肤叙述，帮助读者将视觉偏好落到可执行的任务体验。"
+    "retention_hypothesis": "hypothesis_only: 用晚上回到任务现场的故事钩子承接工具能力，再用五层工作台和任务页验证形成节奏，降低说明书感。"
   }
 }

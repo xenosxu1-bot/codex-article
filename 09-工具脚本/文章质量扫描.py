@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote
@@ -13,6 +13,14 @@ INTERNAL_REMINDERS = ("发布前请", "请再次核验", "发布到公众号或�
 BROAD_UNSOURCED_PHRASES = ("当前一些产品", "产品方公开资料也会", "官方安全建议会专门")
 FINAL_CHECK_SENTENCE = "本文发布前已完成事实、版权与格式检查。"
 VISUAL_MODULE_MARKERS = ("视觉速读", "方法卡", "对比卡", "检查清单", "流程卡", "图解", "速览")
+STORY_SCENE_MARKERS = (
+    "早上", "中午", "晚上", "半夜", "周一", "你刚", "你终于", "坐回电脑", "打开电脑", "赶稿", "交付",
+    "项目", "现场", "卡住", "找不到", "担心", "怕", "我会", "你会发现", "这时", "那一刻",
+)
+MANUAL_OUTLINE_MARKERS = (
+    "是什么", "为什么需要", "适合谁", "不适合谁", "准备工作", "一步一步", "操作步骤", "常见错误",
+    "常见问题", "功能介绍", "能力清单", "最小可复用", "使用方法", "配置说明", "安装步骤",
+)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 CAPTION_RE = re.compile(r"^\s*(?:\*|_)?(?:图|图片|自制示意图)[:：].*(?:\*|_)?\s*$")
 
@@ -90,6 +98,15 @@ def scan_file(path):
         problems.append(("P1", "正文包含文章封面图引用，封面应外置"))
     if FINAL_CHECK_SENTENCE in text:
         problems.append(("P1", "正文含发布检查收束句；应移至发布流程或资产登记表"))
+
+    nonempty_lines = [line.strip() for line in lines if line.strip()]
+    first_screen = "\n".join(nonempty_lines[1:8]) if len(nonempty_lines) > 1 else ""
+    if first.startswith(">") and first_screen and not any(marker in first_screen for marker in STORY_SCENE_MARKERS):
+        problems.append(("P2", "首屏缺少故事/场景钩子；公众号主稿请先写人正在经历的问题，再进入说明"))
+    h2_headings = [line.strip("# ").strip() for line in lines if line.startswith("## ")]
+    manual_heading_count = sum(any(marker in heading for marker in MANUAL_OUTLINE_MARKERS) for heading in h2_headings)
+    if manual_heading_count >= 4:
+        problems.append(("P2", "二级标题偏说明书目录；请改成场景推进、判断升级和实操复盘的阅读节奏"))
 
     in_fence = False
     for index, line in enumerate(lines, 1):
