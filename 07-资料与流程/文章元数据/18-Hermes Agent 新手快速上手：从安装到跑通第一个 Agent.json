@@ -28,12 +28,27 @@
       "label": "OpenAI Codex 官方仓库",
       "url": "https://github.com/openai/codex",
       "type": "official"
+    },
+    {
+      "label": "Hermes Agent 工具说明",
+      "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/tools.md",
+      "type": "official"
+    },
+    {
+      "label": "Anthropic Building Effective Agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "type": "research"
+    },
+    {
+      "label": "OpenAI Harness Engineering",
+      "url": "https://openai.com/index/harness-engineering/",
+      "type": "official"
     }
   ],
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已按 Hermes Agent 官方 Quickstart 与 Installation 复核安装、模型、会话与 Gateway 指令；补充 Agent 入门解释、Hermes 与 Codex 的场景差异，并复核三张正文插图均无品牌标识、伪造界面或可读文本。"
+    "notes": "2026-07-27 已完成重写与验证：文章统一检查、质量扫描、图片资产检查、5 张正文图严格视觉检查、Python 编译和 diff 格式检查均通过；全仓图片资产检查遗留 3 项与第17、18篇无关的 P2 未引用旧图预警，未删除或移动。"
   },
   "visuals": {
     "cover": {
@@ -92,16 +107,44 @@
           "topic_consistent": true,
           "text_overflow_checked": true
         }
+      },
+      {
+        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图06-三条边界.png",
+        "purpose": "首次运行的能力、数据与写入边界",
+        "source_type": "cc-switch-local-authored-illustration",
+        "content_binding": "对应首次运行前收紧能力、数据和写入范围的三条边界。",
+        "post_layout_handoff": "插入三条边界之后，帮助读者先理解权限范围再开始练习。",
+        "rights_reviewed": true,
+        "consistency_review": {
+          "reviewed": true,
+          "reviewed_at": "2026-07-27",
+          "topic_consistent": true,
+          "text_overflow_checked": true
+        }
+      },
+      {
+        "path": "08-素材库/图片/正文插图/18-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-正文插图07-升级阶梯.png",
+        "purpose": "从只读到自动化的四级能力阶梯",
+        "source_type": "cc-switch-local-authored-illustration",
+        "content_binding": "对应 L1 到 L4 的渐进式扩展路径。",
+        "post_layout_handoff": "插入能力阶梯之后，收束 Gateway、Skills 与 MCP 的扩展时机。",
+        "rights_reviewed": true,
+        "consistency_review": {
+          "reviewed": true,
+          "reviewed_at": "2026-07-27",
+          "topic_consistent": true,
+          "text_overflow_checked": true
+        }
       }
     ]
   },
   "editorial": {
     "article_type": "wechat_reading",
     "primary_reader": "第一次安装 Hermes Agent，需要建立受控、可复核基础闭环的新手读者",
-    "reader_scenario": "担心一次配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题",
-    "structure": "hook-pain-reframe-method-verification-action",
-    "one_sentence_promise": "用三段十分钟练习跑通启动、模型、只读任务与会话续接",
-    "primary_action": "在同一终端完成四项验证，并把扩展能力放到第二轮",
-    "retention_hypothesis": "hypothesis_only: 以四项验收标准替代功能堆叠，帮助读者按步骤完成首个可核查任务"
+    "reader_scenario": "担心一次配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题或控制权限",
+    "structure": "hook-agent-mental-model-verification-boundaries-install-readonly-continuation-handoff-ladder-action",
+    "one_sentence_promise": "用三段十分钟练习和四级能力阶梯跑通受控的首个 Agent 任务",
+    "primary_action": "在同一终端完成四项验证，并整理一份可交接的项目事实包",
+    "retention_hypothesis": "hypothesis_only: 用三条边界和四级能力阶梯替代功能堆叠，帮助新手在每次扩展前留下验证依据。"
   }
 }

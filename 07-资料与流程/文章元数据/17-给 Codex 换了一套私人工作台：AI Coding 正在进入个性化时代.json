@@ -18,12 +18,17 @@
       "label": "Codex Dream Skin GitHub 仓库（第三方项目）",
       "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
       "type": "third-party"
+    },
+    {
+      "label": "OpenAI Harness Engineering",
+      "url": "https://openai.com/index/harness-engineering/",
+      "type": "official"
     }
   ],
   "checks": {
     "status": "passed",
     "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已按 OpenAI Codex 官方产品页和 Dream Skin 当期 README 复核第三方边界、普通用户安装路径、任务页验证与还原原则；第 17 篇正文图片已按内容负责人要求回退为原始视觉示例。"
+    "notes": "2026-07-27 已完成重写与验证：文章统一检查、质量扫描、图片资产检查、4 张正文图严格视觉检查、Python 编译和 diff 格式检查均通过；全仓图片资产检查遗留 3 项与第17、18篇无关的 P2 未引用旧图预警，未删除或移动。"
   },
   "visuals": {
     "cover": {
@@ -82,16 +87,30 @@
           "topic_consistent": true,
           "text_overflow_checked": true
         }
+      },
+      {
+        "path": "08-素材库/图片/正文插图/17-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-正文插图08-五层工作台.png",
+        "purpose": "个人 AI 工作台五层结构",
+        "source_type": "cc-switch-local-authored-illustration",
+        "content_binding": "对应外观、导航、任务、知识与恢复五层结构。",
+        "post_layout_handoff": "插入为什么不是简单换背景之后，承接工作台从视觉到规则的升级。",
+        "rights_reviewed": true,
+        "consistency_review": {
+          "reviewed": true,
+          "reviewed_at": "2026-07-27",
+          "topic_consistent": true,
+          "text_overflow_checked": true
+        }
       }
     ]
   },
   "editorial": {
     "article_type": "wechat_reading",
-    "primary_reader": "已开始高频使用 Codex，正在评估第三方界面主题是否适合日常工作的读者",
-    "reader_scenario": "想尝试 Dream Skin，但需要先确认任务页、输入区域和还原路径是否稳定可用",
-    "structure": "hook-pain-reframe-method-verification-action",
-    "one_sentence_promise": "用一套十分钟验证顺序判断主题是否值得留在日常工作台",
-    "primary_action": "在空白任务中完成导航、输入、滚动和还原检查，再决定是否安装",
-    "retention_hypothesis": "hypothesis_only: 将视觉兴趣转为可复核的可用性判断，降低只看截图后直接安装的跳失风险"
+    "primary_reader": "高频使用 Codex、希望安全调整工作界面并建立个人工作台的新手与进阶用户",
+    "reader_scenario": "想安装第三方主题，但担心任务受干扰、更新失效或无法恢复",
+    "structure": "story-trend-boundary-experience-method-install-safety-audience-future-action",
+    "one_sentence_promise": "用一次十分钟空白任务验证，判断主题是否真正提升个人 AI 工作台",
+    "primary_action": "通过空白任务验证主题，并固定恢复入口、项目入口和规则入口",
+    "retention_hypothesis": "hypothesis_only: 以工作台五层结构替代单纯换肤叙述，帮助读者将视觉偏好落到可执行的任务体验。"
   }
 }
