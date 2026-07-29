@@ -3,18 +3,16 @@
   "project": "codex-article",
   "canonical_skill": {
     "repository": "xenosxu1-bot/article-Skill",
-    "branch": "main",
-    "commit": "e31fd66388f96fc2da09f34ed36714f6a8585358"
+    "branch": "main"
   },
   "runtime_resolution": [
     "--skill-root",
     "ARTICLE_SKILL_ROOT",
-    "~/.codex/skills/article-wechat"
+    "../article-Skill"
   ],
   "paths": {
     "metadata_directory": "07-资料与流程/文章元数据",
     "asset_registry": "07-资料与流程/文章资产登记表.md",
-    "active_cover_template": "09-工具脚本/封面提示词模板-V1.3.md",
     "cover_directory": "08-素材库/图片/文章封面",
     "inline_image_directory": "08-素材库/图片/正文插图"
   },
@@ -31,5 +29,11 @@
     "cover_ratio": 2.35,
     "cover_ratio_tolerance": 0.05,
     "min_cover_width": 1200
+  },
+  "skill_integrity": {
+    "lock_file": "09-工具脚本/article-skill.lock.json",
+    "required_git_worktree": true,
+    "require_clean_worktree": true,
+    "allow_personal_installation_fallback": false
   }
 }

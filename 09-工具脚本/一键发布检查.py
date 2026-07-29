@@ -495,6 +495,32 @@ def approved_legacy_script_template_archives(raw: str) -> tuple[list[str], list[
             rejected.append(line)
     return approved, rejected
 
+def approved_article_skill_duplicate_deletions(raw: str) -> tuple[list[str], list[str]]:
+    """Allow removal of project-local copies now owned by canonical article-Skill."""
+    approved: list[str] = []
+    rejected: list[str] = []
+    allowed_files = {
+        "09-\u5de5\u5177\u811a\u672c/article-wechat-SKILL.md",
+        "09-\u5de5\u5177\u811a\u672c/\u5c01\u9762\u63d0\u793a\u8bcd\u6a21\u677f-V1.3.md",
+        "09-\u5de5\u5177\u811a\u672c/\u6279\u91cf\u8865\u5168\u6587\u7ae0\u5c01\u9762.py",
+        "09-\u5de5\u5177\u811a\u672c/gpt_image_cover.py",
+        "09-\u5de5\u5177\u811a\u672c/\u6279\u91cf\u751f\u6210\u914d\u56fe.py",
+    }
+    allowed_prefixes = ("09-\u5de5\u5177\u811a\u672c/article-wechat-skill/",)
+    for line in filter(None, raw.splitlines()):
+        parts = line.split("\t")
+        status = parts[0] if parts else ""
+        if not status.startswith("D") or len(parts) < 2:
+            rejected.append(line)
+            continue
+        deleted = parts[1].replace("\\", "/")
+        if deleted in allowed_files or deleted.startswith(allowed_prefixes):
+            approved.append(line)
+        else:
+            rejected.append(line)
+    return approved, rejected
+
+
 def check_git_deletions() -> None:
     print("\n=== Git 删除检查 ===")
     staged = capture_stdout(["git", "diff", "--cached", "--find-renames=5%", "--name-status", "--diff-filter=DR"]).strip()
@@ -511,10 +537,12 @@ def check_git_deletions() -> None:
         approved.extend(accepted_archives)
         accepted_legacy_archives, rejected_legacy_archives = approved_legacy_script_template_archives("\n".join(rejected_archives))
         approved.extend(accepted_legacy_archives)
-        unexpected.extend(rejected_legacy_archives)
+        accepted_duplicate_deletions, rejected_duplicate_deletions = approved_article_skill_duplicate_deletions("\n".join(rejected_legacy_archives))
+        approved.extend(accepted_duplicate_deletions)
+        unexpected.extend(rejected_duplicate_deletions)
 
     if approved:
-        print(f"已识别 {len(approved)} 项已登记的归档迁移或同编号重命名。")
+        print(f"已识别 {len(approved)} 项已登记的归档迁移、同编号重命名或 article-Skill 重复代码删除。")
     if unexpected:
         print("\n".join(unexpected))
         raise SystemExit("存在未登记的删除项，请确认是否为预期删除")
