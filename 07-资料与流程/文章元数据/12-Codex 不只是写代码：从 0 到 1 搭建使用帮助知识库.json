@@ -29,27 +29,64 @@
   },
   "visuals": {
     "cover": {
-      "path": "08-素材库/图片/文章封面/12-Codex_Help-cover-v2.png",
-      "purpose": "从代码任务到使用帮助知识库的主题定位",
+      "path": "08-素材库/图片/文章封面/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-封面.png",
+      "purpose": "将分散教程卡片连成一条路线，归入模块化帮助手册。",
       "source_type": "ai-generated-base-plus-local-typography",
-      "content_binding": "对应开场中“把教程做成长期资产”的承诺。",
-      "post_layout_handoff": "作为公众号首图，正文从 Codex_Help 的结构进入方法论。",
+      "content_binding": "将分散教程卡片连成一条路线，归入模块化帮助手册。",
+      "post_layout_handoff": "先由模型生成无文字主题底图，再由 article-Skill 本地确定性排版叠加中文标题、副标题和能力标签。",
       "rights_reviewed": true,
       "consistency_review": {
         "reviewed": true,
-        "reviewed_at": "2026-07-27",
+        "reviewed_at": "2026-07-29",
         "topic_consistent": true,
-        "text_overflow_checked": true
+        "text_overflow_checked": true,
+        "title_safe_area_checked": true,
+        "candidate_selection": "cover-01-candidate-01",
+        "candidate_selection_sha256": "sha256:1ccc5c2475e45c254a0a237ea40a134334c44e672c1898acf7b489d8c0e610bb",
+        "reverse_validation": "pass",
+        "mobile_preview_checked": true,
+        "mobile_preview_width_px": 375,
+        "visual_qa_result": "passed"
       },
       "generation": {
         "provider": "ccswitch-codex-responses-image",
         "model": "gpt-image-2",
-        "base_asset_request_id": "resp_057bccd639516af0016a66f5bb8f548191b263b075d6914e73",
-        "base_asset_sha256": "6c3476afef68ecfa83abc09b89aa4cc0decbc59818bcdd8be5ff251b7d50963b",
-        "base_asset_file": ".tmp/article16-codex-help-20260727/cover-base.png",
-        "local_composition": "在无文字视觉底图上用本地脚本完成中文排版与信息层级。",
-        "license_status": "needs_human_review"
-      }
+        "candidate_pack_job_id": "codex-article-12-cover-20260728",
+        "candidate_count": 3,
+        "human_selected_candidate_id": "cover-01-candidate-01",
+        "human_selected_candidate_sha256": "sha256:1ccc5c2475e45c254a0a237ea40a134334c44e672c1898acf7b489d8c0e610bb",
+        "base_asset_file": "08-素材库/图片/封面底图/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-gpt-image底图.png",
+        "base_asset_sha256": "926991e6e4dc27e523615cab86ac6aaf5758d900bb63d7399092b58c7b9b7c4c",
+        "base_asset_preprocess": {
+          "operation": "center_crop_to_2.35:1_then_lanczos_resize_2350x1000",
+          "crop_box": [
+            0,
+            2,
+            1919,
+            818
+          ],
+          "source_size": [
+            1919,
+            820
+          ],
+          "output_size": [
+            2350,
+            1000
+          ],
+          "output_sha256": "926991e6e4dc27e523615cab86ac6aaf5758d900bb63d7399092b58c7b9b7c4c"
+        },
+        "local_composition": "使用 article-Skill runtime.cover_renderer 在入选无文字底图上完成中文确定性排版。",
+        "renderer": "deterministic-pillow-cover",
+        "design_system_version": "wechat-visual-design.v2",
+        "final_cover_sha256": "0cf7547b7ebee7b6ac411bddd764071e3ef86c5f7ed093aa1adbc38b05d0097e",
+        "license_status": "needs_human_release_review",
+        "visual_qa": {
+          "checked_at": "2026-07-29",
+          "mobile_preview_width_px": 375,
+          "result": "passed"
+        }
+      },
+      "rights_review_note": "2026-07-29 已复核入选底图不含可读文字、可识别商标、真实人物或伪造产品界面；微信帐号正式发布授权仍由内容负责人确认。"
     },
     "inline": [
       {

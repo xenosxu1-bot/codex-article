@@ -1,0 +1,42 @@
+{
+  "schema_version": "wechat-cover-semantic-brief.v1",
+  "article_id": "12",
+  "article_title": "Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库",
+  "generated_at": "2026-07-29",
+  "source_job_id": "codex-article-12-cover-20260728",
+  "human_selected_candidate": {
+    "candidate_id": "cover-01-candidate-01",
+    "candidate_sha256": "sha256:1ccc5c2475e45c254a0a237ea40a134334c44e672c1898acf7b489d8c0e610bb",
+    "selection_reason": "内容负责人明确选择第 1 个候选视觉。"
+  },
+  "visual_goal": "将分散教程卡片连成一条路线，归入模块化帮助手册。",
+  "base_image_prompt": "Premium WeChat technology editorial cover background at 2.35:1, text-free. Show scattered tutorial knowledge becoming one reader-guided, maintainable help guide: restrained reference cards connect through one clean route into an open modular manual. Deep navy field, cyan and warm white highlights, calm dark title-safe area on the left, subject on the right. No text, logo, screenshot, robot, human, code rain, or generic AI brain.",
+  "negative_constraints": [
+    "readable text",
+    "logo",
+    "watermark",
+    "QR code",
+    "real product screenshot",
+    "robot",
+    "human figure",
+    "generic AI brain"
+  ],
+  "local_typography": {
+    "title": "把教程做成长期可用的知识库",
+    "subtitle": "读者路径 / 来源复核 / 更新清单",
+    "eyebrow": "CODEX HELP",
+    "tags": [
+      "读者路线",
+      "可核验",
+      "可维护"
+    ],
+    "renderer": "article-Skill runtime.cover_renderer",
+    "design_system_version": "wechat-visual-design.v2"
+  },
+  "files": {
+    "base_asset": "08-素材库/图片/封面底图/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-gpt-image底图.png",
+    "cover": "08-素材库/图片/文章封面/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-封面.png",
+    "prompt": "08-素材库/图片/封面底图/12-Codex 不只是写代码：从 0 到 1 搭建使用帮助知识库-gpt-image提示词.txt"
+  },
+  "copyright_and_release_boundary": "已按提示词禁止商标、真实人物和伪官方界面；微信帐号正式发布授权仍由内容负责人确认。"
+}

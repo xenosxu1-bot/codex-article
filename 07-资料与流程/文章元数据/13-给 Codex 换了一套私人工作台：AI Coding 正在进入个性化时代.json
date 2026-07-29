@@ -33,16 +33,62 @@
   "visuals": {
     "cover": {
       "path": "08-素材库/图片/文章封面/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-封面.png",
-      "purpose": "第三方主题工具与私人工作台主题",
-      "source_type": "local-authored-cover",
-      "content_binding": "概括文章“主题改造须可验证、可还原”的结论",
-      "post_layout_handoff": "作为公众号首图，正文从主题用途与边界展开。",
+      "purpose": "将外观、导航、任务、知识与回滚组成一套可还原的个人工作台。",
+      "source_type": "ai-generated-base-plus-local-typography",
+      "content_binding": "将外观、导航、任务、知识与回滚组成一套可还原的个人工作台。",
+      "post_layout_handoff": "先由模型生成无文字主题底图，再由 article-Skill 本地确定性排版叠加中文标题、副标题和能力标签。",
       "rights_reviewed": true,
       "consistency_review": {
         "reviewed": true,
-        "reviewed_at": "2026-07-27",
+        "reviewed_at": "2026-07-29",
         "topic_consistent": true,
-        "text_overflow_checked": true
+        "text_overflow_checked": true,
+        "title_safe_area_checked": true,
+        "candidate_selection": "cover-01-candidate-02",
+        "candidate_selection_sha256": "sha256:e8193ab827dd34e5101304c8bc61a082233471c10236ca0c52be723755906a3d",
+        "reverse_validation": "pass",
+        "mobile_preview_checked": true,
+        "mobile_preview_width_px": 375,
+        "visual_qa_result": "passed"
+      },
+      "rights_review_note": "2026-07-29 已复核入选底图不含可读文字、可识别商标、真实人物或伪造产品界面；微信帐号正式发布授权仍由内容负责人确认。",
+      "generation": {
+        "provider": "ccswitch-codex-responses-image",
+        "model": "gpt-image-2",
+        "candidate_pack_job_id": "codex-article-13-cover-20260728",
+        "candidate_count": 3,
+        "human_selected_candidate_id": "cover-01-candidate-02",
+        "human_selected_candidate_sha256": "sha256:e8193ab827dd34e5101304c8bc61a082233471c10236ca0c52be723755906a3d",
+        "base_asset_file": "08-素材库/图片/封面底图/13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代-gpt-image底图.png",
+        "base_asset_sha256": "7d352b22fb3ffa9e9956c88adff43a6688d4419802ec81c3c711a3f114fdbdd1",
+        "base_asset_preprocess": {
+          "operation": "center_crop_to_2.35:1_then_lanczos_resize_2350x1000",
+          "crop_box": [
+            0,
+            1,
+            1921,
+            818
+          ],
+          "source_size": [
+            1921,
+            819
+          ],
+          "output_size": [
+            2350,
+            1000
+          ],
+          "output_sha256": "7d352b22fb3ffa9e9956c88adff43a6688d4419802ec81c3c711a3f114fdbdd1"
+        },
+        "local_composition": "使用 article-Skill runtime.cover_renderer 在入选无文字底图上完成中文确定性排版。",
+        "renderer": "deterministic-pillow-cover",
+        "design_system_version": "wechat-visual-design.v2",
+        "final_cover_sha256": "3d86e5f9061eff61ba93c9d7861a6c404a41cc3bc5b8bfa204171b5680f74e7e",
+        "license_status": "needs_human_release_review",
+        "visual_qa": {
+          "checked_at": "2026-07-29",
+          "mobile_preview_width_px": 375,
+          "result": "passed"
+        }
       }
     },
     "inline": [

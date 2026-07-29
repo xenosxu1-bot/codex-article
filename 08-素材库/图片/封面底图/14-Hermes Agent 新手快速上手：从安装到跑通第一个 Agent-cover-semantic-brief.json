@@ -1,0 +1,42 @@
+{
+  "schema_version": "wechat-cover-semantic-brief.v1",
+  "article_id": "14",
+  "article_title": "Hermes Agent 新手快速上手：从安装到跑通第一个 Agent",
+  "generated_at": "2026-07-29",
+  "source_job_id": "codex-article-14-cover-20260728",
+  "human_selected_candidate": {
+    "candidate_id": "cover-01-candidate-03",
+    "candidate_sha256": "sha256:a999c6cb1993e188e5a460ddac786173a8a56a274bd98640939a564fa10a098b",
+    "selection_reason": "内容负责人明确选择第 3 个候选视觉。"
+  },
+  "visual_goal": "将终端、证据卡和会话续接环组成最小闭环，并用三道边界表示权限、数据与写入控制。",
+  "base_image_prompt": "Premium WeChat editorial cover background at 2.35:1, text-free. Show a beginner agent first-day loop: a minimal abstract terminal panel, one evidence card, and one session-continuation ring surrounded by three translucent guard rails for permissions, data scope, and write boundaries. Deep navy-black with restrained teal, cold white, and tiny amber cue. Calm title-safe area across the top. No text, logo, robot, human, actual terminal UI, dashboard, code rain, or generic AI brain.",
+  "negative_constraints": [
+    "readable text",
+    "logo",
+    "watermark",
+    "QR code",
+    "real product screenshot",
+    "robot",
+    "human figure",
+    "generic AI brain"
+  ],
+  "local_typography": {
+    "title": "Hermes Agent 新手第一天上手",
+    "subtitle": "先跑通最小闭环，再增加能力",
+    "eyebrow": "BEGINNER PATH",
+    "tags": [
+      "只读验证",
+      "清晰边界",
+      "会话续接"
+    ],
+    "renderer": "article-Skill runtime.cover_renderer",
+    "design_system_version": "wechat-visual-design.v2"
+  },
+  "files": {
+    "base_asset": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-gpt-image底图.png",
+    "cover": "08-素材库/图片/文章封面/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
+    "prompt": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-gpt-image提示词.txt"
+  },
+  "copyright_and_release_boundary": "已按提示词禁止商标、真实人物和伪官方界面；微信帐号正式发布授权仍由内容负责人确认。"
+}

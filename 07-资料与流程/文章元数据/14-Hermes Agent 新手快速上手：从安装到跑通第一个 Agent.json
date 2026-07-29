@@ -53,16 +53,62 @@
   "visuals": {
     "cover": {
       "path": "08-素材库/图片/文章封面/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
-      "purpose": "Hermes Agent 新手第一天路线",
-      "source_type": "local-authored-cover",
-      "content_binding": "对应“先跑通基础闭环，再扩展能力”的文章结论",
-      "post_layout_handoff": "作为公众号首图，正文从验收标准进入安装。",
+      "purpose": "将终端、证据卡和会话续接环组成最小闭环，并用三道边界表示权限、数据与写入控制。",
+      "source_type": "ai-generated-base-plus-local-typography",
+      "content_binding": "将终端、证据卡和会话续接环组成最小闭环，并用三道边界表示权限、数据与写入控制。",
+      "post_layout_handoff": "先由模型生成无文字主题底图，再由 article-Skill 本地确定性排版叠加中文标题、副标题和能力标签。",
       "rights_reviewed": true,
       "consistency_review": {
         "reviewed": true,
-        "reviewed_at": "2026-07-27",
+        "reviewed_at": "2026-07-29",
         "topic_consistent": true,
-        "text_overflow_checked": true
+        "text_overflow_checked": true,
+        "title_safe_area_checked": true,
+        "candidate_selection": "cover-01-candidate-03",
+        "candidate_selection_sha256": "sha256:a999c6cb1993e188e5a460ddac786173a8a56a274bd98640939a564fa10a098b",
+        "reverse_validation": "pass",
+        "mobile_preview_checked": true,
+        "mobile_preview_width_px": 375,
+        "visual_qa_result": "passed"
+      },
+      "rights_review_note": "2026-07-29 已复核入选底图不含可读文字、可识别商标、真实人物或伪造产品界面；微信帐号正式发布授权仍由内容负责人确认。",
+      "generation": {
+        "provider": "ccswitch-codex-responses-image",
+        "model": "gpt-image-2",
+        "candidate_pack_job_id": "codex-article-14-cover-20260728",
+        "candidate_count": 3,
+        "human_selected_candidate_id": "cover-01-candidate-03",
+        "human_selected_candidate_sha256": "sha256:a999c6cb1993e188e5a460ddac786173a8a56a274bd98640939a564fa10a098b",
+        "base_asset_file": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-gpt-image底图.png",
+        "base_asset_sha256": "eba141ba2b44bbd08a612ff7cfef35689f0828cb6fa3ff3f610583e82595fb0c",
+        "base_asset_preprocess": {
+          "operation": "center_crop_to_2.35:1_then_lanczos_resize_2350x1000",
+          "crop_box": [
+            0,
+            2,
+            1919,
+            818
+          ],
+          "source_size": [
+            1919,
+            820
+          ],
+          "output_size": [
+            2350,
+            1000
+          ],
+          "output_sha256": "eba141ba2b44bbd08a612ff7cfef35689f0828cb6fa3ff3f610583e82595fb0c"
+        },
+        "local_composition": "使用 article-Skill runtime.cover_renderer 在入选无文字底图上完成中文确定性排版。",
+        "renderer": "deterministic-pillow-cover",
+        "design_system_version": "wechat-visual-design.v2",
+        "final_cover_sha256": "81f2995bbefe34fa36fdff189c5a84ac446fc7ffcc45131901c4cb897e042db6",
+        "license_status": "needs_human_release_review",
+        "visual_qa": {
+          "checked_at": "2026-07-29",
+          "mobile_preview_width_px": 375,
+          "result": "passed"
+        }
       }
     },
     "inline": [
