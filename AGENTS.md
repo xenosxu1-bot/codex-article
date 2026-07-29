@@ -136,8 +136,8 @@
 
 ## Workspace Boundary and Artifact Retention
 
-- `D:\projects_git\Codex_article\.publication\codex-article` is the only Git root and the long-term source of truth. Run Git commands there. The outer `D:\projects_git\Codex_article` directory is a workspace container and must not contain a second `.git` directory, a release copy, or an unpacked repository backup.
-- Keep publishable articles, indexes, source ledgers, and registered assets in the canonical repository. The outer `articles/` directory is a legacy/staging source area, not an automatic deletion target: remove a package only after its content, required evidence, and retained assets have been explicitly migrated, linked, or declared obsolete.
+- `D:\projects_git\Codex_article` is the only Git root and the long-term source of truth. Run Git commands there. Do not recreate `.publication/codex-article`, a nested Git repository, a release copy, or an unpacked repository backup inside this project.
+- Keep publishable articles, indexes, source ledgers, and registered assets in the canonical repository. The previous outer `articles/` staging directory was removed after the repository promotion; do not recreate it as a parallel source of truth.
 - Treat `.tmp/` as task-local, ignored working space. Remove generated previews, temporary scripts, fetched image batches, and diagnostic files after the related visual or publishing check has completed; retain only artifacts needed by an active task or an unresolved review.
 - Do not keep the same deliverable as an unpacked release folder, a local ZIP, and a copied checkout. Use the canonical Git history and versioned GitHub Releases for reproducible releases; keep only one documented recovery copy when a recovery copy is truly required.
 - `10-外部原文归档/` is evidence storage rather than disposable cache. Do not delete raw source snapshots merely because derived Markdown or text exists; clean it only through the archive retention and copyright-review process.
