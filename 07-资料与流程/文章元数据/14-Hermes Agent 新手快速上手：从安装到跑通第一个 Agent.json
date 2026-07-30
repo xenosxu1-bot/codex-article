@@ -10,45 +10,28 @@
   },
   "sources": [
     {
-      "label": "Hermes Agent GitHub 仓库",
+      "label": "Hermes Agent GitHub repository",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "type": "official"
+      "type": "official",
+      "checked_at": "2026-07-30"
     },
     {
-      "label": "Hermes Agent Quickstart",
-      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-      "type": "official"
+      "label": "Hermes Agent Chinese Quickstart",
+      "url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+      "type": "official",
+      "checked_at": "2026-07-30"
     },
     {
-      "label": "Hermes Agent Installation",
-      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
-      "type": "official"
-    },
-    {
-      "label": "OpenAI Codex 官方仓库",
-      "url": "https://github.com/openai/codex",
-      "type": "official"
-    },
-    {
-      "label": "Hermes Agent 工具说明",
-      "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/tools.md",
-      "type": "official"
-    },
-    {
-      "label": "Anthropic Building Effective Agents",
-      "url": "https://www.anthropic.com/engineering/building-effective-agents",
-      "type": "research"
-    },
-    {
-      "label": "OpenAI Harness Engineering",
-      "url": "https://openai.com/index/harness-engineering/",
-      "type": "official"
+      "label": "Hermes Agent Chinese Installation",
+      "url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/installation",
+      "type": "official",
+      "checked_at": "2026-07-30"
     }
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已完成重写与验证：文章统一检查、质量扫描、图片资产检查、5 张正文图严格视觉检查、Python 编译和 diff 格式检查均通过；全仓图片资产检查遗留 3 项与第17、18篇无关的 P2 未引用旧图预警，未删除或移动。"
+    "reviewed_at": "2026-07-30",
+    "notes": "2026-07-30 已按锁定 article-Skill 2b886ef 重构正文、更新 Brief 和官方来源复核日期；内容重复度最高 3.82%，图片资产检查与文章统一严格检查通过（P0=0，P1=0）。未新生产封面或正文图，保留已登记的官方中文文档截图与封面资产。"
   },
   "visuals": {
     "cover": {
@@ -258,11 +241,21 @@
   },
   "editorial": {
     "article_type": "wechat_reading",
-    "primary_reader": "第一次安装 Hermes Agent，需要建立受控、可复核基础闭环的新手读者",
-    "reader_scenario": "担心一次配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题或控制权限",
-    "structure": "hook-agent-mental-model-verification-boundaries-install-readonly-continuation-handoff-ladder-action",
-    "one_sentence_promise": "用三段十分钟练习和四级能力阶梯跑通受控的首个 Agent 任务",
-    "primary_action": "在同一终端完成四项验证，并整理一份可交接的项目事实包",
-    "retention_hypothesis": "hypothesis_only: 用三条边界和四级能力阶梯替代功能堆叠，帮助新手在每次扩展前留下验证依据。"
+    "primary_reader": "第一次从命令行安装 Hermes Agent，希望先建立受控、可复核基础闭环的新手读者",
+    "reader_scenario": "担心同时配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题，也不知道哪些权限和数据会被接触。",
+    "structure": "hook-verification-boundaries-install-readonly-continuation-handoff-ladder-action",
+    "one_sentence_promise": "用固定环境、只读任务卡、会话验证和能力阶梯，在首日跑通受控的第一个 Agent 闭环。",
+    "primary_action": "在一个非敏感目录完成四项验证，并写出一份含证据和未确认项的交接包。",
+    "retention_hypothesis": "hypothesis_only: 用失败可定位的最小闭环替代功能堆叠，让新手先获得可检查的进展感。"
+  },
+  "brief": {
+    "target_reader": "第一次从命令行安装 Hermes Agent，希望先建立受控、可复核基础闭环的新手读者",
+    "core_problem": "一次配置 Provider、工具、Gateway、Skills 与 MCP 后，无法定位问题，也无法判断权限与数据边界。",
+    "not_writing": "不把当前命令、Provider 或平台支持写成永久事实；不鼓励在首次练习中接触敏感数据或开启外部自动化；不虚构项目效果。",
+    "core_view": "先验证固定环境、真实模型回复、只读文件证据和会话恢复，再按能力阶梯扩展。",
+    "deliverables": "八段公众号正文、五张已登记官方中文文档截图的语义校对、首日任务卡、会话恢复与交接包模板。",
+    "source_requirements": "Hermes 官方仓库、中文快速入门与中文安装说明均在 2026-07-30 复核。",
+    "risks": "安装方式、模型 Provider、工具与平台支持可能更新；执行前以官方中文文档为准。",
+    "related_articles": "11 篇 OpenClaw 入门与 12、13 篇工作流内容；本文不做工具能力排名。"
   }
 }

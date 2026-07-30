@@ -3,7 +3,7 @@ from collections import defaultdict
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE = "2026-07-23"
+DATE = "2026-07-30"
 ASSET = ROOT / "07-资料与流程" / "文章资产登记表.md"
 NAV = ROOT / "00-知识库导航"
 CATEGORIES = ["工具教程", "AI知识", "好文方法", "安全治理", "案例实战", "热点追踪"]

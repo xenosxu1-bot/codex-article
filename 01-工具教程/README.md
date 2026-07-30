@@ -1,6 +1,6 @@
 # 工具教程
 
-> 共 8 篇；分类内按文章编号升序展示，编号与文件名和资产登记表一致。
+> 共 7 篇；分类内按文章编号升序展示，编号与文件名和资产登记表一致。
 
 | 编号 | 标题 | 系列 | 标签 | 中文字数 |
 | ---: | --- | --- | --- | ---: |
@@ -10,5 +10,4 @@
 | 05 | [Codex 插件与 Skill 指南：把常用能力沉淀进工作流](<05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流.md>) | Codex入门与工程化 | Skill, 插件, 工作流 | 3827 |
 | 09 | [Codex 智能体与 Skills 中文参考手册](<09-Codex 智能体与 Skills 中文参考手册.md>) | Codex入门与工程化 | 智能体, Skill, 手册 | 7525 |
 | 11 | [OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件](<11-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md>) | AI工具连接与系统 | OpenClaw, AI Agent, Gateway | 3207 |
-| 13 | [给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代](<13-给 Codex 换了一套私人工作台：AI Coding 正在进入个性化时代.md>) | Codex入门与工程化 | Codex, AI Coding, 个性化工作台 | 3004 |
 | 14 | [Hermes Agent 新手快速上手：从安装到跑通第一个 Agent](<14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md>) | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 2304 |
