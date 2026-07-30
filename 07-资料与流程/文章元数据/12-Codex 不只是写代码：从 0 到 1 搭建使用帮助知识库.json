@@ -5,19 +5,19 @@
       "label": "Codex_Help repository",
       "url": "https://github.com/xenosxu1-bot/Codex_Help",
       "type": "repository",
-      "checked_at": "2026-07-30"
+      "checked_at": "2026-07-27"
     },
     {
       "label": "OpenAI Codex official documentation",
-      "url": "https://developers.openai.com/codex/overview/",
+      "url": "https://developers.openai.com/codex/overview",
       "type": "official",
-      "checked_at": "2026-07-30"
+      "checked_at": "2026-07-27"
     }
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-30",
-    "notes": "2026-07-30 已按锁定 article-Skill 2b886ef 重构正文、更新 Brief 和来源复核日期；内容重复度最高 3.46%，图片资产检查与文章统一严格检查通过（P0=0，P1=0）。未新生产封面或正文图，保留已登记且与重构结构一致的图文资产。"
+    "reviewed_at": "2026-07-27",
+    "notes": "2026-07-27 已完成第 16 篇两张正文图安全区修复：原图经无裁剪缩放后，补齐左右 64px、上下 36px 的深色安全边距；保留正文结构、来源边界和可复核案例。"
   },
   "article": {
     "id": "12",
@@ -185,21 +185,11 @@
   },
   "editorial": {
     "article_type": "wechat_reading",
-    "primary_reader": "已有零散 Codex 教程或工作记录，想把它们整理为可维护帮助知识库的个人维护者与内容团队",
-    "reader_scenario": "教程、聊天记录和素材分散；新读者找不到入口，维护者改完正文又遗漏导航、图片或来源复核。",
-    "structure": "hook-route-boundary-evidence-minimum-structure-task-card-maintenance-seven-day-action",
-    "one_sentence_promise": "以 Codex_Help 为可复核案例，搭出从读者入口、维护证据到持续更新的最小知识库闭环。",
-    "primary_action": "选择一个高频任务，在七天内完成首页入口、快速开始、维护清单与一次真实读者走查。",
-    "retention_hypothesis": "hypothesis_only: 先让读者看到自己正在卡住的入口问题，再用任务卡与七天路径降低知识库搭建的抽象感。"
-  },
-  "brief": {
-    "target_reader": "已有零散 Codex 教程或工作记录，想把它们整理为可维护帮助知识库的个人维护者与内容团队",
-    "core_problem": "教程按作者顺序堆放，读者找不到下一步，维护者也无法追踪来源、素材和更新影响。",
-    "not_writing": "不把 Codex_Help 表述为官方文档；不承诺具体产品能力、版本、价格或可用性；不虚构使用数据或读者案例。",
-    "core_view": "先做读者路径，再分离公开正文和维护证据，用任务卡与固定维护闭环让知识库持续可用。",
-    "deliverables": "七段公众号正文、两张已登记正文图的语义校对、来源与复核边界、七天最小行动路径。",
-    "source_requirements": "Codex_Help 仓库与 OpenAI Codex 官方概览均在 2026-07-30 复核。",
-    "risks": "产品事实会变化；正文只描述方法和核验边界，具体能力回到官方入口。",
-    "related_articles": "01、04、05、09、13 篇 Codex 系列内容。"
+    "primary_reader": "已积累零散 Codex 使用经验，想把个人或团队教程整理成可维护知识库的读者",
+    "reader_scenario": "资料、聊天记录和教程分散，换项目或版本后不知道从哪里继续或如何核验旧结论",
+    "structure": "hook-pain-reframe-method-case-verification-action",
+    "one_sentence_promise": "用 Codex_Help 的可复核案例，搭出一条从读者入口到持续维护的最小知识库路径",
+    "primary_action": "用七天最小版本完成第一个任务入口、来源复核和更新清单",
+    "retention_hypothesis": "hypothesis_only: 先用读者路径和可检查任务卡降低知识库搭建的抽象感，再用七天行动清单促成首次实践"
   }
 }
