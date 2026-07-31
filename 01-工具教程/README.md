@@ -10,4 +10,4 @@
 | 05 | [Codex 插件与 Skill 指南：把常用能力沉淀进工作流](<05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流.md>) | Codex入门与工程化 | Skill, 插件, 工作流 | 3827 |
 | 09 | [Codex 智能体与 Skills 中文参考手册](<09-Codex 智能体与 Skills 中文参考手册.md>) | Codex入门与工程化 | 智能体, Skill, 手册 | 7525 |
 | 11 | [OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件](<11-OpenClaw 新手上手指南：把 AI 助手接进常用聊天软件.md>) | AI工具连接与系统 | OpenClaw, AI Agent, Gateway | 3207 |
-| 14 | [Hermes Agent 新手快速上手：从安装到跑通第一个 Agent](<14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent.md>) | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 2304 |
+| 14 | [Hermes Agent 快速上手：从安装到跑通第一个 Agent](<14-Hermes Agent 快速上手：从安装到跑通第一个 Agent.md>) | AI工具连接与系统 | Hermes Agent, AI Agent, 工具教程 | 2304 |
