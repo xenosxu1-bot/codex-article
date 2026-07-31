@@ -1,1 +1,14 @@
-Premium WeChat editorial cover background at 2.35:1, text-free. Show a beginner agent first-day loop: a minimal abstract terminal panel, one evidence card, and one session-continuation ring surrounded by three translucent guard rails for permissions, data scope, and write boundaries. Deep navy-black with restrained teal, cold white, and tiny amber cue. Calm title-safe area across the top. No text, logo, robot, human, actual terminal UI, dashboard, code rain, or generic AI brain.
+Premium WeChat editorial cover background at 2.35:1, text-free. A bespoke product-illustration landscape for a beginner Hermes Agent first-day controlled loop: an evidence archive and inspection eye, a transparent protected session loop, an explicit pause-and-check control, a handoff / start token, and a capability staircase. Deep navy with restrained cyan and warm amber. Reserve a calm dark title-safe area on the left. No readable text, logo, watermark, website screenshot, product UI/dashboard, robot, human, generic AI brain, code rain, or third-party brand marks.
+
+Negative constraints:
+- readable text
+- logo
+- watermark
+- QR code
+- official website screenshot
+- product UI or dashboard
+- fake product interface
+- robot
+- human figure
+- generic AI brain
+- third-party brand mark

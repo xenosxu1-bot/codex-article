@@ -1,0 +1,13 @@
+{
+  "review_version": "visual-selection.v2",
+  "article_id": "14",
+  "job_id": "hermes-agent-original-icons-20260731",
+  "selected_candidate_id": "cover-01-candidate-03",
+  "selected_candidate_sha256": "sha256:fac9dbc0d09a6d4887ff2bcfdf2bc070fd8b9aeb203711fd78a0ab8c6e927ae9",
+  "decision": "select",
+  "decision_reason": "内容负责人选择候选 3；此前否决 Logo 与官网截图方向。",
+  "creative_direction": "原创自定义图标表达环境确认、只读证据、会话续接、暂停检查与能力递进。",
+  "base_asset_sha256": "sha256:dcb57f734b7dcd68ba5dbd21d3d5f9daec848c3a0b2b94aa2efdd4916a34525d",
+  "final_cover_sha256": "sha256:424ec002d1ea2f1a0b01b40820929a21321fe5abfa88849a3959991232d5613e",
+  "reviewed_at": "2026-07-31"
+}

@@ -10,102 +10,87 @@
   },
   "sources": [
     {
-      "label": "Hermes Agent GitHub 仓库",
+      "label": "Hermes Agent GitHub repository",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "type": "official"
+      "type": "official",
+      "checked_at": "2026-07-30"
     },
     {
-      "label": "Hermes Agent Quickstart",
-      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-      "type": "official"
+      "label": "Hermes Agent Chinese Quickstart",
+      "url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/quickstart",
+      "type": "official",
+      "checked_at": "2026-07-30"
     },
     {
-      "label": "Hermes Agent Installation",
-      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
-      "type": "official"
-    },
-    {
-      "label": "OpenAI Codex 官方仓库",
-      "url": "https://github.com/openai/codex",
-      "type": "official"
-    },
-    {
-      "label": "Hermes Agent 工具说明",
-      "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/tools.md",
-      "type": "official"
-    },
-    {
-      "label": "Anthropic Building Effective Agents",
-      "url": "https://www.anthropic.com/engineering/building-effective-agents",
-      "type": "research"
-    },
-    {
-      "label": "OpenAI Harness Engineering",
-      "url": "https://openai.com/index/harness-engineering/",
-      "type": "official"
+      "label": "Hermes Agent Chinese Installation",
+      "url": "https://hermes-agent.nousresearch.com/docs/zh-Hans/getting-started/installation",
+      "type": "official",
+      "checked_at": "2026-07-30"
     }
   ],
   "checks": {
     "status": "passed",
-    "reviewed_at": "2026-07-27",
-    "notes": "2026-07-27 已完成重写与验证：文章统一检查、质量扫描、图片资产检查、5 张正文图严格视觉检查、Python 编译和 diff 格式检查均通过；全仓图片资产检查遗留 3 项与第17、18篇无关的 P2 未引用旧图预警，未删除或移动。"
+    "reviewed_at": "2026-07-30",
+    "notes": "2026-07-30 已按锁定 article-Skill 2b886ef 重构正文、更新 Brief 和官方来源复核日期；内容重复度最高 3.82%，图片资产检查与文章统一严格检查通过（P0=0，P1=0）。未新生产封面或正文图，保留已登记的官方中文文档截图与封面资产。；2026-07-31 已按内容负责人选择的原创图标候选 3 重绘封面；新封面不含 Logo、官网截图或伪造产品界面，已完成确定性中文排版与严格图片视觉检查（P0=0，P1=0）。"
   },
   "visuals": {
     "cover": {
       "path": "08-素材库/图片/文章封面/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-封面.png",
-      "purpose": "将终端、证据卡和会话续接环组成最小闭环，并用三道边界表示权限、数据与写入控制。",
-      "source_type": "ai-generated-base-plus-local-typography",
-      "content_binding": "将终端、证据卡和会话续接环组成最小闭环，并用三道边界表示权限、数据与写入控制。",
-      "post_layout_handoff": "先由模型生成无文字主题底图，再由 article-Skill 本地确定性排版叠加中文标题、副标题和能力标签。",
+      "purpose": "用原创图标讲清 Hermes Agent 的新手受控闭环：只读证据、会话续接、暂停检查与能力递进。",
+      "source_type": "ai-generated-text-free-base-plus-local-typography",
+      "content_binding": "眼睛表示证据核对，文件夹表示只读材料，会话环表示可恢复上下文，暂停键表示检查点，阶梯表示在验证后再扩展能力。",
+      "post_layout_handoff": "模型仅生成无文字原创图标底图；article-Skill 本地确定性排版叠加中文标题、副标题和眉题。未叠加 Logo、官网截图或伪造产品界面。",
       "rights_reviewed": true,
       "consistency_review": {
         "reviewed": true,
-        "reviewed_at": "2026-07-29",
+        "reviewed_at": "2026-07-31",
         "topic_consistent": true,
         "text_overflow_checked": true,
         "title_safe_area_checked": true,
         "candidate_selection": "cover-01-candidate-03",
-        "candidate_selection_sha256": "sha256:a999c6cb1993e188e5a460ddac786173a8a56a274bd98640939a564fa10a098b",
+        "candidate_selection_sha256": "sha256:fac9dbc0d09a6d4887ff2bcfdf2bc070fd8b9aeb203711fd78a0ab8c6e927ae9",
+        "selection_receipt": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-cover-selection-receipt.json",
         "reverse_validation": "pass",
         "mobile_preview_checked": true,
         "mobile_preview_width_px": 375,
         "visual_qa_result": "passed"
       },
-      "rights_review_note": "2026-07-29 已复核入选底图不含可读文字、可识别商标、真实人物或伪造产品界面；微信帐号正式发布授权仍由内容负责人确认。",
+      "rights_review_note": "2026-07-31 已复核入选底图不含可读文字、可识别商标、官网截图、真实人物或伪造产品界面；使用自定义语义图标。微信帐号正式发布授权仍由内容负责人确认。",
       "generation": {
-        "provider": "ccswitch-codex-responses-image",
+        "provider": "ccswitch-gpt-image-2",
         "model": "gpt-image-2",
-        "candidate_pack_job_id": "codex-article-14-cover-20260728",
+        "candidate_pack_job_id": "hermes-agent-original-icons-20260731",
         "candidate_count": 3,
         "human_selected_candidate_id": "cover-01-candidate-03",
-        "human_selected_candidate_sha256": "sha256:a999c6cb1993e188e5a460ddac786173a8a56a274bd98640939a564fa10a098b",
+        "human_selected_candidate_sha256": "sha256:fac9dbc0d09a6d4887ff2bcfdf2bc070fd8b9aeb203711fd78a0ab8c6e927ae9",
+        "selection_receipt": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-cover-selection-receipt.json",
         "base_asset_file": "08-素材库/图片/封面底图/14-Hermes Agent 新手快速上手：从安装到跑通第一个 Agent-gpt-image底图.png",
-        "base_asset_sha256": "eba141ba2b44bbd08a612ff7cfef35689f0828cb6fa3ff3f610583e82595fb0c",
+        "base_asset_sha256": "dcb57f734b7dcd68ba5dbd21d3d5f9daec848c3a0b2b94aa2efdd4916a34525d",
         "base_asset_preprocess": {
-          "operation": "center_crop_to_2.35:1_then_lanczos_resize_2350x1000",
-          "crop_box": [
-            0,
-            2,
-            1919,
+          "operation": "crop_right_1px_to_exact_2.35:1_then_lanczos_resize_2350x1000",
+          "source_size": [
+            1923,
             818
           ],
-          "source_size": [
-            1919,
-            820
+          "crop_box": [
+            0,
+            0,
+            1922,
+            818
           ],
           "output_size": [
             2350,
             1000
           ],
-          "output_sha256": "eba141ba2b44bbd08a612ff7cfef35689f0828cb6fa3ff3f610583e82595fb0c"
+          "output_sha256": "dcb57f734b7dcd68ba5dbd21d3d5f9daec848c3a0b2b94aa2efdd4916a34525d"
         },
-        "local_composition": "使用 article-Skill runtime.cover_renderer 在入选无文字底图上完成中文确定性排版。",
+        "local_composition": "使用锁定 article-Skill runtime.cover_renderer 在入选无文字底图上完成中文确定性排版。",
         "renderer": "deterministic-pillow-cover",
-        "design_system_version": "wechat-visual-design.v2",
-        "final_cover_sha256": "81f2995bbefe34fa36fdff189c5a84ac446fc7ffcc45131901c4cb897e042db6",
+        "design_system_version": "wechat-visual-design.v5",
+        "final_cover_sha256": "424ec002d1ea2f1a0b01b40820929a21321fe5abfa88849a3959991232d5613e",
         "license_status": "needs_human_release_review",
         "visual_qa": {
-          "checked_at": "2026-07-29",
+          "checked_at": "2026-07-31",
           "mobile_preview_width_px": 375,
           "result": "passed"
         }
@@ -258,11 +243,21 @@
   },
   "editorial": {
     "article_type": "wechat_reading",
-    "primary_reader": "第一次安装 Hermes Agent，需要建立受控、可复核基础闭环的新手读者",
-    "reader_scenario": "担心一次配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题或控制权限",
-    "structure": "hook-agent-mental-model-verification-boundaries-install-readonly-continuation-handoff-ladder-action",
-    "one_sentence_promise": "用三段十分钟练习和四级能力阶梯跑通受控的首个 Agent 任务",
-    "primary_action": "在同一终端完成四项验证，并整理一份可交接的项目事实包",
-    "retention_hypothesis": "hypothesis_only: 用三条边界和四级能力阶梯替代功能堆叠，帮助新手在每次扩展前留下验证依据。"
+    "primary_reader": "第一次从命令行安装 Hermes Agent，希望先建立受控、可复核基础闭环的新手读者",
+    "reader_scenario": "担心同时配置模型、工具、Gateway、Skills 和 MCP 后无法定位问题，也不知道哪些权限和数据会被接触。",
+    "structure": "hook-verification-boundaries-install-readonly-continuation-handoff-ladder-action",
+    "one_sentence_promise": "用固定环境、只读任务卡、会话验证和能力阶梯，在首日跑通受控的第一个 Agent 闭环。",
+    "primary_action": "在一个非敏感目录完成四项验证，并写出一份含证据和未确认项的交接包。",
+    "retention_hypothesis": "hypothesis_only: 用失败可定位的最小闭环替代功能堆叠，让新手先获得可检查的进展感。"
+  },
+  "brief": {
+    "target_reader": "第一次从命令行安装 Hermes Agent，希望先建立受控、可复核基础闭环的新手读者",
+    "core_problem": "一次配置 Provider、工具、Gateway、Skills 与 MCP 后，无法定位问题，也无法判断权限与数据边界。",
+    "not_writing": "不把当前命令、Provider 或平台支持写成永久事实；不鼓励在首次练习中接触敏感数据或开启外部自动化；不虚构项目效果。",
+    "core_view": "先验证固定环境、真实模型回复、只读文件证据和会话恢复，再按能力阶梯扩展。",
+    "deliverables": "八段公众号正文、五张已登记官方中文文档截图的语义校对、首日任务卡、会话恢复与交接包模板。",
+    "source_requirements": "Hermes 官方仓库、中文快速入门与中文安装说明均在 2026-07-30 复核。",
+    "risks": "安装方式、模型 Provider、工具与平台支持可能更新；执行前以官方中文文档为准。",
+    "related_articles": "11 篇 OpenClaw 入门与 12、13 篇工作流内容；本文不做工具能力排名。"
   }
 }
