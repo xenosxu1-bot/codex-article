@@ -263,9 +263,11 @@ def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str
     rejected: list[str] = []
     stems: set[str] = set()
     approved_active_names: set[str] = set()
+    approved_duplicate_report_names: set[str] = set()
     if OFFLINE_RELATION.exists():
         released_id_re = re.compile(r"\u5df2\u91ca\u653e\u6b63\u5f0f\u7f16\u53f7[\uff1a:]\s*(\d{1,2})")
         active_purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u73b0\u7528\u6587\u4ef6[\uff1a:]\s*([^|；]+)")
+        duplicate_report_purge_re = re.compile(r"\u5df2\u6279\u51c6\u5220\u9664\u67e5\u91cd\u62a5\u544a\u6587\u4ef6[\uff1a:]\s*(.+?\.(?:json|md))\s*(?=；|\||$)")
         for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines():
             if not line.startswith("|") or "\u5df2\u4e0b\u67b6" not in line:
                 continue
@@ -282,6 +284,10 @@ def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str
                     name = item.strip().strip("` .")
                     if name.lower().endswith((".png", ".jpg", ".jpeg", ".webp", ".txt")):
                         approved_active_names.add(name)
+            for report_match in duplicate_report_purge_re.finditer(line):
+                name = report_match.group(1).strip().strip("` .")
+                if name.lower().endswith((".json", ".md")):
+                    approved_duplicate_report_names.add(name)
     allowed_dirs = {
         "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u6587\u7ae0\u5c01\u9762",
         "08-\u7d20\u6750\u5e93/\u56fe\u7247/\u6b63\u6587\u63d2\u56fe",
@@ -298,9 +304,10 @@ def approved_registered_offline_deletions(raw: str) -> tuple[list[str], list[str
         is_formal_article = bool(re.match(r"^0[1-6]-", rel_parent)) and source.suffix.lower() == ".md"
         is_formal_asset = rel_parent in allowed_dirs
         is_article_metadata = rel_parent == "07-资料与流程/文章元数据" and source.suffix.lower() == ".json"
+        is_duplicate_report = rel_parent == "07-资料与流程/内容去重报告" and source.name in approved_duplicate_report_names
         matches_registered_stem = any(exact == stem or exact.startswith(stem + "-") or exact.startswith(stem) for stem in stems)
         matches_explicit_active_file = is_formal_asset and source.name in approved_active_names
-        if (is_formal_article or is_formal_asset or is_article_metadata) and (matches_registered_stem or matches_explicit_active_file):
+        if is_duplicate_report or ((is_formal_article or is_formal_asset or is_article_metadata) and (matches_registered_stem or matches_explicit_active_file)):
             approved.append(line)
         else:
             rejected.append(line)
