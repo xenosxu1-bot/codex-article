@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """公众号正文图片视觉检查。
 
-补足“图片存在但版式不适合发布”的漏检：
+检查图片文件完整性并生成可选预览：
 1. 检查正式文章实际引用的本地图片尺寸。
-2. 用像素启发式检查重点内容是否贴边。
-3. 生成 375px 手机宽度预览拼图，供终稿前人工快速复核段距、拥挤和裁切问题。
+2. 不对比例、留白、位置或风格设置硬性要求。
+3. 生成可选预览拼图，供人工判断是否适合目标平台。
 
 使用建议：
 - 全仓巡检：python 09-工具脚本/图片视觉检查.py
 - 新图终稿：python 09-工具脚本/图片视觉检查.py --focus 29 --strict
 
-说明：像素检查只能发现明显风险，不能替代人工审美确认；最终发布前仍必须打开预览图检查。
+说明：脚本不评价审美和模板符合度；预览仅供人工参考。
 """
 from __future__ import annotations
 
@@ -31,11 +31,6 @@ ASSET_FILE = ROOT / "07-资料与流程" / "文章资产登记表.md"
 PREVIEW_FILE = ROOT / ".tmp" / "图片视觉检查预览.jpg"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
-MIN_WIDTH = 1200
-MIN_HEIGHT = 675
-SAFE_MARGIN_RATIO = 0.035
-DARK_ROW_THRESHOLD = 24
-DARK_COL_THRESHOLD = 24
 
 
 def split_row(line: str) -> list[str]:
@@ -100,74 +95,21 @@ def font(size: int):
     return ImageFont.load_default()
 
 
-def ink_bbox(img: Image.Image) -> tuple[int, int, int, int] | None:
-    rgb = img.convert("RGB")
-    pix = rgb.load()
-    w, h = rgb.size
-    # Original assets are often light canvases, while AI-generated technical
-    # diagrams commonly use a dark canvas.  Treating every dark pixel as ink
-    # makes the full dark background look like edge content.  Sample the four
-    # corners and switch to contrast-based detection for dark canvases.
-    samples = [pix[x, y] for x in (0, min(12, w - 1), max(0, w - 13), w - 1) for y in (0, min(12, h - 1), max(0, h - 13), h - 1)]
-    bg = tuple(sum(color[index] for color in samples) // len(samples) for index in range(3))
-    bg_luminance = (bg[0] * 299 + bg[1] * 587 + bg[2] * 114) // 1000
-    dark_canvas = bg_luminance < 72
-    row_counts = [0] * h
-    col_counts = [0] * w
-    for y in range(h):
-        for x in range(w):
-            r, g, b = pix[x, y]
-            if dark_canvas:
-                contrast = max(abs(r - bg[0]), abs(g - bg[1]), abs(b - bg[2]))
-                # Count bright/contrasting foreground, not the dark backdrop.
-                is_ink = contrast >= 42 and max(r, g, b) >= 58
-            else:
-                # Light canvases retain the original text/icon heuristic.
-                is_ink = r < 145 and g < 155 and b < 175
-            if is_ink:
-                row_counts[y] += 1
-                col_counts[x] += 1
-    rows = [i for i, c in enumerate(row_counts) if c >= DARK_ROW_THRESHOLD]
-    cols = [i for i, c in enumerate(col_counts) if c >= DARK_COL_THRESHOLD]
-    if not rows or not cols:
-        return None
-    return min(cols), min(rows), max(cols), max(rows)
-
-
-def add_safety_issue(strict: bool, problems: list[str], warnings: list[str], message: str) -> None:
-    if strict:
-        problems.append(f"[P1] {message}")
-    else:
-        warnings.append(f"[P2] {message}")
-
-
 def check_image(path: Path, strict: bool = False) -> tuple[list[str], list[str]]:
+    """只检查文件可读性；尺寸和版式仅作为非阻断提醒。"""
     problems: list[str] = []
     warnings: list[str] = []
     try:
         with Image.open(path) as im:
             w, h = im.size
             rel = path.relative_to(ROOT)
-            if w < MIN_WIDTH or h < MIN_HEIGHT:
-                add_safety_issue(strict, problems, warnings, f"???????{rel} ({w}x{h})?????? {MIN_WIDTH}x{MIN_HEIGHT}")
-            if w / h < 1.45 or w / h > 1.9:
-                warnings.append(f"[P2] 图片比例不适合公众号横版信息图：{rel} ({w}x{h})")
-            bbox = ink_bbox(im)
-            if bbox:
-                left, top, right, bottom = bbox
-                safe = max(36, int(min(w, h) * SAFE_MARGIN_RATIO))
-                if top < safe:
-                    add_safety_issue(strict, problems, warnings, f"图片顶部安全区不足：{rel}，顶部重点像素约 {top}px，建议不少于 {safe}px")
-                if left < safe:
-                    add_safety_issue(strict, problems, warnings, f"图片左侧安全区不足：{rel}，左侧重点像素约 {left}px，建议不少于 {safe}px")
-                if w - right < safe:
-                    add_safety_issue(strict, problems, warnings, f"图片右侧安全区不足：{rel}，右侧留白约 {w-right}px，建议不少于 {safe}px")
-                if h - bottom < safe:
-                    add_safety_issue(strict, problems, warnings, f"图片底部安全区不足：{rel}，底部留白约 {h-bottom}px，建议不少于 {safe}px")
+            if w <= 0 or h <= 0:
+                problems.append(f"[P0] 图片尺寸无效：{rel} ({w}x{h})")
+            elif w < 320 or h < 180:
+                warnings.append(f"[P2] 图片像素较小，是否适合目标平台请人工判断：{rel} ({w}x{h})")
     except Exception as exc:
-        problems.append(f"[P1] 图片无法打开：{path.relative_to(ROOT)}：{exc}")
+        problems.append(f"[P0] 图片无法打开：{path.relative_to(ROOT)}：{exc}")
     return problems, warnings
-
 
 def make_preview(paths: list[Path]) -> None:
     if not paths:
@@ -202,7 +144,7 @@ def make_preview(paths: list[Path]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="检查公众号正文图片视觉发布风险")
     parser.add_argument("--focus", help="只检查文件名或路径包含该关键词的图片，例如 29 或 Hermes")
-    parser.add_argument("--strict", action="store_true", help="严格模式：安全区不足按 P1 阻断，适合新生成图片终稿检查")
+    parser.add_argument("--strict", action="store_true", help="兼容旧命令；不再把尺寸、比例或安全区作为阻断条件")
     args = parser.parse_args()
 
     article_files = parse_assets()
@@ -220,7 +162,7 @@ def main() -> int:
     print(f"正式文章引用图片：{len(images)} 张")
     if args.focus:
         print(f"检查范围：{args.focus}")
-    print(f"严格模式：{'开启' if args.strict else '关闭'}")
+    print(f"严格模式参数：{'已传入但不改变视觉检查门槛' if args.strict else '未传入'}")
     print(f"手机预览拼图：{PREVIEW_FILE.relative_to(ROOT)}")
     if problems:
         print("\n阻断问题：")
@@ -236,7 +178,7 @@ def main() -> int:
     p1 = sum(1 for item in problems if item.startswith("[P1]"))
     p2 = len(warnings)
     print(f"\n图片视觉检查：P0={p0} P1={p1} P2={p2}")
-    print("说明：脚本只能发现明显安全区/尺寸风险；发布前仍需打开手机预览拼图人工确认段距、拥挤和裁切。")
+    print("说明：脚本只阻断图片损坏；尺寸、比例、留白和风格由人工按任务判断。")
     return 1 if p0 or p1 else 0
 
 

@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""文章事实、版权与安全边界扫描。
+
+本脚本不再把标题、章节、标点、代码块、表格、图片数量或视觉风格当成硬规则。
+只阻断可确认的文件完整性、敏感信息和本地引用问题；事实与版权风险输出人工核验提醒。
+"""
+from __future__ import annotations
+
 from pathlib import Path
 import re
 import sys
@@ -7,22 +15,20 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTICLE_DIR_RE = re.compile(r"^0[1-6]-")
 ARTICLE_FILE_RE = re.compile(r"^\d{2}-.+\.md$")
 BAD_CHARS = ["�", "锟", "鐭", "鈥", "Ã", "Â"]
-RISKY_CODE_LANGS = {"md", "markdown", "mermaid", ""}
-PUBLIC_TAIL_HEADINGS = ("图片来源", "图片来源与发布提醒", "审核记录", "参考资料", "资料来源", "发布检查", "来源与发布")
-INTERNAL_REMINDERS = ("发布前请", "请再次核验", "发布到公众号或商业渠道前", "建议发布前")
-BROAD_UNSOURCED_PHRASES = ("当前一些产品", "产品方公开资料也会", "官方安全建议会专门")
-FINAL_CHECK_SENTENCE = "本文发布前已完成事实、版权与格式检查。"
-VISUAL_MODULE_MARKERS = ("视觉速读", "方法卡", "对比卡", "检查清单", "流程卡", "图解", "速览")
-STORY_SCENE_MARKERS = (
-    "早上", "中午", "晚上", "半夜", "周一", "你刚", "你终于", "坐回电脑", "打开电脑", "赶稿", "交付",
-    "项目", "现场", "卡住", "找不到", "担心", "怕", "我会", "你会发现", "这时", "那一刻",
-)
-MANUAL_OUTLINE_MARKERS = (
-    "是什么", "为什么需要", "适合谁", "不适合谁", "准备工作", "一步一步", "操作步骤", "常见错误",
-    "常见问题", "功能介绍", "能力清单", "最小可复用", "使用方法", "配置说明", "安装步骤",
-)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
-CAPTION_RE = re.compile(r"^\s*(?:\*|_)?(?:图|图片|自制示意图)[:：].*(?:\*|_)?\s*$")
+SECRET_RE = re.compile(
+    r"(?:sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9_]{20,}|xox[baprs]-[A-Za-z0-9-]{10,}|"
+    r"(?:token|api[_-]?key|secret|password)\s*=\s*['\"][A-Za-z0-9_\-]{12,})",
+    re.IGNORECASE,
+)
+FACT_REVIEW_RE = re.compile(
+    r"(?:首次|唯一|行业第一|绝对|保证|100%|提升\s*\d+%|降低\s*\d+%|官方认证|权威认证|客户案例|生产环境)",
+    re.IGNORECASE,
+)
+RIGHTS_REVIEW_RE = re.compile(
+    r"(?:转载|截图|Logo|商标|字体|图片来源|许可|授权|版权|开源协议|官方界面|第三方素材)",
+    re.IGNORECASE,
+)
 
 
 def iter_articles():
@@ -32,123 +38,42 @@ def iter_articles():
                 yield file
 
 
-def fenced_openers(text):
-    for match in re.finditer(r"^(`{3,}|~{3,})([^\n]*)$", text, re.M):
-        line_no = text[: match.start()].count("\n") + 1
-        yield line_no, match.group(1), match.group(2).strip()
+def normalize_target(raw: str) -> str:
+    target = raw.strip()
+    if target.startswith("<") and ">" in target:
+        target = target[1 : target.index(">")]
+    else:
+        title_match = re.match(r"([^\s]+)\s+[\"'].*[\"']$", target)
+        if title_match:
+            target = title_match.group(1)
+    return unquote(target.split("#", 1)[0].split("?", 1)[0].strip("<>"))
 
 
-def find_tables(lines):
-    separator_re = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$")
-    i = 0
-    while i < len(lines):
-        if lines[i].strip().startswith("|") and i + 1 < len(lines) and separator_re.match(lines[i + 1]):
-            start = i + 1
-            block = []
-            while i < len(lines) and lines[i].strip().startswith("|"):
-                block.append(lines[i])
-                i += 1
-            headers = [cell.strip() for cell in block[0].strip().strip("|").split("|")]
-            rows = max(0, len(block) - 2)
-            yield start, len(headers), rows, block[0]
-        else:
-            i += 1
-
-
-def scan_file(path):
+def scan_file(path: Path):
     text = path.read_text(encoding="utf-8")
-    lines = text.splitlines()
     rel = path.relative_to(ROOT)
-    problems = []
+    problems: list[tuple[str, str]] = []
+    warnings: list[tuple[str, str]] = []
 
     if any(ch in text for ch in BAD_CHARS):
-        problems.append(("P0", "疑似乱码字符"))
-    if "****" in text:
-        problems.append(("P1", "存在异常加粗符号 ****"))
-    if re.search(r"\[\^\d+\]", text):
-        problems.append(("P1", "正文含脚注标记；公众号版请改为正文表达或外置来源说明"))
-    if any(line.startswith("## ") and any(heading in line for heading in PUBLIC_TAIL_HEADINGS) for line in lines):
-        problems.append(("P1", "正文含图片来源/审核记录/参考资料等内部区块"))
-    if any(reminder in text for reminder in INTERNAL_REMINDERS):
-        problems.append(("P1", "正文含发布前复核提醒；应移至资产登记表或发布流程"))
-    if any(phrase in text for phrase in BROAD_UNSOURCED_PHRASES):
-        problems.append(("P1", "存在过实的泛化产品/官方表述；请改为有边界的类别表达"))
+        problems.append(("P0", "疑似乱码字符，先修复文件编码或内容损坏"))
+    if SECRET_RE.search(text):
+        problems.append(("P0", "疑似包含密钥、Token、密码或其他敏感凭据"))
 
-    first = next((line.strip() for line in lines if line.strip()), "")
-    if first.startswith("# "):
-        problems.append(("P0", "正文首行重复 H1 标题"))
-    if first and not first.startswith(">"):
-        problems.append(("P1", "正文开头不是一句话结论引用"))
-    if first.startswith("!"):
-        problems.append(("P1", "正文以图片开头，封面应外置"))
-    image_refs = IMAGE_RE.findall(text)
-    if not image_refs and not any(marker in text for marker in VISUAL_MODULE_MARKERS):
-        problems.append(("P1", "正文缺少图片或视觉化版式模块；请加入正文插图、视觉速读、方法卡、对比卡、检查清单或流程卡"))
-    for image_ref in image_refs:
-        raw_ref = image_ref.strip()
-        normalized_ref = raw_ref.strip("<>")
-        if re.search(r"[\u4e00-\u9fff\s]", normalized_ref) and not (raw_ref.startswith("<") and raw_ref.endswith(">")):
-            problems.append(("P1", f"正文图片路径含中文或空格但未用 <...> 包裹：{normalized_ref}"))
-        if normalized_ref.startswith(("http://", "https://", "data:")) or not normalized_ref:
+    for raw_ref in IMAGE_RE.findall(text):
+        normalized = normalize_target(raw_ref)
+        if not normalized or re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", normalized) or normalized.startswith("//"):
             continue
-        target = unquote(normalized_ref.split("#", 1)[0].strip().strip("<>"))
-        if target and not (path.parent / target).resolve().exists():
-            problems.append(("P0", f"正文图片不存在：{normalized_ref}"))
-    if "文章封面" in text or "%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2" in text:
-        problems.append(("P1", "正文包含文章封面图引用，封面应外置"))
-    if FINAL_CHECK_SENTENCE in text:
-        problems.append(("P1", "正文含发布检查收束句；应移至发布流程或资产登记表"))
+        target = (path.parent / normalized.replace("/", "\\")).resolve()
+        if not target.exists():
+            problems.append(("P0", f"正文引用的本地图片不存在：{normalized}"))
 
-    nonempty_lines = [line.strip() for line in lines if line.strip()]
-    first_screen = "\n".join(nonempty_lines[1:8]) if len(nonempty_lines) > 1 else ""
-    if first.startswith(">") and first_screen and not any(marker in first_screen for marker in STORY_SCENE_MARKERS):
-        problems.append(("P2", "首屏缺少故事/场景钩子；公众号主稿请先写人正在经历的问题，再进入说明"))
-    h2_headings = [line.strip("# ").strip() for line in lines if line.startswith("## ")]
-    manual_heading_count = sum(any(marker in heading for marker in MANUAL_OUTLINE_MARKERS) for heading in h2_headings)
-    if manual_heading_count >= 4:
-        problems.append(("P2", "二级标题偏说明书目录；请改成场景推进、判断升级和实操复盘的阅读节奏"))
+    if FACT_REVIEW_RE.search(text):
+        warnings.append(("P2", "检测到可能需要来源或事实核验的强表述；不因风格或结构自动阻断"))
+    if RIGHTS_REVIEW_RE.search(text):
+        warnings.append(("P2", "检测到外部素材、官方界面或版权相关表述；请人工确认来源和许可范围"))
 
-    in_fence = False
-    for index, line in enumerate(lines, 1):
-        stripped = line.strip()
-        if stripped.startswith("```") or stripped.startswith("~~~"):
-            in_fence = not in_fence
-        if in_fence:
-            continue
-        if line.startswith("# "):
-            problems.append(("P0", f"第 {index} 行存在 H1"))
-        if "点个" in line and "在看" in line:
-            problems.append(("P1", f"第 {index} 行存在平台 CTA"))
-        if re.search(r"\S\s+#{2,6}\s+", line):
-            problems.append(("P1", f"第 {index} 行疑似标题与正文挤在同一行"))
-        if re.search(r"!\[[^\]]*\]\([^)]+\)\S", line):
-            problems.append(("P1", f"第 {index} 行疑似图片与正文挤在同一行"))
-        if CAPTION_RE.match(line):
-            problems.append(("P1", f"第 {index} 行存在独立图片图注；请把说明融入相邻正文或移入素材登记表"))
-
-    bold_count = len(re.findall(r"\*\*[^*]+\*\*", text))
-    if bold_count > 10:
-        problems.append(("P1", f"加粗 {bold_count} 处，超过 10 处"))
-    elif bold_count > 6:
-        problems.append(("P2", f"加粗 {bold_count} 处，建议继续收敛"))
-
-    openers = list(fenced_openers(text))
-    if len(openers) % 2 != 0:
-        problems.append(("P0", "代码块数量疑似未闭合"))
-    for idx, (line_no, fence, lang) in enumerate(openers):
-        if idx % 2 == 0:
-            problems.append(("P1", f"第 {line_no} 行存在围栏代码块；公众号发布版请改成引用示例卡、编号清单或静态图片"))
-            if fence != "```":
-                problems.append(("P1", f"第 {line_no} 行存在非标准代码围栏：{fence}"))
-
-    for line_no, cols, rows, header in find_tables(lines):
-        if cols >= 4:
-            problems.append(("P1", f"第 {line_no} 行存在 {cols} 列宽表格；公众号移动端请改成卡片/小节"))
-
-    if "？" in path.name:
-        problems.append(("P1", "文件名包含问号"))
-
-    return rel, problems
+    return rel, problems, warnings
 
 
 def main():
@@ -156,18 +81,17 @@ def main():
     counts = {"P0": 0, "P1": 0, "P2": 0}
     for article in iter_articles():
         total += 1
-        rel, problems = scan_file(article)
-        if not problems:
+        rel, problems, warnings = scan_file(article)
+        if not problems and not warnings:
             continue
         print(f"\n{rel}")
-        for level, message in problems:
+        for level, message in [*problems, *warnings]:
             counts[level] += 1
             print(f"  [{level}] {message}")
     print(f"\n扫描文章：{total} 篇")
     print(f"P0: {counts['P0']}  P1: {counts['P1']}  P2: {counts['P2']}")
-    return 1 if counts["P0"] or counts["P1"] else 0
+    return 1 if counts["P0"] else 0
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

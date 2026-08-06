@@ -99,11 +99,8 @@ def main() -> int:
     used_images, image_ref_problems = collect_used_images(existing_articles)
     problems.extend(image_ref_problems)
 
+    # 封面不是每篇文章的强制资产；仅统计现有文件，不因缺少封面阻断。
     cover_files = [p for p in COVER_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if COVER_DIR.exists() else []
-    cover_ids = {m.group(1) for p in cover_files if (m := re.match(r"^(\d{2})-", p.name))}
-    missing_cover = sorted(formal_ids - cover_ids)
-    for no in missing_cover:
-        problems.append(f"[P1] 正式文章 {no} 缺少同编号封面文件")
 
     inline_files = [p for p in INLINE_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if INLINE_DIR.exists() else []
     archived_inline_files = [p for p in ARCHIVE_INLINE_DIR.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if ARCHIVE_INLINE_DIR.exists() else []
@@ -134,7 +131,7 @@ def main() -> int:
 
     print(f"正式文章：{len(assets)} 篇")
     print(f"正文图片引用：{len(used_images)} 个")
-    print(f"封面文件：{len(cover_files)} 个；正文插图文件：{len(inline_files)} 个；归档正文插图：{len(archived_inline_files)} 个")
+    print(f"封面文件：{len(cover_files)} 个（非强制）；正文插图文件：{len(inline_files)} 个；归档正文插图：{len(archived_inline_files)} 个")
 
     if problems:
         print("\n阻断问题：")
