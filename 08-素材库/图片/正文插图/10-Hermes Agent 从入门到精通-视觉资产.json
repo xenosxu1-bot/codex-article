@@ -1,0 +1,28 @@
+{
+  "article": "10-Hermes Agent 从入门到精通.md",
+  "generated_at": "2026-08-06",
+  "render_mode": "deterministic_post_layout_only",
+  "canvas": "1600x900",
+  "aspect_ratio": "16:9",
+  "source_of_truth": "D:/projects_git/article-Skill/accounts/default/visual-identity/visual-identity.v1.json",
+  "cover": {
+    "status": "not_bound_in_markdown",
+    "reason": "当前文章文件只绑定正文插图，封面由发布包单独管理"
+  },
+  "assets": [
+    {
+      "file": "10-Hermes Agent 从入门到精通-正文插图01.png",
+      "role": "任务闭环示意图",
+      "source_heading": "第二阶段：完成一个可核查的只读任务",
+      "mobile_qa": "checked_1600_to_375_preview"
+    },
+    {
+      "file": "10-Hermes Agent 从入门到精通-正文插图02.png",
+      "role": "学习路线图",
+      "source_heading": "四周学习路线",
+      "mobile_qa": "checked_1600_to_375_preview"
+    }
+  ],
+  "human_review": "required_before_publish",
+  "rights_review": "required_before_publish"
+}
