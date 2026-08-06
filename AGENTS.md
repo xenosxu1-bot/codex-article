@@ -160,3 +160,11 @@
 - 只有负责人明确批准“一次性编号迁移”时，才允许重排。先在 `07-资料与流程/编号变更记录.md` 固化旧号→新号映射、涉及资产和验收标准，再执行。
 - 一次性迁移必须同步正文、正在使用的图片、正文引用、元数据、资产登记表、README/索引、本地链接和发布记录，然后运行 `python 09-工具脚本/一键发布检查.py`。
 - `07-资料与流程/文章资产登记表.md` 同时记录「入库状态」和「发布状态」；正式文章上线、修改或下架时先更新发布状态，再运行 `09-工具脚本/重建知识库索引.py` 同步 README 的每篇文章状态列。
+
+## Codex Productivity Contract
+
+- Run `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1` for a lightweight verification; add `-Deep` before an authorized article release review.
+- Versioned Git hooks live in `.githooks/`; run `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-git-hooks.ps1` when configuring a checkout. `pre-commit` checks staged paths, secrets, and whitespace, while `pre-push` runs the verification entry point.
+- Use the `github-update-push` workflow only when the user explicitly requests synchronization: inspect local changes, fetch, validate, stage explicit paths, push the authorized scope, and compare local/upstream/remote identities.
+- Keep `article-Skill` as the only visual-rule source. This repository may validate or adapt locked content, but must not create a second rule source or silently publish.
+- If using an agent, assign disjoint file ownership and require a final main-task review; do not parallel-edit the same article or lock file.

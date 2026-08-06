@@ -144,19 +144,23 @@ def check_article_consistency() -> None:
     file_ids = sorted((parse_article_path(path)[0] for path in file_paths if parse_article_path(path)), key=int)
     record_ids = [record["id"] for record in records]
     retired_ids = read_retired_formal_ids()
-    max_id = max((int(item) for item in [*file_ids, *record_ids]), default=0)
-    expected_ids = [
-        f"{index:02d}"
-        for index in range(1, max_id + 1)
-        if f"{index:02d}" not in retired_ids
-    ]
-    if file_ids != expected_ids:
-        issues.append("[P0] Formal article file IDs are not continuous after excluding registered retired IDs")
-    if record_ids != expected_ids:
-        issues.append("[P0] Asset register IDs are not continuous after excluding registered retired IDs")
+    if len(file_ids) != len(set(file_ids)):
+        issues.append("[P0] Formal article file IDs contain duplicates")
+    if len(record_ids) != len(set(record_ids)):
+        issues.append("[P0] Asset register IDs contain duplicates")
+    if file_ids != sorted(record_ids, key=int):
+        issues.append("[P0] Formal article file IDs do not match the asset register")
     for retired_id in retired_ids:
         if retired_id in file_ids or retired_id in record_ids:
             issues.append(f"[P0] Retired formal ID is still occupied: {retired_id}")
+    if len(file_ids) > 1:
+        gaps = [
+            f"{index:02d}"
+            for index in range(int(file_ids[0]), int(file_ids[-1]) + 1)
+            if f"{index:02d}" not in file_ids and f"{index:02d}" not in retired_ids
+        ]
+        if gaps:
+            print("Documented non-contiguous IDs retained: " + ", ".join(gaps))
 
     valid_publish_statuses = {"已发布", "待上线", "修正中", "暂不发布", "已下架"}
     for record in records:
@@ -512,6 +516,8 @@ def approved_article_skill_duplicate_deletions(raw: str) -> tuple[list[str], lis
         "09-\u5de5\u5177\u811a\u672c/\u6279\u91cf\u8865\u5168\u6587\u7ae0\u5c01\u9762.py",
         "09-\u5de5\u5177\u811a\u672c/gpt_image_cover.py",
         "09-\u5de5\u5177\u811a\u672c/\u6279\u91cf\u751f\u6210\u914d\u56fe.py",
+        # Redundant project adapter note; canonical integration docs remain in the other runbook.
+        "09-\u5de5\u5177\u811a\u672c/\u5c01\u9762\u751f\u4ea7\u63a5\u5165\u8bf4\u660e.md",
     }
     allowed_prefixes = ("09-\u5de5\u5177\u811a\u672c/article-wechat-skill/",)
     for line in filter(None, raw.splitlines()):

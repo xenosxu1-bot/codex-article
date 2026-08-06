@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+repo_root="$(git rev-parse --show-toplevel)"
+git diff --cached --check
+files="$(git diff --cached --name-only --diff-filter=AM)"
+for file in $files; do
+  case "$file" in
+    .env|.env.*|*/.env|*/.env.*|node_modules/*|.tmp/*|playwright-report/*|test-results/*)
+      echo "? forbidden staged path: $file" >&2
+      exit 1
+      ;;
+  esac
+done
+added="$(git diff --cached --unified=0 --diff-filter=AM -- . ':(exclude).githooks/**' | grep '^+' | grep -v '^+++' || true)"
+if printf '%s\n' "$added" | grep -Eiq 'OPENAI_API_KEY|JWT_SECRET|APP_SECRET|DATABASE_URL|BEGIN .*PRIVATE KEY'; then
+  echo '? possible secret in staged additions' >&2
+  exit 1
+fi
+echo '? staged safety checks passed'

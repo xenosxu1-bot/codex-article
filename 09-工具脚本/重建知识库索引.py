@@ -1,9 +1,10 @@
 from pathlib import Path
 from collections import defaultdict
+from datetime import date
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE = "2026-07-30"
+DATE = date.today().isoformat()
 ASSET = ROOT / "07-资料与流程" / "文章资产登记表.md"
 NAV = ROOT / "00-知识库导航"
 CATEGORIES = ["工具教程", "AI知识", "好文方法", "安全治理", "案例实战", "热点追踪"]
@@ -55,6 +56,7 @@ def update_readme(rows):
         f"这是一个面向 AI 工具、Codex 使用、AI Agent 工作流和个人效率方法的中文知识库。当前保留 {len(rows)} 篇整合优化版文章：重复主题已合并，短稿已补足适用边界、执行清单和验收标准；README 按文章编号升序展示，编号与文章文件名前缀、资产登记表和发布记录保持一致；下架或删除后不自动重排；只有明确批准的一次性迁移才按《编号变更记录》执行；《编号变更记录》保留旧号到新号的追溯关系。",
         before,
     )
+    before = re.sub(r"> \u66f4\u65b0\u65f6\u95f4\uff1a\d{4}-\d{2}-\d{2}", f"> \u66f4\u65b0\u65f6\u95f4\uff1a{DATE}", before)
     before = re.sub(r"> 文章数量：\d+ 篇", f"> 文章数量：{len(rows)} 篇", before)
     before = re.sub(r"> 发布状态：\d+/\d+ 已整合入库.*", f"> 发布状态：{len(rows)}/{len(rows)} 已整合入库，正文图片、本地链接与正文图注检查通过。", before)
     out = [
