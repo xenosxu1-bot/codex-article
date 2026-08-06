@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "article": {
-    "id": "19",
+    "id": "10",
     "title": "Hermes Agent 从入门到精通",
-    "path": "01-工具教程/19-Hermes Agent 从入门到精通.md",
+    "path": "01-工具教程/10-Hermes Agent 从入门到精通.md",
     "tier": "deep",
     "category": "工具教程",
     "series": "AI工具连接与系统",
@@ -72,10 +72,10 @@
     }
   ],
   "assets": {
-    "cover": "08-素材库/图片/文章封面/19-Hermes Agent 从入门到精通-封面.png",
+    "cover": "08-素材库/图片/文章封面/10-Hermes Agent 从入门到精通-封面.png",
     "inline_images": [
-      "08-素材库/图片/正文插图/19-Hermes Agent 从入门到精通-正文插图01.png",
-      "08-素材库/图片/正文插图/19-Hermes Agent 从入门到精通-正文插图02.png"
+      "08-素材库/图片/正文插图/10-Hermes Agent 从入门到精通-正文插图01.png",
+      "08-素材库/图片/正文插图/10-Hermes Agent 从入门到精通-正文插图02.png"
     ],
     "visual_notes": "封面与正文图均为本地确定性绘制，无伪造官方界面、无真实 Logo、无机器人形象；中文文字由脚本叠加并校对。"
   },

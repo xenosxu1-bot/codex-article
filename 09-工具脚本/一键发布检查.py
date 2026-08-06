@@ -144,23 +144,19 @@ def check_article_consistency() -> None:
     file_ids = sorted((parse_article_path(path)[0] for path in file_paths if parse_article_path(path)), key=int)
     record_ids = [record["id"] for record in records]
     retired_ids = read_retired_formal_ids()
-    if len(file_ids) != len(set(file_ids)):
-        issues.append("[P0] Formal article file IDs contain duplicates")
-    if len(record_ids) != len(set(record_ids)):
-        issues.append("[P0] Asset register IDs contain duplicates")
-    if file_ids != sorted(record_ids, key=int):
-        issues.append("[P0] Formal article file IDs do not match the asset register")
+    max_id = max((int(item) for item in [*file_ids, *record_ids]), default=0)
+    expected_ids = [
+        f"{index:02d}"
+        for index in range(1, max_id + 1)
+        if f"{index:02d}" not in retired_ids
+    ]
+    if file_ids != expected_ids:
+        issues.append("[P0] Formal article file IDs are not continuous after excluding registered retired IDs")
+    if record_ids != expected_ids:
+        issues.append("[P0] Asset register IDs are not continuous after excluding registered retired IDs")
     for retired_id in retired_ids:
         if retired_id in file_ids or retired_id in record_ids:
             issues.append(f"[P0] Retired formal ID is still occupied: {retired_id}")
-    if len(file_ids) > 1:
-        gaps = [
-            f"{index:02d}"
-            for index in range(int(file_ids[0]), int(file_ids[-1]) + 1)
-            if f"{index:02d}" not in file_ids and f"{index:02d}" not in retired_ids
-        ]
-        if gaps:
-            print("Documented non-contiguous IDs retained: " + ", ".join(gaps))
 
     valid_publish_statuses = {"已发布", "待上线", "修正中", "暂不发布", "已下架"}
     for record in records:
@@ -396,6 +392,22 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                 new_match = re.match(r"^(\d{2})-", new_path.name)
                 # A complete reindex preserves the title suffix while changing its numeric prefix.
                 if old_match and new_match and old_name[3:] == new_path.name[3:] and (ROOT / new_path).exists():
+                    approved.append(line)
+                    continue
+                # Content-deduplication reports are regenerated with a new timestamp during article renumbering.
+                old_path = Path(parts[1].replace("/", "\\"))
+                report_dir = "07-资料与流程/内容去重报告"
+                timestamped_report_re = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}-(.+\.(?:json|md))$")
+                old_report_match = timestamped_report_re.match(old_name)
+                new_report_match = timestamped_report_re.match(new_path.name)
+                if (
+                    old_path.parent.as_posix() == report_dir
+                    and new_path.parent.as_posix() == report_dir
+                    and old_report_match
+                    and new_report_match
+                    and old_report_match.group(1) == new_report_match.group(1)
+                    and (ROOT / new_path).exists()
+                ):
                     approved.append(line)
                     continue
                 # Full reindexing preserves the title suffix while replacing its numeric prefix.
