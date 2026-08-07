@@ -1,6 +1,6 @@
 {
-  "article": "10-Hermes Agent 从入门到精通.md",
-  "generated_at": "2026-08-06",
+  "article": "10-Hermes Agent 实战入门：从安装到第一条可验收任务.md",
+  "generated_at": "2026-08-07",
   "render_mode": "deterministic_post_layout_only",
   "canvas": "1600x900",
   "aspect_ratio": "16:9",
@@ -11,15 +11,24 @@
   },
   "assets": [
     {
-      "file": "10-Hermes Agent 从入门到精通-正文插图01.png",
+      "file": "10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图01.png",
       "role": "任务闭环示意图",
-      "source_heading": "第二阶段：完成一个可核查的只读任务",
+      "source_heading": "二、30 分钟完整实战：审查一组资料，但不修改原文件",
+      "value_and_usage": "帮助新手理解输入、执行、证据、复盘四步；用于首次学习、任务设计、失败定位和自动化前验收。",
       "mobile_qa": "checked_1600_to_375_preview"
     },
     {
-      "file": "10-Hermes Agent 从入门到精通-正文插图02.png",
+      "file": "10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图03.png",
+      "role": "新手任务卡示意图",
+      "source_heading": "三、把一次成功写成可复用任务卡",
+      "value_and_usage": "把提示词拆成目标、输入、边界、输出、失败五个可填写区块；用于第一次分派任务、多人协作、Skill 沉淀和 Cron 前检查。",
+      "mobile_qa": "checked_1600_to_375_preview"
+    },
+    {
+      "file": "10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图02.png",
       "role": "学习路线图",
-      "source_heading": "四周学习路线",
+      "source_heading": "九、7 天练习路线：每天只增加一种能力",
+      "value_and_usage": "用可验证的过关条件阻止新手一次性开启全部能力；用于制定学习计划和判断何时进入自动化。",
       "mobile_qa": "checked_1600_to_375_preview"
     }
   ],

@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "article": {
     "id": "10",
-    "title": "Hermes Agent 从入门到精通",
-    "path": "01-工具教程/10-Hermes Agent 从入门到精通.md",
+    "title": "Hermes Agent 实战入门：从安装到第一条可验收任务",
+    "path": "01-工具教程/10-Hermes Agent 实战入门：从安装到第一条可验收任务.md",
     "tier": "deep",
     "category": "工具教程",
     "series": "AI工具连接与系统",
@@ -15,69 +15,84 @@
     ],
     "status": "S6 已入库",
     "created_at": "2026-08-06",
-    "updated_at": "2026-08-06"
+    "updated_at": "2026-08-07"
   },
   "brief": {
-    "target_reader": "想从命令行和消息平台搭建个人或小团队 Agent 工作台的中文读者",
-    "core_question": "Hermes Agent 如何从安装、模型配置、工具启用，逐步进阶到 Skill、网关、自动化和安全治理",
+    "target_reader": "第一次接触 AI Agent、想从终端和文件任务开始建立安全工作流的中文新手，也适合需要把重复工作沉淀成 Skill 的个人和小团队",
+    "core_question": "15 分钟跑通一次对话 → 30 分钟完成一次只读资料审查 → 把任务写成任务卡 → 再决定是否启用 Skill、Cron、网关或子 Agent。",
     "not_covering": [
       "不做生产部署安全审计",
       "不声称实测所有网关和后端",
       "不提供账号后台发布操作"
     ],
-    "new_angle": "不同于已删除的快速上手选题，本篇按四级能力路线讲清从个人试用到工作台化的进阶顺序，并补充安全边界和可复现练习模板。"
+    "new_angle": "15 分钟跑通一次对话 → 30 分钟完成一次只读资料审查 → 把任务写成任务卡 → 再决定是否启用 Skill、Cron、网关或子 Agent。"
   },
   "sources": [
     {
       "type": "official",
-      "title": "NousResearch/hermes-agent README",
-      "url": "https://github.com/NousResearch/hermes-agent",
-      "checked_at": "2026-08-06",
-      "notes": "项目定位、安装命令、入口、模型供应商、网关、学习闭环、后端和许可证。"
+      "title": "Hermes Agent Quickstart",
+      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+      "checked_at": "2026-08-07",
+      "notes": "安装、配置、首次对话、Blank Slate 和先跑通普通对话再扩展能力的路径。"
     },
     {
       "type": "official",
-      "title": "Hermes Agent Quickstart",
-      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
-      "checked_at": "2026-08-06",
-      "notes": "安装、配置、首轮对话和排错路径。"
+      "title": "NousResearch/hermes-agent README",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "checked_at": "2026-08-07",
+      "notes": "项目定位、入口、工具、模型供应商、消息平台、后端和许可证。"
     },
     {
       "type": "official",
       "title": "Tools & Toolsets",
       "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
-      "checked_at": "2026-08-06",
-      "notes": "工具类别、工具集与终端后端。"
+      "checked_at": "2026-08-07",
+      "notes": "工具类别、工具集、终端后端与自动化相关能力。"
     },
     {
       "type": "official",
       "title": "Skills System",
       "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
-      "checked_at": "2026-08-06",
-      "notes": "Skills 存放路径、渐进加载与 agentskills 标准。"
+      "checked_at": "2026-08-07",
+      "notes": "Skills 的按需加载、复用方式和创建边界。"
+    },
+    {
+      "type": "official",
+      "title": "Scheduled Tasks (Cron)",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+      "checked_at": "2026-08-07",
+      "notes": "定时任务的独立上下文、执行和投递注意事项。"
+    },
+    {
+      "type": "official",
+      "title": "Messaging Platforms",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/messaging-platforms",
+      "checked_at": "2026-08-07",
+      "notes": "Telegram、Discord、Slack、WhatsApp、Signal 等消息入口的配置边界。"
     },
     {
       "type": "official",
       "title": "Security",
       "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
-      "checked_at": "2026-08-06",
-      "notes": "命令审批、隔离、凭据过滤、上下文扫描等安全边界。"
+      "checked_at": "2026-08-07",
+      "notes": "命令审批、容器隔离、上下文扫描、跨会话隔离和路径校验。"
     },
     {
       "type": "official",
       "title": "Architecture",
       "url": "https://hermes-agent.nousresearch.com/docs/developer-guide/architecture",
-      "checked_at": "2026-08-06",
-      "notes": "入口、AIAgent、Prompt Builder、Provider Resolution、Tool Dispatch 等架构模块。"
+      "checked_at": "2026-08-07",
+      "notes": "入口、代理循环、Prompt Builder、Provider Resolution 和 Tool Dispatch 等架构模块。"
     }
   ],
   "assets": {
-    "cover": "08-素材库/图片/文章封面/10-Hermes Agent 从入门到精通-封面.png",
+    "cover": "08-素材库/图片/文章封面/10-Hermes Agent 实战入门：从安装到第一条可验收任务-封面.png",
     "inline_images": [
-      "08-素材库/图片/正文插图/10-Hermes Agent 从入门到精通-正文插图01.png",
-      "08-素材库/图片/正文插图/10-Hermes Agent 从入门到精通-正文插图02.png"
+      "08-素材库/图片/正文插图/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图01.png",
+      "08-素材库/图片/正文插图/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图02.png",
+      "08-素材库/图片/正文插图/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图03.png"
     ],
-    "visual_notes": "封面与正文图均为本地确定性绘制，无伪造官方界面、无真实 Logo、无机器人形象；中文文字由脚本叠加并校对。"
+    "visual_notes": "封面与正文图均为本地确定性绘制，无伪造官方界面、无真实 Logo、无机器人形象；正文图分别解释任务闭环、任务卡和学习路线，并在正文中标注每张图的价值与使用场景。"
   },
   "checks": {
     "fact_review": "已核对 GitHub README、中文 README 和官方文档页面；正文不保留公开参考资料区块。",
