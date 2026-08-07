@@ -73,6 +73,6 @@
 | 08 | [别再只会问 AI：把它变成可交付工作流](<03-好文方法/08-别再只会问 AI：把它变成可交付工作流.md>) | 好文方法 | AI工作流与个人效率 | 工作流, 任务卡, 可交付 | 待上线 | 3229 |
 | 09 | [Codex 智能体与 Skills 中文参考手册](<01-工具教程/09-Codex 智能体与 Skills 中文参考手册.md>) | 工具教程 | Codex入门与工程化 | 智能体, Skill, 手册 | 待上线 | 7525 |
 | 10 | [Hermes Agent 实战入门：从安装到第一条可验收任务](<01-工具教程/10-Hermes Agent 实战入门：从安装到第一条可验收任务.md>) | 工具教程 | AI工具连接与系统 | Hermes Agent, AI Agent, 开源工具, 工作流 | 待上线 | 4681 |
-| 11 | [AI Agent 到底是什么：从聊天机器人到自动完成工作的系统](<02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md>) | AI知识 | AI Agent 与自动化 | AI Agent, 任务拆解, 工作流, 人工验收 | 待上线 | 2278 |
-| 12 | [MCP 是什么：AI 为什么需要一个 USB-C 接口](<01-工具教程/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md>) | 工具教程 | AI工具连接与系统 | MCP, AI Agent, 工具连接, 安全边界 | 待上线 | 2272 |
-| 14 | [2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选](<01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选.md>) | 工具教程 | AI工具连接与系统 | AI Coding, Codex, Claude Code, GitHub Copilot, Cursor, 工具选型 | 待上线 | 2535 |
+| 11 | [AI Agent 到底是什么：从聊天机器人到自动完成工作的系统](<02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md>) | AI知识 | AI Agent 与自动化 | AI Agent, 任务拆解, 工作流, 人工验收 | 待上线 | 2734 |
+| 12 | [MCP 是什么：AI 为什么需要一个 USB-C 接口](<01-工具教程/12-MCP 是什么：AI 为什么需要一个 USB-C 接口/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md>) | 工具教程 | AI工具连接与系统 | MCP, AI Agent, 工具连接, 安全边界 | 待上线 | 2667 |
+| 14 | [2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选](<01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选.md>) | 工具教程 | AI工具连接与系统 | AI Coding, Codex, Claude Code, GitHub Copilot, Cursor, 工具选型 | 待上线 | 2912 |

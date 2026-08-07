@@ -40,6 +40,19 @@ def locate_one(pattern: str, label: str) -> Path:
     return matches[0]
 
 
+def locate_article(article_id: str) -> Path:
+    """Locate a formal article in either the legacy flat layout or an article package."""
+    patterns = (
+        f"[0-9][0-9]-*/{article_id}-*.md",
+        f"[0-9][0-9]-*/{article_id}-*/{article_id}-*.md",
+    )
+    matches = sorted({path.resolve() for pattern in patterns for path in REPO_ROOT.glob(pattern)})
+    if len(matches) != 1:
+        detail = "; ".join(patterns)
+        raise FileNotFoundError(f"article must resolve to exactly one file; found {len(matches)} for {detail}")
+    return matches[0]
+
+
 def load_lock() -> dict[str, str]:
     data = json.loads(LOCK_PATH.read_text(encoding="utf-8"))
     canonical = data.get("canonical_skill", {})
@@ -114,7 +127,7 @@ def main() -> int:
         raise ValueError("Provide --id or --article")
     json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     lock = load_lock()
-    article = Path(args.article) if args.article else locate_one(f"[0-9][0-9]-*/{normalize_id(args.id)}-*.md", "article")
+    article = Path(args.article) if args.article else locate_article(normalize_id(args.id))
     if not article.is_absolute():
         article = (REPO_ROOT / article).resolve()
     manifest = Path(args.manifest) if args.manifest else locate_one(f"07-资料与流程/文章元数据/{normalize_id(args.id)}-*.json", "metadata")

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "14",
+    "title": "2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选",
+    "path": "01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": null,
+    "figures": [
+      {
+        "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png",
+        "kind": "original-diagram",
+        "alt": "四类 AI 编程工具的工作入口比较"
+      },
+      {
+        "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png",
+        "kind": "original-diagram",
+        "alt": "按工作入口选择 AI 编程工具的决策路径"
+      },
+      {
+        "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png",
+        "kind": "original-diagram",
+        "alt": "用于比较 AI 编程工具的统一任务卡"
+      }
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/文章元数据/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选.json",
+    "verification_ledger": "07-资料与流程/文章资料核验台账.md"
+  },
+  "notes": "正文与文章专属图片放在同一文章包；资料来源与核验记录仅在仓库流程目录维护；封面如后续生成，仅放 assets/cover，不在正文嵌入。"
+}

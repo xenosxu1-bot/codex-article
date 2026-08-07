@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "11",
+    "title": "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
+    "path": "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
+    "category": "02-AI知识"
+  },
+  "assets": {
+    "cover": null,
+    "figures": [
+      {
+        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png",
+        "kind": "original-diagram",
+        "alt": "AI Agent 从目标到可验收交付"
+      },
+      {
+        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图02.png",
+        "kind": "original-diagram",
+        "alt": "聊天助手、固定自动化与 AI Agent 的差异对比"
+      },
+      {
+        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图03.png",
+        "kind": "original-diagram",
+        "alt": "AI Agent 从目标到验收的六步任务闭环"
+      }
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/文章元数据/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.json",
+    "verification_ledger": "07-资料与流程/文章资料核验台账.md"
+  },
+  "notes": "正文与文章专属图片放在同一文章包；资料来源与核验记录仅在仓库流程目录维护；封面如后续生成，仅放 assets/cover，不在正文嵌入。"
+}

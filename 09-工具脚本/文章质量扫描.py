@@ -32,8 +32,9 @@ RIGHTS_REVIEW_RE = re.compile(
 
 
 def iter_articles():
+    """Yield legacy flat articles and article-package bodies without treating package assets as articles."""
     for directory in sorted(p for p in ROOT.iterdir() if p.is_dir() and ARTICLE_DIR_RE.match(p.name)):
-        for file in sorted(directory.glob("*.md")):
+        for file in sorted(directory.rglob("*.md")):
             if ARTICLE_FILE_RE.match(file.name):
                 yield file
 

@@ -83,6 +83,21 @@ def collect_used_images(article_files: list[Path]) -> tuple[set[Path], list[str]
     return used, problems
 
 
+def collect_package_media_files(article_files: list[Path]) -> tuple[list[Path], list[Path]]:
+    """Return optional covers and inline figures that live beside packaged articles."""
+    covers: list[Path] = []
+    figures: list[Path] = []
+    for article in article_files:
+        assets_root = article.parent / "assets"
+        cover_dir = assets_root / "cover"
+        figure_dir = assets_root / "figures"
+        if cover_dir.exists():
+            covers.extend(p for p in cover_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS)
+        if figure_dir.exists():
+            figures.extend(p for p in figure_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS)
+    return covers, figures
+
+
 def main() -> int:
     assets = parse_assets()
     formal_ids = {item["id"] for item in assets}
@@ -99,10 +114,12 @@ def main() -> int:
     used_images, image_ref_problems = collect_used_images(existing_articles)
     problems.extend(image_ref_problems)
 
-    # 封面不是每篇文章的强制资产；仅统计现有文件，不因缺少封面阻断。
-    cover_files = [p for p in COVER_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if COVER_DIR.exists() else []
-
-    inline_files = [p for p in INLINE_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if INLINE_DIR.exists() else []
+    # 封面不是每篇文章的强制资产；兼容旧的集中素材库和新的单篇文章包。
+    legacy_cover_files = [p for p in COVER_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if COVER_DIR.exists() else []
+    legacy_inline_files = [p for p in INLINE_DIR.glob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if INLINE_DIR.exists() else []
+    package_cover_files, package_inline_files = collect_package_media_files(existing_articles)
+    cover_files = [*legacy_cover_files, *package_cover_files]
+    inline_files = [*legacy_inline_files, *package_inline_files]
     archived_inline_files = [p for p in ARCHIVE_INLINE_DIR.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS] if ARCHIVE_INLINE_DIR.exists() else []
     archived_set = {p.resolve() for p in archived_inline_files}
 
@@ -131,7 +148,7 @@ def main() -> int:
 
     print(f"正式文章：{len(assets)} 篇")
     print(f"正文图片引用：{len(used_images)} 个")
-    print(f"封面文件：{len(cover_files)} 个（非强制）；正文插图文件：{len(inline_files)} 个；归档正文插图：{len(archived_inline_files)} 个")
+    print(f"封面文件：{len(cover_files)} 个（非强制，含文章包）；正文插图文件：{len(inline_files)} 个（含文章包）；归档正文插图：{len(archived_inline_files)} 个")
 
     if problems:
         print("\n阻断问题：")

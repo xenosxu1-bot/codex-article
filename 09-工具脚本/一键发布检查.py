@@ -44,14 +44,14 @@ def run(cmd: list[str], title: str, check: bool = True) -> subprocess.CompletedP
     return result
 
 
-def run_python(script_name: str, title: str) -> None:
+def run_python(script_name: str, title: str, *arguments: str) -> None:
     safe_name = ascii(script_name)
     code = (
         "import glob,runpy,sys;d=glob.glob('09-*')[0];sys.path.insert(0,d);"
         + "target=" + safe_name + ";p=next(x for x in glob.glob('09-*/*.py') if x.endswith(target));"
         + "runpy.run_path(p,run_name='__main__')"
     )
-    run([sys.executable, '-c', code], title)
+    run([sys.executable, '-c', code, *arguments], title)
 
 
 def parse_asset_records() -> list[dict[str, str]]:
@@ -90,14 +90,14 @@ def read_retired_formal_ids() -> list[str]:
 def iter_article_files() -> list[Path]:
     files: list[Path] = []
     for directory in sorted(p for p in ROOT.iterdir() if p.is_dir() and ARTICLE_DIR_RE.match(p.name)):
-        for file in sorted(directory.glob("*.md")):
+        for file in sorted(directory.rglob("*.md")):
             if ARTICLE_FILE_RE.match(file.name):
                 files.append(file)
     return files
 
 
 def parse_article_path(path: str) -> tuple[str, str] | None:
-    match = re.fullmatch(r"0[1-6]-.+/(\d{2})-(.+)\.md", path.replace("\\", "/"))
+    match = re.fullmatch(r"0[1-6]-.+/(?:\d{2}-.+/)?(\d{2})-(.+)\.md", path.replace("\\", "/"))
     if not match:
         return None
     return match.group(1), match.group(2)
@@ -377,7 +377,7 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
     asset_paths = [record["path"] for record in parse_asset_records()]
     registered_by_id: dict[str, str] = {}
     for item in asset_paths:
-        match = re.match(r"^0[1-6]-[^/]+/(\d{2})-", item)
+        match = re.match(r"^0[1-6]-[^/]+/(?:\d{2}-[^/]+/)?(\d{2})-", item)
         if match:
             registered_by_id[match.group(1)] = item.replace("/", "\\")
 
@@ -449,13 +449,21 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         registered = registered_by_id.get(no, "")
 
         # Article retitle: old formal article path is deleted, but the same id now points to a new file.
-        if re.match(r"^0[1-6]-", source_path.parent.as_posix()) and source_path.suffix.lower() == ".md":
+        if source_path.parts and re.match(r"^0[1-6]-", source_path.parts[0]) and source_path.suffix.lower() == ".md":
             if registered and registered != source and (ROOT / registered).exists():
                 approved.append(line)
                 continue
 
-        # Image retitle/redraw: old same-number image leaves active asset dirs, new same-number image exists.
+        # Article-package migration: an article-bound legacy image may move beside the body.
         parent = source_path.parent.as_posix()
+        if parent in {"08-素材库/图片/文章封面", "08-素材库/图片/正文插图"} and registered:
+            package_assets = (ROOT / registered).parent / "assets"
+            replacement = package_assets / ("cover" if parent.endswith("文章封面") else "figures") / source_path.name
+            if replacement.is_file():
+                approved.append(line)
+                continue
+
+        # Image retitle/redraw: old same-number image leaves active asset dirs, new same-number image exists.
         if parent in {"08-素材库/图片/文章封面", "08-素材库/图片/正文插图"}:
             suffix_match = re.search(r"(-封面|-正文插图\d+)\.(png|jpe?g|webp)$", source_path.name, re.I)
             if suffix_match:
@@ -616,6 +624,7 @@ def check_secret_risk() -> None:
 def main() -> int:
     print("一键发布前检查开始：检查并重建索引，不提交、不推送。")
     run_python("重建知识库索引.py", "重建知识库索引")
+    run_python("资料核验检查.py", "资料核验检查与台账重建", "--write-ledger")
     run_python("文章质量扫描.py", "文章质量扫描")
     run_python("选题文章绑定检查.py", "选题文章绑定检查")
     run_python("图片资产检查.py", "图片资产检查")

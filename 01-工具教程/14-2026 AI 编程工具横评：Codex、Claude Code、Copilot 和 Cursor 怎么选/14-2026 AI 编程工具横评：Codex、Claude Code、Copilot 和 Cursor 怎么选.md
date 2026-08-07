@@ -1,3 +1,7 @@
+**14. 2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选**
+
+> 真正让人焦虑的，不是工具太少，而是每个工具都承诺“更快”，却很少告诉你：出了错，谁来定位、谁来回滚、谁来负责。
+
 同一句“帮我修复这个项目里的登录问题”，交给不同的 AI 编程工具，得到的体验可能完全不同。
 
 有的工具更像 IDE 里的副驾驶，适合边看边改；有的更像可以交代任务的编码 Agent，会先理解代码库，再修改多个文件、运行测试并返回变更；还有的工具擅长浏览器调试或后台执行。
@@ -7,7 +11,9 @@
 本文比较 Codex、Claude Code、GitHub Copilot 和 Cursor 的工作定位。它不是统一基准测试，也不替代你在自己的项目上做实测。产品功能、价格、模型选择和地区可用性都可能变化，使用前请以官方页面为准。
 
 
-![四类 AI 编程工具的工作入口比较](../08-素材库/图片/正文插图/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png)
+![四类 AI 编程工具的工作入口比较](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png)
+
+> **可以转发的一句话：AI 编程工具选型，不是选模型，而是选你愿意交出去的责任边界。**
 ## 先给结论：四款工具适合四种不同的工作方式
 
 ### Codex：适合把完整工程任务交给 Agent
@@ -57,6 +63,16 @@ Cursor 的 Agent 模式强调自主探索代码库、多文件编辑、终端操
 
 这张表只是工作流判断，不是模型能力排行榜。同一工具在不同项目、不同模型、不同上下文质量下，结果可能相差很大。
 
+![按工作入口选择 AI 编程工具的决策路径](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png)
+
+先确认你的工作入口：是以终端任务为主、以 IDE 编辑为主、以 GitHub 协作为主，还是以快速探索为主。工具名只是候选，任务的责任边界才是筛选条件。
+
+## 一个不该直接交给 AI 的反例
+
+涉及生产数据库迁移、密钥轮换、支付逻辑、权限模型或不可逆批量删除时，不应把“直接执行”当作默认选项。即使工具能生成看似合理的方案，也先要求它只读盘点：列出受影响文件、依赖、回滚条件和待人工确认的问题。
+
+这里的判断标准不是工具够不够聪明，而是**一旦判断错误，损失是否能被快速发现和撤回**。不能轻易回滚的任务，必须保留人工审批与分阶段验证。
+
 ## 不要先看宣传页，先用同一任务做小型实测
 
 如果你真想比较四款工具，建议不要只看演示视频。准备一个可以恢复的测试仓库，给每个工具同一份任务说明。
@@ -82,6 +98,10 @@ Cursor 的 Agent 模式强调自主探索代码库、多文件编辑、终端操
 7. 从首次执行到可合并结果花了多少时间、调用和人工返工。
 
 最终答案可能不是“谁第一”，而是“谁在你的项目类型上最稳定”。
+
+![用于比较 AI 编程工具的统一任务卡](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png)
+
+把同一张任务卡交给不同工具，记录范围、质量、证据和风险，才能从“演示印象”走到“项目证据”。
 
 ## 四款工具都要遵守的安全底线
 
@@ -133,13 +153,4 @@ AI 编程工具的竞争，正在从“谁能生成更多代码”转向“谁�
 
 当这些问题都有清晰答案时，AI 编程工具才不只是一个会写代码的聊天窗口，而是一个可以被团队控制和验收的工程协作者。
 
-## 官方资料与核验入口
-
-- [OpenAI Academy：Codex](https://openai.com/academy/codex/)
-- [OpenAI Help：Codex CLI](https://help.openai.com/en/articles/11096431)
-- [Anthropic：Claude Code Overview](https://code.claude.com/docs/en/overview)
-- [GitHub Changelog：Browser tools for GitHub Copilot in VS Code](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/)
-- [Cursor：Agent Modes](https://docs.cursor.com/agent)
-- [Cursor：Background Agents](https://docs.cursor.com/background-agent)
-
-> 资料核验时间：2026-08-07。工具能力、模型选项、套餐、网络权限和企业控制项变化较快；正式发布前应重新核对当前官方文档，并在目标项目上完成实测。
+> 如果团队正在为“该买哪个 AI 编程工具”争论，把统一任务卡先发给参与试用的人；一轮可复现的实测，比十个演示视频更容易形成共识。

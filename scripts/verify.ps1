@@ -16,7 +16,8 @@ if ($Deep) {
     $checks = @(
         @{ Marker = 'ARCHIVE_INLINE_DIR ='; Label = 'image asset check' },
         @{ Marker = 'OUTPUT_FILE = ROOT /'; Label = 'topic binding check' },
-        @{ Marker = 'BAD_CHARS ='; Label = 'article quality scan' }
+        @{ Marker = 'BAD_CHARS ='; Label = 'article quality scan' },
+        @{ Marker = 'REQUIRED_ARTICLE_STATES ='; Label = 'source evidence check' }
     )
     foreach ($check in $checks) {
         $script = Get-ChildItem -LiteralPath $tools.FullName -File -Filter '*.py' |
