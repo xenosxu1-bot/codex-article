@@ -3,7 +3,7 @@
   "canonical_skill": {
     "repository": "https://github.com/xenosxu1-bot/article-Skill",
     "branch": "main",
-    "commit": "c003c95d08edac56605db7e2deeae417690d3991"
+    "commit": "8a1d96a71bf7c869dd2ebf77e06a3120497c4d9c"
   },
   "compatibility": {
     "historical_snapshot": null,
