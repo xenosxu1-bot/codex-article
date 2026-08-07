@@ -1,0 +1,66 @@
+{
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "11",
+                    "title":  "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
+                    "path":  "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
+                    "tier":  "standard",
+                    "category":  "AI知识",
+                    "series":  "AI Agent 与自动化",
+                    "tags":  [
+                                 "AI Agent",
+                                 "任务拆解",
+                                 "工作流",
+                                 "人工验收"
+                             ],
+                    "status":  "S6 已入库",
+                    "created_at":  "2026-08-07",
+                    "updated_at":  "2026-08-07"
+                },
+    "brief":  {
+                  "target_reader":  "第一次接触 AI Agent、希望把 AI 从问答助手变成可控工作协作者的中文读者，也适合负责流程设计的个人和小团队",
+                  "core_question":  "AI Agent 与普通聊天机器人、固定自动化到底差在哪里，怎样把第一项任务交给它而不失去控制",
+                  "not_covering":  [
+                                       "不比较所有 Agent 产品的价格和套餐",
+                                       "不承诺某个产品长期保持同样能力",
+                                       "不提供绕过审批、权限或安全边界的操作"
+                                   ],
+                  "new_angle":  "不从产品宣传出发，而是用模型、上下文、工具、执行与验收四层模型，配合任务卡和风险分级，解释如何安全启动第一条 Agent 工作流"
+              },
+    "sources":  [
+                    {
+                        "type":  "official",
+                        "title":  "OpenAI：ChatGPT Work",
+                        "url":  "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对工作入口、跨应用与长任务相关的官方描述；正文采用保守表述，不把宣传性能力写成普遍保证。"
+                    },
+                    {
+                        "type":  "official",
+                        "title":  "OpenAI：New tools for building agents",
+                        "url":  "https://openai.com/index/new-tools-for-building-agents/",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对 Agent 工具链和构建工作流的官方背景。"
+                    },
+                    {
+                        "type":  "official",
+                        "title":  "Model Context Protocol：What is MCP?",
+                        "url":  "https://modelcontextprotocol.io/introduction",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对 MCP 作为连接 AI 应用与外部系统开放标准的定义。"
+                    }
+                ],
+    "assets":  {
+                   "cover":  null,
+                   "inline_images":  [
+                                         "08-素材库/图片/正文插图/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png"
+                                     ],
+                   "visual_notes":  "本地确定性绘制的原创信息图，展示目标、上下文、工具、执行与人工验收的关系；不是官方界面、Logo 或产品截图。"
+               },
+    "checks":  {
+                   "fact_review":  "已核对正文列出的官方资料与当前页面；产品能力、版本和可用性均保留变化提示，不把厂商宣传写成普遍保证。",
+                   "copyright_review":  "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
+                   "policy_review":  "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
+                   "human_publish_approval":  "pending"
+               }
+}

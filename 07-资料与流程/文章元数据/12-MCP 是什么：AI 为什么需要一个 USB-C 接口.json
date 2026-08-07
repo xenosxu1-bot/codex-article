@@ -1,0 +1,66 @@
+{
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "12",
+                    "title":  "MCP 是什么：AI 为什么需要一个 USB-C 接口",
+                    "path":  "01-工具教程/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md",
+                    "tier":  "standard",
+                    "category":  "工具教程",
+                    "series":  "AI工具连接与系统",
+                    "tags":  [
+                                 "MCP",
+                                 "AI Agent",
+                                 "工具连接",
+                                 "安全边界"
+                             ],
+                    "status":  "S6 已入库",
+                    "created_at":  "2026-08-07",
+                    "updated_at":  "2026-08-07"
+                },
+    "brief":  {
+                  "target_reader":  "希望让 AI 读取资料、访问项目数据或调用工具的开发者、产品经理和高级用户",
+                  "core_question":  "MCP 到底解决了什么连接问题，普通用户和团队如何从只读、最小权限的方式开始使用",
+                  "not_covering":  [
+                                       "不把 MCP Server 列表当成安全背书",
+                                       "不提供生产环境无审计接入方案",
+                                       "不把协议标准等同于某个客户端的全部能力"
+                                   ],
+                  "new_angle":  "把 MCP 拆成连接层、能力暴露和安全边界三部分，重点交付“先只读、再小范围写入”的落地顺序，而不是只讲协议名词"
+              },
+    "sources":  [
+                    {
+                        "type":  "official",
+                        "title":  "Model Context Protocol：What is MCP?",
+                        "url":  "https://modelcontextprotocol.io/introduction",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对 MCP 的定义、USB-C 类比、资源与工具连接关系。"
+                    },
+                    {
+                        "type":  "official",
+                        "title":  "Model Context Protocol：Documentation",
+                        "url":  "https://modelcontextprotocol.io/docs",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对官方文档入口与规范持续变化提示。"
+                    },
+                    {
+                        "type":  "official",
+                        "title":  "Claude Code：Overview",
+                        "url":  "https://code.claude.com/docs/en/overview",
+                        "checked_at":  "2026-08-07",
+                        "notes":  "核对客户端侧 MCP/工具工作方式的官方入口；正文不将其能力外推到所有客户端。"
+                    }
+                ],
+    "assets":  {
+                   "cover":  null,
+                   "inline_images":  [
+                                         "08-素材库/图片/正文插图/12-MCP 是什么：AI 为什么需要一个 USB-C 接口-正文插图01.png"
+                                     ],
+                   "visual_notes":  "本地确定性绘制的原创连接层与安全边界信息图，未使用官方界面、Logo、截图或第三方素材。"
+               },
+    "checks":  {
+                   "fact_review":  "已核对正文列出的官方资料与当前页面；产品能力、版本和可用性均保留变化提示，不把厂商宣传写成普遍保证。",
+                   "copyright_review":  "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
+                   "policy_review":  "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
+                   "human_publish_approval":  "pending"
+               }
+}

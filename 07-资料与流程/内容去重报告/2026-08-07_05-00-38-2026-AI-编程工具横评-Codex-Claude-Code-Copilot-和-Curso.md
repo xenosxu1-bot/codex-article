@@ -1,0 +1,64 @@
+# 内容重复度检查：2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选
+
+- 候选文件：`01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选.md`
+- 判定标准：重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%
+- 强制阈值：重复度必须 **低于 50%**；规范化标题或正文完全一致时直接阻止。
+- 检查结果：**PASS**
+
+| 参考条目 | 类型 | 正文相似度 | 标题相似度 | 重复度 | 结果 |
+| --- | --- | ---: | ---: | ---: | --- |
+| EXT-20260723-035 免费接入DeepSeek V4：ClaudeCode/OpenClaw/Opencode配置全攻略 | external-archive | 1.09% | 26.09% | 4.84% | 通过 |
+| EXT-20260723-007 Codex 完整使用指南Day1：从入门到 AI 自动开发 | external-archive | 1.69% | 16.39% | 3.89% | 通过 |
+| EXT-20260723-015 别再傻傻买OpenAI API了！10分钟让Codex直连DeepSeek-V4 | external-archive | 0.79% | 19.72% | 3.63% | 通过 |
+| EXT-20260723-043 PPT、Excel、Photoshop全下岗！2026年最值得掌握的10个AI神器曝光 | external-archive | 0.44% | 21.33% | 3.57% | 通过 |
+| EXT-20260723-006 Codex 新手上手Day2：从界面到第一个高质量任务 | external-archive | 1.7% | 13.11% | 3.41% | 通过 |
+| 02 Codex 进阶提效：配置、权限、复用与自动化 | formal-article | 1.42% | 14.55% | 3.39% | 通过 |
+| EXT-20260723-002 Codex 插件与 Skill 指南：把常用能力装进工作流 | external-archive | 0.98% | 16.39% | 3.29% | 通过 |
+| EXT-20260723-029 DeepSeek、豆包、千问三足鼎立！2026 国产 AI 最强对决，看完就知道怎么选 | external-archive | 0.38% | 19.72% | 3.28% | 通过 |
+| 09 Codex 智能体与 Skills 中文参考手册 | formal-article | 0.72% | 17.54% | 3.24% | 通过 |
+| 05 Codex 插件与 Skill 指南：把常用能力沉淀进工作流 | formal-article | 0.79% | 16.13% | 3.09% | 通过 |
+| EXT-20260723-040 AI编程：如何构建一个能自主写代码的“数字同事” | external-archive | 1.77% | 10.53% | 3.08% | 通过 |
+| 01 Codex 新手上手：从界面到第一个高质量任务 | formal-article | 1.07% | 14.04% | 3.02% | 通过 |
+| EXT-20260723-019 Claude、ChatGPT、Gemini、Grok：选错一个，效率直接掉队 | external-archive | 0.43% | 17.65% | 3.01% | 通过 |
+| EXT-20260723-031 一文读懂OpenCode，从入门到精通 | external-archive | 0.76% | 14.81% | 2.87% | 通过 |
+| EXT-20260723-004 AGENTS.md 深度模板：让 Codex 按团队规则工作 | external-archive | 0.98% | 13.11% | 2.8% | 通过 |
+| 04 AGENTS.md 深度模板：让 Codex 按团队规则工作 | formal-article | 0.83% | 13.11% | 2.67% | 通过 |
+| EXT-20260723-042 海内外主流AI工具分析 | external-archive | 1.6% | 8.51% | 2.64% | 通过 |
+| 03 Codex 实战案例：从失败测试到可验证修复 | formal-article | 0.33% | 14.29% | 2.42% | 通过 |
+| EXT-20260723-005 Codex实战案例Day3：从失败测试到可验证修复 | external-archive | 0.44% | 13.33% | 2.37% | 通过 |
+| 11 AI Agent 到底是什么：从聊天机器人到自动完成工作的系统 | formal-article | 2.11% | 3.13% | 2.26% | 通过 |
+| EXT-20260723-037 未来已来：2026年国内大模型豆包、千问、DeepSeek生态深度解析 | external-archive | 0.46% | 11.94% | 2.18% | 通过 |
+| 12 MCP 是什么：AI 为什么需要一个 USB-C 接口 | formal-article | 1.41% | 3.57% | 1.73% | 通过 |
+| EXT-20260723-036 除了OpenAI，还有谁在定义AI未来？15家海外必知的大模型公司 | external-archive | 0.92% | 6.06% | 1.69% | 通过 |
+| EXT-20260723-020 3分钟看懂 WorkBuddy：腾讯正在打造真正的“AI员工” | external-archive | 0.23% | 9.52% | 1.62% | 通过 |
+| EXT-20260723-041 用这五款AI工具，小白也能变行业大神 | external-archive | 0.47% | 7.55% | 1.53% | 通过 |
+| EXT-20260723-017 AI学习神器NotebookLM：真正的高手已经不用AI找答案了 | external-archive | 0.39% | 6.06% | 1.24% | 通过 |
+| EXT-20260723-010 别再装满一整个AI工具箱了：我实测了10款主流AI工具，最后只留下这3个 | external-archive | 0.39% | 5.97% | 1.23% | 通过 |
+| 06 跟着 weStudy 做一个 AI 学习小程序 | formal-article | 0.14% | 7.27% | 1.21% | 通过 |
+| EXT-20260723-021 一篇文章讲透 Agent Skill：从使用到原理，一次讲清 | external-archive | 0.77% | 3.23% | 1.14% | 通过 |
+| EXT-20260723-033 AI重磅消息：OpenAI甩出GPT-5.5 Instant！ | external-archive | 0.14% | 6.56% | 1.1% | 通过 |
+| EXT-20260723-003 GPT-5.6 来了，但真正炸裂的是 ChatGPT Work | external-archive | 0.64% | 3.39% | 1.05% | 通过 |
+| EXT-20260723-026 AI开始“自己上班”了，很多人还停留在问问题 | external-archive | 0.55% | 3.64% | 1.01% | 通过 |
+| EXT-20260723-022 ChatGPT只是开始，AI Agent才是真正危险的东西 | external-archive | 0.57% | 3.17% | 0.96% | 通过 |
+| EXT-20260723-016 被吹爆的Notion到底怎么用？我整理了一份全网最简单教程 | external-archive | 0% | 6.25% | 0.94% | 通过 |
+| EXT-20260723-028 【产品经理必备】AI基础概念篇：Agent、Token、RAG...... | external-archive | 0.49% | 3.33% | 0.92% | 通过 |
+| 08 别再只会问 AI：把它变成可交付工作流 | formal-article | 0.41% | 3.77% | 0.91% | 通过 |
+| EXT-20260723-025 【AI入门第一周】你不是学不会AI，你只是还没人告诉你该先学什么 | external-archive | 0.49% | 3.13% | 0.89% | 通过 |
+| EXT-20260723-032 10款精选国内AI软件，亲测好用，建议偷偷收藏 | external-archive | 0.26% | 3.51% | 0.75% | 通过 |
+| EXT-20260723-008 人与AI的认知分水岭：谁在为你思考？ | external-archive | 0.2% | 3.85% | 0.75% | 通过 |
+| EXT-20260723-027 AI不会替代你，但会用AI的人一定会 | external-archive | 0.17% | 3.85% | 0.72% | 通过 |
+| EXT-20260723-038 99%的人不知道的AI进阶三步曲 | external-archive | 0.09% | 3.92% | 0.66% | 通过 |
+| EXT-20260723-012 为什么我劝你现在就开始用AI：真正拉开差距的，不是努力，而是借力 | external-archive | 0.21% | 3.08% | 0.64% | 通过 |
+| EXT-20260723-024 给AI新手的100个神级Prompt模板 | external-archive | 0.11% | 3.57% | 0.63% | 通过 |
+| EXT-20260723-009 靠AI月入过万：普通人靠AI赚钱的5条路 | external-archive | 0.08% | 3.77% | 0.63% | 通过 |
+| EXT-20260723-030 零基础学AI，3个阶段循序渐，普通人也能轻松上手 | external-archive | 0.12% | 3.45% | 0.62% | 通过 |
+| EXT-20260723-014 未来3年，AI不会淘汰你，但不会这5项技能的人会越来越难 | external-archive | 0.12% | 3.28% | 0.59% | 通过 |
+| EXT-20260723-018 AI不会淘汰你，但会用AI的人正在淘汰你 | external-archive | 0% | 3.85% | 0.58% | 通过 |
+| EXT-20260723-011 打工人必看：用AI把3小时工作压缩到15分钟 | external-archive | 0% | 3.51% | 0.53% | 通过 |
+| EXT-20260723-023 普通人最容易赚钱的AI玩法：不是写代码，而是工作流 | external-archive | 0% | 3.39% | 0.51% | 通过 |
+| EXT-20260723-001 学AI最大的误区：收藏100个Prompt，不如练好这5种能力 | external-archive | 0.05% | 3.08% | 0.5% | 通过 |
+| 10 Hermes Agent 实战入门：从安装到第一条可验收任务 | formal-article | 0.58% | 0% | 0.49% | 通过 |
+| EXT-20260723-013 法国、阿根廷世界杯预测大战：Kimi、DeepSeek、ChatGPT谁更懂球? | external-archive | 0.05% | 2.86% | 0.47% | 通过 |
+| EXT-20260723-039 Trae IDE深度解析：从需求到代码，30分钟完成Android App开发的秘诀 | external-archive | 0.04% | 2.74% | 0.45% | 通过 |
+| 07 别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化 | formal-article | 0.44% | 0% | 0.37% | 通过 |
+| EXT-20260723-034 当机器学会写诗，人类还剩什么？ | external-archive | 0% | 0% | 0% | 通过 |
