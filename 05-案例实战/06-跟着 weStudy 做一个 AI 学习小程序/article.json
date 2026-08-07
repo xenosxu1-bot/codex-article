@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "06",
+    "title": "跟着 weStudy 做一个 AI 学习小程序",
+    "path": "05-案例实战/06-跟着 weStudy 做一个 AI 学习小程序/06-跟着 weStudy 做一个 AI 学习小程序.md",
+    "category": "05-案例实战"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/06-跟着 weStudy 做一个 AI 学习小程序-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/06-跟着 weStudy 做一个 AI 学习小程序-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：跟着 weStudy 做一个 AI 学习小程序的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图01.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图02.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图03.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图04.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图05.png"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

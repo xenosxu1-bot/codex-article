@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "09",
+    "title": "Codex 智能体与 Skills 中文参考手册",
+    "path": "01-工具教程/09-Codex 智能体与 Skills 中文参考手册/09-Codex 智能体与 Skills 中文参考手册.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/09-Codex 智能体与 Skills 中文参考手册-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": []
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "10",
+    "title": "Hermes Agent 实战入门：从安装到第一条可验收任务",
+    "path": "01-工具教程/10-Hermes Agent 实战入门：从安装到第一条可验收任务/10-Hermes Agent 实战入门：从安装到第一条可验收任务.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/10-Hermes Agent 实战入门：从安装到第一条可验收任务-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "Hermes Agent 任务闭环：从目标到可验收结果"
+      },
+      {
+        "file": "assets/figures/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图03.png",
+        "kind": "inline-image",
+        "alt": "Hermes Agent 任务卡：目标、输入、边界、输出、失败处理"
+      },
+      {
+        "file": "assets/figures/10-Hermes Agent 实战入门：从安装到第一条可验收任务-正文插图02.png",
+        "kind": "inline-image",
+        "alt": "Hermes Agent 学习路线：从能用到可自动化"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/official-screenshots/hermes-zh-first-chat-session.png",
+      "assets/archive/official-screenshots/hermes-zh-next-layer.png",
+      "assets/archive/official-screenshots/hermes-zh-quick-reference.png",
+      "assets/archive/official-screenshots/hermes-zh-quickstart-fast-path.png",
+      "assets/archive/official-screenshots/hermes-zh-tools-available.png"
+    ],
+    "records": [
+      "assets/records/10-Hermes Agent 从入门到精通-视觉资产.json"
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/10-Hermes Agent 从入门到精通.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

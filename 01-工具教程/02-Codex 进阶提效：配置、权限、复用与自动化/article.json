@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "02",
+    "title": "Codex 进阶提效：配置、权限、复用与自动化",
+    "path": "01-工具教程/02-Codex 进阶提效：配置、权限、复用与自动化/02-Codex 进阶提效：配置、权限、复用与自动化.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/02-Codex 进阶提效：配置、权限、复用与自动化-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/02-Codex 进阶提效：配置、权限、复用与自动化-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：Codex 进阶提效：配置、权限、复用与自动化的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/02-Codex 进阶提效：配置、权限、复用与自动化-正文插图02.jpg"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

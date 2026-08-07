@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "01",
+    "title": "Codex 新手上手：从界面到第一个高质量任务",
+    "path": "01-工具教程/01-Codex 新手上手：从界面到第一个高质量任务/01-Codex 新手上手：从界面到第一个高质量任务.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/01-Codex 新手上手：从界面到第一个高质量任务-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/01-Codex 新手上手：从界面到第一个高质量任务-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：Codex 新手上手：从界面到第一个高质量任务的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/01-Codex 新手上手：从界面到第一个高质量任务-正文插图02.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/01-Codex 新手上手：从界面到第一个高质量任务-正文插图03.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/01-Codex 新手上手：从界面到第一个高质量任务-正文插图04.jpg"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

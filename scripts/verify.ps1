@@ -14,13 +14,13 @@ if ($Deep) {
     if (-not $tools) { throw 'Verification failed: the 09-* tools directory was not found.' }
 
     $checks = @(
-        @{ Marker = 'ARCHIVE_INLINE_DIR ='; Label = 'image asset check' },
+        @{ Marker = 'def check_article(item:'; Label = 'image asset check' },
         @{ Marker = 'OUTPUT_FILE = ROOT /'; Label = 'topic binding check' },
         @{ Marker = 'BAD_CHARS ='; Label = 'article quality scan' },
         @{ Marker = 'REQUIRED_ARTICLE_STATES ='; Label = 'source evidence check' }
     )
     foreach ($check in $checks) {
-        $script = Get-ChildItem -LiteralPath $tools.FullName -File -Filter '*.py' |
+        $script = Get-ChildItem -LiteralPath $tools.FullName -File -Filter '*.py' -Recurse |
             Where-Object { (Get-Content -LiteralPath $_.FullName -Raw -Encoding utf8) -like "*$($check.Marker)*" } |
             Select-Object -First 1
         if (-not $script) { throw "Verification failed: $($check.Label) script was not found." }

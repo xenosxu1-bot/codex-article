@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "07",
+    "title": "别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化",
+    "path": "06-热点追踪/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化.md",
+    "category": "06-热点追踪"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/文章封面-历史未使用/07-GPT-5.6 来了，但真正炸裂的是 ChatGPT Work-封面.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/07-GPT-5.6 来了，但真正炸裂的是 ChatGPT Work-正文插图02.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/07-GPT-5.6 来了，但真正炸裂的是 ChatGPT Work-正文插图03.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/07-GPT-5.6 来了，但真正炸裂的是 ChatGPT Work-正文插图04.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/07-GPT-5.6 来了，但真正炸裂的是 ChatGPT Work-正文插图05.png"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

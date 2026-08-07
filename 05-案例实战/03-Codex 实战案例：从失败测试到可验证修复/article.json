@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "03",
+    "title": "Codex 实战案例：从失败测试到可验证修复",
+    "path": "05-案例实战/03-Codex 实战案例：从失败测试到可验证修复/03-Codex 实战案例：从失败测试到可验证修复.md",
+    "category": "05-案例实战"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/03-Codex 实战案例：从失败测试到可验证修复-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/03-Codex 实战案例：从失败测试到可验证修复-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：Codex 实战案例：从失败测试到可验证修复的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/文章封面-历史未使用/03-Codex 实战速查：修 bug、安全检查与高质量提示词-封面.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/03-Codex 实战速查：修 bug、安全检查与高质量提示词-正文插图02.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/03-Codex 实战速查：修 bug、安全检查与高质量提示词-正文插图03.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/03-Codex 实战速查：修 bug、安全检查与高质量提示词-正文插图04.jpg"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

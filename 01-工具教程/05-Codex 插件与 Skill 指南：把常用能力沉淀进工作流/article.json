@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "05",
+    "title": "Codex 插件与 Skill 指南：把常用能力沉淀进工作流",
+    "path": "01-工具教程/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：Codex 插件与 Skill 指南：把常用能力沉淀进工作流的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/文章封面-历史未使用/05-Codex 插件与 Skill 指南：把常用能力装进工作流-封面.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/05-Codex 插件与 Skill 指南：把常用能力装进工作流-正文插图02.jpg"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

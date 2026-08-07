@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "08",
+    "title": "别再只会问 AI：把它变成可交付工作流",
+    "path": "03-好文方法/08-别再只会问 AI：把它变成可交付工作流/08-别再只会问 AI：把它变成可交付工作流.md",
+    "category": "03-好文方法"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/08-别再只会问 AI：把它变成可交付工作流-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/08-别再只会问 AI：把它变成可交付工作流-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：别再只会问 AI：把它变成可交付工作流的阅读路径"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/08-别再只会问 AI：把它变成可交付工作流-正文插图02.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/08-别再只会问 AI：把它变成可交付工作流-正文插图03.jpg",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/08-别再只会问 AI：把它变成可交付工作流-正文插图04.jpg"
+    ]
+  },
+  "records": {
+    "metadata": null,
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

@@ -11,7 +11,7 @@
 本文比较 Codex、Claude Code、GitHub Copilot 和 Cursor 的工作定位。它不是统一基准测试，也不替代你在自己的项目上做实测。产品功能、价格、模型选择和地区可用性都可能变化，使用前请以官方页面为准。
 
 
-![四类 AI 编程工具的工作入口比较](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png)
+![四类 AI 编程工具的工作入口比较](<assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png>)
 
 > **可以转发的一句话：AI 编程工具选型，不是选模型，而是选你愿意交出去的责任边界。**
 ## 先给结论：四款工具适合四种不同的工作方式
@@ -63,7 +63,7 @@ Cursor 的 Agent 模式强调自主探索代码库、多文件编辑、终端操
 
 这张表只是工作流判断，不是模型能力排行榜。同一工具在不同项目、不同模型、不同上下文质量下，结果可能相差很大。
 
-![按工作入口选择 AI 编程工具的决策路径](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png)
+![按工作入口选择 AI 编程工具的决策路径](<assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png>)
 
 先确认你的工作入口：是以终端任务为主、以 IDE 编辑为主、以 GitHub 协作为主，还是以快速探索为主。工具名只是候选，任务的责任边界才是筛选条件。
 
@@ -99,7 +99,7 @@ Cursor 的 Agent 模式强调自主探索代码库、多文件编辑、终端操
 
 最终答案可能不是“谁第一”，而是“谁在你的项目类型上最稳定”。
 
-![用于比较 AI 编程工具的统一任务卡](assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png)
+![用于比较 AI 编程工具的统一任务卡](<assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png>)
 
 把同一张任务卡交给不同工具，记录范围、质量、证据和风险，才能从“演示印象”走到“项目证据”。
 
