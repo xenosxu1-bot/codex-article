@@ -1,0 +1,36 @@
+{
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "14",
+                    "title":  "2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选",
+                    "path":  "01-工具教程/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.md",
+                    "category":  "01-工具教程"
+                },
+    "assets":  {
+                   "cover":  null,
+                   "figures":  [
+                                   {
+                                       "file":  "assets/figures/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "同一个工程问题，四种工作入口定位图"
+                                   },
+                                   {
+                                       "file":  "assets/figures/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "从只读盘点到可验收交付的统一实测任务卡"
+                                   }
+                               ],
+                   "archived_files":  [
+                                          {
+                                              "file":  "assets/archive/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png",
+                                              "kind":  "legacy-inline-image",
+                                              "reason":  "旧版任务路径图已被统一实测任务卡替代，不再作为正文插图使用。"
+                                          }
+                                      ]
+               },
+    "records":  {
+                    "metadata":  "07-资料与流程/03-资产与核验/文章元数据/14-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.json",
+                    "verification_ledger":  "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+                },
+    "notes":  "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+}

@@ -15,7 +15,7 @@
     ],
     "status": "S6 已入库",
     "created_at": "2026-08-07",
-    "updated_at": "2026-08-07"
+    "updated_at": "2026-08-10"
   },
   "brief": {
     "target_reader": "第一次接触 AI Agent、希望把 AI 从问答助手变成可控工作协作者的中文读者，也适合负责流程设计的个人和小团队",
@@ -30,24 +30,17 @@
   "sources": [
     {
       "type": "official",
-      "title": "OpenAI：ChatGPT Work",
-      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
-      "checked_at": "2026-08-07",
-      "notes": "核对工作入口、跨应用与长任务相关的官方描述；正文采用保守表述，不把宣传性能力写成普遍保证。"
+      "title": "OpenAI Agents SDK：Agents guide",
+      "url": "https://platform.openai.com/docs/guides/agents",
+      "checked_at": "2026-08-10",
+      "notes": "核对 Agent 能力围绕指令、工具、交接、护栏和追踪等组成部分组织；正文不外推到具体套餐或产品可用范围。"
     },
     {
       "type": "official",
-      "title": "OpenAI：New tools for building agents",
-      "url": "https://openai.com/index/new-tools-for-building-agents/",
-      "checked_at": "2026-08-07",
-      "notes": "核对 Agent 工具链和构建工作流的官方背景。"
-    },
-    {
-      "type": "official",
-      "title": "Model Context Protocol：What is MCP?",
-      "url": "https://modelcontextprotocol.io/introduction",
-      "checked_at": "2026-08-07",
-      "notes": "核对 MCP 作为连接 AI 应用与外部系统开放标准的定义。"
+      "title": "Model Context Protocol：Architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+      "checked_at": "2026-08-10",
+      "notes": "核对 Host、Client、Server 与外部系统的连接角色，用于说明 Agent 工具连接边界。"
     }
   ],
   "assets": {
@@ -60,7 +53,7 @@
     "visual_notes": "三张本地确定性绘制的原创信息图，用于概念对比、可复现工作流与行动检查；不使用第三方 Logo、官方截图或未授权素材。"
   },
   "checks": {
-    "fact_review": "已核对正文列出的官方资料与当前页面；产品能力、版本和可用性均保留变化提示，不把厂商宣传写成普遍保证。",
+    "fact_review": "已补充 Agent 生命周期、权限分档、团队引入路线和长期评估清单；2026-08-10 核对 OpenAI Agents SDK 与 MCP 官方架构文档，删除不可复核的产品时点表述。",
     "copyright_review": "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
     "policy_review": "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
     "human_publish_approval": "pending"

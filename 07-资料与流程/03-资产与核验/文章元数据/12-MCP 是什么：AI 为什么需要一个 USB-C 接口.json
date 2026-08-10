@@ -15,7 +15,7 @@
     ],
     "status": "S6 已入库",
     "created_at": "2026-08-07",
-    "updated_at": "2026-08-07"
+    "updated_at": "2026-08-10"
   },
   "brief": {
     "target_reader": "希望让 AI 读取资料、访问项目数据或调用工具的开发者、产品经理和高级用户",
@@ -30,23 +30,23 @@
   "sources": [
     {
       "type": "official",
-      "title": "Model Context Protocol：What is MCP?",
-      "url": "https://modelcontextprotocol.io/introduction",
-      "checked_at": "2026-08-07",
-      "notes": "核对 MCP 的定义、USB-C 类比、资源与工具连接关系。"
+      "title": "Model Context Protocol：Architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+      "checked_at": "2026-08-10",
+      "notes": "核对 Host、Client、Server 和外部系统的架构关系。"
     },
     {
       "type": "official",
-      "title": "Model Context Protocol：Documentation",
-      "url": "https://modelcontextprotocol.io/docs",
-      "checked_at": "2026-08-07",
-      "notes": "核对官方文档入口与规范持续变化提示。"
+      "title": "Model Context Protocol：Server concepts",
+      "url": "https://modelcontextprotocol.io/docs/learn/server-concepts",
+      "checked_at": "2026-08-10",
+      "notes": "核对 Resources、Tools、Prompts 的 Server 能力划分。"
     },
     {
       "type": "official",
       "title": "Claude Code：Overview",
       "url": "https://code.claude.com/docs/en/overview",
-      "checked_at": "2026-08-07",
+      "checked_at": "2026-08-10",
       "notes": "核对客户端侧 MCP/工具工作方式的官方入口；正文不将其能力外推到所有客户端。"
     }
   ],
@@ -60,7 +60,7 @@
     "visual_notes": "三张本地确定性绘制的原创信息图，用于概念对比、可复现工作流与行动检查；不使用第三方 Logo、官方截图或未授权素材。"
   },
   "checks": {
-    "fact_review": "已核对正文列出的官方资料与当前页面；产品能力、版本和可用性均保留变化提示，不把厂商宣传写成普遍保证。",
+    "fact_review": "已补充 MCP 架构角色、能力与权限分离、团队接入路线和排障表；2026-08-10 核对 MCP 官方架构/Server 概念文档与 Claude Code 官方入口。",
     "copyright_review": "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
     "policy_review": "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
     "human_publish_approval": "pending"

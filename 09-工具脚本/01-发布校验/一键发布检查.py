@@ -76,13 +76,13 @@ def parse_asset_records() -> list[dict[str, str]]:
 
 
 def read_retired_formal_ids() -> list[str]:
-    """Read IDs explicitly marked permanently reserved in the offboarding register."""
+    """Read IDs explicitly marked as historical reserved gaps in the offboarding register."""
     if not OFFLINE_RELATION.exists():
         return []
     ids = {
         match.group(1).zfill(2)
         for line in OFFLINE_RELATION.read_text(encoding="utf-8").splitlines()
-        for match in re.finditer(r"\u6c38\u4e45\u4fdd\u7559\u7f16\u53f7[\uff1a:]\s*(\d{1,2})", line)
+        for match in re.finditer(r"(?:\u6c38\u4e45\u4fdd\u7559\u7f16\u53f7|\u5386\u53f2\u7f16\u53f7\u4fdd\u7559)[\uff1a:]\s*(\d{1,2})", line)
     }
     return sorted(ids, key=int)
 
@@ -443,6 +443,11 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         source = parts[-1].replace("/", "\\")
         source_path = Path(source)
         match = re.match(r"^(\d{2})-", source_path.name)
+        if not match and source_path.parts and re.match(r"^0[1-6]-", source_path.parts[0]):
+            for component in reversed(source_path.parts):
+                match = re.match(r"^(\d{2})-", component)
+                if match:
+                    break
         if not match:
             rejected.append(line)
             continue
@@ -452,6 +457,51 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         # Article retitle: old formal article path is deleted, but the same id now points to a new file.
         if source_path.parts and re.match(r"^0[1-6]-", source_path.parts[0]) and source_path.suffix.lower() == ".md":
             if registered and registered != source and (ROOT / registered).exists():
+                approved.append(line)
+                continue
+
+        # Article-package retitle: nested package files may appear as D/A instead of Git renames
+        # when the title or regenerated assets change. Approve only when the same article id
+        # now points to a different package and the corresponding relative file exists there.
+        if registered and len(source_path.parts) >= 3 and re.match(r"^0[1-6]-", source_path.parts[0]):
+            registered_path = Path(registered)
+            old_article_dir = next(
+                (component for component in source_path.parts if component.startswith(no + "-")),
+                "",
+            )
+            if (
+                old_article_dir
+                and registered_path.parent.name.startswith(no + "-")
+                and registered_path.parent.name != old_article_dir
+                and (ROOT / registered).is_file()
+            ):
+                relative = source_path.parts[source_path.parts.index(old_article_dir) + 1 :]
+                replacement = ROOT / registered_path.parent / Path(*relative)
+                if replacement.is_file():
+                    approved.append(line)
+                    continue
+                if len(relative) >= 2 and relative[0] == "assets":
+                    replacement_dir = ROOT / registered_path.parent / Path(*relative[:-1])
+                    suffix_match = re.search(r"(\d{2}\.(?:png|jpe?g|webp))$", source_path.name, re.I)
+                    if suffix_match and replacement_dir.is_dir():
+                        suffix = suffix_match.group(1)
+                        replacement_exists = any(
+                            candidate.is_file()
+                            and candidate.name.startswith(no + "-")
+                            and candidate.name.endswith(suffix)
+                            for candidate in replacement_dir.glob(no + "-*" + suffix)
+                        )
+                        if replacement_exists:
+                            approved.append(line)
+                            continue
+
+        # Metadata retitle: the same article id may have a new title-based metadata filename.
+        if (len(source_path.parts) >= 3 and source_path.parts[0].startswith("07-") and source_path.parts[1].startswith("03-") and source_path.suffix.lower() == ".json"):
+            replacement_exists = any(
+                candidate.is_file() and candidate.name != source_path.name
+                for candidate in source_path.parent.glob(f"{no}-*.json")
+            )
+            if replacement_exists:
                 approved.append(line)
                 continue
 
