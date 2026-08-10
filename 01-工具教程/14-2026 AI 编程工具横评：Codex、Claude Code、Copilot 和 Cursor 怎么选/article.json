@@ -12,17 +12,19 @@
       {
         "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png",
         "kind": "inline-image",
-        "alt": "四类 AI 编程工具的工作入口比较"
+        "alt": "同一个工程问题，四种工作入口定位图"
       },
       {
         "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png",
         "kind": "inline-image",
-        "alt": "按工作入口选择 AI 编程工具的决策路径"
-      },
+        "alt": "从只读盘点到可验收交付的统一实测任务卡"
+      }
+    ],
+    "archived_files": [
       {
-        "file": "assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png",
-        "kind": "inline-image",
-        "alt": "用于比较 AI 编程工具的统一任务卡"
+        "file": "assets/archive/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png",
+        "kind": "legacy-inline-image",
+        "reason": "旧版任务路径图已被统一实测任务卡替代，不再作为正文插图使用。"
       }
     ]
   },

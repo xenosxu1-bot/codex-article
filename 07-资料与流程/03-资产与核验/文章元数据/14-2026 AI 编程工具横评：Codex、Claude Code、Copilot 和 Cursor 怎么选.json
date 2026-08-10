@@ -77,10 +77,9 @@
     "cover": null,
     "inline_images": [
       "01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png",
-      "01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png",
-      "01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图03.png"
+      "01-工具教程/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选/assets/figures/14-2026 AI 编程工具横评：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图02.png"
     ],
-    "visual_notes": "三张本地确定性绘制的原创信息图，用于概念对比、可复现工作流与行动检查；不使用第三方 Logo、官方截图或未授权素材。"
+    "visual_notes": "两张本地确定性绘制的原创信息图，用于工作入口定位与可复现实测任务；不使用第三方 Logo、官方截图或未授权素材。"
   },
   "checks": {
     "fact_review": "已核对正文列出的官方资料与当前页面；产品能力、版本和可用性均保留变化提示，不把厂商宣传写成普遍保证。",
