@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "16",
+    "title": "Dify 新手教程：做第一个可分享的 AI 应用",
+    "path": "01-工具教程/16-Dify 新手教程：做第一个可分享的 AI 应用/16-Dify 新手教程：做第一个可分享的 AI 应用.md",
+    "tier": "standard",
+    "category": "工具教程",
+    "series": "AI新手开源工具实用教程",
+    "tags": [
+      "Dify",
+      "AI应用",
+      "工作流",
+      "RAG",
+      "开源工具"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-08-11",
+    "updated_at": "2026-08-11"
+  },
+  "topic": {
+    "id": "T083",
+    "status": "S6 已入库"
+  },
+  "brief": {
+    "reader_moment": "想把 Prompt 变成小工具的运营、产品和知识工作者",
+    "emotional_tension": "资料或 Prompt 已经能帮忙，但还散在聊天记录、文件夹或个人电脑里，无法稳定复用。",
+    "contrarian_claim": "新手学习 AI 工具不应追求功能大全，而应先交付一个低风险、可验收的小成果。",
+    "share_target": "AI 新手、知识工作者和希望把生活问题工具化的普通读者。",
+    "reusable_asset": "隐私分层清单、验收样例和发布前检查清单。",
+    "counterexample": "不适合用来替代医疗、法律、投资、安全和其他专业判断；不适合直接上传敏感资料或真实密钥。",
+    "figure_plan": [
+      "把 Prompt 做成 AI 应用的最小闭环",
+      "Dify 新手发布前验收清单"
+    ],
+    "target_reader": "想把 Prompt 变成小工具的运营、产品和知识工作者",
+    "core_question": "如何从一个生活或工作问题做出可复用 AI 应用",
+    "not_covering": "不承诺真实生产实测效果，不替代法律、医疗、投资、安全或商业部署决策；不转载官方或第三方截图。",
+    "core_view": "AI 新手学习开源工具应从低风险、可复现、可验收的小场景开始，而不是追逐功能大全。",
+    "deliverables": [
+      "教程正文",
+      "原创正文信息图",
+      "资料核验记录",
+      "隐私与发布边界提示"
+    ],
+    "source_requirements": "优先核对官方 GitHub README、官方文档和许可证；发布前需要复核当前版本和条款。",
+    "risks": [
+      "产品界面和命令可能更新",
+      "用户可能误把 AI 输出当作专业结论",
+      "教程截图或 Logo 使用存在版权/品牌风险"
+    ],
+    "new_angle": "承接本地助手和个人知识库之后，把一个反复使用的 Prompt 封装成可分享应用，重点讲变量、输入边界、测试样例和发布前验收。"
+  },
+  "sources": [
+    {
+      "title": "Dify GitHub README",
+      "url": "https://github.com/langgenius/dify/blob/main/README.md",
+      "checked_at": "2026-08-11",
+      "notes": "核对 Dify 作为开源 LLM 应用开发平台的定位、AI Workflow、RAG pipeline、Agent、模型管理、可观测性与 Docker Compose 快速启动入口。"
+    },
+    {
+      "title": "Dify Documentation Home",
+      "url": "https://docs.dify.ai/",
+      "checked_at": "2026-08-11",
+      "notes": "核对官方文档入口与后续应用编排、知识库和部署资料的权威来源；正文把具体界面差异保留为发布前复核项。"
+    },
+    {
+      "title": "Dify LICENSE",
+      "url": "https://github.com/langgenius/dify/blob/main/LICENSE",
+      "checked_at": "2026-08-11",
+      "notes": "核对 modified Apache 2.0、商用、多租户服务和前端版权/Logo 相关附加条件；正文提醒团队或商用部署前复核授权边界。"
+    }
+  ],
+  "assets": {
+    "cover": null,
+    "inline_images": [
+      {
+        "file": "assets/figures/16-Dify 新手教程：做第一个可分享的 AI 应用-正文插图01.png",
+        "alt": "把 Prompt 做成 AI 应用的最小闭环"
+      },
+      {
+        "file": "assets/figures/16-Dify 新手教程：做第一个可分享的 AI 应用-正文插图02.png",
+        "alt": "Dify 新手发布前验收清单"
+      }
+    ],
+    "visual_notes": "两张正文图均为本地确定性脚本绘制的信息图，不包含官方 Logo、商标化界面、真人或第三方截图。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pass",
+      "notes": "已按 2026-08-11 官方 README、文档与 LICENSE 复核核心事实；发布前仍需复核版本和界面变更。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文为原创表达；图片为本地原创信息图；不复制第三方博文图片、官方 Logo 或界面。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "已提示密钥、隐私、医疗/法律/投资/安全高风险边界，不鼓励绕过权限或上传敏感资料。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "仓库入库不等于公众号或其他平台发布，仍需负责人发布前人工预览确认。"
+    }
+  },
+  "editorial_review": {
+    "structure": "由生活痛点进入，逐步给出工具定位、最小场景、操作步骤、验收方式和风险边界。",
+    "ai_tone": "已减少模板化口吻，保留作者判断和具体新手场景。",
+    "visual_reference_boundary": "图片仅服务相邻段落说明，未使用外部截图或品牌素材。"
+  }
+}

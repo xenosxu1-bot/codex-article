@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "15",
+    "title": "AnythingLLM 新手教程：把散落资料变成可问答知识库",
+    "path": "01-工具教程/15-AnythingLLM 新手教程：把散落资料变成可问答知识库/15-AnythingLLM 新手教程：把散落资料变成可问答知识库.md",
+    "tier": "standard",
+    "category": "工具教程",
+    "series": "AI新手开源工具实用教程",
+    "tags": [
+      "AnythingLLM",
+      "本地知识库",
+      "RAG",
+      "文档问答",
+      "隐私边界"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-08-11",
+    "updated_at": "2026-08-11"
+  },
+  "topic": {
+    "id": "T082",
+    "status": "S6 已入库"
+  },
+  "brief": {
+    "reader_moment": "已跑通本地助手、想整理 PDF/网页/笔记的新手",
+    "emotional_tension": "资料或 Prompt 已经能帮忙，但还散在聊天记录、文件夹或个人电脑里，无法稳定复用。",
+    "contrarian_claim": "新手学习 AI 工具不应追求功能大全，而应先交付一个低风险、可验收的小成果。",
+    "share_target": "AI 新手、知识工作者和希望把生活问题工具化的普通读者。",
+    "reusable_asset": "隐私分层清单、验收样例和发布前检查清单。",
+    "counterexample": "不适合用来替代医疗、法律、投资、安全和其他专业判断；不适合直接上传敏感资料或真实密钥。",
+    "figure_plan": [
+      "从散落资料到可问答知识库的四步路径",
+      "个人资料入库前的隐私分层清单"
+    ],
+    "target_reader": "已跑通本地助手、想整理 PDF/网页/笔记的新手",
+    "core_question": "如何把个人资料接进 AI，并知道哪些内容不该上传",
+    "not_covering": "不承诺真实生产实测效果，不替代法律、医疗、投资、安全或商业部署决策；不转载官方或第三方截图。",
+    "core_view": "AI 新手学习开源工具应从低风险、可复现、可验收的小场景开始，而不是追逐功能大全。",
+    "deliverables": [
+      "教程正文",
+      "原创正文信息图",
+      "资料核验记录",
+      "隐私与发布边界提示"
+    ],
+    "source_requirements": "优先核对官方 GitHub README、官方文档和许可证；发布前需要复核当前版本和条款。",
+    "risks": [
+      "产品界面和命令可能更新",
+      "用户可能误把 AI 输出当作专业结论",
+      "教程截图或 Logo 使用存在版权/品牌风险"
+    ],
+    "new_angle": "承接第 14 篇本地 AI 助手入口，把焦点从能聊天推进到围绕自己的资料回答，同时把隐私分层和可验证回答作为第一课。"
+  },
+  "sources": [
+    {
+      "title": "AnythingLLM GitHub README",
+      "url": "https://github.com/Mintplex-Labs/anything-llm",
+      "checked_at": "2026-08-11",
+      "notes": "核对 AnythingLLM 的产品定位、文档聊天、Agent、多用户、文档类型、来源引用和本地运行描述；正文不把官方宣传改写成实测效果。"
+    },
+    {
+      "title": "AnythingLLM Desktop Installation Overview",
+      "url": "https://docs.anythingllm.com/installation-desktop/overview",
+      "checked_at": "2026-08-11",
+      "notes": "核对桌面版作为新手低摩擦入口的定位；正文建议先用桌面版体验，再按需求升级到 Docker。"
+    },
+    {
+      "title": "AnythingLLM Local Docker Documentation",
+      "url": "https://docs.anythingllm.com/installation-docker/local-docker",
+      "checked_at": "2026-08-11",
+      "notes": "核对 Docker 镜像、3001 访问入口、持久化存储卷和 Ollama/localhost 注意事项。"
+    },
+    {
+      "title": "AnythingLLM LICENSE",
+      "url": "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+      "checked_at": "2026-08-11",
+      "notes": "核对 MIT 许可证；正文仍提醒团队、商用、素材和数据处理需按实际部署边界复核。"
+    }
+  ],
+  "assets": {
+    "cover": null,
+    "inline_images": [
+      {
+        "file": "assets/figures/15-AnythingLLM 新手教程：把散落资料变成可问答知识库-正文插图01.png",
+        "alt": "从散落资料到可问答知识库的四步路径"
+      },
+      {
+        "file": "assets/figures/15-AnythingLLM 新手教程：把散落资料变成可问答知识库-正文插图02.png",
+        "alt": "个人资料入库前的隐私分层清单"
+      }
+    ],
+    "visual_notes": "两张正文图均为本地确定性脚本绘制的信息图，不包含官方 Logo、商标化界面、真人或第三方截图。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pass",
+      "notes": "已按 2026-08-11 官方 README、文档与 LICENSE 复核核心事实；发布前仍需复核版本和界面变更。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文为原创表达；图片为本地原创信息图；不复制第三方博文图片、官方 Logo 或界面。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "已提示密钥、隐私、医疗/法律/投资/安全高风险边界，不鼓励绕过权限或上传敏感资料。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "仓库入库不等于公众号或其他平台发布，仍需负责人发布前人工预览确认。"
+    }
+  },
+  "editorial_review": {
+    "structure": "由生活痛点进入，逐步给出工具定位、最小场景、操作步骤、验收方式和风险边界。",
+    "ai_tone": "已减少模板化口吻，保留作者判断和具体新手场景。",
+    "visual_reference_boundary": "图片仅服务相邻段落说明，未使用外部截图或品牌素材。"
+  }
+}

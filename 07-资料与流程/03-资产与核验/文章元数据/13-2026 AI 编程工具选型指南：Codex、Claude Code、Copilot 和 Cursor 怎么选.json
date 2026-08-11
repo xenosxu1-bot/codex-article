@@ -2,7 +2,7 @@
     "schema_version": "1.0",
     "article": {
         "id": "13",
-        "title": "2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选",
+        "title": "AI 编程工具对比：Codex、Claude Code、Copilot、Cursor、CodeBuddy、Trae 怎么选",
         "path": "01-工具教程/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.md",
         "tier": "standard",
         "category": "工具教程",
@@ -21,13 +21,13 @@
     },
     "brief": {
         "target_reader": "正在选择 AI 编程工具的独立开发者、技术负责人、产品经理和小团队",
-        "core_question": "Codex、Claude Code、GitHub Copilot 和 Cursor 的工作入口、权限方式与适用场景有什么差异，如何在自己的项目上做选择",
+        "core_question": "Codex、Claude Code、GitHub Copilot、Cursor、CodeBuddy、Trae 与 QCode 的工作入口、权限方式与适用场景有什么差异，如何在自己的项目上做选择",
         "not_covering": [
             "不做统一性能基准测试或价格承诺；本文提供可复现实测方法，不把方法模板当成实测结果",
             "不把厂商宣传能力写成所有账户都可用",
             "不替代目标代码库上的真实试用、权限评估和团队采购决策"
         ],
-        "new_angle": "不以模型榜单为中心，而是用同一条工程任务和七维验收表比较工作入口、代码库理解、执行闭环、浏览器/后台能力、审查、权限与团队协作"
+        "new_angle": "不以模型榜单为中心，而是先按工作入口区分四个基础工具，再补充 CodeBuddy、Trae 与 QCode 的产品层级、试用任务和权限/数据边界"
     },
     "sources": [
         {
@@ -71,9 +71,29 @@
             "url": "https://docs.cursor.com/background-agent",
             "checked_at": "2026-08-10",
             "notes": "核对 Cursor 后台 Agent 官方入口。"
+        },
+        {
+            "type": "official",
+            "title": "腾讯云代码助手 CodeBuddy 产品页",
+            "url": "https://cloud.tencent.com/product/acc",
+            "checked_at": "2026-08-11",
+            "notes": "核对 CodeBuddy IDE、编辑器插件、CodeBuddy Code（CLI）形态，以及对话、补全、测试、评审、工程理解、知识库和 MCP Server 等官方能力描述；正文不把厂商宣传写成实测结论。"
+        },
+        {
+            "type": "official",
+            "title": "TRAE 官方首页",
+            "url": "https://www.trae.cn/",
+            "checked_at": "2026-08-11",
+            "notes": "核对 TraeCode 的官方产品定位；正文仅据此区分 AI 主入口与传统 IDE 插件路径，不延伸未核实的版本、额度或地区结论。"
+        },
+        {
+            "type": "third_party",
+            "title": "QCode 官方网站",
+            "url": "https://qcode.cc/",
+            "checked_at": "2026-08-11",
+            "notes": "核对 QCode 自述的 Claude Code、OpenAI Codex、Google Gemini 开发者订阅平台定位；正文将其作为第三方接入/订阅服务单独讨论，并提示账号、数据流转、条款和服务连续性风险，不视为官方 IDE。"
         }
-    ],
-    "assets": {
+    ],    "assets": {
         "cover": null,
         "inline_images": [
             "01-工具教程/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/assets/figures/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选-正文插图01.png",
@@ -82,16 +102,16 @@
         "visual_notes": "两张 1080×1440 本地确定性绘制的原创编辑型信息图，采用暖白背景、深色文字和少量强调色；分别用于工作入口选择与四步验收证据链。不使用第三方 Logo、官方截图或未授权素材。"
     },
     "checks": {
-        "fact_review": "已重新核对官方资料入口；正文将官方定位、适用推断和待实测结论分开表达，产品能力、版本、套餐和地区可用性仍需在实际接入前复核。",
+        "fact_review": "已重新核对官方资料入口，并新增 CodeBuddy、Trae 与 QCode；正文将官方定位、选型推断、第三方服务边界和待实测结论分开表达，产品能力、版本、套餐和地区可用性仍需在实际接入前复核。",
         "copyright_review": "正文不嵌入官方资料入口；来源集中记录在资料核验台账和元数据，配图为本地原创信息图。",
         "policy_review": "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
         "human_publish_approval": "pending"
     },
     "editorial_review": {
-        "title_positioning": "保留选型指南标题，在导语中前置四类读者的第一优先试用项，并增加 20 分钟同题试用承诺。",
+        "title_positioning": "标题改为直接对比型表达，覆盖六款主流 AI 编程工具；QCode 保留在正文中作为不同层级的第三方接入/订阅服务单独说明。",
         "ai_tone": "删除定义式开场、对称套话和泛化收束；改用具体工作场景、第一题和口语化决策句。",
-        "depth": "去除未填实测记录表，改为可执行的同题试用任务、四项判断和付费前五项核对。",
+        "depth": "保留同题试用任务和四项判断，增加三类补充产品的第一次试用方法、权限边界和数据风险提醒。",
         "layout": "保留两张原创信息图；图 1 明确仅表示第一入口，图 2 服务于 20 分钟同题试用流程。",
-        "fact_boundary": "不把四款产品写成互斥能力类别；选型结论限定为工作入口建议，价格、额度、模型和地区支持要求购买当日以官方页面复核。"
+        "fact_boundary": "不把七个名称写成同一类互斥能力；CodeBuddy 与 Trae 作为 coding tool 入口补充，QCode 作为第三方接入/订阅服务单独核对，价格、额度、模型和地区支持要求购买当日以官方页面复核。"
     }
 }
