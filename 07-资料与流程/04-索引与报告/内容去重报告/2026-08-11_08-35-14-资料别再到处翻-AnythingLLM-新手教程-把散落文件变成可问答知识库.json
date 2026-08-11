@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "checked_at": "2026-08-11T08:35:14.079Z",
   "candidate": {
-    "path": "01-工具教程/15-AnythingLLM 新手教程：把散落资料变成可问答知识库/15-AnythingLLM 新手教程：把散落资料变成可问答知识库.md",
-    "title": "AnythingLLM 新手教程：把散落资料变成可问答知识库",
+    "path": "01-工具教程/15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库/15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库.md",
+    "title": "资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库",
     "characters": 3133
   },
   "policy": {
@@ -22,8 +22,8 @@
       "reference": {
         "id": "16",
         "kind": "formal-article",
-        "title": "Dify 新手教程：做第一个可分享的 AI 应用",
-        "path": "01-工具教程/16-Dify 新手教程：做第一个可分享的 AI 应用/16-Dify 新手教程：做第一个可分享的 AI 应用.md"
+        "title": "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
+        "path": "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md"
       },
       "comparison": {
         "body_similarity_percent": 3.49,

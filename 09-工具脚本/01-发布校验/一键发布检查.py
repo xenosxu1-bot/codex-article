@@ -388,10 +388,35 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         status = parts[0] if parts else ""
         if status.startswith("R"):
             if len(parts) >= 3:
-                old_name = Path(parts[1].replace("/", "\\")).name
+                old_path = Path(parts[1].replace("/", "\\"))
+                old_name = old_path.name
                 new_path = Path(parts[2].replace("/", "\\"))
                 old_match = re.match(r"^(\d{2})-", old_name)
                 new_match = re.match(r"^(\d{2})-", new_path.name)
+
+                # Article-package retitle: article.json keeps a stable basename, so the
+                # generic numeric-prefix rules above cannot identify this as a same-ID move.
+                def package_identity(path: Path) -> tuple[str, str, tuple[str, ...]] | None:
+                    if len(path.parts) < 3 or not ARTICLE_DIR_RE.match(path.parts[0]):
+                        return None
+                    article_dir = path.parts[1]
+                    article_match = re.match(r"^(\d{2})-", article_dir)
+                    if not article_match:
+                        return None
+                    return article_match.group(1), article_dir, path.parts[2:]
+
+                old_package = package_identity(old_path)
+                new_package = package_identity(new_path)
+                if (
+                    old_package
+                    and new_package
+                    and old_package[0] == new_package[0]
+                    and old_package[1] != new_package[1]
+                    and old_package[2] == new_package[2]
+                    and (ROOT / new_path).is_file()
+                ):
+                    approved.append(line)
+                    continue
                 # A complete reindex preserves the title suffix while changing its numeric prefix.
                 if old_match and new_match and old_name[3:] == new_path.name[3:] and (ROOT / new_path).exists():
                     approved.append(line)
@@ -412,6 +437,37 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                 ):
                     approved.append(line)
                     continue
+
+                # A title migration changes the report slug as well. Verify both report
+                # snapshots still point to the same formal article before accepting it.
+                if (
+                    old_path.parent.as_posix() == report_dir
+                    and new_path.parent.as_posix() == report_dir
+                    and old_report_match
+                    and new_report_match
+                    and (ROOT / new_path).is_file()
+                ):
+                    def report_candidate_path(text: str) -> str:
+                        match = re.search(r'"path"\s*:\s*"([^"]+)"', text)
+                        if match:
+                            return match.group(1)
+                        match = re.search(r"\u5019\u9009\u6587\u4ef6\uff1a`([^`]+)`", text)
+                        return match.group(1) if match else ""
+
+                    def formal_article_id(path_text: str) -> str:
+                        path_parts = Path(path_text.replace("/", "\\")).parts
+                        if len(path_parts) >= 2 and ARTICLE_DIR_RE.match(path_parts[0]):
+                            match = re.match(r"^(\d{2})-", path_parts[1])
+                            return match.group(1) if match else ""
+                        return ""
+
+                    old_report = capture_stdout(["git", "show", f"HEAD:{parts[1]}"])
+                    new_report = new_path.read_text(encoding="utf-8")
+                    old_id = formal_article_id(report_candidate_path(old_report))
+                    new_id = formal_article_id(report_candidate_path(new_report))
+                    if old_id and old_id == new_id:
+                        approved.append(line)
+                        continue
                 # Full reindexing preserves the title suffix while replacing its numeric prefix.
                 if old_match and new_match and old_name[3:] == new_path.name[3:] and (ROOT / new_path).exists():
                     approved.append(line)

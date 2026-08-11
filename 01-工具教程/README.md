@@ -13,5 +13,5 @@
 | 12 | [MCP 是什么：AI 为什么需要一个 USB-C 接口](<12-MCP 是什么：AI 为什么需要一个 USB-C 接口/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md>) | AI工具连接与系统 | MCP, AI Agent, 工具连接, 安全边界 | 3731 |
 | 13 | [2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选](<13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.md>) | AI工具连接与系统 | AI Coding, Codex, Claude Code, GitHub Copilot, Cursor, 工具选型 | 4041 |
 | 14 | [Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来](<14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md>) | AI新手开源工具实用教程 | Ollama, Open WebUI, 本地AI助手, 开源工具, 生活效率 | 3131 |
-| 15 | [AnythingLLM 新手教程：把散落资料变成可问答知识库](<15-AnythingLLM 新手教程：把散落资料变成可问答知识库/15-AnythingLLM 新手教程：把散落资料变成可问答知识库.md>) | AI新手开源工具实用教程 | AnythingLLM, 本地知识库, RAG, 文档问答, 隐私边界 | 2440 |
-| 16 | [Dify 新手教程：做第一个可分享的 AI 应用](<16-Dify 新手教程：做第一个可分享的 AI 应用/16-Dify 新手教程：做第一个可分享的 AI 应用.md>) | AI新手开源工具实用教程 | Dify, AI应用, 工作流, RAG, 开源工具 | 2423 |
+| 15 | [资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库](<15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库/15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库.md>) | AI新手开源工具实用教程 | AnythingLLM, 本地知识库, RAG, 文档问答, 隐私边界 | 2440 |
+| 16 | [别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用](<16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md>) | AI新手开源工具实用教程 | Dify, AI应用, 工作流, RAG, 开源工具 | 2423 |
