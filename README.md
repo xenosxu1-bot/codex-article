@@ -76,3 +76,4 @@
 | 11 | [AI Agent 到底是什么：从聊天机器人到自动完成工作的系统](<02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md>) | AI知识 | AI Agent 与自动化 | AI Agent, 任务拆解, 工作流, 人工验收 | 4.41% | 3880 |
 | 12 | [MCP 是什么：AI 为什么需要一个 USB-C 接口](<01-工具教程/12-MCP 是什么：AI 为什么需要一个 USB-C 接口/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md>) | 工具教程 | AI工具连接与系统 | MCP, AI Agent, 工具连接, 安全边界 | 2.80% | 3731 |
 | 13 | [2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选](<01-工具教程/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.md>) | 工具教程 | AI工具连接与系统 | AI Coding, Codex, Claude Code, GitHub Copilot, Cursor, 工具选型 | 4.84% | 4041 |
+| 14 | [Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来](<01-工具教程/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md>) | 工具教程 | AI新手开源工具实用教程 | Ollama, Open WebUI, 本地AI助手, 开源工具, 生活效率 | 2.58% | 3131 |

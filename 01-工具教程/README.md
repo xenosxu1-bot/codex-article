@@ -1,6 +1,6 @@
 # 工具教程
 
-> 共 8 篇；分类内按文章编号升序展示，编号与文件名和资产登记表一致。
+> 共 9 篇；分类内按文章编号升序展示，编号与文件名和资产登记表一致。
 
 | 编号 | 标题 | 系列 | 标签 | 中文字数 |
 | ---: | --- | --- | --- | ---: |
@@ -12,3 +12,4 @@
 | 10 | [Hermes Agent 实战入门：从安装到第一条可验收任务](<10-Hermes Agent 实战入门：从安装到第一条可验收任务/10-Hermes Agent 实战入门：从安装到第一条可验收任务.md>) | AI工具连接与系统 | Hermes Agent, AI Agent, 开源工具, 工作流 | 4970 |
 | 12 | [MCP 是什么：AI 为什么需要一个 USB-C 接口](<12-MCP 是什么：AI 为什么需要一个 USB-C 接口/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md>) | AI工具连接与系统 | MCP, AI Agent, 工具连接, 安全边界 | 3731 |
 | 13 | [2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选](<13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选/13-2026 AI 编程工具选型指南：Codex、Claude Code、Copilot 和 Cursor 怎么选.md>) | AI工具连接与系统 | AI Coding, Codex, Claude Code, GitHub Copilot, Cursor, 工具选型 | 4041 |
+| 14 | [Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来](<14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md>) | AI新手开源工具实用教程 | Ollama, Open WebUI, 本地AI助手, 开源工具, 生活效率 | 3131 |

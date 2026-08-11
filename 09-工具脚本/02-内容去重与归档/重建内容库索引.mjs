@@ -17,33 +17,61 @@ function relative(absolutePath) {
   return path.relative(repoRoot, absolutePath).split(path.sep).join('/');
 }
 
+async function appendFormalMarkdown(entries, absolutePath, nameForId) {
+  const markdown = await fs.readFile(absolutePath, 'utf8');
+  const text = contentToPlainText(markdown, '.md');
+  const id = nameForId.slice(0, 2);
+  entries.push({
+    schema_version: '1.0',
+    id,
+    kind: 'formal-article',
+    title: extractMarkdownTitle(markdown, deriveTitleFromPath(absolutePath)),
+    canonical_path: relative(absolutePath),
+    text_path: relative(absolutePath),
+    source_url: null,
+    status: 'formal-article',
+    fingerprint: buildFingerprint(text)
+  });
+}
+
 async function listFormalEntries() {
   const entries = [];
+  const seen = new Set();
   for (const directory of formalDirectories) {
     const directoryPath = path.join(repoRoot, directory);
-    let names = [];
+    let items = [];
     try {
-      names = await fs.readdir(directoryPath);
+      items = await fs.readdir(directoryPath, { withFileTypes: true });
     } catch {
       continue;
     }
-    for (const name of names.sort((left, right) => left.localeCompare(right, 'zh-CN'))) {
-      if (!/^\d{2}-.+\.md$/u.test(name)) continue;
-      const absolutePath = path.join(directoryPath, name);
-      const markdown = await fs.readFile(absolutePath, 'utf8');
-      const text = contentToPlainText(markdown, '.md');
-      const id = name.slice(0, 2);
-      entries.push({
-        schema_version: '1.0',
-        id,
-        kind: 'formal-article',
-        title: extractMarkdownTitle(markdown, deriveTitleFromPath(name)),
-        canonical_path: relative(absolutePath),
-        text_path: relative(absolutePath),
-        source_url: null,
-        status: 'formal-article',
-        fingerprint: buildFingerprint(text)
-      });
+    for (const item of items.sort((left, right) => left.name.localeCompare(right.name, 'zh-CN'))) {
+      if (item.isFile() && /^\d{2}-.+\.md$/u.test(item.name)) {
+        const absolutePath = path.join(directoryPath, item.name);
+        const key = relative(absolutePath);
+        if (!seen.has(key)) {
+          seen.add(key);
+          await appendFormalMarkdown(entries, absolutePath, item.name);
+        }
+        continue;
+      }
+      if (!item.isDirectory() || !/^\d{2}-.+/u.test(item.name)) continue;
+      const packagePath = path.join(directoryPath, item.name);
+      let childNames = [];
+      try {
+        childNames = await fs.readdir(packagePath);
+      } catch {
+        continue;
+      }
+      const markdownName = childNames
+        .filter((child) => /^\d{2}-.+\.md$/u.test(child) && child.slice(0, 2) === item.name.slice(0, 2))
+        .sort((left, right) => left.localeCompare(right, 'zh-CN'))[0];
+      if (!markdownName) continue;
+      const absolutePath = path.join(packagePath, markdownName);
+      const key = relative(absolutePath);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      await appendFormalMarkdown(entries, absolutePath, markdownName);
     }
   }
   return entries;

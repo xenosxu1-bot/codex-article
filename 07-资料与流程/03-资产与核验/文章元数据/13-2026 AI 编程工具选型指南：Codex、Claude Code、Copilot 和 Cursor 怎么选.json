@@ -53,10 +53,10 @@
         },
         {
             "type": "official",
-            "title": "GitHub Changelog：Browser tools for GitHub Copilot in VS Code",
-            "url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/",
-            "checked_at": "2026-08-10",
-            "notes": "核对 GitHub 于 2026-07-01 公布的浏览器工具 GA 信息；正文保留计划和可用性变化提示。"
+            "title": "GitHub Docs：About GitHub Copilot coding agent",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+            "checked_at": "2026-08-11",
+            "notes": "核对 Copilot coding agent 与 GitHub 协作、审查链路相关描述；正文不以单一浏览器功能定义产品定位。"
         },
         {
             "type": "official",
@@ -88,10 +88,10 @@
         "human_publish_approval": "pending"
     },
     "editorial_review": {
-        "title_positioning": "已将“横评”改为“选型指南”，避免没有统一实测结果时制造跑分预期。",
-        "ai_tone": "已减少对称套话、抽象形容词和连续金句，增加场景判断、适用边界和作者式决策语言。",
-        "depth": "已增加概念分类、横向验收矩阵、测试环境清单、任务卡、证据记录表和决策顺序。",
-        "layout": "已将正文图从 16:9 PPT 式横版改为 1080×1440 竖版编辑型信息图；减少英文装饰和卡片文字，增加任务、文件、终端、测试与交付元素，便于手机阅读。",
-        "fact_boundary": "官方资料、作者推断和实际测试结论分层；正文不新增官方资料与核验入口。"
+        "title_positioning": "保留选型指南标题，在导语中前置四类读者的第一优先试用项，并增加 20 分钟同题试用承诺。",
+        "ai_tone": "删除定义式开场、对称套话和泛化收束；改用具体工作场景、第一题和口语化决策句。",
+        "depth": "去除未填实测记录表，改为可执行的同题试用任务、四项判断和付费前五项核对。",
+        "layout": "保留两张原创信息图；图 1 明确仅表示第一入口，图 2 服务于 20 分钟同题试用流程。",
+        "fact_boundary": "不把四款产品写成互斥能力类别；选型结论限定为工作入口建议，价格、额度、模型和地区支持要求购买当日以官方页面复核。"
     }
 }
