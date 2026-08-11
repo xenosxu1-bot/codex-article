@@ -343,7 +343,8 @@ def approved_archive_deletions(raw: str) -> tuple[list[str], list[str]]:
         if len(parts) < 2 or not parts[0].startswith("D"):
             unexpected.append(line)
             continue
-        source = parts[-1].replace("/", "\\")
+        source_posix = parts[-1].replace("\\", "/")
+        source = source_posix.replace("/", "\\")
         source_path = Path(source)
         target = ARCHIVED_INLINE_DIR / source_path.name
         is_registered_move = (
@@ -440,7 +441,8 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
         if len(parts) < 2 or not status.startswith("D"):
             rejected.append(line)
             continue
-        source = parts[-1].replace("/", "\\")
+        source_posix = parts[-1].replace("\\", "/")
+        source = source_posix.replace("/", "\\")
         source_path = Path(source)
         match = re.match(r"^(\d{2})-", source_path.name)
         if not match and source_path.parts and re.match(r"^0[1-6]-", source_path.parts[0]):
@@ -453,6 +455,57 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
             continue
         no = match.group(1)
         registered = registered_by_id.get(no, "")
+
+        # Article reindex: package support files and metadata may be D/A when the numeric
+        # prefix changes. Approve only when a registered article with the same title suffix
+        # exists and the corresponding replacement file is present.
+        def has_numeric_prefix(value: str) -> bool:
+            return len(value) > 3 and value[:2].isdigit() and value[2] == "-"
+
+        source_components = source_posix.split("/")
+        source_article_dir = ""
+        old_title_suffix = ""
+        # Prefer the numeric filename stem for metadata JSON, otherwise use the deepest
+        # numeric article-package directory. Top-level category folders such as "01-????"
+        # are not article ids and must not be treated as the replacement suffix.
+        if source_path.suffix.lower() == ".json" and has_numeric_prefix(source_path.stem):
+            old_title_suffix = source_path.stem[3:]
+        else:
+            source_article_dir = next(
+                (component for component in reversed(source_components[:-1]) if has_numeric_prefix(component)),
+                "",
+            )
+            if source_article_dir:
+                old_title_suffix = source_article_dir[3:]
+        if old_title_suffix:
+            approved_reindex = False
+            for target in asset_paths:
+                target_path = Path(target.replace("/", "\\"))
+                target_article_dir = target_path.parent.name
+                if not (has_numeric_prefix(target_article_dir) and target_article_dir[3:] == old_title_suffix):
+                    continue
+                if source_path.suffix.lower() == ".json" and source_posix.startswith("07-"):
+                    replacement = ROOT / source_path.parent / f"{target_article_dir}.json"
+                    if replacement.is_file():
+                        approved_reindex = True
+                        break
+                    continue
+                if source_article_dir:
+                    article_dir_index = source_components.index(source_article_dir)
+                    relative_parts = list(source_components[article_dir_index + 1 :])
+                    if not relative_parts:
+                        continue
+                    replacement_name = relative_parts[-1]
+                    if has_numeric_prefix(replacement_name):
+                        replacement_name = target_article_dir[:2] + replacement_name[2:]
+                    relative_parts[-1] = replacement_name
+                    replacement = ROOT / target_path.parent / Path(*relative_parts)
+                    if replacement.is_file():
+                        approved_reindex = True
+                        break
+            if approved_reindex:
+                approved.append(line)
+                continue
 
         # Article retitle: old formal article path is deleted, but the same id now points to a new file.
         if source_path.parts and re.match(r"^0[1-6]-", source_path.parts[0]) and source_path.suffix.lower() == ".md":
