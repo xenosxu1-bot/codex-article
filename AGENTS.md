@@ -136,3 +136,10 @@
 - Use the `github-update-push` workflow only when the user explicitly requests synchronization: inspect local changes, fetch, validate, stage explicit paths, push the authorized scope, and compare local/upstream/remote identities.
 - `article-Skill` 仅在任务明确调用、项目明确锁定或需要复用其生产能力时使用。本项目不把 `article-Skill` 的风格、结构和视觉模板自动扩大为全局硬规则；其他经授权的生成路径也可以使用，但必须遵守事实、版权、安全、隐私和仓库完整性边界。不得静默发布。
 - If using an agent, assign disjoint file ownership and require a final main-task review; do not parallel-edit the same article or lock file.
+
+
+### article-Skill 受控仓库同步例外
+
+- 默认“仅用户明确确认提交或推送”仍然有效。唯一的等价显式授权是某次 `production` 文章请求包含 `authorization.allow_repository_sync: true`，且 canonical `article-Skill` 输出与该最终文章包绑定的 `repository_sync_intent.status=ready`。
+- 该授权只适用于意图指定的 `codex-article/main`、精确 `owned_paths` 与提交说明。必须经 `scripts/sync-generated-article.ps1 -ResultPath <结果文件> -Execute` 按 `github-update-push` 安全流程完成；工作区存在预先暂存或未归属改动、远端不一致、校验失败或谱系不完整时一律阻断。
+- 此例外不授权推送 `prod`、自动合并、强推、清理工作区、代替人工平台发布，或提交意图外文件。
