@@ -18,6 +18,11 @@
         "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图02.png",
         "kind": "inline-image",
         "alt": "Dify 新手发布前验收清单"
+      },
+      {
+        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图03.png",
+        "kind": "inline-image",
+        "alt": "Dify 中文页面操作路径（原创路径图）"
       }
     ],
     "archived_files": []
@@ -26,5 +31,5 @@
     "metadata": "07-资料与流程/03-资产与核验/文章元数据/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.json",
     "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
   },
-  "notes": "正文插图为本仓库本地脚本原创信息图；未使用官方 Logo、第三方截图或伪造界面。"
+  "notes": "正文插图为本仓库本地脚本原创信息图；第03张为官方入口的原创操作路径图，不使用官方 Logo、第三方截图或伪造界面。"
 }
