@@ -1,30 +1,42 @@
 {
-    "schema_version": "1.0",
-    "article": {
-        "id": "14",
-        "title": "Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来",
-        "path": "01-工具教程/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md",
-        "category": "01-工具教程"
-    },
-    "assets": {
-        "cover": null,
-        "figures": [
-            {
-                "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图01.png",
-                "kind": "inline-image",
-                "alt": "Ollama 和 Open WebUI 的本地助手分工图"
-            },
-            {
-                "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图02.png",
-                "kind": "inline-image",
-                "alt": "新手第一个生活任务卡"
-            }
-        ],
-        "archived_files": []
-    },
-    "records": {
-        "metadata": "07-资料与流程/03-资产与核验/文章元数据/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.json",
-        "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
-    },
-    "notes": "正文与文章专属图片位于本文章包；实操工具截图不转载第三方博客图片，发布前建议使用自建环境截图替换或补充。"
+  "schema_version": "1.0",
+  "article": {
+    "id": "14",
+    "title": "Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来",
+    "path": "01-工具教程/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": null,
+    "figures": [
+      {
+        "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "Ollama 与 Open WebUI 的本地助手分工图"
+      },
+      {
+        "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图02.png",
+        "kind": "inline-image",
+        "alt": "终端中确认 Ollama 可用的三个位置示意，非官方终端截图"
+      },
+      {
+        "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图03.png",
+        "kind": "inline-image",
+        "alt": "浏览器中确认 Open WebUI 本机入口与模型选择的位置示意，非官方界面截图"
+      },
+      {
+        "file": "assets/figures/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图04.png",
+        "kind": "inline-image",
+        "alt": "新手第一个生活任务卡：事实、限制、格式与验收"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来-正文插图02-审核前任务卡.png"
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文与文章专属图片位于本文章包；4 张图片均为原创信息图或操作位置示意，不复制第三方博客图片，也不冒充官方界面。实操截图如需补充，应由作者在自建环境中截取并脱敏。"
 }
