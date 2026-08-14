@@ -1,61 +1,60 @@
 {
-  "schema_version": "1.0",
-  "article": {
-    "id": "11",
-    "title": "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
-    "path": "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
-    "tier": "standard",
-    "category": "AI知识",
-    "series": "AI Agent 与自动化",
-    "tags": [
-      "AI Agent",
-      "任务拆解",
-      "工作流",
-      "人工验收"
-    ],
-    "status": "S6 已入库",
-    "created_at": "2026-08-07",
-    "updated_at": "2026-08-10"
-  },
-  "brief": {
-    "target_reader": "第一次接触 AI Agent、希望把 AI 从问答助手变成可控工作协作者的中文读者，也适合负责流程设计的个人和小团队",
-    "core_question": "AI Agent 与普通聊天机器人、固定自动化到底差在哪里，怎样把第一项任务交给它而不失去控制",
-    "not_covering": [
-      "不比较所有 Agent 产品的价格和套餐",
-      "不承诺某个产品长期保持同样能力",
-      "不提供绕过审批、权限或安全边界的操作"
-    ],
-    "new_angle": "不从产品宣传出发，而是用模型、上下文、工具、执行与验收四层模型，配合任务卡和风险分级，解释如何安全启动第一条 Agent 工作流"
-  },
-  "sources": [
-    {
-      "type": "official",
-      "title": "OpenAI Agents SDK：Agents guide",
-      "url": "https://platform.openai.com/docs/guides/agents",
-      "checked_at": "2026-08-10",
-      "notes": "核对 Agent 能力围绕指令、工具、交接、护栏和追踪等组成部分组织；正文不外推到具体套餐或产品可用范围。"
-    },
-    {
-      "type": "official",
-      "title": "Model Context Protocol：Architecture",
-      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
-      "checked_at": "2026-08-10",
-      "notes": "核对 Host、Client、Server 与外部系统的连接角色，用于说明 Agent 工具连接边界。"
-    }
-  ],
-  "assets": {
-    "cover": null,
-    "inline_images": [
-      "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png",
-      "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图02.png",
-      "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图03.png"
-    ],
-    "visual_notes": "三张本地确定性绘制的原创信息图，用于概念对比、可复现工作流与行动检查；不使用第三方 Logo、官方截图或未授权素材。"
-  },
-  "checks": {
-    "fact_review": "已补充 Agent 生命周期、权限分档、团队引入路线和长期评估清单；2026-08-10 核对 OpenAI Agents SDK 与 MCP 官方架构文档，删除不可复核的产品时点表述。",
-    "copyright_review": "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
-    "policy_review": "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
-    "human_publish_approval": "pending"
-  }
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "11",
+                    "title":  "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
+                    "path":  "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
+                    "tier":  "standard",
+                    "category":  "AI知识",
+                    "series":  "AI Agent 与自动化",
+                    "tags":  [
+                                 "AI Agent",
+                                 "任务拆解",
+                                 "工作流",
+                                 "人工验收"
+                             ],
+                    "status":  "S6 已入库",
+                    "created_at":  "2026-08-07",
+                    "updated_at":  "2026-08-14"
+                },
+    "brief":  {
+                  "target_reader":  "第一次接触 AI Agent、希望把 AI 从问答助手变成可控工作协作者的中文读者，也适合负责流程设计的个人和小团队",
+                  "core_question":  "AI Agent 与普通聊天机器人、固定自动化到底差在哪里，怎样把第一项任务交给它而不失去控制",
+                  "not_covering":  [
+                                       "不比较所有 Agent 产品的价格和套餐",
+                                       "不承诺某个产品长期保持同样能力",
+                                       "不提供绕过审批、权限或安全边界的操作"
+                                   ],
+                  "new_angle":  "不从产品宣传出发，而是用模型、上下文、工具、执行与验收四层模型，配合任务卡和风险分级，解释如何安全启动第一条 Agent 工作流"
+              },
+    "sources":  [
+                    {
+                        "type":  "official",
+                        "title":  "OpenAI Agents SDK：Agents guide",
+                        "url":  "https://platform.openai.com/docs/guides/agents",
+                        "checked_at":  "2026-08-14",
+                        "notes":  "核对 Agent 能力围绕指令、工具、交接、护栏和追踪等组成部分组织；正文不外推到具体套餐或产品可用范围。"
+                    },
+                    {
+                        "type":  "official",
+                        "title":  "Model Context Protocol：Architecture",
+                        "url":  "https://modelcontextprotocol.io/docs/learn/architecture",
+                        "checked_at":  "2026-08-14",
+                        "notes":  "核对 Host、Client、Server 与外部系统的连接角色，用于说明 Agent 工具连接边界。"
+                    }
+                ],
+    "assets":  {
+                   "cover":  null,
+                   "inline_images":  [
+                                         "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png",
+                                         "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图02.png"
+                                     ],
+                   "visual_notes":  "三张本地确定性绘制的原创信息图，用于概念对比、可复现工作流与行动检查；不使用第三方 Logo、官方截图或未授权素材。"
+               },
+    "checks":  {
+                   "fact_review":  "2026-08-14 按正文引用的官方文档复核产品定位、主操作路线与风险边界；重写为面向首次使用者的低风险最小任务、明确成功/失败信号、验收表与常见卡点。动态页面、套餐、版本、模型和部署参数仍须在发布当天以当前官方资料复核。",
+                   "copyright_review":  "正文只使用公开资料链接；配图为本地原创信息图，不使用第三方 Logo、官方截图或未授权素材。",
+                   "policy_review":  "不包含绕过权限、泄露凭据或高风险自动化操作；强调只读、最小权限、人工确认和回滚边界。",
+                   "human_publish_approval":  "pending"
+               }
 }

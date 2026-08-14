@@ -1,34 +1,32 @@
 {
-  "schema_version": "1.0",
-  "article": {
-    "id": "11",
-    "title": "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
-    "path": "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
-    "category": "02-AI知识"
-  },
-  "assets": {
-    "cover": null,
-    "figures": [
-      {
-        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png",
-        "kind": "inline-image",
-        "alt": "AI Agent 从目标到可验收交付"
-      },
-      {
-        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图02.png",
-        "kind": "inline-image",
-        "alt": "聊天助手、固定自动化与 AI Agent 的差异对比"
-      },
-      {
-        "file": "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图03.png",
-        "kind": "inline-image",
-        "alt": "AI Agent 从目标到验收的六步任务闭环"
-      }
-    ]
-  },
-  "records": {
-    "metadata": "07-资料与流程/03-资产与核验/文章元数据/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.json",
-    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
-  },
-  "notes": "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "11",
+                    "title":  "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
+                    "path":  "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
+                    "category":  "02-AI知识"
+                },
+    "assets":  {
+                   "cover":  null,
+                   "figures":  [
+                                   {
+                                       "file":  "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图01.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "AI Agent 从目标到可验收交付"
+                                   },
+                                   {
+                                       "file":  "assets/figures/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图02.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "聊天助手、固定自动化与 AI Agent 的差异对比"
+                                   }
+                               ],
+                   "archived_files":  [
+                                          "assets/archive/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统-正文插图03.png"
+                                      ]
+               },
+    "records":  {
+                    "metadata":  "07-资料与流程/03-资产与核验/文章元数据/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.json",
+                    "verification_ledger":  "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+                },
+    "notes":  "正文、封面和文章专属图片均在本文章包；历史未使用文件放在本包 assets/archive；事实来源和发布记录集中维护在 07-资料与流程。"
 }
