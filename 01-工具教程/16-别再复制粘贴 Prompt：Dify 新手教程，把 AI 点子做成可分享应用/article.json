@@ -1,35 +1,41 @@
 {
-  "schema_version": "1.0",
-  "article": {
-    "id": "16",
-    "title": "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
-    "path": "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md",
-    "category": "01-工具教程"
-  },
-  "assets": {
-    "cover": null,
-    "figures": [
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图01.png",
-        "kind": "inline-image",
-        "alt": "把 Prompt 做成 AI 应用的最小闭环"
-      },
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图02.png",
-        "kind": "inline-image",
-        "alt": "Dify 新手发布前验收清单"
-      },
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图03.png",
-        "kind": "inline-image",
-        "alt": "Dify 中文页面操作路径（原创路径图）"
-      }
-    ],
-    "archived_files": []
-  },
-  "records": {
-    "metadata": "07-资料与流程/03-资产与核验/文章元数据/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.json",
-    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
-  },
-  "notes": "正文插图为本仓库本地脚本原创信息图；第03张为官方入口的原创操作路径图，不使用官方 Logo、第三方截图或伪造界面。"
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "16",
+                    "title":  "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
+                    "path":  "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md",
+                    "category":  "01-工具教程"
+                },
+    "assets":  {
+                   "cover":  null,
+                   "figures":  [
+                                   {
+                                       "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图01.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "Prompt 到可用 AI 应用的五个产品契约（原创信息图）"
+                                   },
+                                   {
+                                       "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图02.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "Dify 发布与版本迭代验收清单（原创信息图）"
+                                   },
+                                   {
+                                       "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图03.png",
+                                       "kind":  "inline-image",
+                                       "alt":  "Dify 应用形态选择与验证路径（原创信息图，非后台截图）"
+                                   }
+                               ],
+                   "archived_files":  [
+
+                                      ]
+               },
+    "records":  {
+                    "metadata":  "07-资料与流程/03-资产与核验/文章元数据/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.json",
+                    "verification_ledger":  "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+                },
+    "notes":  [
+                  "正文于 2026-08-13 按 Dify 官方资料重构：以单轮文本生成的最小闭环讲解输入、输出、测试、访问与变更记录。",
+                  "三张配图均为原创信息图，不以任何旧版或特定部署界面作为操作承诺。",
+                  "正文中的测试用例是待执行验收基线，需由操作者在自己的工作区记录真实结果。"
+              ]
 }

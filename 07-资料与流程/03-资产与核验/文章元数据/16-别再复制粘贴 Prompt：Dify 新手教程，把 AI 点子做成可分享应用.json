@@ -1,134 +1,116 @@
 {
-  "schema_version": "1.0",
-  "article": {
-    "id": "16",
-    "title": "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
-    "path": "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md",
-    "tier": "standard",
-    "category": "工具教程",
-    "series": "AI新手开源工具实用教程",
-    "tags": [
-      "Dify",
-      "AI应用",
-      "工作流",
-      "RAG",
-      "开源工具"
-    ],
-    "status": "S6 已入库",
-    "created_at": "2026-08-11",
-    "updated_at": "2026-08-12"
-  },
-  "topic": {
-    "id": "T083",
-    "status": "S6 已入库"
-  },
-  "brief": {
-    "reader_moment": "想把 Prompt 变成小工具的运营、产品和知识工作者",
-    "emotional_tension": "资料或 Prompt 已经能帮忙，但还散在聊天记录、文件夹或个人电脑里，无法稳定复用。",
-    "contrarian_claim": "新手学习 AI 工具不应追求功能大全，而应先交付一个低风险、可验收的小成果。",
-    "share_target": "AI 新手、知识工作者和希望把生活问题工具化的普通读者。",
-    "reusable_asset": "云端上手主路线、变量说明表、五类输入测试矩阵和发布权限验收清单。",
-    "counterexample": "不适合用来替代医疗、法律、投资、安全和其他专业判断；不适合直接上传敏感资料或真实密钥。",
-    "figure_plan": [
-      "把 Prompt 做成 AI 应用的最小闭环",
-      "Dify 中文页面操作路径（原创路径图）",
-      "Dify 新手发布前验收清单"
-    ],
-    "target_reader": "想把 Prompt 变成小工具的运营、产品和知识工作者",
-    "core_question": "如何从一个生活或工作问题做出可复用 AI 应用",
-    "not_covering": "不承诺真实生产实测效果，不替代法律、医疗、投资、安全或商业部署决策；不直接转载官方或第三方截图，中文页面以原创路径图和可点击资料入口说明。",
-    "core_view": "AI 新手学习开源工具应从低风险、可复现、可验收的小场景开始，而不是追逐功能大全。",
-    "deliverables": [
-      "教程正文",
-      "原创正文信息图",
-      "资料核验记录",
-      "隐私与发布边界提示"
-    ],
-    "source_requirements": "优先核对官方 GitHub README、官方文档和许可证；发布前需要复核当前版本和条款。",
-    "risks": [
-      "产品界面和命令可能更新",
-      "用户可能误把 AI 输出当作专业结论",
-      "教程截图或 Logo 使用存在版权/品牌风险"
-    ],
-    "new_angle": "承接本地助手和个人知识库之后，把一个反复使用的 Prompt 封装成可分享应用，重点讲变量、输入边界、测试样例和发布前验收。"
-  },
-  "sources": [
-    {
-      "title": "Dify GitHub README",
-      "url": "https://github.com/langgenius/dify/blob/main/README.md",
-      "checked_at": "2026-08-11",
-      "notes": "核对 Dify 作为开源 LLM 应用开发平台的定位、AI Workflow、RAG pipeline、Agent、模型管理、可观测性与 Docker Compose 快速启动入口。"
-    },
-    {
-      "title": "Dify Documentation Home",
-      "url": "https://docs.dify.ai/",
-      "checked_at": "2026-08-11",
-      "notes": "核对官方文档入口与后续应用编排、知识库和部署资料的权威来源；正文把具体界面差异保留为发布前复核项。"
-    },
-    {
-      "title": "Dify LICENSE",
-      "url": "https://github.com/langgenius/dify/blob/main/LICENSE",
-      "checked_at": "2026-08-11",
-      "notes": "核对 modified Apache 2.0、商用、多租户服务和前端版权/Logo 相关附加条件；正文提醒团队或商用部署前复核授权边界。"
-    },
-    {
-      "title": "Dify 中文官网",
-      "url": "https://dify.ai/zh",
-      "checked_at": "2026-08-12",
-      "notes": "核对中文官网入口；正文仅把它作为中文入口，不把首页按钮名称写成固定版本承诺。"
-    },
-    {
-      "title": "菜鸟教程：Dify 入门教程",
-      "url": "https://www.runoob.com/ai-agent/dify-usage.html",
-      "checked_at": "2026-08-12",
-      "notes": "作为中文入门补充阅读，帮助读者理解基础操作；不替代 Dify 官方文档。"
-    },
-    {
-      "title": "掘金：Dify 从入门到精通教程",
-      "url": "https://juejin.cn/post/7559399069144465423",
-      "checked_at": "2026-08-12",
-      "notes": "作为中文工作流、知识库与 AI 配置的补充阅读；产品版本和页面变化以官方资料为准。"
-    }
-  ],
-  "assets": {
-    "cover": null,
-    "inline_images": [
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图01.png",
-        "alt": "把 Prompt 做成 AI 应用的最小闭环"
-      },
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图02.png",
-        "alt": "Dify 新手发布前验收清单"
-      },
-      {
-        "file": "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图03.png",
-        "alt": "Dify 中文页面操作路径（原创路径图）"
-      }
-    ],
-    "visual_notes": "三张正文图均为本地确定性脚本绘制的信息图，不包含官方 Logo、商标化界面、真人或第三方截图；第03张用于说明中文页面查找路径，不是官方后台截图。"
-  },
-  "checks": {
-    "fact_review": {
-      "status": "pending",
-      "notes": "已补充 Dify 中文官网入口与中文操作路径，并把菜鸟教程、掘金文章标注为补充阅读；因产品页面、版本、套餐和许可证可能变化，正式发布前需按当前官方资料复核。"
-    },
-    "copyright_review": {
-      "status": "pass",
-      "notes": "正文为原创表达；图片为本地原创信息图；不复制第三方博文图片、官方 Logo 或界面。"
-    },
-    "policy_review": {
-      "status": "pass",
-      "notes": "已提示密钥、隐私、医疗/法律/投资/安全高风险边界，不鼓励绕过权限或上传敏感资料。"
-    },
-    "human_publish_approval": {
-      "status": "pending",
-      "notes": "仓库入库不等于公众号或其他平台发布，仍需负责人发布前人工预览确认。"
-    }
-  },
-  "editorial_review": {
-    "structure": "以 Prompt 反复复制的具体困境切入，明确云端主路线，依次完成场景收窄、中文页面查找、变量配置、提示词、五类测试、Web App 分享与权限复核。",
-    "ai_tone": "已改为具体冲突、操作判断和失败处理，减少内部流程话术与对称句式；仍需人工通读确认发布平台语气。",
-    "visual_reference_boundary": "图片仅服务相邻段落说明，未使用外部截图或品牌素材。"
-  }
+    "schema_version":  "1.0",
+    "article":  {
+                    "id":  "16",
+                    "title":  "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
+                    "path":  "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md",
+                    "tier":  "standard",
+                    "category":  "工具教程",
+                    "series":  "AI新手开源工具实用教程",
+                    "tags":  [
+                                 "Dify",
+                                 "AI应用",
+                                 "工作流",
+                                 "RAG",
+                                 "开源工具"
+                             ],
+                    "status":  "S6 已入库",
+                    "created_at":  "2026-08-11",
+                    "updated_at":  "2026-08-13"
+                },
+    "topic":  {
+                  "id":  "T083",
+                  "status":  "S6 已入库"
+              },
+    "brief":  {
+                  "reader_moment":  "读者已经会复制或改写 Prompt，但希望把反复出现的任务交给同事、客户或社群成员稳定使用。",
+                  "tension":  "把 Prompt 放进一个页面并不等于产品化；缺少输入、输出、测试、访问和变更约定时，应用无法被可靠交接。",
+                  "core_question":  "如何用 Dify 的单轮文本生成场景，练习从 Prompt 到可分享 AI 服务的最小闭环？",
+                  "central_view":  "先建立产品契约和测试基线，再扩展工作流、知识库或 Agent；复杂能力不应替代清晰边界。",
+                  "scope_boundary":  "旅行计划示例仅覆盖单轮文本生成、输入输出约束、测试与发布检查；不包含实时信息、预订、支付或安全决策。"
+              },
+    "sources":  [
+                    {
+                        "title":  "Dify GitHub README",
+                        "url":  "https://github.com/langgenius/dify/blob/main/README.md",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Dify 作为开源 LLM 应用开发平台的官方定位，以及官方文档、云端与自托管入口。"
+                    },
+                    {
+                        "title":  "Dify Docs: Chatbot",
+                        "url":  "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/chatbot.mdx",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Chatbot 的多轮对话定位、变量输入能力与不适合多步骤工具编排的边界。"
+                    },
+                    {
+                        "title":  "Dify Docs: Text Generator",
+                        "url":  "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/text-generator.mdx",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Text Generator 的单轮生成定位、适用场景和变量输入说明。"
+                    },
+                    {
+                        "title":  "Dify Docs: Workflow and Chatflow",
+                        "url":  "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/workflow-chatflow.mdx",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Workflow 与 Chatflow 面向多步骤、分支、工具或流程编排的定位。"
+                    },
+                    {
+                        "title":  "Dify Docs: Web App Access Controls",
+                        "url":  "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/publish/webapp/web-app-access.mdx",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Web App 访问控制存在工作区、版本或套餐差异，正文因此不把默认公开或具体权限按钮写成永久事实。"
+                    },
+                    {
+                        "title":  "Dify Docs: Version Control",
+                        "url":  "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/version-control.mdx",
+                        "checked_at":  "2026-08-13",
+                        "notes":  "核对 Chatflow 与 Workflow 的草稿、已发布版本、历史版本、发布说明和回退相关说明。"
+                    }
+                ],
+    "assets":  {
+                   "cover":  null,
+                   "inline_images":  [
+                                         {
+                                             "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图01.png",
+                                             "alt":  "把 Prompt 做成 AI 应用的最小闭环"
+                                         },
+                                         {
+                                             "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图02.png",
+                                             "alt":  "Dify 新手发布前验收清单"
+                                         },
+                                         {
+                                             "file":  "assets/figures/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用-正文插图03.png",
+                                             "alt":  "Dify 中文页面操作路径（原创路径图）"
+                                         }
+                                     ],
+                   "visual_notes":  "三张正文图均为本地确定性脚本绘制的信息图，不包含官方 Logo、商标化界面、真人或第三方截图；第03张用于说明中文页面查找路径，不是官方后台截图。"
+               },
+    "checks":  {
+                   "fact_review":  {
+                                       "status":  "pending",
+                                       "notes":  "已补充 Dify 中文官网入口与中文操作路径，并把菜鸟教程、掘金文章标注为补充阅读；因产品页面、版本、套餐和许可证可能变化，正式发布前需按当前官方资料复核。"
+                                   },
+                   "copyright_review":  {
+                                            "status":  "pass",
+                                            "notes":  "正文为原创表达；图片为本地原创信息图；不复制第三方博文图片、官方 Logo 或界面。"
+                                        },
+                   "policy_review":  {
+                                         "status":  "pass",
+                                         "notes":  "已提示密钥、隐私、医疗/法律/投资/安全高风险边界，不鼓励绕过权限或上传敏感资料。"
+                                     },
+                   "human_publish_approval":  {
+                                                  "status":  "pending",
+                                                  "notes":  "仓库入库不等于公众号或其他平台发布，仍需负责人发布前人工预览确认。"
+                                              }
+               },
+    "editorial_review":  {
+                             "structure":  "以 Prompt 反复复制的具体困境切入，明确云端主路线，依次完成场景收窄、中文页面查找、变量配置、提示词、五类测试、Web App 分享与权限复核。",
+                             "ai_tone":  "已改为具体冲突、操作判断和失败处理，减少内部流程话术与对称句式；仍需人工通读确认发布平台语气。",
+                             "visual_reference_boundary":  "图片仅服务相邻段落说明，未使用外部截图或品牌素材。"
+                         },
+    "notes":  [
+                  "2026-08-13：按官方资料重构正文；不再把旧教程的具体界面标签、默认公开或固定权限行为写成跨版本事实。",
+                  "视觉资产已替换为原创信息图：产品契约、应用形态选择与发布验收；不使用或仿制 Dify 后台截图。",
+                  "本文的测试表是使用者应在自身工作区执行并留存的验收基线，不将模板误写成已执行结果。"
+              ]
 }
