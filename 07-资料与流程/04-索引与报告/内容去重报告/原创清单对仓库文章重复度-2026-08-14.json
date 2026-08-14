@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "calculated_at": "2026-08-14T03:55:29.457Z",
+  "source": {
+    "manifest": "10-外部原文归档/微信原创文章清单-2026-07-23.json",
+    "exported_at": "2026-07-23",
+    "original_articles": 43
+  },
+  "policy": {
+    "formula": "重复度 = 正文五字片段 Dice 相似度 × 85% + 标题二字片段 Dice 相似度 × 15%",
+    "max_allowed_repeat_percent": 50,
+    "value_definition": "每篇仓库正式文章与原创清单全部文章比较后的最高重复度"
+  },
+  "summary": {
+    "formal_articles": 17,
+    "original_articles": 43,
+    "max_repeat_percent": 80.19,
+    "blocked": 4,
+    "review": 0,
+    "pass": 13
+  },
+  "rows": [
+    {
+      "id": "01",
+      "title": "Codex 新手上手：从界面到第一个高质量任务",
+      "path": "01-工具教程/01-Codex 新手上手：从界面到第一个高质量任务/01-Codex 新手上手：从界面到第一个高质量任务.md",
+      "max_repeat_percent": 73.27,
+      "body_similarity_percent": 70.96,
+      "title_similarity_percent": 86.36,
+      "result": "阻止",
+      "match": {
+        "id": "EXT-20260723-006",
+        "title": "Codex 新手上手Day2：从界面到第一个高质量任务",
+        "url": "https://mp.weixin.qq.com/s/UCrtwlgnA0C8QhqlqHCl_g",
+        "published_at": "2026-07-08"
+      }
+    },
+    {
+      "id": "02",
+      "title": "Codex 进阶提效：配置、权限、复用与自动化",
+      "path": "01-工具教程/02-Codex 进阶提效：配置、权限、复用与自动化/02-Codex 进阶提效：配置、权限、复用与自动化.md",
+      "max_repeat_percent": 6.51,
+      "body_similarity_percent": 4.3,
+      "title_similarity_percent": 19.05,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-004",
+        "title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+        "url": "https://mp.weixin.qq.com/s/njIOjTALcXqGW9Fxf_3_hA",
+        "published_at": "2026-07-10"
+      }
+    },
+    {
+      "id": "03",
+      "title": "Codex 实战案例：从失败测试到可验证修复",
+      "path": "05-案例实战/03-Codex 实战案例：从失败测试到可验证修复/03-Codex 实战案例：从失败测试到可验证修复.md",
+      "max_repeat_percent": 59.89,
+      "body_similarity_percent": 55.33,
+      "title_similarity_percent": 85.71,
+      "result": "阻止",
+      "match": {
+        "id": "EXT-20260723-005",
+        "title": "Codex实战案例Day3：从失败测试到可验证修复",
+        "url": "https://mp.weixin.qq.com/s/rumQG--XAQEjUHhGChwToQ",
+        "published_at": "2026-07-10"
+      }
+    },
+    {
+      "id": "04",
+      "title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+      "path": "01-工具教程/04-AGENTS.md 深度模板：让 Codex 按团队规则工作/04-AGENTS.md 深度模板：让 Codex 按团队规则工作.md",
+      "max_repeat_percent": 80.19,
+      "body_similarity_percent": 76.69,
+      "title_similarity_percent": 100,
+      "result": "阻止",
+      "match": {
+        "id": "EXT-20260723-004",
+        "title": "AGENTS.md 深度模板：让 Codex 按团队规则工作",
+        "url": "https://mp.weixin.qq.com/s/njIOjTALcXqGW9Fxf_3_hA",
+        "published_at": "2026-07-10"
+      }
+    },
+    {
+      "id": "05",
+      "title": "Codex 插件与 Skill 指南：把常用能力沉淀进工作流",
+      "path": "01-工具教程/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流/05-Codex 插件与 Skill 指南：把常用能力沉淀进工作流.md",
+      "max_repeat_percent": 59.7,
+      "body_similarity_percent": 54.39,
+      "title_similarity_percent": 89.8,
+      "result": "阻止",
+      "match": {
+        "id": "EXT-20260723-002",
+        "title": "Codex 插件与 Skill 指南：把常用能力装进工作流",
+        "url": "https://mp.weixin.qq.com/s/Vt_W0pyHI9_YcZk8Jeen8w",
+        "published_at": "2026-07-14"
+      }
+    },
+    {
+      "id": "06",
+      "title": "跟着 weStudy 做一个 AI 学习小程序",
+      "path": "05-案例实战/06-跟着 weStudy 做一个 AI 学习小程序/06-跟着 weStudy 做一个 AI 学习小程序.md",
+      "max_repeat_percent": 2.42,
+      "body_similarity_percent": 0.44,
+      "title_similarity_percent": 13.64,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-020",
+        "title": "3分钟看懂 WorkBuddy：腾讯正在打造真正的“AI员工”",
+        "url": "https://mp.weixin.qq.com/s/pUJZ_8O6c0JeNz-obUQPJg",
+        "published_at": "2026-05-27"
+      }
+    },
+    {
+      "id": "07",
+      "title": "别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化",
+      "path": "06-热点追踪/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化/07-别只盯 GPT-5.6：真正值得关注的是工作入口 Agent 化.md",
+      "max_repeat_percent": 4.32,
+      "body_similarity_percent": 0.24,
+      "title_similarity_percent": 27.45,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-022",
+        "title": "ChatGPT只是开始，AI Agent才是真正危险的东西",
+        "url": "https://mp.weixin.qq.com/s/t2XXfRYbQlSH-xda7FNYLQ",
+        "published_at": "2026-05-25"
+      }
+    },
+    {
+      "id": "08",
+      "title": "别再只会问 AI：把它变成可交付工作流",
+      "path": "03-好文方法/08-别再只会问 AI：把它变成可交付工作流/08-别再只会问 AI：把它变成可交付工作流.md",
+      "max_repeat_percent": 2.81,
+      "body_similarity_percent": 0.52,
+      "title_similarity_percent": 15.79,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-023",
+        "title": "普通人最容易赚钱的AI玩法：不是写代码，而是工作流",
+        "url": "https://mp.weixin.qq.com/s/MYxHCvjguhLoNWyzRdTcPA",
+        "published_at": "2026-05-23"
+      }
+    },
+    {
+      "id": "09",
+      "title": "Codex 智能体与 Skills 中文参考手册",
+      "path": "01-工具教程/09-Codex 智能体与 Skills 中文参考手册/09-Codex 智能体与 Skills 中文参考手册.md",
+      "max_repeat_percent": 7.73,
+      "body_similarity_percent": 1.87,
+      "title_similarity_percent": 40.91,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-002",
+        "title": "Codex 插件与 Skill 指南：把常用能力装进工作流",
+        "url": "https://mp.weixin.qq.com/s/Vt_W0pyHI9_YcZk8Jeen8w",
+        "published_at": "2026-07-14"
+      }
+    },
+    {
+      "id": "10",
+      "title": "Hermes Agent 实战入门：从安装到第一条可验收任务",
+      "path": "01-工具教程/10-Hermes Agent 实战入门：从安装到第一条可验收任务/10-Hermes Agent 实战入门：从安装到第一条可验收任务.md",
+      "max_repeat_percent": 2.84,
+      "body_similarity_percent": 0.57,
+      "title_similarity_percent": 15.69,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-021",
+        "title": "一篇文章讲透 Agent Skill：从使用到原理，一次讲清",
+        "url": "https://mp.weixin.qq.com/s/u0-t6rP_G9mSj_tkEIhK6w",
+        "published_at": "2026-05-26"
+      }
+    },
+    {
+      "id": "11",
+      "title": "AI Agent 到底是什么：从聊天机器人到自动完成工作的系统",
+      "path": "02-AI知识/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统/11-AI Agent 到底是什么：从聊天机器人到自动完成工作的系统.md",
+      "max_repeat_percent": 4.05,
+      "body_similarity_percent": 1.24,
+      "title_similarity_percent": 20,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-028",
+        "title": "【产品经理必备】AI基础概念篇：Agent、Token、RAG......",
+        "url": "https://mp.weixin.qq.com/s/O0n0E541EYdbZmUtzNdj5Q",
+        "published_at": "2026-05-14"
+      }
+    },
+    {
+      "id": "12",
+      "title": "MCP 是什么：AI 为什么需要一个 USB-C 接口",
+      "path": "01-工具教程/12-MCP 是什么：AI 为什么需要一个 USB-C 接口/12-MCP 是什么：AI 为什么需要一个 USB-C 接口.md",
+      "max_repeat_percent": 2.48,
+      "body_similarity_percent": 1.11,
+      "title_similarity_percent": 10.26,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-040",
+        "title": "AI编程：如何构建一个能自主写代码的“数字同事”",
+        "url": "https://mp.weixin.qq.com/s/FLlaWjdVePLMU3QqV95WGw",
+        "published_at": "2026-04-27"
+      }
+    },
+    {
+      "id": "13",
+      "title": "AI 编程工具对比：Codex、Claude Code、Copilot、Cursor、CodeBuddy、Trae 怎么选",
+      "path": "01-工具教程/13-AI 编程工具对比：Codex、Claude Code、Copilot、Cursor、CodeBuddy、Trae 怎么选/13-AI 编程工具对比：Codex、Claude Code、Copilot、Cursor、CodeBuddy、Trae 怎么选.md",
+      "max_repeat_percent": 4.31,
+      "body_similarity_percent": 0.72,
+      "title_similarity_percent": 24.66,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-035",
+        "title": "免费接入DeepSeek V4：ClaudeCode/OpenClaw/Opencode配置全攻略",
+        "url": "https://mp.weixin.qq.com/s/JyfuQd5_Lf629RlHer_X8g",
+        "published_at": "2026-05-03"
+      }
+    },
+    {
+      "id": "14",
+      "title": "Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来",
+      "path": "01-工具教程/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来/14-Ollama + Open WebUI 新手教程：先把“本地 AI 助手”跑起来.md",
+      "max_repeat_percent": 2.86,
+      "body_similarity_percent": 1.06,
+      "title_similarity_percent": 13.04,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-031",
+        "title": "一文读懂OpenCode，从入门到精通",
+        "url": "https://mp.weixin.qq.com/s/JR2xhsumZaxmwrE347CW0A",
+        "published_at": "2026-05-09"
+      }
+    },
+    {
+      "id": "15",
+      "title": "资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库",
+      "path": "01-工具教程/15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库/15-资料别再到处翻：AnythingLLM 新手教程，把散落文件变成可问答知识库.md",
+      "max_repeat_percent": 1.03,
+      "body_similarity_percent": 0,
+      "title_similarity_percent": 6.9,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-033",
+        "title": "AI重磅消息：OpenAI甩出GPT-5.5 Instant！",
+        "url": "https://mp.weixin.qq.com/s/elR-kgg2u0QblXmB7B-VCQ",
+        "published_at": "2026-05-06"
+      }
+    },
+    {
+      "id": "16",
+      "title": "别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用",
+      "path": "01-工具教程/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用/16-别再复制粘贴 Prompt：Dify 新手教程，把 AI 点子做成可分享应用.md",
+      "max_repeat_percent": 4.46,
+      "body_similarity_percent": 0.31,
+      "title_similarity_percent": 28,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-024",
+        "title": "给AI新手的100个神级Prompt模板",
+        "url": "https://mp.weixin.qq.com/s/-Bn94QNLYs6hQJmhlr_LDQ",
+        "published_at": "2026-05-23"
+      }
+    },
+    {
+      "id": "17",
+      "title": "DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来",
+      "path": "01-工具教程/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.md",
+      "max_repeat_percent": 3.85,
+      "body_similarity_percent": 0.76,
+      "title_similarity_percent": 21.33,
+      "result": "通过",
+      "match": {
+        "id": "EXT-20260723-015",
+        "title": "别再傻傻买OpenAI API了！10分钟让Codex直连DeepSeek-V4",
+        "url": "https://mp.weixin.qq.com/s/ZHeSY-2DK7YW9yMfP9lLSg",
+        "published_at": "2026-06-10"
+      }
+    }
+  ]
+}
