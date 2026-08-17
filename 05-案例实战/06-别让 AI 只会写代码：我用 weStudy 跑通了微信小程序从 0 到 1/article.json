@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "06",
+    "title": "别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1",
+    "path": "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1.md",
+    "category": "05-案例实战"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/06-cover.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/06-flow.png",
+        "kind": "inline-image",
+        "alt": "从导入项目到追完一次请求的四步闭环"
+      },
+      {
+        "file": "assets/figures/06-files.png",
+        "kind": "inline-image",
+        "alt": "从页面文字找到功能代码的阅读路线"
+      },
+      {
+        "file": "assets/figures/06-ai-loop.png",
+        "kind": "inline-image",
+        "alt": "AI 出题从页面选择到云函数返回的调用链"
+      },
+      {
+        "file": "assets/figures/06-checklist.png",
+        "kind": "inline-image",
+        "alt": "第一轮开发验收清单"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图01.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图02.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图03.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图04.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图05.png",
+      "assets/archive/legacy/旧版图片/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-封面.png",
+      "assets/archive/legacy/旧版图片/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图01.png",
+      "assets/archive/legacy/旧版图片/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图02.png",
+      "assets/archive/legacy/旧版图片/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图03.png",
+      "assets/archive/legacy/旧版图片/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图04.png"
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和正文插图均已完全重构。正文图片采用短 ASCII 文件名与相对 Markdown 路径，便于 Preview 和平台编辑器识别；图示均为原创开发示意图，不是官方界面截图。旧版图片仅保留在文章包 assets/archive/legacy/ 中。"
+}

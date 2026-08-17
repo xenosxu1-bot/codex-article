@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "06",
+    "title": "别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1",
+    "path": "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1.md",
+    "tier": "deep",
+    "category": "案例实战",
+    "series": "AI学习与应用案例",
+    "tags": [
+      "微信小程序",
+      "小程序开发",
+      "weStudy",
+      "Codex",
+      "WorkBuddy",
+      "CloudBase",
+      "腾讯混元",
+      "AI应用"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-07-23",
+    "updated_at": "2026-08-17"
+  },
+  "brief": {
+    "target_reader": "第一次打开微信开发者工具、想把一个真实点子做成可运行小程序的中文新手；希望看到清晰操作和验收信号，而不是产品说明书。",
+    "core_question": "如何以 weStudy 本地项目为例，在第一天完成导入、编译、定位页面、改一处文案，并追完一次 AI 出题从页面到云函数的调用链？",
+    "not_covering": [
+      "不承诺复刻 weStudy 的完整功能或提审结果",
+      "不提供或暴露 AppID、密钥、云环境、真实用户数据",
+      "不把历史活动额度写成当前可领权益",
+      "不把模拟器结果等同于真机、云端联调或审核通过"
+    ],
+    "new_angle": "完全改写为“跟着用户动作开发”的实战教程：先跑通项目，再改一句话，随后从 AI 出题入口反推页面、service、云函数和 handler，最后给出 30 分钟验收清单。",
+    "reader_moment": "第一次打开微信开发者工具，看到一堆目录、配置和云函数，却不知道从哪里开始；读完能完成一次可复查的小改动。",
+    "emotional_tension": "新手担心自己只是复制 AI 生成的代码，项目能打开却不知道出了问题该找哪里。",
+    "contrarian_claim": "第一天不应该追求做完一个小程序，而应该先跑通一个从页面到云端、每一步都有验收信号的闭环。",
+    "share_target": "想做微信小程序但容易被工程目录和 AI 术语劝退的产品、运营、教师和开发新手。",
+    "reusable_asset": "30 分钟首轮开发路线、AI 出题调用链阅读法、Codex/WorkBuddy 任务提示和第一天验收清单。",
+    "counterexample": "模拟器显示页面不等于真机、云端权限、隐私授权和 AI 请求已通过；一次让 AI 重写整个项目也不等于完成开发。",
+    "figure_plan": "封面用手机式原创信息图建立目标；四张正文图分别服务于四步闭环、文件定位、AI 调用链和验收清单。"
+  },
+  "sources": [
+    {
+      "type": "official",
+      "title": "微信开发者工具下载与说明",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html",
+      "checked_at": "2026-08-17",
+      "notes": "核对开发者工具作为项目导入、编译、预览入口；版本界面可能变化。"
+    },
+    {
+      "type": "official",
+      "title": "微信小程序组件文档",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/component/",
+      "checked_at": "2026-08-17",
+      "notes": "核对小程序组件和已有组件复用的官方入口。"
+    },
+    {
+      "type": "official",
+      "title": "微信云开发文档",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html",
+      "checked_at": "2026-08-17",
+      "notes": "核对云函数、数据库和云开发基础入口；具体环境、权限、计费与配额以当前账号后台为准。"
+    },
+    {
+      "type": "reference",
+      "title": "腾讯云开发者社区活动文章",
+      "url": "https://developer.cloud.tencent.cn/article/2615984?from_column=20421&from=20421",
+      "checked_at": "2026-08-17",
+      "notes": "只保留为历史操作线索；活动资格、额度、有效期、计费和当前入口必须由读者在自己的后台复核。"
+    }
+  ],
+  "assets": {
+    "cover": "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/cover/06-cover.png",
+    "inline_images": [
+      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-flow.png",
+      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-files.png",
+      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-ai-loop.png",
+      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-checklist.png"
+    ],
+    "visual_notes": "封面和四张正文图均为本地原创信息图，使用短 ASCII 文件名并以相对 Markdown 路径引用。图中没有微信官方截图、Logo 或未经授权的第三方素材。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pass",
+      "notes": "2026-08-17 基于 weStudy 本地项目文件、微信官方开发者工具/组件/云开发入口和用户提供的腾讯云文章核对。项目目录与调用链只描述已在本地文件中找到的内容；活动权益保留时效边界。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文完全重写；图片为本地原创开发示意图，不转载外部网页截图、Logo 或页面 UI。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "不暴露密钥、AppID、Cookie 或真实用户数据；明确真机、云端权限、隐私授权、模型输出与成本需要人工验证。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "本次仅完成本地文章包重构，未执行 Git 提交/推送，也不等于公众号或其他平台发布。"
+    }
+  },
+  "editorial_review": {
+    "structure": "以新手第一次打开开发者工具的困惑为开头，按“导入并编译—改一句话—从用户动作反推文件—追 AI 出题调用链—工具分工—安全边界—30 分钟验收”推进。每段围绕一个可观察结果，不再沿用原说明书式结构。",
+    "reader_experience": "增加真实操作路径、代码文件位置、失败排查、复制即用的 AI 任务提示和验收清单；将“能运行”“能解释”“能验证”分开，避免把模拟器结果夸大为上线结果。",
+    "ai_tone": "删除泛化承诺和空泛理论，改用第一人称场景、短句、具体文件、按钮动作和观察信号；保留必要的事实边界，不把 AI 当作最终裁判。",
+    "preview_fix": "正文图片统一使用 ./assets/figures/06-*.png 相对 Markdown 路径，文件名改为短 ASCII 名称；封面不嵌入正文，避免 Preview 将图片当作普通链接显示。"
+  },
+  "notes": [
+    "第 06 篇为已入库文章的完全重构，不改变文章编号。",
+    "本轮重构未修改 D:/projects_git/weStudy 源项目，仅基于其本地文件核对文章中的目录和调用链。",
+    "文章只完成本地修改与校验，不代表 GitHub 同步或内容平台发布。",
+    "参考活动文章只作为历史操作线索，当前资格、额度和计费以读者自己的官方后台为准。",
+    "weStudy 本地项目仅作为本次正文重构的本地事实依据，不作为对外资料台账 URL；对外发布前应在自己的项目和后台重新复核。"
+  ]
+}
