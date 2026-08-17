@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "article": {
     "id": "06",
-    "title": "别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1",
-    "path": "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1.md",
+    "title": "第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环",
+    "path": "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环.md",
     "tier": "deep",
     "category": "案例实战",
     "series": "AI学习与应用案例",
@@ -70,12 +70,12 @@
     }
   ],
   "assets": {
-    "cover": "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/cover/06-cover.png",
+    "cover": "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/assets/cover/06-cover.png",
     "inline_images": [
-      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-flow.png",
-      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-files.png",
-      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-ai-loop.png",
-      "05-案例实战/06-别让 AI 只会写代码：我用 weStudy 跑通了微信小程序从 0 到 1/assets/figures/06-checklist.png"
+      "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/assets/figures/06-flow.png",
+      "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/assets/figures/06-files.png",
+      "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/assets/figures/06-ai-loop.png",
+      "05-案例实战/06-第一次做微信小程序：用 weStudy 看懂从导入到 AI 功能的开发闭环/assets/figures/06-checklist.png"
     ],
     "visual_notes": "封面和四张正文图均为本地原创信息图，使用短 ASCII 文件名并以相对 Markdown 路径引用。图中没有微信官方截图、Logo 或未经授权的第三方素材。"
   },
@@ -94,17 +94,37 @@
     },
     "human_publish_approval": {
       "status": "pending",
-      "notes": "本次仅完成本地文章包重构，未执行 Git 提交/推送，也不等于公众号或其他平台发布。"
+      "notes": "文章包已完成本地重构、资料核验与发布前检查；GitHub 同步不等于公众号或其他内容平台发布，平台原生图片转换、手机端展示和最终发布仍需人工确认。"
+    },
+    "public_platform_review": {
+      "status": "needs_human_review",
+      "release_eligibility": "not_ready",
+      "skill_review": "public-platform-review.v1",
+      "passed": [
+        "标题承诺审查",
+        "前置条件",
+        "动作序列",
+        "成功信号",
+        "失败恢复",
+        "读者角色自检",
+        "375px移动端语义预览记录"
+      ],
+      "actual_blockers": [
+        "正式平台交付前需把4处Markdown图片引用转换为平台原生图片块，并逐张核对手机端展示"
+      ],
+      "false_positive_note": "当前运行时的本机路径正则会把 https:// 中的 s:// 误识别为绝对路径；正文未发现 D:/、C:/、/Users/、/home/ 或 /workspace/ 本机路径，已用诊断归一化复核 portable_path_check=pass。",
+      "reviewed_at": "2026-08-17"
     }
   },
   "editorial_review": {
     "structure": "以新手第一次打开开发者工具的困惑为开头，按“导入并编译—改一句话—从用户动作反推文件—追 AI 出题调用链—工具分工—安全边界—30 分钟验收”推进。每段围绕一个可观察结果，不再沿用原说明书式结构。",
-    "reader_experience": "增加真实操作路径、代码文件位置、失败排查、复制即用的 AI 任务提示和验收清单；将“能运行”“能解释”“能验证”分开，避免把模拟器结果夸大为上线结果。",
-    "ai_tone": "删除泛化承诺和空泛理论，改用第一人称场景、短句、具体文件、按钮动作和观察信号；保留必要的事实边界，不把 AI 当作最终裁判。",
-    "preview_fix": "正文图片统一使用 ./assets/figures/06-*.png 相对 Markdown 路径，文件名改为短 ASCII 名称；封面不嵌入正文，避免 Preview 将图片当作普通链接显示。"
+    "reader_experience": "增加真实操作路径、相对目录、成功信号、失败排查、可复制的 AI 任务提示和验收清单；将“页面能编译”“调用链看懂”“云端可用”“具备发布条件”明确拆开。",
+    "ai_tone": "删除泛化承诺和空泛理论，改用第一次打开工具的真实场景、短句、按钮动作、文件位置和观察信号；保留必要的事实边界，不把 AI 当作最终裁判。",
+    "preview_fix": "正文源文件使用 ./assets/figures/06-*.png 相对 Markdown 路径，文件名采用短 ASCII 名称；封面不嵌入正文。正式发布前仍需把图片转换为平台原生媒体块，并在 375px 语义预览中逐张检查。"
   },
   "notes": [
     "第 06 篇为已入库文章的完全重构，不改变文章编号。",
+    "标题主动去掉“跑通/从 0 到 1”式运行承诺，改为可核验的阅读与操作目标。",
     "本轮重构未修改 D:/projects_git/weStudy 源项目，仅基于其本地文件核对文章中的目录和调用链。",
     "文章只完成本地修改与校验，不代表 GitHub 同步或内容平台发布。",
     "参考活动文章只作为历史操作线索，当前资格、额度和计费以读者自己的官方后台为准。",
