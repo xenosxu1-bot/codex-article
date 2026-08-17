@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "06",
+    "title": "别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）",
+    "path": "05-案例实战/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）.md",
+    "category": "05-案例实战"
+  },
+  "assets": {
+    "cover": {
+      "file": "assets/cover/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "图：从小程序点子到首个可验证结果的四步路线"
+      },
+      {
+        "file": "assets/figures/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图02.png",
+        "kind": "inline-image",
+        "alt": "图：weStudy 的前端、组件、服务层与云函数目录结构"
+      },
+      {
+        "file": "assets/figures/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图03.png",
+        "kind": "inline-image",
+        "alt": "图：从活动线索到自己账号权益的四步核验"
+      },
+      {
+        "file": "assets/figures/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）-正文插图04.png",
+        "kind": "inline-image",
+        "alt": "图：微信小程序第一天验收卡"
+      }
+    ],
+    "archived_files": [
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图01.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图02.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图03.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图04.png",
+      "assets/archive/legacy/图片/归档/正文插图-历史未引用/06-weStudy-流程图05.png"
+    ]
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/06-别急着写第一行代码：从 0 到 1 做出微信小程序（weStudy 实战）.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": "正文、封面和正文插图均位于文章包。四张正文图为原创信息图；原文活动页仅登记为事实与操作线索，不复制其界面截图。"
+}

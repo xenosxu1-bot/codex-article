@@ -591,13 +591,16 @@ def approved_same_number_replacements(raw: str) -> tuple[list[str], list[str]]:
                     continue
                 if len(relative) >= 2 and relative[0] == "assets":
                     replacement_dir = ROOT / registered_path.parent / Path(*relative[:-1])
-                    suffix_match = re.search(r"(\d{2}\.(?:png|jpe?g|webp))$", source_path.name, re.I)
-                    if suffix_match and replacement_dir.is_dir():
-                        suffix = suffix_match.group(1)
+                    # A title-based cover name normally ends in "-封面.png", not an image
+                    # sequence such as "01.png".  For a same-ID package retitle, accept the
+                    # deletion only when an article-ID-prefixed raster replacement exists in
+                    # the identical asset subdirectory of the currently registered package.
+                    suffix = source_path.suffix.lower()
+                    if suffix in {".png", ".jpg", ".jpeg", ".webp"} and replacement_dir.is_dir():
                         replacement_exists = any(
                             candidate.is_file()
                             and candidate.name.startswith(no + "-")
-                            and candidate.name.endswith(suffix)
+                            and candidate.suffix.lower() == suffix
                             for candidate in replacement_dir.glob(no + "-*" + suffix)
                         )
                         if replacement_exists:
