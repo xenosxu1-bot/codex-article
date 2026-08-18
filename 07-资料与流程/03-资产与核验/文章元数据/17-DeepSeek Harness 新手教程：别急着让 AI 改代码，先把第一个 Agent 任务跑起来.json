@@ -33,28 +33,28 @@
     {
       "title": "DeepSeek Harness GitHub README (Chinese)",
       "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-18",
       "notes": "核对开源定位、开发者预览提示、npx 启动方式、默认本地 Web 地址、源码运行路径与插件架构说明。",
       "type": "official"
     },
     {
       "title": "DeepSeek Harness Guide: Quick Start",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-18",
       "notes": "核对 Web UI 启动、Models 设置、工作区选择、会话输入可用条件，以及当前权限策略下的审批提示。",
       "type": "official"
     },
     {
       "title": "DeepSeek Harness Guide: Providers",
       "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-18",
       "notes": "核对模型提供商、自定义 OpenAI 兼容端点与本地凭据脱敏说明的边界。",
       "type": "official"
     },
     {
       "title": "DeepSeek Harness CLI README (Chinese)",
       "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.zh.md",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-18",
       "notes": "核对 profile、headless、web 与插件命令的官方入口；正文仅作为后续学习边界说明。",
       "type": "official"
     }
@@ -82,7 +82,7 @@
   "checks": {
     "fact_review": {
       "status": "pass",
-      "notes": "2026-08-14 已依据官方 README、Quick Start、Providers 与 CLI 文档核对；仓库快照为 47f943859bef60e4160492346772ded9b24f765a（2026-08-13）。开发者预览版发布前仍需复核当前界面、命令与权限行为。"
+      "notes": "2026-08-18 依据 DeepSeek Harness 官方中文 README、Quick Start、Providers 与 CLI 文档复核；当前 master 分支核验提交为 99f6f02fecdb7dff40c3fbc9470f5907c29f74ca，正文保留开发者预览和兼容性变化提示。"
     },
     "copyright_review": {
       "status": "pass",
@@ -98,16 +98,17 @@
     }
   },
   "editorial_review": {
-    "structure": "改为“第一次为什么要慢一点—模型/工作区/审批是什么—十分钟安全练习—日常设置与故障判断”的陪伴式路径；命令保留为可复现练习，减少连续指令堆叠。",
-    "ai_tone": "以第一次打开 Agent 的真实紧张感作为开头，增加“先停一下、亲手确认、看到什么才算过关”等人性化衔接；把步骤改成场景化提示，不把读者当成只会照抄命令的人。",
-    "visual_reference_boundary": "三张文中图均已插入正文相邻位置；17篇现有图为标题带式信息图而非左上角说明书角标，保持主体标题与非官方重绘边界，不新增角标。"
+    "structure": "按“新手为什么要慢一点—工具与普通聊天的区别—准备安全练习目录—十分钟跑通—只读到最小写入—迁移到真实项目—高频卡点与任务卡”重构，补齐价值解释、成功信号、故障排查和后续学习路线。",
+    "ai_tone": "把抽象的风险说明改为第一次打开 Agent 时会遇到的具体犹豫与选择；每个动作都配目的、成功信号和首个排查点，避免连续命令清单。",
+    "visual_reference_boundary": "三张原创信息图保留在操作节点，正文改用无尖括号的本地图片引用，避免预览器把图片路径当作普通链接；首图明确为官方中文文档操作顺序的原创重绘。"
   },
   "notes": [
     "正文已按新手 L2 实操目标重构为三大块：背景与作用、快速上手、高频设置与重要功能；读者可在独立练习目录依次完成启动、模型连通性、工作区、只读任务与最小写入验证。",
     "页面入口按官方中文《使用 Web UI》指南中的设置、模型、工作区选择和审批能力描述；开发者预览版界面可能变化，正文明确提示以当前页面为准。",
     "首张配图为基于官方中文文档内容的原创编辑重绘，不是官方 Web UI 截图；两张配图均为本地原创信息图，不使用官方 Logo、官方界面或第三方截图。",
     "文中的命令与任务卡是可复现练习模板，不把模板误写成已执行的真实生产结果。",
-    "2026-08-18：按新手阅读体验重构正文，使用用户目录变量替代作者电脑绝对路径；三张文中图重新放置在自然叙事节点，保留官方文档重绘与原创示意图的来源说明。"
+    "2026-08-18：按新手阅读体验重构正文，使用用户目录变量替代作者电脑绝对路径；三张文中图重新放置在自然叙事节点，保留官方文档重绘与原创示意图的来源说明。",
+    "2026-08-18：从 AI 新手视角补齐 Agent 与普通聊天工具的差异、Node/npm 前置检查、模型调用成本、工作区边界、真实项目迁移、高频故障排查和可复用任务卡；核验当前官方 master 提交。"
   ],
   "updated_at": "2026-08-18"
 }

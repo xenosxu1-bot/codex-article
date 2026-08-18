@@ -33,42 +33,42 @@
     {
       "title": "Dify GitHub README",
       "url": "https://github.com/langgenius/dify/blob/main/README.md",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Dify 作为开源 LLM 应用开发平台的官方定位，以及官方文档、云端与自托管入口。",
       "type": "official"
     },
     {
       "title": "Dify Docs: Chatbot",
       "url": "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/chatbot.mdx",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Chatbot 的多轮对话定位、变量输入能力与不适合多步骤工具编排的边界。",
       "type": "official"
     },
     {
       "title": "Dify Docs: Text Generator",
       "url": "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/text-generator.mdx",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Text Generator 的单轮生成定位、适用场景和变量输入说明。",
       "type": "official"
     },
     {
       "title": "Dify Docs: Workflow and Chatflow",
       "url": "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/workflow-chatflow.mdx",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Workflow 与 Chatflow 面向多步骤、分支、工具或流程编排的定位。",
       "type": "official"
     },
     {
       "title": "Dify Docs: Web App Access Controls",
       "url": "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/publish/webapp/web-app-access.mdx",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Web App 访问控制存在工作区、版本或套餐差异，正文因此不把默认公开或具体权限按钮写成永久事实。",
       "type": "official"
     },
     {
       "title": "Dify Docs: Version Control",
       "url": "https://github.com/langgenius/dify-docs/blob/main/en/cloud/use-dify/build/version-control.mdx",
-      "checked_at": "2026-08-13",
+      "checked_at": "2026-08-18",
       "notes": "核对 Chatflow 与 Workflow 的草稿、已发布版本、历史版本、发布说明和回退相关说明。",
       "type": "official"
     }
@@ -93,8 +93,8 @@
   },
   "checks": {
     "fact_review": {
-      "status": "pending",
-      "notes": "已补充 Dify 中文官网入口与中文操作路径，并把菜鸟教程、掘金文章标注为补充阅读；因产品页面、版本、套餐和许可证可能变化，正式发布前需按当前官方资料复核。"
+      "status": "pass",
+      "notes": "2026-08-18 依据 Dify 官方 README、应用形态、Text Generator、Workflow/Chatflow、Web App 访问与版本管理资料复核；正文保留云端、自托管、版本和套餐差异提示，不把具体按钮写成永久事实。"
     },
     "copyright_review": {
       "status": "pass",
@@ -110,15 +110,16 @@
     }
   },
   "editorial_review": {
-    "structure": "改为“真实使用冲突—小服务判断—从输入到测试—发布前找人试用—维护边界”的读者叙事；保留旅行计划贯穿案例和三张文中图，但减少菜单式讲解。",
-    "ai_tone": "重写开头、过渡和结尾，加入真实使用场景与停靠点；将“完成标准/逐项确认”改成读者能理解的判断问题，保留必要的事实、测试和安全边界。",
-    "visual_reference_boundary": "三张原创信息图均保留正文语义，已移除左上角提示胶囊式角标；图片前后由自然语句承接，不再使用说明书式图注。"
+    "structure": "按“读者冲突—适用判断—准备条件—最小应用—三轮测试—发布验收—能力升级”重构；一个旅行计划案例贯穿全文，并补充可观察输出示例、失败排查和发布完成标准。",
+    "ai_tone": "删除泛化的说明书式过渡，改用“你会遇到什么—为什么—现在做什么—看到什么才算过关”的陪伴式表达；保留真实犹豫、取舍和暂不适用边界。",
+    "visual_reference_boundary": "三张原创信息图保留在对应语义节点，正文改用无尖括号的本地图片引用，避免预览器把图片路径当作普通链接；图片不冒充官方后台截图。"
   },
   "notes": [
     "2026-08-13：按官方资料重构正文；不再把旧教程的具体界面标签、默认公开或固定权限行为写成跨版本事实。",
     "视觉资产已替换为原创信息图：产品契约、应用形态选择与发布验收；不使用或仿制 Dify 后台截图。",
     "本文的测试表是使用者应在自身工作区执行并留存的验收基线，不将模板误写成已执行结果。",
-    "2026-08-18：按新手阅读体验重构正文，降低说明书式教程感；三张正文图清理顶部提示角标，保留主体信息与来源边界。"
+    "2026-08-18：按新手阅读体验重构正文，降低说明书式教程感；三张正文图清理顶部提示角标，保留主体信息与来源边界。",
+    "2026-08-18：从 AI 新手视角补齐 Dify 工作区、模型提供商、调用成本提示、变量输入、示例输出、三轮测试、发布验收和能力升级路线；明确“复制链接成功不等于发布完成”。"
   ],
   "updated_at": "2026-08-18"
 }
