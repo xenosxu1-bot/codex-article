@@ -1,107 +1,113 @@
 {
-    "schema_version":  "1.0",
-    "article":  {
-                    "id":  "17",
-                    "title":  "DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来",
-                    "path":  "01-工具教程/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.md",
-                    "tier":  "standard",
-                    "category":  "工具教程",
-                    "series":  "AI新手开源工具实用教程",
-                    "tags":  [
-                                 "DeepSeek Harness",
-                                 "AI Agent",
-                                 "Agent工作台",
-                                 "工作区",
-                                 "权限审批"
-                             ],
-                    "status":  "S6 已入库",
-                    "created_at":  "2026-08-14",
-                    "updated_at":  "2026-08-14"
-                },
-    "topic":  {
-                  "id":  "T092",
-                  "status":  "S6 已入库"
-              },
-    "brief":  {
-                  "reader_moment":  "读者第一次体验 Agent 工作台，想让 AI 帮忙处理项目，却不希望在没弄清权限和动作前把真实目录交出去。",
-                  "tension":  "工具能读文件、调用命令和创建内容并不等于新手应该直接授权；缺少练习目录、最小任务和人工验收时，便利会放大不确定性。",
-                  "core_question":  "如何在独立练习目录中启动 DeepSeek Harness，先完成可验证的只读任务，再安全尝试最小写入？",
-                  "central_view":  "先把模型链路、工作区范围、任务约束和审批检查拆开验证，再把 Agent 用到真实项目；可见、可停、可验收比一次完成更多工作更重要。",
-                  "scope_boundary":  "本文只覆盖官方开发者预览版的本地 Web 启动、模型配置、工作区、会话、审批和入门任务卡；不承诺稳定版本行为，不涉及生产部署、密钥管理方案或无人工监管的自动执行。"
-              },
-    "sources":  [
-                    {
-                        "title":  "DeepSeek Harness GitHub README (Chinese)",
-                        "url":  "https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md",
-                        "checked_at":  "2026-08-14",
-                        "notes":  "核对开源定位、开发者预览提示、npx 启动方式、默认本地 Web 地址、源码运行路径与插件架构说明。"
-                    },
-                    {
-                        "title":  "DeepSeek Harness Guide: Quick Start",
-                        "url":  "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
-                        "checked_at":  "2026-08-14",
-                        "notes":  "核对 Web UI 启动、Models 设置、工作区选择、会话输入可用条件，以及当前权限策略下的审批提示。"
-                    },
-                    {
-                        "title":  "DeepSeek Harness Guide: Providers",
-                        "url":  "https://deepseek-harness.github.io/deepseek-harness/guide/providers",
-                        "checked_at":  "2026-08-14",
-                        "notes":  "核对模型提供商、自定义 OpenAI 兼容端点与本地凭据脱敏说明的边界。"
-                    },
-                    {
-                        "title":  "DeepSeek Harness CLI README (Chinese)",
-                        "url":  "https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.zh.md",
-                        "checked_at":  "2026-08-14",
-                        "notes":  "核对 profile、headless、web 与插件命令的官方入口；正文仅作为后续学习边界说明。"
-                    }
-                ],
-    "assets":  {
-                   "cover":  null,
-                   "inline_images":  [
-                                         {
-                                             "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-官方中文指南操作路径图.png",
-                                             "alt":  "DeepSeek Harness 官方中文文档操作路径图（编辑重绘，非官方 Web UI 截图）",
-                                             "source_url":  "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
-                                             "source_type":  "official-chinese-documentation-redraw"
-                                         },
-                                         {
-                                             "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图01.png",
-                                             "alt":  "DeepSeek Harness 第一次使用的四步安全闭环"
-                                         },
-                                         {
-                                             "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图02.png",
-                                             "alt":  "Agent 审批前的四个检查问题"
-                                         }
-                                     ],
-                   "visual_notes":  "首张正文图根据官方中文《使用 Web UI》文档的已核验操作顺序进行原创编辑重绘，图内已明确标注“不是官方 Web UI 截图”；不使用官方 Logo、官方界面截图或第三方博文图片。其余两张图为本地原创信息图。"
-               },
-    "checks":  {
-                   "fact_review":  {
-                                       "status":  "pass",
-                                       "notes":  "2026-08-14 已依据官方 README、Quick Start、Providers 与 CLI 文档核对；仓库快照为 47f943859bef60e4160492346772ded9b24f765a（2026-08-13）。开发者预览版发布前仍需复核当前界面、命令与权限行为。"
-                                   },
-                   "copyright_review":  {
-                                            "status":  "pass",
-                                            "notes":  "正文为原创表达；首张图是对官方中文文档操作顺序的原创编辑重绘，非官方 Web UI 截图，不包含官方 Logo、界面或第三方图片，来源链接已登记。其余两张图为本地原创信息图；平台发布前仍由负责人确认引用与排版展示。"
-                                        },
-                   "policy_review":  {
-                                         "status":  "pass",
-                                         "notes":  "明确提示 API Key、用户目录、本地凭据、权限审批、删除/联网/批量修改与真实项目的风险边界；不鼓励绕过权限或无人工监管执行。"
-                                     },
-                   "human_publish_approval":  {
-                                                  "status":  "pending",
-                                                  "notes":  "仓库正式入库不等于公众号或其他内容平台发布；仍需负责人根据当前版本、实操环境与平台排版进行人工预览确认。"
-                                              }
-               },
-    "editorial_review":  {
-                             "structure":  "重构为三大块：先说明 DeepSeek Harness 的开发者预览定位、模型—工作区—审批三层作用；再用四步练习任务引导新手完成可验证的首次启动；最后集中说明模型、工作区、任务、审批、凭据等高频设置和能力边界，并提供真实仓库迁移与故障排查。",
-                             "ai_tone":  "删除大段概念解释，改用“现在做什么、看到什么、如何验收、出错先查哪里”的指令式表达；保留必要的权限与隐私边界，不虚构真实运行结果。",
-                             "visual_reference_boundary":  "首张图依据官方中文《使用 Web UI》文档的操作顺序编辑重绘，图注明确其非官方 Web UI 截图；不仿制界面或使用官方 Logo。其余插图只解释安全闭环和审批判断，属于原创抽象示意图。"
-                         },
-    "notes":  [
-                  "正文已按新手 L2 实操目标重构为三大块：背景与作用、快速上手、高频设置与重要功能；读者可在独立练习目录依次完成启动、模型连通性、工作区、只读任务与最小写入验证。",
-                  "页面入口按官方中文《使用 Web UI》指南中的设置、模型、工作区选择和审批能力描述；开发者预览版界面可能变化，正文明确提示以当前页面为准。",
-                  "首张配图为基于官方中文文档内容的原创编辑重绘，不是官方 Web UI 截图；两张配图均为本地原创信息图，不使用官方 Logo、官方界面或第三方截图。",
-                  "文中的命令与任务卡是可复现练习模板，不把模板误写成已执行的真实生产结果。"
-              ]
+  "schema_version": "1.0",
+  "article": {
+    "id": "17",
+    "title": "DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来",
+    "path": "01-工具教程/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.md",
+    "tier": "standard",
+    "category": "工具教程",
+    "series": "AI新手开源工具实用教程",
+    "tags": [
+      "DeepSeek Harness",
+      "AI Agent",
+      "Agent工作台",
+      "工作区",
+      "权限审批"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-08-14",
+    "updated_at": "2026-08-18"
+  },
+  "topic": {
+    "id": "T092",
+    "status": "S6 已入库"
+  },
+  "brief": {
+    "reader_moment": "读者第一次体验 Agent 工作台，想让 AI 帮忙处理项目，却不希望在没弄清权限和动作前把真实目录交出去。",
+    "tension": "工具能读文件、调用命令和创建内容并不等于新手应该直接授权；缺少练习目录、最小任务和人工验收时，便利会放大不确定性。",
+    "core_question": "如何在独立练习目录中启动 DeepSeek Harness，先完成可验证的只读任务，再安全尝试最小写入？",
+    "central_view": "先把模型链路、工作区范围、任务约束和审批检查拆开验证，再把 Agent 用到真实项目；可见、可停、可验收比一次完成更多工作更重要。",
+    "scope_boundary": "本文只覆盖官方开发者预览版的本地 Web 启动、模型配置、工作区、会话、审批和入门任务卡；不承诺稳定版本行为，不涉及生产部署、密钥管理方案或无人工监管的自动执行。"
+  },
+  "sources": [
+    {
+      "title": "DeepSeek Harness GitHub README (Chinese)",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md",
+      "checked_at": "2026-08-14",
+      "notes": "核对开源定位、开发者预览提示、npx 启动方式、默认本地 Web 地址、源码运行路径与插件架构说明。",
+      "type": "official"
+    },
+    {
+      "title": "DeepSeek Harness Guide: Quick Start",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
+      "checked_at": "2026-08-14",
+      "notes": "核对 Web UI 启动、Models 设置、工作区选择、会话输入可用条件，以及当前权限策略下的审批提示。",
+      "type": "official"
+    },
+    {
+      "title": "DeepSeek Harness Guide: Providers",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/guide/providers",
+      "checked_at": "2026-08-14",
+      "notes": "核对模型提供商、自定义 OpenAI 兼容端点与本地凭据脱敏说明的边界。",
+      "type": "official"
+    },
+    {
+      "title": "DeepSeek Harness CLI README (Chinese)",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.zh.md",
+      "checked_at": "2026-08-14",
+      "notes": "核对 profile、headless、web 与插件命令的官方入口；正文仅作为后续学习边界说明。",
+      "type": "official"
+    }
+  ],
+  "assets": {
+    "cover": null,
+    "inline_images": [
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-官方中文指南操作路径图.png",
+        "alt": "DeepSeek Harness 官方中文文档操作路径图（编辑重绘，非官方 Web UI 截图）",
+        "source_url": "https://deepseek-harness.github.io/deepseek-harness/guide/quickstart",
+        "source_type": "official-chinese-documentation-redraw"
+      },
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图01.png",
+        "alt": "DeepSeek Harness 第一次使用的四步安全闭环"
+      },
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图02.png",
+        "alt": "Agent 审批前的四个检查问题"
+      }
+    ],
+    "visual_notes": "首张正文图根据官方中文《使用 Web UI》文档的已核验操作顺序进行原创编辑重绘，图内已明确标注“不是官方 Web UI 截图”；不使用官方 Logo、官方界面截图或第三方博文图片。其余两张图为本地原创信息图。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pass",
+      "notes": "2026-08-14 已依据官方 README、Quick Start、Providers 与 CLI 文档核对；仓库快照为 47f943859bef60e4160492346772ded9b24f765a（2026-08-13）。开发者预览版发布前仍需复核当前界面、命令与权限行为。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文为原创表达；首张图是对官方中文文档操作顺序的原创编辑重绘，非官方 Web UI 截图，不包含官方 Logo、界面或第三方图片，来源链接已登记。其余两张图为本地原创信息图；平台发布前仍由负责人确认引用与排版展示。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "明确提示 API Key、用户目录、本地凭据、权限审批、删除/联网/批量修改与真实项目的风险边界；不鼓励绕过权限或无人工监管执行。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "仓库正式入库不等于公众号或其他内容平台发布；仍需负责人根据当前版本、实操环境与平台排版进行人工预览确认。"
+    }
+  },
+  "editorial_review": {
+    "structure": "改为“第一次为什么要慢一点—模型/工作区/审批是什么—十分钟安全练习—日常设置与故障判断”的陪伴式路径；命令保留为可复现练习，减少连续指令堆叠。",
+    "ai_tone": "以第一次打开 Agent 的真实紧张感作为开头，增加“先停一下、亲手确认、看到什么才算过关”等人性化衔接；把步骤改成场景化提示，不把读者当成只会照抄命令的人。",
+    "visual_reference_boundary": "三张文中图均已插入正文相邻位置；17篇现有图为标题带式信息图而非左上角说明书角标，保持主体标题与非官方重绘边界，不新增角标。"
+  },
+  "notes": [
+    "正文已按新手 L2 实操目标重构为三大块：背景与作用、快速上手、高频设置与重要功能；读者可在独立练习目录依次完成启动、模型连通性、工作区、只读任务与最小写入验证。",
+    "页面入口按官方中文《使用 Web UI》指南中的设置、模型、工作区选择和审批能力描述；开发者预览版界面可能变化，正文明确提示以当前页面为准。",
+    "首张配图为基于官方中文文档内容的原创编辑重绘，不是官方 Web UI 截图；两张配图均为本地原创信息图，不使用官方 Logo、官方界面或第三方截图。",
+    "文中的命令与任务卡是可复现练习模板，不把模板误写成已执行的真实生产结果。",
+    "2026-08-18：按新手阅读体验重构正文，使用用户目录变量替代作者电脑绝对路径；三张文中图重新放置在自然叙事节点，保留官方文档重绘与原创示意图的来源说明。"
+  ],
+  "updated_at": "2026-08-18"
 }

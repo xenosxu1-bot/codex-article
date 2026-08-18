@@ -1,41 +1,40 @@
 {
-    "schema_version":  "1.0",
-    "article":  {
-                    "id":  "17",
-                    "title":  "DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来",
-                    "path":  "01-工具教程/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.md",
-                    "category":  "01-工具教程"
-                },
-    "assets":  {
-                   "cover":  null,
-                   "figures":  [
-                                   {
-                                       "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图01.png",
-                                       "kind":  "inline-image",
-                                       "alt":  "DeepSeek Harness 第一次使用的四步安全闭环（原创信息图）"
-                                   },
-                                   {
-                                       "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图02.png",
-                                       "kind":  "inline-image",
-                                       "alt":  "Agent 审批前的四个检查问题（原创信息图）"
-                                   },
-                                   {
-                                       "file":  "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-官方中文指南操作路径图.png",
-                                       "kind":  "inline-image",
-                                       "alt":  "DeepSeek Harness 官方中文文档操作路径图（编辑重绘）"
-                                   }
-                               ],
-                   "archived_files":  [
-
-                                      ]
-               },
-    "records":  {
-                    "metadata":  "07-资料与流程/03-资产与核验/文章元数据/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.json",
-                    "verification_ledger":  "07-资料与流程/03-资产与核验/文章资料核验台账.md"
-                },
-    "notes":  [
-                  "正文按 DeepSeek Harness 官方 README、官方中文《使用 Web UI》、Providers 与 CLI 文档撰写；教程只承诺已核验的启动、工作区、模型、会话和审批边界。",
-                  "第一张正文图为基于官方中文文档的原创编辑重绘，明确标注为非官方 Web UI 截图；两张安全与审批图为本地原创信息图。",
-                  "文中的任务卡是新手在自己工作区执行的可复现练习模板，不把模板误写成已执行的真实生产结果。"
-              ]
+  "schema_version": "1.0",
+  "article": {
+    "id": "17",
+    "title": "DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来",
+    "path": "01-工具教程/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": null,
+    "figures": [
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "DeepSeek Harness 第一次使用的四步安全闭环（原创信息图）"
+      },
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-正文插图02.png",
+        "kind": "inline-image",
+        "alt": "Agent 审批前的四个检查问题（原创信息图）"
+      },
+      {
+        "file": "assets/figures/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来-官方中文指南操作路径图.png",
+        "kind": "inline-image",
+        "alt": "DeepSeek Harness 官方中文文档操作路径图（编辑重绘）"
+      }
+    ],
+    "archived_files": []
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/17-DeepSeek Harness 新手教程：别急着让 AI 改代码，先把第一个 Agent 任务跑起来.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": [
+    "正文按 DeepSeek Harness 官方 README、官方中文《使用 Web UI》、Providers 与 CLI 文档撰写；教程只承诺已核验的启动、工作区、模型、会话和审批边界。",
+    "第一张正文图为基于官方中文文档的原创编辑重绘，明确标注为非官方 Web UI 截图；两张安全与审批图为本地原创信息图。",
+    "文中的任务卡是新手在自己工作区执行的可复现练习模板，不把模板误写成已执行的真实生产结果。",
+    "2026-08-18：正文重构为陪伴式首次上手路径，示例使用用户目录变量避免绑定作者电脑盘符；三张文中图均位于相邻操作语境，不使用说明书式角标。"
+  ]
 }
