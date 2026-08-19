@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "18",
+    "title": "从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换",
+    "path": "01-工具教程/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换.md",
+    "tier": "standard",
+    "category": "工具教程",
+    "series": "浏览器工具与效率实战",
+    "tags": [
+      "浏览器插件",
+      "Manifest V3",
+      "Side Panel",
+      "JavaScript",
+      "浏览器效率"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-08-19",
+    "updated_at": "2026-08-19"
+  },
+  "topic": {
+    "id": "T094",
+    "status": "S6 已入库"
+  },
+  "brief": {
+    "reader_moment": "读者每天在浏览器收藏夹、标签页和本地资料之间反复查找，想做一个自己能用的侧边栏插件。",
+    "tension": "功能越多越容易变成另一个复杂工作台；新手需要先跑通一个能加载、能切换、能保存入口的最小闭环。",
+    "core_question": "如何从一个空目录开始，做出一个可以在 Edge/Chrome 中加载并实际减少页面切换的浏览器插件？",
+    "central_view": "先做侧边栏导航 MVP，再增加收藏夹、自定义入口和只记录插件主动访问的轻量常用列表；每完成一层就验证一次。",
+    "scope_boundary": "本文只覆盖 Manifest V3 本地插件、侧边栏、标签页、收藏夹、本地存储和轻量常用访问；不承诺完整浏览历史、在线同步或系统默认程序唤起。"
+  },
+  "sources": [
+    {
+      "title": "Chrome Extensions: Manifest V3",
+      "url": "https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3",
+      "checked_at": "2026-08-19",
+      "notes": "核对 Manifest V3 为当前扩展平台版本方向，以及 service worker 背景脚本和本地打包代码边界。",
+      "type": "official"
+    },
+    {
+      "title": "Chrome Extensions: Side Panel API",
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/sidePanel",
+      "checked_at": "2026-08-19",
+      "notes": "核对 sidePanel 权限、side_panel.default_path、setPanelBehavior 和 Chrome 114+ MV3 可用性。",
+      "type": "official"
+    },
+    {
+      "title": "Chrome Extensions: Tabs API",
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/tabs",
+      "checked_at": "2026-08-19",
+      "notes": "核对 tabs.query、tabs.update、tabs.create 以及 title、url、favIconUrl 对 tabs 权限或 host permissions 的要求。",
+      "type": "official"
+    },
+    {
+      "title": "Chrome Extensions: Bookmarks API",
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/bookmarks",
+      "checked_at": "2026-08-19",
+      "notes": "核对 bookmarks.getTree 读取浏览器收藏夹树的官方入口。",
+      "type": "official"
+    },
+    {
+      "title": "Chrome Extensions: Storage API",
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/storage",
+      "checked_at": "2026-08-19",
+      "notes": "核对 chrome.storage.local 作为浏览器本地持久化入口；正文不把它描述为云端同步。",
+      "type": "official"
+    },
+    {
+      "title": "Microsoft Edge extensions overview",
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/extensions/",
+      "checked_at": "2026-08-19",
+      "notes": "核对 Edge 扩展的总体定位；具体 API 兼容性仍需按当前 Edge 版本复核。",
+      "type": "official"
+    }
+  ],
+  "assets": {
+    "cover": null,
+    "inline_images": [
+      {
+        "file": "assets/figures/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换-正文插图01.png",
+        "alt": "从重复查找到侧边栏直达：插件 MVP 演进路径（原创流程图，非浏览器官方界面）",
+        "source_type": "local-original-diagram"
+      },
+      {
+        "file": "assets/figures/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换-正文插图02.png",
+        "alt": "侧边栏 MVP 结构：当前页面、搜索和快速入口（原创 UI 示意图，非浏览器官方界面）",
+        "source_type": "local-original-diagram"
+      },
+      {
+        "file": "assets/figures/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换-正文插图03.png",
+        "alt": "轻量常用访问：从插件主动打开到下次一键直达（原创流程图）",
+        "source_type": "local-original-diagram"
+      },
+      {
+        "file": "assets/figures/18-从0到1开发一个可用的浏览器插件：用侧边栏解决页面反复切换-正文插图04.png",
+        "alt": "浏览器插件开发验收闭环：从加载到真正可使用（原创流程图）",
+        "source_type": "local-original-diagram"
+      }
+    ],
+    "visual_notes": "四张图片为本地脚本绘制的原创流程图或 UI 示意图，不是浏览器官方界面截图，不包含官方 Logo 或第三方素材。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pass",
+      "notes": "2026-08-19 依据 Chrome Extensions 官方 Manifest V3、Side Panel、Tabs、Bookmarks、Storage 文档及 Microsoft Edge Extensions 官方概览复核；正文对版本差异和 Native Messaging 边界保留提示。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文为原创表达；四张图由本地脚本原创绘制，不使用浏览器官方界面截图、Logo 或第三方图片。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "明确 tabs、bookmarks、storage、sidePanel 权限边界；不读取完整浏览历史，不把本地存储写成在线同步，也不承诺系统默认程序唤起。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "仓库正式入库不等于公众号或其他内容平台发布；仍需负责人进行平台排版和移动端预览确认。"
+    }
+  },
+  "editorial_review": {
+    "structure": "按“真实问题—最小目标—插件加载—当前页面—已打开页面—搜索—收藏夹—自定义入口—常用访问—逐层验收”组织，减少说明书式长清单。",
+    "ai_tone": "用新手能看到的页面效果和验收信号推进，不把 API 罗列作为正文主体。",
+    "visual_reference_boundary": "四张本地原创图分别放在 MVP、侧边栏结构、常用访问和验收节点；正文明确它们不是浏览器官方界面截图。"
+  },
+  "notes": [
+    "文章面向能阅读少量 JavaScript 的新手，目标是完成一次可验证的本地插件 MVP，而不是解释全部浏览器扩展 API。",
+    "文中代码为关键片段；完整可运行版本与文章配套插件资产不在本文仓库路径内。",
+    "2026-08-19：完成原创配图、流程图、官方来源登记与查重候选检查。"
+  ],
+  "updated_at": "2026-08-19"
+}
