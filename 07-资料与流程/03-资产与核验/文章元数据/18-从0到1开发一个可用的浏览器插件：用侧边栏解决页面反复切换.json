@@ -9,9 +9,11 @@
     "series": "浏览器工具与效率实战",
     "tags": [
       "浏览器插件",
+      "Codex",
+      "AI辅助开发",
+      "提示词",
       "Manifest V3",
       "Side Panel",
-      "JavaScript",
       "浏览器效率"
     ],
     "status": "S6 已入库",
@@ -23,13 +25,27 @@
     "status": "S6 已入库"
   },
   "brief": {
-    "reader_moment": "读者每天在浏览器收藏夹、标签页和本地资料之间反复查找，想做一个自己能用的侧边栏插件。",
-    "tension": "功能越多越容易变成另一个复杂工作台；新手需要先跑通一个能加载、能切换、能保存入口的最小闭环。",
-    "core_question": "如何从一个空目录开始，做出一个可以在 Edge/Chrome 中加载并实际减少页面切换的浏览器插件？",
-    "central_view": "先做侧边栏导航 MVP，再增加收藏夹、自定义入口和只记录插件主动访问的轻量常用列表；每完成一层就验证一次。",
-    "scope_boundary": "本文只覆盖 Manifest V3 本地插件、侧边栏、标签页、收藏夹、本地存储和轻量常用访问；不承诺完整浏览历史、在线同步或系统默认程序唤起。"
+    "reader_moment": "想用 Codex 把自己每天重复查找页面和资料的流程做成浏览器侧边栏插件，但不知道如何从空目录开始的 AI 新手。",
+    "tension": "直接复制代码容易跑不起来，也难以定位问题；新手需要先说清场景，再让 Codex 分阶段实现并在真实浏览器里验收。",
+    "core_question": "如何把个人使用场景讲清楚，让 Codex 分阶段生成、修改、调试并验证一个可加载、可切换、可搜索的侧边栏插件？",
+    "central_view": "把 Codex 当作开发搭档而不是代码搜索框：先规划 MVP，再一次只实现一个动作，最后用真实使用路径验收；代码只作为理解辅助。",
+    "scope_boundary": "本文只覆盖 Manifest V3 本地插件、侧边栏、标签页、搜索、自定义入口和轻量常用访问；不承诺完整浏览历史、在线同步或系统默认程序唤起。"
   },
   "sources": [
+    {
+      "title": "OpenAI Help Center: Using Codex with your ChatGPT plan",
+      "url": "https://help.openai.com/en/articles/11369540",
+      "checked_at": "2026-08-19",
+      "notes": "用于补充 Codex 使用入口的官方说明；具体可用能力仍以当前产品界面和账户权限为准。",
+      "type": "official"
+    },
+    {
+      "title": "OpenAI Academy: Codex for Builders",
+      "url": "https://academy.openai.com/public/clubs/builders-etkn1/resources/codex-for-builders",
+      "checked_at": "2026-08-19",
+      "notes": "用于核对 Codex 面向开发实践的定位；正文将其作为分阶段开发搭档，不把提示词替代人工验收。",
+      "type": "official"
+    },
     {
       "title": "Chrome Extensions: Manifest V3",
       "url": "https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3",
@@ -118,14 +134,15 @@
     }
   },
   "editorial_review": {
-    "structure": "按“真实问题—最小目标—插件加载—当前页面—已打开页面—搜索—收藏夹—自定义入口—常用访问—逐层验收”组织，减少说明书式长清单。",
-    "ai_tone": "用新手能看到的页面效果和验收信号推进，不把 API 罗列作为正文主体。",
+    "structure": "按“描述重复问题—让 Codex 先规划—创建最小骨架—逐项增量实现—用提示词调试—方案 A 常用访问—真实场景验收—迁移方法”组织，正文以提示词和验收信号为主。",
+    "ai_tone": "面向 AI 新手，明确每轮在 Codex 中输入什么、应该看到什么、如何复测；删除大段实现代码，保留少量数据思路帮助读者理解。",
     "visual_reference_boundary": "四张本地原创图分别放在 MVP、侧边栏结构、常用访问和验收节点；正文明确它们不是浏览器官方界面截图。"
   },
   "notes": [
-    "文章面向能阅读少量 JavaScript 的新手，目标是完成一次可验证的本地插件 MVP，而不是解释全部浏览器扩展 API。",
-    "文中代码为关键片段；完整可运行版本与文章配套插件资产不在本文仓库路径内。",
-    "2026-08-19：完成原创配图、流程图、官方来源登记与查重候选检查。"
+    "文章面向不会从空目录开始写浏览器插件、但希望用 Codex 完成个人工具的 AI 新手。",
+    "正文重点是需求提示词、分阶段实施提示词、增量调试提示词和人工验收闭环；不把完整可运行代码当作阅读前提。",
+    "四张配图为本地原创流程图或 UI 示意图，继续对应 MVP、侧边栏结构、常用访问和验收节点。",
+    "2026-08-19：完成 Codex 新手定位整改，补充 OpenAI Codex 资料来源并同步官方浏览器 API 边界。"
   ],
   "updated_at": "2026-08-19"
 }
