@@ -7,8 +7,22 @@
     "category": "01-工具教程"
   },
   "assets": {
-    "cover": null,
-    "figures": [],
+    "cover": {
+      "file": "assets/cover/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-封面.png",
+      "kind": "article-cover"
+    },
+    "figures": [
+      {
+        "file": "assets/figures/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-正文插图01.png",
+        "kind": "inline-image",
+        "alt": "先把上下文讲清楚：四类有效上下文"
+      },
+      {
+        "file": "assets/figures/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-正文插图02.png",
+        "kind": "inline-image",
+        "alt": "把任务拆成可验证的小步"
+      }
+    ],
     "archived_files": []
   },
   "records": {
@@ -17,7 +31,26 @@
   },
   "notes": [
     "正文由真实 Writer Connector 生成，并经 Editor Connector 编辑。",
-    "本次同步仅包含正文与元数据，未同步 fallback 视觉资产。",
-    "生产状态为 human_review，仓库入库不等于外部平台发布。"
+    "生产状态为 human_review，仓库入库不等于外部平台发布。",
+    "正文由实际 Writer Connector 生成，由 Editor Connector 完成结构、可读性与发布前编辑。",
+    "已纳入 article-Skill A+D fallback v2 视觉：封面与两张正文图均为文章衍生的本地确定性资产，已进行 v2 文字安全区复核。",
+    "当前仍为 human_review：事实复核与人工发布确认未被视为已完成，本轮不做外部发布。",
+    "正文元数据中的官方参考记录已同步至文章包 manifest，仅作来源占位与人工复核索引，不代表 fact_review 已自动通过。"
+  ],
+  "sources": [
+    {
+      "title": "OpenAI Academy: Codex for Builders",
+      "url": "https://academy.openai.com/public/clubs/builders-etkn1/resources/codex-for-builders",
+      "checked_at": "2026-08-21",
+      "notes": "用于核对 AI 辅助开发从需求、任务拆解到验证的实践定位；本文不将其扩展为特定产品版本或效果承诺。",
+      "type": "official"
+    },
+    {
+      "title": "OpenAI Help Center: Using Codex with your ChatGPT plan",
+      "url": "https://help.openai.com/en/articles/11369540",
+      "checked_at": "2026-08-21",
+      "notes": "用于核对 Codex 使用应以当前产品界面、账号权限和官方说明为准；正文不据此推导价格或可用范围。",
+      "type": "official"
+    }
   ]
 }

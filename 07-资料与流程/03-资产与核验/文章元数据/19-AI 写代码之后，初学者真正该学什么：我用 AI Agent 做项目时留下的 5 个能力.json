@@ -46,14 +46,17 @@
     }
   ],
   "assets": {
-    "cover": null,
-    "inline_images": [],
-    "visual_notes": "本篇由真实 Writer Connector 生成正文并经 Editor Connector 编辑；本次仅同步正文与文章元数据，未把本地 fallback 视觉资产伪装为模型生成图片。"
+    "cover": "01-工具教程/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力/assets/cover/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-封面.png",
+    "inline_images": [
+      "01-工具教程/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力/assets/figures/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-正文插图01.png",
+      "01-工具教程/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力/assets/figures/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力-正文插图02.png"
+    ],
+    "visual_notes": "封面与两张正文图已纳入文章包，使用 article-Skill A+D fallback v2 的本地确定性渲染；视觉合同为 wechat-ui-layout.v1，设计系统为 wechat-visual-design.v3，未声称为远程图像模型生成证明。封面使用短标题与副标题以适酅标题安全区，正文完整标题不变。"
   },
   "checks": {
     "fact_review": {
       "status": "pending",
-      "notes": "已登记官方参考资料；生产阶段 fact_retrieval Connector 未配置，涉及产品当前能力、版本、价格或权限的表述仍须人工复核。"
+      "notes": "已登记官方参考资料；由于 fact_retrieval Connector 当前不可用，涉及产品当前能力、版本、价格与权限的表述仍需人工复核。"
     },
     "copyright_review": {
       "status": "pass",
@@ -71,7 +74,7 @@
   "editorial_review": {
     "structure": "按“从误区切入—五项能力—学习顺序变化”组织，正文强调判断、上下文、证据和变化控制。",
     "ai_tone": "正文来自真实 Writer Connector，并由 Editor Connector 完成编辑；仍需结合作者真实经历做最终人工去 AI 味复核。",
-    "visual_reference_boundary": "本次未在正文中引用图片，避免把未实际调用远程生图模型的 fallback 资产当作正式视觉成果。"
+    "visual_reference_boundary": "已纳入本地 A+D fallback v2 封面与正文图；图片为文章衍生的确定性资产，不代表远程图像模型或外部平台生成凭证。"
   },
   "notes": [
     "本文题目为用户确认的创作方向，正文由真实 Writer Connector 生成，并经 Editor Connector 编辑。",
