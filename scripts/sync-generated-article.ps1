@@ -1,10 +1,9 @@
-﻿[CmdletBinding(DefaultParameterSetName = 'Intent')]
+[CmdletBinding(DefaultParameterSetName = 'Intent')]
 param(
     [Parameter(Mandatory = $true, ParameterSetName = 'Intent')]
     [string]$IntentPath,
     [Parameter(Mandatory = $true, ParameterSetName = 'Result')]
     [string]$ResultPath,
-    [string]$ProjectConfigPath = (Join-Path $PSScriptRoot '..\09-工具脚本\03-技能接入\article-skill-project.json'),
     [string]$SkillRoot = 'D:\projects_git\article-Skill',
     [switch]$Execute,
     [string]$ReceiptPath
@@ -13,6 +12,24 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+
+# Repository-sync policy is intentionally kept in this executable contract.
+# The project no longer maintains a separate adapter JSON or Skill lock file.
+$SyncPolicy = [ordered]@{
+    IntentSchema = 'repository-sync-intent.v1'
+    RequiredIntentStatus = 'ready'
+    RequiredExecutionProfile = 'production'
+    TargetId = 'codex-article'
+    TargetBranch = 'main'
+    RequiredChecks = @('article_unified_check', 'one_click_publish_check', 'project_deep_verify', 'git_diff_check', 'staged_secret_scan')
+    AllowedOwnedPathPrefixes = @(
+        'README.md', '00-知识库导航', '01-工具教程', '02-效率方法', '03-AI与创作',
+        '04-编程与开发', '05-职场与成长', '06-案例与复盘', '07-资料与流程'
+    )
+    BlockOnUnownedChanges = $true
+    BlockOnPreexistingStagedChanges = $true
+    BlockWhenRemoteNotEqual = $true
+}
 
 function Read-JsonFile([string]$Path) {
     if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { throw "File not found: $Path" }
@@ -73,7 +90,6 @@ function Write-Receipt([string]$Status, [string]$Message, [object]$Intent, [obje
 
 $intent = $null
 try {
-    $config = Read-JsonFile $ProjectConfigPath
     $intent = if ($PSCmdlet.ParameterSetName -eq 'Result') {
         $result = Read-JsonFile $ResultPath
         $result.repository_sync_intent
@@ -81,20 +97,18 @@ try {
         Read-JsonFile $IntentPath
     }
     if ($null -eq $intent) { throw 'No repository_sync_intent is present; automatic repository delivery is not authorized.' }
-    $adapter = $config.repository_sync
-    if ($null -eq $adapter -or $adapter.enabled -ne $true) { throw 'Repository sync is disabled in the project adapter configuration.' }
-    if ($intent.schema_version -ne $adapter.intent_schema) { throw "Unexpected intent schema: $($intent.schema_version)" }
-    if ($intent.status -ne $adapter.trigger.required_intent_status) { throw "Intent status is not executable: $($intent.status)" }
+    if ($intent.schema_version -ne $SyncPolicy.IntentSchema) { throw "Unexpected intent schema: $($intent.schema_version)" }
+    if ($intent.status -ne $SyncPolicy.RequiredIntentStatus) { throw "Intent status is not executable: $($intent.status)" }
     if ($intent.authorization.allow_repository_sync -ne $true) { throw 'The intent lacks explicit repository-sync authorization.' }
-    if ($intent.execution_profile -ne $adapter.trigger.required_execution_profile) { throw "Intent execution profile must be $($adapter.trigger.required_execution_profile)." }
-    if ($intent.target_id -ne $adapter.target.id) { throw "Intent target_id does not match this project: $($intent.target_id)" }
-    if ($intent.branch -ne $adapter.target.branch) { throw "Intent branch does not match configured target branch: $($intent.branch)" }
+    if ($intent.execution_profile -ne $SyncPolicy.RequiredExecutionProfile) { throw "Intent execution profile must be $($SyncPolicy.RequiredExecutionProfile)." }
+    if ($intent.target_id -ne $SyncPolicy.TargetId) { throw "Intent target_id does not match this project: $($intent.target_id)" }
+    if ($intent.branch -ne $SyncPolicy.TargetBranch) { throw "Intent branch does not match configured target branch: $($intent.branch)" }
     if ([string]::IsNullOrWhiteSpace([string]$intent.article_id) -or [string]::IsNullOrWhiteSpace([string]$intent.commit_message)) { throw 'Intent must contain article_id and commit_message.' }
     if ($null -eq $intent.final_article_package -or [string]::IsNullOrWhiteSpace([string]$intent.final_article_package.artifact_id) -or [string]::IsNullOrWhiteSpace([string]$intent.final_article_package.content_sha256)) { throw 'Intent final_article_package lineage is incomplete.' }
 
     $ownedPaths = @($intent.owned_paths | ForEach-Object { "$_".Replace('\', '/').TrimEnd('/') })
     if ($ownedPaths.Count -eq 0 -or @($ownedPaths | Select-Object -Unique).Count -ne $ownedPaths.Count) { throw 'Intent owned_paths must be a non-empty unique list.' }
-    $allowedPrefixes = @($adapter.safety.allowed_owned_path_prefixes)
+    $allowedPrefixes = @($SyncPolicy.AllowedOwnedPathPrefixes)
     foreach ($owned in $ownedPaths) {
         if (-not (Test-SafeRelativePath $owned)) { throw "Unsafe owned path: $owned" }
         $allowed = $false
@@ -105,11 +119,11 @@ try {
         if (-not $allowed) { throw "Owned path is outside configured article-delivery scope: $owned" }
     }
     $requiredChecks = @($intent.required_checks)
-    $unsupportedChecks = @($requiredChecks | Where-Object { $_ -notin @($adapter.required_checks) })
+    $unsupportedChecks = @($requiredChecks | Where-Object { $_ -notin @($SyncPolicy.RequiredChecks) })
     if ($unsupportedChecks.Count -gt 0) { throw "Intent requests unsupported checks: $($unsupportedChecks -join ', ')" }
 
     $branch = (Invoke-Git @('branch', '--show-current') | Select-Object -First 1)
-    if ($branch -ne $adapter.target.branch) { throw "Current branch is $branch; expected $($adapter.target.branch)." }
+    if ($branch -ne $SyncPolicy.TargetBranch) { throw "Current branch is $branch; expected $($SyncPolicy.TargetBranch)." }
 
     if (-not $Execute) {
         Write-Receipt 'planned' 'Intent is structurally valid. Dry run does not fetch, validate, stage, commit, or push.' $intent ([ordered]@{ working_changes = @(Get-WorkingChanges) })
@@ -117,16 +131,16 @@ try {
     }
 
     $preexistingStaged = @(Invoke-Git @('diff', '--cached', '--name-only'))
-    if ($adapter.safety.block_on_preexisting_staged_changes -eq $true -and $preexistingStaged.Count -gt 0) { throw "Pre-existing staged changes block automatic sync: $($preexistingStaged -join ', ')" }
+    if ($SyncPolicy.BlockOnPreexistingStagedChanges -eq $true -and $preexistingStaged.Count -gt 0) { throw "Pre-existing staged changes block automatic sync: $($preexistingStaged -join ', ')" }
     $initialChanges = @(Get-WorkingChanges)
     $initialOutside = @($initialChanges | Where-Object { -not (Test-OwnedPath $_ $ownedPaths) })
-    if ($adapter.safety.block_on_unowned_changes -eq $true -and $initialOutside.Count -gt 0) { throw "Unowned working-tree changes block automatic sync: $($initialOutside -join ', ')" }
+    if ($SyncPolicy.BlockOnUnownedChanges -eq $true -and $initialOutside.Count -gt 0) { throw "Unowned working-tree changes block automatic sync: $($initialOutside -join ', ')" }
     if ($initialChanges.Count -eq 0) { throw 'No uncommitted target changes are available to synchronize.' }
 
     Invoke-Git @('fetch', 'origin') | Out-Null
     $aheadBehind = @(Invoke-Git @('rev-list', '--left-right', '--count', "HEAD...origin/$branch"))
     $counts = ($aheadBehind -join ' ').Trim().Split([char[]]' ' , [System.StringSplitOptions]::RemoveEmptyEntries)
-    if ($adapter.safety.block_when_remote_not_equal -eq $true -and ($counts.Count -ne 2 -or $counts[0] -ne '0' -or $counts[1] -ne '0')) { throw "Local and origin/$branch differ (ahead=$($counts[0]), behind=$($counts[1])); automatic merge is disabled." }
+    if ($SyncPolicy.BlockWhenRemoteNotEqual -eq $true -and ($counts.Count -ne 2 -or $counts[0] -ne '0' -or $counts[1] -ne '0')) { throw "Local and origin/$branch differ (ahead=$($counts[0]), behind=$($counts[1])); automatic merge is disabled." }
 
     $toolsRoot = Get-ChildItem -LiteralPath $ProjectRoot -Directory | Where-Object { $_.Name -like '09-*' } | Select-Object -First 1
     if ($null -eq $toolsRoot) { throw 'Cannot locate project tool directory.' }
@@ -142,7 +156,7 @@ try {
 
     $postCheckChanges = @(Get-WorkingChanges)
     $postCheckOutside = @($postCheckChanges | Where-Object { -not (Test-OwnedPath $_ $ownedPaths) })
-    if ($adapter.safety.block_on_unowned_changes -eq $true -and $postCheckOutside.Count -gt 0) { throw "Checks produced or retained unowned changes; automatic sync stopped: $($postCheckOutside -join ', ')" }
+    if ($SyncPolicy.BlockOnUnownedChanges -eq $true -and $postCheckOutside.Count -gt 0) { throw "Checks produced or retained unowned changes; automatic sync stopped: $($postCheckOutside -join ', ')" }
     if ($postCheckChanges.Count -eq 0) { throw 'Checks completed but no owned changes remain to commit.' }
     if ('git_diff_check' -in $requiredChecks) { Invoke-Git @('diff', '--check') | Out-Null }
 

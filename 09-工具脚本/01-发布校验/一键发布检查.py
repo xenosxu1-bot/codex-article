@@ -733,6 +733,9 @@ def approved_article_skill_duplicate_deletions(raw: str) -> tuple[list[str], lis
         "09-\u5de5\u5177\u811a\u672c/\u6279\u91cf\u751f\u6210\u914d\u56fe.py",
         # Redundant project adapter note; canonical integration docs remain in the other runbook.
         "09-\u5de5\u5177\u811a\u672c/\u5c01\u9762\u751f\u4ea7\u63a5\u5165\u8bf4\u660e.md",
+        # Project-side Skill adapter and version pin were intentionally removed.
+        "09-\u5de5\u5177\u811a\u672c/03-\u6280\u80fd\u63a5\u5165/article-skill-project.json",
+        "09-\u5de5\u5177\u811a\u672c/03-\u6280\u80fd\u63a5\u5165/article-skill.lock.json",
     }
     allowed_prefixes = ("09-\u5de5\u5177\u811a\u672c/article-wechat-skill/",)
     for line in filter(None, raw.splitlines()):
@@ -802,8 +805,6 @@ def approved_workflow_reorganization_deletions(raw: str) -> tuple[list[str], lis
         "更新文章资产重复度.mjs": "02-内容去重与归档",
         "检查内容重复度.mjs": "02-内容去重与归档",
         "重建内容库索引.mjs": "02-内容去重与归档",
-        "article-skill-project.json": "03-技能接入",
-        "article-skill.lock.json": "03-技能接入",
         "article-wechat-skill-说明.md": "03-技能接入",
     }
     for line in filter(None, raw.splitlines()):
