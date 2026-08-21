@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "19",
+    "title": "AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力",
+    "path": "01-工具教程/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力.md",
+    "category": "01-工具教程"
+  },
+  "assets": {
+    "cover": null,
+    "figures": [],
+    "archived_files": []
+  },
+  "records": {
+    "metadata": "07-资料与流程/03-资产与核验/文章元数据/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力.json",
+    "verification_ledger": "07-资料与流程/03-资产与核验/文章资料核验台账.md"
+  },
+  "notes": [
+    "正文由真实 Writer Connector 生成，并经 Editor Connector 编辑。",
+    "本次同步仅包含正文与元数据，未同步 fallback 视觉资产。",
+    "生产状态为 human_review，仓库入库不等于外部平台发布。"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "article": {
+    "id": "19",
+    "title": "AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力",
+    "path": "01-工具教程/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力/19-AI 写代码之后，初学者真正该学什么：我用 AI Agent 做项目时留下的 5 个能力.md",
+    "tier": "standard",
+    "category": "工具教程",
+    "series": "AI学习与应用案例",
+    "tags": [
+      "AI Agent",
+      "AI编程",
+      "AI学习",
+      "项目实践",
+      "新手成长"
+    ],
+    "status": "S6 已入库",
+    "created_at": "2026-08-21",
+    "updated_at": "2026-08-21"
+  },
+  "topic": {
+    "id": "T095",
+    "status": "S6 已入库"
+  },
+  "brief": {
+    "reader_moment": "已经能让 AI 生成代码，但一遇到项目判断、验收和返工就不知道该学什么的初学者。",
+    "tension": "AI 可以快速产出代码，却不能替读者承担需求判断、上下文理解、证据验收和变化控制。",
+    "core_question": "AI 写代码之后，初学者最值得优先补上的能力是什么？",
+    "central_view": "从“会不会写语法”转向“能不能把问题变成可验证任务，并对结果做出判断”，是 AI 编程时代更稳的学习主线。",
+    "scope_boundary": "本文讨论通用的项目协作与学习能力，不对特定模型、工具版本、效率提升比例或个人经历作未经核验的承诺。"
+  },
+  "sources": [
+    {
+      "title": "OpenAI Academy: Codex for Builders",
+      "url": "https://academy.openai.com/public/clubs/builders-etkn1/resources/codex-for-builders",
+      "checked_at": "2026-08-21",
+      "notes": "用于核对 AI 辅助开发从需求、任务拆解到验证的实践定位；本文不将其扩展为特定产品版本或效果承诺。",
+      "type": "official"
+    },
+    {
+      "title": "OpenAI Help Center: Using Codex with your ChatGPT plan",
+      "url": "https://help.openai.com/en/articles/11369540",
+      "checked_at": "2026-08-21",
+      "notes": "用于核对 Codex 使用应以当前产品界面、账号权限和官方说明为准；正文不据此推导价格或可用范围。",
+      "type": "official"
+    }
+  ],
+  "assets": {
+    "cover": null,
+    "inline_images": [],
+    "visual_notes": "本篇由真实 Writer Connector 生成正文并经 Editor Connector 编辑；本次仅同步正文与文章元数据，未把本地 fallback 视觉资产伪装为模型生成图片。"
+  },
+  "checks": {
+    "fact_review": {
+      "status": "pending",
+      "notes": "已登记官方参考资料；生产阶段 fact_retrieval Connector 未配置，涉及产品当前能力、版本、价格或权限的表述仍须人工复核。"
+    },
+    "copyright_review": {
+      "status": "pass",
+      "notes": "正文为本次 Connector 生成的原创表达；未引用外部文章、截图、Logo 或第三方图片。"
+    },
+    "policy_review": {
+      "status": "pass",
+      "notes": "未包含密钥、Cookie、个人敏感信息或高风险执行指令；文章明确 AI 输出仍需人工验收。"
+    },
+    "human_publish_approval": {
+      "status": "pending",
+      "notes": "仓库正式入库不等于公众号或其他内容平台发布；仍需完成事实复核、平台排版和移动端预览确认。"
+    }
+  },
+  "editorial_review": {
+    "structure": "按“从误区切入—五项能力—学习顺序变化”组织，正文强调判断、上下文、证据和变化控制。",
+    "ai_tone": "正文来自真实 Writer Connector，并由 Editor Connector 完成编辑；仍需结合作者真实经历做最终人工去 AI 味复核。",
+    "visual_reference_boundary": "本次未在正文中引用图片，避免把未实际调用远程生图模型的 fallback 资产当作正式视觉成果。"
+  },
+  "notes": [
+    "本文题目为用户确认的创作方向，正文由真实 Writer Connector 生成，并经 Editor Connector 编辑。",
+    "生产回执状态为 human_review；这表示已生成正式候选稿，不等于事实、视觉或公众号发布审核完成。",
+    "2026-08-21：首次同步为第 19 篇正式文章候选。"
+  ],
+  "updated_at": "2026-08-21"
+}
