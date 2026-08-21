@@ -23,8 +23,8 @@ $SyncPolicy = [ordered]@{
     TargetBranch = 'main'
     RequiredChecks = @('article_unified_check', 'one_click_publish_check', 'project_deep_verify', 'git_diff_check', 'staged_secret_scan')
     AllowedOwnedPathPrefixes = @(
-        'README.md', '00-知识库导航', '01-工具教程', '02-效率方法', '03-AI与创作',
-        '04-编程与开发', '05-职场与成长', '06-案例与复盘', '07-资料与流程'
+        'README.md', '00-知识库导航', '01-工具教程', '02-AI知识', '03-好文方法',
+        '04-安全治理', '05-案例实战', '06-热点追踪', '07-资料与流程'
     )
     BlockOnUnownedChanges = $true
     BlockOnPreexistingStagedChanges = $true

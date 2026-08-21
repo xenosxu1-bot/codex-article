@@ -79,6 +79,31 @@ def verify_skill_worktree(root: Path) -> Path:
     return root
 
 
+def locate_manifest(article_id: str | None, article: Path) -> Path:
+    """Prefer centralized metadata and fall back to the package manifest.
+
+    Older formal articles predate the centralized metadata directory but still
+    carry an article.json inside their package. Keeping this fallback lets the
+    unified check cover the full historical corpus without reintroducing a
+    project-side lock/config file.
+    """
+    if article_id:
+        central = sorted(REPO_ROOT.glob(f"07-资料与流程/03-资产与核验/文章元数据/{article_id}-*.json"))
+        if len(central) == 1:
+            return central[0]
+        if len(central) > 1:
+            raise FileNotFoundError(
+                f"metadata must resolve to exactly one centralized file; found {len(central)} for article {article_id}"
+            )
+    package_manifest = article.parent / "article.json"
+    if package_manifest.is_file():
+        return package_manifest.resolve()
+    raise FileNotFoundError(
+        f"metadata not found for article {article_id or article.name}; "
+        "expected centralized metadata or article package article.json"
+    )
+
+
 def locate_skill_root(arg_value: str | None) -> Path:
     candidates = [arg_value, os.getenv("ARTICLE_SKILL_ROOT"), str(REPO_ROOT.parent / "article-Skill")]
     errors: list[str] = []
@@ -151,7 +176,7 @@ def main() -> int:
     article = Path(args.article) if args.article else locate_article(article_id)
     if not article.is_absolute():
         article = (REPO_ROOT / article).resolve()
-    manifest = Path(args.manifest) if args.manifest else locate_one(f"07-资料与流程/03-资产与核验/文章元数据/{article_id}-*.json", "metadata")
+    manifest = Path(args.manifest) if args.manifest else locate_manifest(article_id, article)
     if not manifest.is_absolute():
         manifest = (REPO_ROOT / manifest).resolve()
     manifest_data = json.loads(manifest.read_text(encoding="utf-8"))
